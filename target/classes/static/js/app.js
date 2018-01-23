@@ -1,14 +1,16 @@
 (function(){
-    var module = angular.module("thesisApp", ['ngResource']);
-    module.config(function () {
-        /*$locationProvider.hashPrefix('!');
-        $routeProvider
-            .when('/documentsList/:folderName', {
-                template: '<documents-list></documents-list>'
-            })
-            .otherwise({
-                redirectTo: '/'
-            });*/
-    });
 
+    var app = angular.module("flightTicketApp", ["ngRoute"]);
+
+    app.config(function($routeProvider){
+        $routeProvider
+            .when("/allflights", {
+                templateUrl: "js/components/thesis-ticket/flightResults.html",
+                controller: "flightController"
+            }).when("/", {
+            templateUrl: "js/components/thesis-ticket/welcome.html"
+
+        })
+            .otherwise({redirectTo:"/"});
+    });
 }());

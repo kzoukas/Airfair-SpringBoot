@@ -1,6 +1,6 @@
-/home/kwstaki/Desktop/springProject/src/main/java/com/thesis/tuc/services/rest/responseDTOs/Flight.java
-/home/kwstaki/Desktop/springProject/src/main/java/com/thesis/tuc/repository/FlightRepository.java
-/home/kwstaki/Desktop/springProject/target/generated-sources/annotations/com/thesis/tuc/services/rest/responseDTOs/QFlight.java
-/home/kwstaki/Desktop/springProject/src/main/java/com/thesis/tuc/MyApplication.java
-/home/kwstaki/Desktop/springProject/src/main/java/com/thesis/tuc/services/rest/controllers/ViewController.java
-/home/kwstaki/Desktop/springProject/src/main/java/com/thesis/tuc/services/rest/responseDTOs/FlightDTO.java
+/home/kwstaki/Documents/IntelliJprojects/Thesis-master/thesis/src/main/java/com/thesis/tuc/services/rest/responseDTOs/FlightDTO.java
+/home/kwstaki/Documents/IntelliJprojects/Thesis-master/thesis/src/main/java/com/thesis/tuc/services/rest/responseDTOs/Flight.java
+/home/kwstaki/Documents/IntelliJprojects/Thesis-master/thesis/target/generated-sources/annotations/com/thesis/tuc/services/rest/responseDTOs/QFlight.java
+/home/kwstaki/Documents/IntelliJprojects/Thesis-master/thesis/src/main/java/com/thesis/tuc/MyApplication.java
+/home/kwstaki/Documents/IntelliJprojects/Thesis-master/thesis/src/main/java/com/thesis/tuc/services/rest/controllers/ViewController.java
+/home/kwstaki/Documents/IntelliJprojects/Thesis-master/thesis/src/main/java/com/thesis/tuc/repository/FlightRepository.java

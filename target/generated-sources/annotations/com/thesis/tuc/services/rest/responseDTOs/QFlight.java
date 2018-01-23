@@ -27,17 +27,25 @@ public class QFlight extends EntityPathBase<Flight> {
 
     public final StringPath fromDepartureTime = createString("fromDepartureTime");
 
+    public final StringPath fromTown = createString("fromTown");
+
     public final StringPath id = createString("id");
 
-    public final StringPath price = createString("price");
+    public final StringPath latitude_from = createString("latitude_from");
 
-    public final StringPath toArrivalTime = createString("toArrivalTime");
+    public final StringPath latitude_to = createString("latitude_to");
+
+    public final StringPath longitude_from = createString("longitude_from");
+
+    public final StringPath longitude_to = createString("longitude_to");
+
+    public final StringPath price = createString("price");
 
     public final StringPath toCompany = createString("toCompany");
 
     public final StringPath toDate = createString("toDate");
 
-    public final StringPath toDepartureTime = createString("toDepartureTime");
+    public final StringPath toTown = createString("toTown");
 
     public QFlight(String variable) {
         super(Flight.class, forVariable(variable));

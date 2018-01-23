@@ -1,0 +1,62 @@
+    <div class="offset-top-40">
+        <ul class="list-tickets">
+            <li class="list-item" ng-repeat="flight in flightList">
+                <div class="list-item-inner">
+                    <div class="list-item-main">
+                        <div class="list-item-top">
+                            <div class="list-item-logo">
+                                <img src="./images/logo-01.jpg" alt="">
+                            </div>
+                            <div class="list-item-content">
+                                <div class="list-item-content-left">
+                                    <div class="text-bold text-base">{{flight.fromDepartureTime}}</div>
+                                    <span class="small reveal-block">{{flight.fromTown}}</span>
+                                </div>
+                                <div class="list-item-content-line-wrapper small">
+                                    <div class="list-item-content-line-top">6h 50m</div>
+                                    <div class="list-item-content-line"></div>
+                                    <div class="list-item-content-line-bottom text-info-dr">Direct</div>
+                                </div>
+                                <div class="list-item-content-right">
+                                    <div class="text-bold text-base">{{flight.fromArrivalTime}}</div>
+                                    <span class="small reveal-block">{{flight.toTown}}</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!--<hr class="divider divider-wide">-->
+                        <!--<div class="list-item-bottom">-->
+                            <!--<div class="list-item-logo">-->
+                                <!--<img src="./images/logo-01.jpg" alt="">-->
+                            <!--</div>-->
+                            <!--<div class="list-item-content">-->
+                                <!--<div class="list-item-content-left">-->
+                                    <!--<div class="text-bold text-base">9:50pm</div>-->
+                                    <!--<span class="small reveal-block">LGW</span>-->
+                                <!--</div>-->
+                                <!--<div class="list-item-content-line-wrapper small">-->
+                                    <!--<div class="list-item-content-line-top">18h 40m</div>-->
+                                    <!--<div class="list-item-content-line"></div>-->
+                                    <!--<div class="list-item-content-line-bottom">-->
+                                        <!--<span class="text-primary-dr">1 stop</span>-->
+                                        <!--<span> DUB</span>-->
+                                    <!--</div>-->
+                                <!--</div>-->
+                                <!--<div class="list-item-content-right">-->
+                                    <!--<div class="text-bold text-base">11:30am (+1)</div>-->
+                                    <!--<span class="small reveal-block">JFK</span>-->
+                                <!--</div>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    </div>
+                    <div class="list-item-footer">
+                        <!--<span class="small">7 deals from</span>-->
+                        <h5 class="text-bold list-item-price">{{flight.price}}</h5>
+                        <a href="#" class="btn btn-primary btn-xs btn-no-shadow">select</a>
+                    </div>
+                </div>
+                <div class="small text-gray-light list-item-subtitle">{{flight.fromDate}}</div>
+            </li>
+            <hr class="divider divider-wide">
+
+        </ul>
+    </div>

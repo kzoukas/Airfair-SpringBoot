@@ -10,24 +10,38 @@ public class Flight {
     private String id;
     private String fromDepartureTime;
     private String fromArrivalTime;
-    private String toDepartureTime;
-    private String toArrivalTime;
+//    private String toDepartureTime;
+//    private String toArrivalTime;
+    private String fromTown;
+    private String toTown;
     private String price;
     private String fromCompany;
     private String toCompany;
     private String fromDate;
     private String toDate;
+    private String longitude_from;
+    private String longitude_to;
+    private String latitude_from;
+    private String latitude_to;
 
-    public Flight(String fromDepartureTime, String fromArrivalTime, String toDepartureTime, String toArrivalTime, String price, String fromCompany, String toCompany, String fromDate, String toDate) {
+
+    public Flight(String fromDepartureTime, String fromArrivalTime, String fromTown, String toTown, String price, String fromCompany, String toCompany, String fromDate, String toDate, String longitude_from, String longitude_to, String latitude_from, String latitude_to) {
         this.fromDepartureTime = fromDepartureTime;
         this.fromArrivalTime = fromArrivalTime;
-        this.toDepartureTime = toDepartureTime;
-        this.toArrivalTime = toArrivalTime;
+        this.fromTown = fromTown;
+        this.toTown = toTown;
+//        this.toDepartureTime = toDepartureTime;
+//        this.toArrivalTime = toArrivalTime;
         this.price = price;
         this.fromCompany = fromCompany;
         this.toCompany = toCompany;
         this.fromDate = fromDate;
         this.toDate = toDate;
+        this.longitude_from = longitude_from;
+        this.longitude_to = longitude_to;
+        this.latitude_from = latitude_from;
+
+        this.latitude_to = latitude_to;
     }
 
     public String getId() {
@@ -42,12 +56,20 @@ public class Flight {
         return fromArrivalTime;
     }
 
-    public String getToDepartureTime() {
-        return toDepartureTime;
+//    public String getToDepartureTime() {
+//        return toDepartureTime;
+//    }
+//
+//    public String getToArrivalTime() {
+//        return toArrivalTime;
+//    }
+
+    public String getFromTown() {
+        return fromTown;
     }
 
-    public String getToArrivalTime() {
-        return toArrivalTime;
+    public String getToTown() {
+        return toTown;
     }
 
     public String getPrice() {
@@ -68,5 +90,21 @@ public class Flight {
 
     public String getToDate() {
         return toDate;
+    }
+
+    public String getLongitude_from() {
+        return longitude_from;
+    }
+
+    public String getLongitude_to() {
+        return longitude_to;
+    }
+
+    public String getLatitude_from() {
+        return latitude_from;
+    }
+
+    public String getLatitude_to() {
+        return latitude_to;
     }
 }
