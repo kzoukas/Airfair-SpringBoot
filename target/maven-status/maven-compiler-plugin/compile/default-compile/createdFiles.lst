@@ -1,0 +1,6 @@
+com/thesis/tuc/services/rest/controllers/ViewController.class
+com/thesis/tuc/services/rest/responseDTOs/Flight.class
+com/thesis/tuc/MyApplication.class
+com/thesis/tuc/repository/FlightRepository.class
+com/thesis/tuc/services/rest/responseDTOs/FlightDTO.class
+com/thesis/tuc/services/rest/responseDTOs/QFlight.class
