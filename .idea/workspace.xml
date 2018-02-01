@@ -2,17 +2,281 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="897d45ea-ce64-4318-878e-4be4f1afd7f2" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/static/js/components/thesis-ticket/thesis-ticket.component.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/static/js/components/thesis-ticket/thesis-ticket.component.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/static/js/components/thesis-ticket/thesis-ticket.service.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/thesis/tuc/services/rest/responseDTOs/QFlight.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/thesis.iml" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/thesis/tuc/services/rest/controllers/ViewController.java" afterPath="$PROJECT_DIR$/src/main/java/com/thesis/tuc/services/rest/controllers/ViewController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/thesis/tuc/services/rest/responseDTOs/Flight.java" afterPath="$PROJECT_DIR$/src/main/java/com/thesis/tuc/services/rest/responseDTOs/Flight.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/application.properties" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/index.html" afterPath="$PROJECT_DIR$/src/main/resources/static/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/js/app.js" afterPath="$PROJECT_DIR$/src/main/resources/static/js/app.js" />
+      <change beforePath="$PROJECT_DIR$/.idea/.name" afterPath="$PROJECT_DIR$/.idea/.name" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__ch_qos_logback_logback_classic_1_1_9.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__ch_qos_logback_logback_classic_1_1_9.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__ch_qos_logback_logback_core_1_1_9.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__ch_qos_logback_logback_core_1_1_9.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_classmate_1_3_3.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_classmate_1_3_3.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_annotations_2_8_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_annotations_2_8_0.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_core_2_8_6.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_core_2_8_6.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_databind_2_8_6.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_databind_2_8_6.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_code_findbugs_annotations_2_0_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_code_findbugs_annotations_2_0_1.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_code_findbugs_jsr305_1_3_9.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_code_findbugs_jsr305_1_3_9.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_guava_guava_18_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_guava_guava_18_0.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_infradna_tool_bridge_method_annotation_1_13.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_infradna_tool_bridge_method_annotation_1_13.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_mysema_codegen_codegen_0_6_7.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_mysema_codegen_codegen_0_6_7.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_mysema_commons_mysema_commons_lang_0_2_4.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_mysema_commons_mysema_commons_lang_0_2_4.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_mysema_querydsl_querydsl_core_3_6_9.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_mysema_querydsl_querydsl_core_3_6_9.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_mysema_querydsl_querydsl_mongodb_3_6_9.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_mysema_querydsl_querydsl_mongodb_3_6_9.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_querydsl_querydsl_apt_4_0_4.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_querydsl_querydsl_apt_4_0_4.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_querydsl_querydsl_codegen_4_0_4.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_querydsl_querydsl_codegen_4_0_4.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_querydsl_querydsl_core_4_1_4.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_querydsl_querydsl_core_4_1_4.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_inject_javax_inject_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_inject_javax_inject_1.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_validation_validation_api_1_1_0_Final.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_validation_validation_api_1_1_0_Final.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_core_8_5_11.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_core_8_5_11.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_el_8_5_11.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_el_8_5_11.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_websocket_8_5_11.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_websocket_8_5_11.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_eclipse_jdt_core_compiler_ecj_4_3_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_eclipse_jdt_core_compiler_ecj_4_3_1.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_hibernate_validator_5_3_4_Final.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_hibernate_validator_5_3_4_Final.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_javassist_javassist_3_21_0_GA.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_javassist_javassist_3_21_0_GA.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_logging_jboss_logging_3_3_0_Final.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_logging_jboss_logging_3_3_0_Final.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mongodb_bson_3_4_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mongodb_bson_3_4_1.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mongodb_mongodb_driver_3_4_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mongodb_mongodb_driver_3_4_1.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mongodb_mongodb_driver_core_3_4_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mongodb_mongodb_driver_core_3_4_1.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_reflections_reflections_0_9_9.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_reflections_reflections_0_9_9.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_jcl_over_slf4j_1_7_22.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_jcl_over_slf4j_1_7_22.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_jul_to_slf4j_1_7_22.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_jul_to_slf4j_1_7_22.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_log4j_over_slf4j_1_7_22.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_log4j_over_slf4j_1_7_22.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_api_1_7_22.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_api_1_7_22.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_1_5_1_RELEASE.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_1_5_1_RELEASE.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_autoconfigure_1_5_1_RELEASE.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_autoconfigure_1_5_1_RELEASE.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_1_5_1_RELEASE.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_1_5_1_RELEASE.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_data_mongodb_1_5_1_RELEASE.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_data_mongodb_1_5_1_RELEASE.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_logging_1_5_1_RELEASE.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_logging_1_5_1_RELEASE.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_tomcat_1_5_1_RELEASE.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_tomcat_1_5_1_RELEASE.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_validation_1_5_1_RELEASE.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_validation_1_5_1_RELEASE.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_web_1_5_1_RELEASE.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_web_1_5_1_RELEASE.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_data_spring_data_commons_1_13_0_RELEASE.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_data_spring_data_commons_1_13_0_RELEASE.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_data_spring_data_mongodb_1_10_0_RELEASE.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_data_spring_data_mongodb_1_10_0_RELEASE.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_aop_4_3_6_RELEASE.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_aop_4_3_6_RELEASE.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_beans_4_3_6_RELEASE.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_beans_4_3_6_RELEASE.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_context_4_3_6_RELEASE.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_context_4_3_6_RELEASE.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_core_4_3_6_RELEASE.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_core_4_3_6_RELEASE.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_expression_4_3_6_RELEASE.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_expression_4_3_6_RELEASE.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_tx_4_3_6_RELEASE.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_tx_4_3_6_RELEASE.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_web_4_3_6_RELEASE.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_web_4_3_6_RELEASE.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_webmvc_4_3_6_RELEASE.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_webmvc_4_3_6_RELEASE.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_yaml_snakeyaml_1_17.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_yaml_snakeyaml_1_17.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/thesis/tuc/services/rest/controllers/ViewController.java" afterPath="$PROJECT_DIR$/src/main/java/com/thesis/tuc/services/rest/controllers/ViewController.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/animate.css" afterPath="$PROJECT_DIR$/src/main/resources/static/css/animate.css" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/bootstrap-datepicker.min.css" afterPath="$PROJECT_DIR$/src/main/resources/static/css/bootstrap-datepicker.min.css" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/bootstrap.min.css" afterPath="$PROJECT_DIR$/src/main/resources/static/css/bootstrap.min.css" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/color(1).css" afterPath="$PROJECT_DIR$/src/main/resources/static/css/color(1).css" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/color.css" afterPath="$PROJECT_DIR$/src/main/resources/static/css/color.css" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/components.css" afterPath="$PROJECT_DIR$/src/main/resources/static/css/components.css" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/jquery.fancybox-buttons.css" afterPath="$PROJECT_DIR$/src/main/resources/static/css/jquery.fancybox-buttons.css" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/jquery.fancybox-thumbs.css" afterPath="$PROJECT_DIR$/src/main/resources/static/css/jquery.fancybox-thumbs.css" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/jquery.fancybox.css" afterPath="$PROJECT_DIR$/src/main/resources/static/css/jquery.fancybox.css" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/jquery.selectbox.css" afterPath="$PROJECT_DIR$/src/main/resources/static/css/jquery.selectbox.css" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/layout.css" afterPath="$PROJECT_DIR$/src/main/resources/static/css/layout.css" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/please-wait.css" afterPath="$PROJECT_DIR$/src/main/resources/static/css/please-wait.css" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/responsive.css" afterPath="$PROJECT_DIR$/src/main/resources/static/css/responsive.css" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/slick-theme.css" afterPath="$PROJECT_DIR$/src/main/resources/static/css/slick-theme.css" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/slick.css" afterPath="$PROJECT_DIR$/src/main/resources/static/css/slick.css" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/style.css" afterPath="$PROJECT_DIR$/src/main/resources/static/css/style.css" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/fonts/FontAwesome.otf" afterPath="$PROJECT_DIR$/src/main/resources/static/fonts/FontAwesome.otf" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/fonts/css" afterPath="$PROJECT_DIR$/src/main/resources/static/fonts/css" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/fonts/css(1)" afterPath="$PROJECT_DIR$/src/main/resources/static/fonts/css(1)" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/fonts/flaticon.css" afterPath="$PROJECT_DIR$/src/main/resources/static/fonts/flaticon.css" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/fonts/flaticon.ttf" afterPath="$PROJECT_DIR$/src/main/resources/static/fonts/flaticon.ttf" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/fonts/flaticon.woff" afterPath="$PROJECT_DIR$/src/main/resources/static/fonts/flaticon.woff" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/fonts/font-awesome.css" afterPath="$PROJECT_DIR$/src/main/resources/static/fonts/font-awesome.css" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/fonts/fontawesome-webfont.eot" afterPath="$PROJECT_DIR$/src/main/resources/static/fonts/fontawesome-webfont.eot" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/fonts/fontawesome-webfont.svg" afterPath="$PROJECT_DIR$/src/main/resources/static/fonts/fontawesome-webfont.svg" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/fonts/fontawesome-webfont.ttf" afterPath="$PROJECT_DIR$/src/main/resources/static/fonts/fontawesome-webfont.ttf" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/fonts/fontawesome-webfont.woff" afterPath="$PROJECT_DIR$/src/main/resources/static/fonts/fontawesome-webfont.woff" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/fonts/fontawesome-webfont.woff2" afterPath="$PROJECT_DIR$/src/main/resources/static/fonts/fontawesome-webfont.woff2" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/fonts/slick.woff" afterPath="$PROJECT_DIR$/src/main/resources/static/fonts/slick.woff" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/bg-footer-2.png" afterPath="$PROJECT_DIR$/src/main/resources/static/images/bg-footer-2.png" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/logo-01.jpg" afterPath="$PROJECT_DIR$/src/main/resources/static/images/logo-01.jpg" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/logo-02.jpg" afterPath="$PROJECT_DIR$/src/main/resources/static/images/logo-02.jpg" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/logo-03.jpg" afterPath="$PROJECT_DIR$/src/main/resources/static/images/logo-03.jpg" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/logo-04.jpg" afterPath="$PROJECT_DIR$/src/main/resources/static/images/logo-04.jpg" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/logo-05.jpg" afterPath="$PROJECT_DIR$/src/main/resources/static/images/logo-05.jpg" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/logo-06.jpg" afterPath="$PROJECT_DIR$/src/main/resources/static/images/logo-06.jpg" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/logo-07.jpg" afterPath="$PROJECT_DIR$/src/main/resources/static/images/logo-07.jpg" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/logo-black-color-1.png" afterPath="$PROJECT_DIR$/src/main/resources/static/images/logo-black-color-1.png" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/logo-white-color-1.png" afterPath="$PROJECT_DIR$/src/main/resources/static/images/logo-white-color-1.png" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/index.html" afterPath="$PROJECT_DIR$/src/main/resources/static/index.html" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/app.js" afterPath="$PROJECT_DIR$/src/main/resources/static/js/app.js" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/components/thesis-ticket/flightController.js" afterPath="$PROJECT_DIR$/src/main/resources/static/js/components/thesis-ticket/flightController.js" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/components/thesis-ticket/flightResults.html" afterPath="$PROJECT_DIR$/src/main/resources/static/js/components/thesis-ticket/flightResults.html" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/components/thesis-ticket/welcome.html" afterPath="$PROJECT_DIR$/src/main/resources/static/js/components/thesis-ticket/welcome.html" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" afterPath="$PROJECT_DIR$/target/classes/application.properties" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/thesis/tuc/services/rest/controllers/ViewController.class" afterPath="$PROJECT_DIR$/target/classes/com/thesis/tuc/services/rest/controllers/ViewController.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/thesis/tuc/services/rest/responseDTOs/QFlight.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/css/animate.css" afterPath="$PROJECT_DIR$/target/classes/static/css/animate.css" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/css/bootstrap-datepicker.min.css" afterPath="$PROJECT_DIR$/target/classes/static/css/bootstrap-datepicker.min.css" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/css/bootstrap.min.css" afterPath="$PROJECT_DIR$/target/classes/static/css/bootstrap.min.css" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/css/color(1).css" afterPath="$PROJECT_DIR$/target/classes/static/css/color(1).css" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/css/color.css" afterPath="$PROJECT_DIR$/target/classes/static/css/color.css" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/css/components.css" afterPath="$PROJECT_DIR$/target/classes/static/css/components.css" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/css/jquery.fancybox-buttons.css" afterPath="$PROJECT_DIR$/target/classes/static/css/jquery.fancybox-buttons.css" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/css/jquery.fancybox-thumbs.css" afterPath="$PROJECT_DIR$/target/classes/static/css/jquery.fancybox-thumbs.css" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/css/jquery.fancybox.css" afterPath="$PROJECT_DIR$/target/classes/static/css/jquery.fancybox.css" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/css/jquery.selectbox.css" afterPath="$PROJECT_DIR$/target/classes/static/css/jquery.selectbox.css" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/css/layout.css" afterPath="$PROJECT_DIR$/target/classes/static/css/layout.css" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/css/please-wait.css" afterPath="$PROJECT_DIR$/target/classes/static/css/please-wait.css" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/css/responsive.css" afterPath="$PROJECT_DIR$/target/classes/static/css/responsive.css" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/css/slick-theme.css" afterPath="$PROJECT_DIR$/target/classes/static/css/slick-theme.css" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/css/slick.css" afterPath="$PROJECT_DIR$/target/classes/static/css/slick.css" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/css/style.css" afterPath="$PROJECT_DIR$/target/classes/static/css/style.css" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/fonts/FontAwesome.otf" afterPath="$PROJECT_DIR$/target/classes/static/fonts/FontAwesome.otf" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/fonts/css" afterPath="$PROJECT_DIR$/target/classes/static/fonts/css" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/fonts/css(1)" afterPath="$PROJECT_DIR$/target/classes/static/fonts/css(1)" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/fonts/flaticon.css" afterPath="$PROJECT_DIR$/target/classes/static/fonts/flaticon.css" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/fonts/flaticon.ttf" afterPath="$PROJECT_DIR$/target/classes/static/fonts/flaticon.ttf" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/fonts/flaticon.woff" afterPath="$PROJECT_DIR$/target/classes/static/fonts/flaticon.woff" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/fonts/font-awesome.css" afterPath="$PROJECT_DIR$/target/classes/static/fonts/font-awesome.css" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/fonts/fontawesome-webfont.eot" afterPath="$PROJECT_DIR$/target/classes/static/fonts/fontawesome-webfont.eot" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/fonts/fontawesome-webfont.svg" afterPath="$PROJECT_DIR$/target/classes/static/fonts/fontawesome-webfont.svg" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/fonts/fontawesome-webfont.ttf" afterPath="$PROJECT_DIR$/target/classes/static/fonts/fontawesome-webfont.ttf" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/fonts/fontawesome-webfont.woff" afterPath="$PROJECT_DIR$/target/classes/static/fonts/fontawesome-webfont.woff" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/fonts/fontawesome-webfont.woff2" afterPath="$PROJECT_DIR$/target/classes/static/fonts/fontawesome-webfont.woff2" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/fonts/slick.woff" afterPath="$PROJECT_DIR$/target/classes/static/fonts/slick.woff" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/images/bg-footer-2.png" afterPath="$PROJECT_DIR$/target/classes/static/images/bg-footer-2.png" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/images/logo-01.jpg" afterPath="$PROJECT_DIR$/target/classes/static/images/logo-01.jpg" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/images/logo-02.jpg" afterPath="$PROJECT_DIR$/target/classes/static/images/logo-02.jpg" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/images/logo-03.jpg" afterPath="$PROJECT_DIR$/target/classes/static/images/logo-03.jpg" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/images/logo-04.jpg" afterPath="$PROJECT_DIR$/target/classes/static/images/logo-04.jpg" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/images/logo-05.jpg" afterPath="$PROJECT_DIR$/target/classes/static/images/logo-05.jpg" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/images/logo-06.jpg" afterPath="$PROJECT_DIR$/target/classes/static/images/logo-06.jpg" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/images/logo-07.jpg" afterPath="$PROJECT_DIR$/target/classes/static/images/logo-07.jpg" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/images/logo-black-color-1.png" afterPath="$PROJECT_DIR$/target/classes/static/images/logo-black-color-1.png" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/images/logo-white-color-1.png" afterPath="$PROJECT_DIR$/target/classes/static/images/logo-white-color-1.png" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/index.html" afterPath="$PROJECT_DIR$/target/classes/static/index.html" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/js/app.js" afterPath="$PROJECT_DIR$/target/classes/static/js/app.js" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/js/components/thesis-ticket/flightController.js" afterPath="$PROJECT_DIR$/target/classes/static/js/components/thesis-ticket/flightController.js" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/js/components/thesis-ticket/flightResults.html" afterPath="$PROJECT_DIR$/target/classes/static/js/components/thesis-ticket/flightResults.html" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/js/components/thesis-ticket/thesis-ticket.component.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/js/components/thesis-ticket/thesis-ticket.component.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/js/components/thesis-ticket/thesis-ticket.service.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/js/components/thesis-ticket/welcome.html" afterPath="$PROJECT_DIR$/target/classes/static/js/components/thesis-ticket/welcome.html" />
+      <change beforePath="$PROJECT_DIR$/target/generated-sources/annotations/com/thesis/tuc/services/rest/responseDTOs/QFlight.java" afterPath="$PROJECT_DIR$/target/generated-sources/annotations/com/thesis/tuc/services/rest/responseDTOs/QFlight.java" />
+      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" />
+      <change beforePath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT.jar" afterPath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT.jar" />
+      <change beforePath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT.jar.original" afterPath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT.jar.original" />
+      <change beforePath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT.war" afterPath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT.war" />
+      <change beforePath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/classes/application.properties" afterPath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/classes/application.properties" />
+      <change beforePath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/classes/com/thesis/tuc/MyApplication.class" afterPath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/classes/com/thesis/tuc/MyApplication.class" />
+      <change beforePath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/classes/com/thesis/tuc/repository/FlightRepository.class" afterPath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/classes/com/thesis/tuc/repository/FlightRepository.class" />
+      <change beforePath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/classes/com/thesis/tuc/services/rest/controllers/ViewController.class" afterPath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/classes/com/thesis/tuc/services/rest/controllers/ViewController.class" />
+      <change beforePath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/classes/com/thesis/tuc/services/rest/responseDTOs/Flight.class" afterPath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/classes/com/thesis/tuc/services/rest/responseDTOs/Flight.class" />
+      <change beforePath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/classes/com/thesis/tuc/services/rest/responseDTOs/FlightDTO.class" afterPath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/classes/com/thesis/tuc/services/rest/responseDTOs/FlightDTO.class" />
+      <change beforePath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/classes/com/thesis/tuc/services/rest/responseDTOs/QFlight.class" afterPath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/classes/com/thesis/tuc/services/rest/responseDTOs/QFlight.class" />
+      <change beforePath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/classes/static/css/animate.css" afterPath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/classes/static/css/animate.css" />
+      <change beforePath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/classes/static/css/bootstrap-datepicker.min.css" afterPath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/classes/static/css/bootstrap-datepicker.min.css" />
+      <change beforePath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/classes/static/css/bootstrap.min.css" afterPath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/classes/static/css/bootstrap.min.css" />
+      <change beforePath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/classes/static/css/color(1).css" afterPath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/classes/static/css/color(1).css" />
+      <change beforePath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/classes/static/css/color.css" afterPath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/classes/static/css/color.css" />
+      <change beforePath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/classes/static/css/components.css" afterPath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/classes/static/css/components.css" />
+      <change beforePath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/classes/static/css/jquery.fancybox-buttons.css" afterPath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/classes/static/css/jquery.fancybox-buttons.css" />
+      <change beforePath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/classes/static/css/jquery.fancybox-thumbs.css" afterPath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/classes/static/css/jquery.fancybox-thumbs.css" />
+      <change beforePath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/classes/static/css/jquery.fancybox.css" afterPath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/classes/static/css/jquery.fancybox.css" />
+      <change beforePath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/classes/static/css/jquery.selectbox.css" afterPath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/classes/static/css/jquery.selectbox.css" />
+      <change beforePath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/classes/static/css/layout.css" afterPath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/classes/static/css/layout.css" />
+      <change beforePath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/classes/static/css/please-wait.css" afterPath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/classes/static/css/please-wait.css" />
+      <change beforePath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/classes/static/css/responsive.css" afterPath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/classes/static/css/responsive.css" />
+      <change beforePath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/classes/static/css/slick-theme.css" afterPath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/classes/static/css/slick-theme.css" />
+      <change beforePath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/classes/static/css/slick.css" afterPath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/classes/static/css/slick.css" />
+      <change beforePath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/classes/static/css/style.css" afterPath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/classes/static/css/style.css" />
+      <change beforePath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/classes/static/fonts/FontAwesome.otf" afterPath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/classes/static/fonts/FontAwesome.otf" />
+      <change beforePath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/classes/static/fonts/css" afterPath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/classes/static/fonts/css" />
+      <change beforePath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/classes/static/fonts/css(1)" afterPath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/classes/static/fonts/css(1)" />
+      <change beforePath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/classes/static/fonts/flaticon.css" afterPath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/classes/static/fonts/flaticon.css" />
+      <change beforePath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/classes/static/fonts/flaticon.ttf" afterPath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/classes/static/fonts/flaticon.ttf" />
+      <change beforePath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/classes/static/fonts/flaticon.woff" afterPath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/classes/static/fonts/flaticon.woff" />
+      <change beforePath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/classes/static/fonts/font-awesome.css" afterPath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/classes/static/fonts/font-awesome.css" />
+      <change beforePath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/classes/static/fonts/fontawesome-webfont.eot" afterPath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/classes/static/fonts/fontawesome-webfont.eot" />
+      <change beforePath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/classes/static/fonts/fontawesome-webfont.svg" afterPath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/classes/static/fonts/fontawesome-webfont.svg" />
+      <change beforePath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/classes/static/fonts/fontawesome-webfont.ttf" afterPath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/classes/static/fonts/fontawesome-webfont.ttf" />
+      <change beforePath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/classes/static/fonts/fontawesome-webfont.woff" afterPath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/classes/static/fonts/fontawesome-webfont.woff" />
+      <change beforePath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/classes/static/fonts/fontawesome-webfont.woff2" afterPath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/classes/static/fonts/fontawesome-webfont.woff2" />
+      <change beforePath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/classes/static/fonts/slick.woff" afterPath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/classes/static/fonts/slick.woff" />
+      <change beforePath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/classes/static/images/bg-footer-2.png" afterPath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/classes/static/images/bg-footer-2.png" />
+      <change beforePath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/classes/static/images/logo-01.jpg" afterPath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/classes/static/images/logo-01.jpg" />
+      <change beforePath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/classes/static/images/logo-02.jpg" afterPath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/classes/static/images/logo-02.jpg" />
+      <change beforePath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/classes/static/images/logo-03.jpg" afterPath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/classes/static/images/logo-03.jpg" />
+      <change beforePath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/classes/static/images/logo-04.jpg" afterPath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/classes/static/images/logo-04.jpg" />
+      <change beforePath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/classes/static/images/logo-05.jpg" afterPath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/classes/static/images/logo-05.jpg" />
+      <change beforePath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/classes/static/images/logo-06.jpg" afterPath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/classes/static/images/logo-06.jpg" />
+      <change beforePath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/classes/static/images/logo-07.jpg" afterPath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/classes/static/images/logo-07.jpg" />
+      <change beforePath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/classes/static/images/logo-black-color-1.png" afterPath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/classes/static/images/logo-black-color-1.png" />
+      <change beforePath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/classes/static/images/logo-white-color-1.png" afterPath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/classes/static/images/logo-white-color-1.png" />
+      <change beforePath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/classes/static/index.html" afterPath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/classes/static/index.html" />
+      <change beforePath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/classes/static/js/app.js" afterPath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/classes/static/js/app.js" />
+      <change beforePath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/classes/static/js/components/thesis-ticket/flightController.js" afterPath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/classes/static/js/components/thesis-ticket/flightController.js" />
+      <change beforePath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/classes/static/js/components/thesis-ticket/flightResults.html" afterPath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/classes/static/js/components/thesis-ticket/flightResults.html" />
+      <change beforePath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/classes/static/js/components/thesis-ticket/flightService.js" afterPath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/classes/static/js/components/thesis-ticket/flightService.js" />
+      <change beforePath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/classes/static/js/components/thesis-ticket/welcome.html" afterPath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/classes/static/js/components/thesis-ticket/welcome.html" />
+      <change beforePath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/classes/static/js/libs/1.6.6/angular-resource.js" afterPath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/classes/static/js/libs/1.6.6/angular-resource.js" />
+      <change beforePath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/classes/static/js/libs/1.6.6/angular-route.js" afterPath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/classes/static/js/libs/1.6.6/angular-route.js" />
+      <change beforePath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/classes/static/js/libs/1.6.6/angular-sanitize.js" afterPath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/classes/static/js/libs/1.6.6/angular-sanitize.js" />
+      <change beforePath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/classes/static/js/libs/1.6.6/angular.js" afterPath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/classes/static/js/libs/1.6.6/angular.js" />
+      <change beforePath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/classes/static/js/libs/jquery-3.2.1.js" afterPath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/classes/static/js/libs/jquery-3.2.1.js" />
+      <change beforePath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/lib/annotations-2.0.1.jar" afterPath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/lib/annotations-2.0.1.jar" />
+      <change beforePath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/lib/bridge-method-annotation-1.13.jar" afterPath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/lib/bridge-method-annotation-1.13.jar" />
+      <change beforePath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/lib/bson-3.4.1.jar" afterPath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/lib/bson-3.4.1.jar" />
+      <change beforePath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/lib/classmate-1.3.3.jar" afterPath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/lib/classmate-1.3.3.jar" />
+      <change beforePath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/lib/codegen-0.6.7.jar" afterPath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/lib/codegen-0.6.7.jar" />
+      <change beforePath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/lib/ecj-4.3.1.jar" afterPath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/lib/ecj-4.3.1.jar" />
+      <change beforePath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/lib/guava-18.0.jar" afterPath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/lib/guava-18.0.jar" />
+      <change beforePath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/lib/hibernate-validator-5.3.4.Final.jar" afterPath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/lib/hibernate-validator-5.3.4.Final.jar" />
+      <change beforePath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/lib/jackson-annotations-2.8.0.jar" afterPath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/lib/jackson-annotations-2.8.0.jar" />
+      <change beforePath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/lib/jackson-core-2.8.6.jar" afterPath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/lib/jackson-core-2.8.6.jar" />
+      <change beforePath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/lib/jackson-databind-2.8.6.jar" afterPath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/lib/jackson-databind-2.8.6.jar" />
+      <change beforePath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/lib/javassist-3.21.0-GA.jar" afterPath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/lib/javassist-3.21.0-GA.jar" />
+      <change beforePath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/lib/javax.inject-1.jar" afterPath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/lib/javax.inject-1.jar" />
+      <change beforePath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/lib/jboss-logging-3.3.0.Final.jar" afterPath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/lib/jboss-logging-3.3.0.Final.jar" />
+      <change beforePath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/lib/jcl-over-slf4j-1.7.22.jar" afterPath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/lib/jcl-over-slf4j-1.7.22.jar" />
+      <change beforePath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/lib/jsr305-1.3.9.jar" afterPath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/lib/jsr305-1.3.9.jar" />
+      <change beforePath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/lib/jul-to-slf4j-1.7.22.jar" afterPath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/lib/jul-to-slf4j-1.7.22.jar" />
+      <change beforePath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/lib/log4j-over-slf4j-1.7.22.jar" afterPath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/lib/log4j-over-slf4j-1.7.22.jar" />
+      <change beforePath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/lib/logback-classic-1.1.9.jar" afterPath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/lib/logback-classic-1.1.9.jar" />
+      <change beforePath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/lib/logback-core-1.1.9.jar" afterPath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/lib/logback-core-1.1.9.jar" />
+      <change beforePath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/lib/mongodb-driver-3.4.1.jar" afterPath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/lib/mongodb-driver-3.4.1.jar" />
+      <change beforePath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/lib/mongodb-driver-core-3.4.1.jar" afterPath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/lib/mongodb-driver-core-3.4.1.jar" />
+      <change beforePath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/lib/mysema-commons-lang-0.2.4.jar" afterPath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/lib/mysema-commons-lang-0.2.4.jar" />
+      <change beforePath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/lib/querydsl-apt-4.0.4.jar" afterPath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/lib/querydsl-apt-4.0.4.jar" />
+      <change beforePath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/lib/querydsl-codegen-4.0.4.jar" afterPath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/lib/querydsl-codegen-4.0.4.jar" />
+      <change beforePath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/lib/querydsl-core-3.6.9.jar" afterPath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/lib/querydsl-core-3.6.9.jar" />
+      <change beforePath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/lib/querydsl-core-4.1.4.jar" afterPath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/lib/querydsl-core-4.1.4.jar" />
+      <change beforePath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/lib/querydsl-mongodb-3.6.9.jar" afterPath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/lib/querydsl-mongodb-3.6.9.jar" />
+      <change beforePath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/lib/reflections-0.9.9.jar" afterPath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/lib/reflections-0.9.9.jar" />
+      <change beforePath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/lib/slf4j-api-1.7.22.jar" afterPath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/lib/slf4j-api-1.7.22.jar" />
+      <change beforePath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/lib/snakeyaml-1.17.jar" afterPath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/lib/snakeyaml-1.17.jar" />
+      <change beforePath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/lib/spring-aop-4.3.6.RELEASE.jar" afterPath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/lib/spring-aop-4.3.6.RELEASE.jar" />
+      <change beforePath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/lib/spring-beans-4.3.6.RELEASE.jar" afterPath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/lib/spring-beans-4.3.6.RELEASE.jar" />
+      <change beforePath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/lib/spring-boot-1.5.1.RELEASE.jar" afterPath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/lib/spring-boot-1.5.1.RELEASE.jar" />
+      <change beforePath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/lib/spring-boot-autoconfigure-1.5.1.RELEASE.jar" afterPath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/lib/spring-boot-autoconfigure-1.5.1.RELEASE.jar" />
+      <change beforePath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/lib/spring-boot-starter-1.5.1.RELEASE.jar" afterPath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/lib/spring-boot-starter-1.5.1.RELEASE.jar" />
+      <change beforePath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/lib/spring-boot-starter-data-mongodb-1.5.1.RELEASE.jar" afterPath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/lib/spring-boot-starter-data-mongodb-1.5.1.RELEASE.jar" />
+      <change beforePath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/lib/spring-boot-starter-logging-1.5.1.RELEASE.jar" afterPath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/lib/spring-boot-starter-logging-1.5.1.RELEASE.jar" />
+      <change beforePath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/lib/spring-boot-starter-tomcat-1.5.1.RELEASE.jar" afterPath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/lib/spring-boot-starter-tomcat-1.5.1.RELEASE.jar" />
+      <change beforePath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/lib/spring-boot-starter-validation-1.5.1.RELEASE.jar" afterPath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/lib/spring-boot-starter-validation-1.5.1.RELEASE.jar" />
+      <change beforePath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/lib/spring-boot-starter-web-1.5.1.RELEASE.jar" afterPath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/lib/spring-boot-starter-web-1.5.1.RELEASE.jar" />
+      <change beforePath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/lib/spring-context-4.3.6.RELEASE.jar" afterPath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/lib/spring-context-4.3.6.RELEASE.jar" />
+      <change beforePath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/lib/spring-core-4.3.6.RELEASE.jar" afterPath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/lib/spring-core-4.3.6.RELEASE.jar" />
+      <change beforePath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/lib/spring-data-commons-1.13.0.RELEASE.jar" afterPath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/lib/spring-data-commons-1.13.0.RELEASE.jar" />
+      <change beforePath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/lib/spring-data-mongodb-1.10.0.RELEASE.jar" afterPath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/lib/spring-data-mongodb-1.10.0.RELEASE.jar" />
+      <change beforePath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/lib/spring-expression-4.3.6.RELEASE.jar" afterPath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/lib/spring-expression-4.3.6.RELEASE.jar" />
+      <change beforePath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/lib/spring-tx-4.3.6.RELEASE.jar" afterPath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/lib/spring-tx-4.3.6.RELEASE.jar" />
+      <change beforePath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/lib/spring-web-4.3.6.RELEASE.jar" afterPath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/lib/spring-web-4.3.6.RELEASE.jar" />
+      <change beforePath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/lib/spring-webmvc-4.3.6.RELEASE.jar" afterPath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/lib/spring-webmvc-4.3.6.RELEASE.jar" />
+      <change beforePath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/lib/tomcat-embed-core-8.5.11.jar" afterPath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/lib/tomcat-embed-core-8.5.11.jar" />
+      <change beforePath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/lib/tomcat-embed-el-8.5.11.jar" afterPath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/lib/tomcat-embed-el-8.5.11.jar" />
+      <change beforePath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/lib/tomcat-embed-websocket-8.5.11.jar" afterPath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/lib/tomcat-embed-websocket-8.5.11.jar" />
+      <change beforePath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/lib/validation-api-1.1.0.Final.jar" afterPath="$PROJECT_DIR$/target/thesis-1.0-SNAPSHOT/WEB-INF/lib/validation-api-1.1.0.Final.jar" />
+      <change beforePath="$PROJECT_DIR$/thesis.iml" afterPath="$PROJECT_DIR$/thesis.iml" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -22,6 +286,219 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FavoritesManager">
+    <favorites_list name="thesis" />
+  </component>
+  <component name="FileEditorManager">
+    <splitter split-orientation="horizontal" split-proportion="0.5751015">
+      <split-first>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file leaf-file-name="ViewController.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/main/java/com/thesis/tuc/services/rest/controllers/ViewController.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="255">
+                  <caret line="24" column="31" lean-forward="false" selection-start-line="24" selection-start-column="31" selection-end-line="24" selection-end-column="31" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/app.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="150">
+                  <caret line="10" column="20" lean-forward="false" selection-start-line="10" selection-start-column="20" selection-end-line="10" selection-end-column="20" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="welcome.html" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/components/thesis-ticket/welcome.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="90">
+                  <caret line="6" column="15" lean-forward="false" selection-start-line="6" selection-start-column="15" selection-end-line="6" selection-end-column="15" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="FlightInfo.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/main/java/com/thesis/tuc/services/rest/responseDTOs/FlightInfo.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="0">
+                  <caret line="0" column="50" lean-forward="false" selection-start-line="0" selection-start-column="50" selection-end-line="0" selection-end-column="50" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                    <element signature="e#859#860#0" expanded="true" />
+                    <element signature="e#884#885#0" expanded="true" />
+                    <element signature="e#919#920#0" expanded="true" />
+                    <element signature="e#950#951#0" expanded="true" />
+                    <element signature="e#983#984#0" expanded="true" />
+                    <element signature="e#1012#1013#0" expanded="true" />
+                    <element signature="e#1047#1048#0" expanded="true" />
+                    <element signature="e#1078#1079#0" expanded="true" />
+                    <element signature="e#1111#1112#0" expanded="true" />
+                    <element signature="e#1140#1141#0" expanded="true" />
+                    <element signature="e#1175#1176#0" expanded="true" />
+                    <element signature="e#1206#1207#0" expanded="true" />
+                    <element signature="e#1239#1240#0" expanded="true" />
+                    <element signature="e#1268#1269#0" expanded="true" />
+                    <element signature="e#1304#1305#0" expanded="true" />
+                    <element signature="e#1336#1337#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/main/resources/static/index.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="351">
+                  <caret line="306" column="90" lean-forward="false" selection-start-line="306" selection-start-column="90" selection-end-line="306" selection-end-column="90" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="components.css" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/main/resources/static/css/components.css">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="1455">
+                  <caret line="6490" column="0" lean-forward="false" selection-start-line="6490" selection-start-column="0" selection-end-line="6490" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="responsive.css" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/main/resources/static/css/responsive.css">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="690">
+                  <caret line="1998" column="15" lean-forward="false" selection-start-line="1998" selection-start-column="15" selection-end-line="1998" selection-end-column="15" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="flightController.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/components/thesis-ticket/flightController.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="163">
+                  <caret line="11" column="22" lean-forward="false" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="22" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file leaf-file-name="flightInfoService.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/components/thesis-ticket/flightInfoService.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="60">
+                  <caret line="4" column="38" lean-forward="false" selection-start-line="4" selection-start-column="38" selection-end-line="4" selection-end-column="38" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="flightService.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/components/thesis-ticket/flightService.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="60">
+                  <caret line="4" column="38" lean-forward="false" selection-start-line="4" selection-start-column="28" selection-end-line="4" selection-end-column="38" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Flight.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/main/java/com/thesis/tuc/services/rest/responseDTOs/Flight.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="15">
+                  <caret line="6" column="32" lean-forward="false" selection-start-line="6" selection-start-column="21" selection-end-line="6" selection-end-column="32" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="flightResults.html" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/components/thesis-ticket/flightResults.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="-270">
+                  <caret line="12" column="85" lean-forward="true" selection-start-line="12" selection-start-column="8" selection-end-line="12" selection-end-column="85" />
+                  <folding>
+                    <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#i#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#h5#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/main/resources/static/css/style.css">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="340">
+                  <caret line="10932" column="69" lean-forward="false" selection-start-line="10932" selection-start-column="69" selection-end-line="10932" selection-end-column="69" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="sidebar.js" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/usefulJs/sidebar.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="135">
+                  <caret line="9" column="1" lean-forward="true" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>list-item</find>
+      <find>inset-xl-right-80</find>
+      <find>text-lg-left</find>
+      <find>cell-lg-8</find>
+      <find>list-tickets</find>
+      <find>section-60</find>
+      <find>list-ti</find>
+      <find>offset</find>
+      <find>sectio</find>
+      <find>page-conte</find>
+      <find>page-content</find>
+      <find>list-tick</find>
+      <find>view</find>
+      <find>images</find>
+      <find>color</find>
+      <find>slider</find>
+    </findStrings>
+    <dirStrings>
+      <dir>$PROJECT_DIR$/src/main/resources/static/css</dir>
+    </dirStrings>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -30,18 +507,42 @@
       <projects_view />
     </option>
   </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
+        <option value="$PROJECT_DIR$/src/main/java/com/thesis/tuc/services/rest/responseDTOs/Flight.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/thesis/tuc/repository/FlightInfoRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/static/js/components/thesis-ticket/flightInfoService.js" />
+        <option value="$PROJECT_DIR$/src/main/resources/static/js/components/thesis-ticket/flightInfoController.js" />
+        <option value="$PROJECT_DIR$/src/main/java/com/thesis/tuc/services/rest/responseDTOs/FlightInfo.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/thesis/tuc/services/rest/controllers/ViewController.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/static/js/app.js" />
+        <option value="$PROJECT_DIR$/src/main/resources/static/js/components/thesis-ticket/welcome.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/static/css/components.css" />
+        <option value="$PROJECT_DIR$/src/main/resources/static/js/components/thesis-ticket/flightResults.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/static/js/components/thesis-ticket/flightController.js" />
+        <option value="$PROJECT_DIR$/src/main/resources/static/css/style.css" />
+        <option value="$PROJECT_DIR$/src/main/resources/static/js/sidebar/sidebar.js" />
+        <option value="$PROJECT_DIR$/src/main/resources/static/js/usefulJs/sidebar.js" />
+        <option value="$PROJECT_DIR$/src/main/resources/static/index.html" />
+      </list>
+    </option>
+  </component>
   <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
   <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
   <component name="JsGulpfileManager">
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="4">
+  <component name="ProjectFrameBounds" extendedState="1">
     <option name="x" value="1920" />
-    <option name="width" value="1912" />
+    <option name="width" value="1915" />
     <option name="height" value="1049" />
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
       <flattenPackages />
@@ -57,6 +558,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -64,27 +566,107 @@
               <item name="thesis" type="b2602c69:ProjectViewProjectNode" />
               <item name="springProject" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="thesis" type="b2602c69:ProjectViewProjectNode" />
+              <item name="springProject" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="thesis" type="b2602c69:ProjectViewProjectNode" />
+              <item name="springProject" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="thesis" type="b2602c69:ProjectViewProjectNode" />
+              <item name="springProject" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="thesis" type="b2602c69:ProjectViewProjectNode" />
+              <item name="springProject" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="tuc" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="thesis" type="b2602c69:ProjectViewProjectNode" />
+              <item name="springProject" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="tuc" type="462c0819:PsiDirectoryNode" />
+              <item name="repository" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="thesis" type="b2602c69:ProjectViewProjectNode" />
+              <item name="springProject" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="tuc" type="462c0819:PsiDirectoryNode" />
+              <item name="rest" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="thesis" type="b2602c69:ProjectViewProjectNode" />
+              <item name="springProject" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="thesis" type="b2602c69:ProjectViewProjectNode" />
+              <item name="springProject" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="thesis" type="b2602c69:ProjectViewProjectNode" />
+              <item name="springProject" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="images" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="thesis" type="b2602c69:ProjectViewProjectNode" />
+              <item name="springProject" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="AndroidView" />
       <pane id="Scope" />
       <pane id="Scratches" />
-      <pane id="PackagesPane" />
+      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="nodejs_interpreter_path" value="/usr/bin/node" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/pom.xml" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="RequestMappingsPanelWidth0" value="75" />
     <property name="RequestMappingsPanelOrder0" value="0" />
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="RequestMappingsPanelOrder1" value="1" />
     <property name="RequestMappingsPanelWidth2" value="75" />
     <property name="RequestMappingsPanelOrder2" value="2" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -98,13 +680,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.MyApplication">
-    <configuration name="MyApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.thesis.tuc.MyApplication" />
-      <module name="thesis" />
-      <envs />
-    </configuration>
+  <component name="RunManager">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="HTML_USED" value="false" />
       <option name="WIDTH" value="400" />
@@ -146,18 +722,18 @@
       <envs />
       <patterns />
     </configuration>
-    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
-      <module name="" />
-      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
-      <option name="PROGRAM_PARAMETERS" />
-      <predefined_log_file id="idea.log" enabled="true" />
-    </configuration>
     <configuration default="true" type="Remote" factoryName="Remote">
       <option name="USE_SOCKET_TRANSPORT" value="true" />
       <option name="SERVER_MODE" value="false" />
       <option name="SHMEM_ADDRESS" value="javadebug" />
       <option name="HOST" value="localhost" />
       <option name="PORT" value="5005" />
+    </configuration>
+    <configuration name="MyApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.thesis.tuc.MyApplication" />
+      <module name="thesis" />
+      <envs />
     </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
@@ -186,9 +762,18 @@
       <properties />
       <listeners />
     </configuration>
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
+      <module name="" />
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
+      <option name="PROGRAM_PARAMETERS" />
+      <predefined_log_file id="idea.log" enabled="true" />
+    </configuration>
   </component>
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -198,45 +783,99 @@
       <option name="presentableId" value="Default" />
       <updated>1516725320474</updated>
       <workItem from="1516725325520" duration="250000" />
+      <workItem from="1517268004665" duration="1250000" />
+      <workItem from="1517306042698" duration="14747000" />
+      <workItem from="1517391497091" duration="141000" />
+      <workItem from="1517392653568" duration="6935000" />
+      <workItem from="1517408576702" duration="6342000" />
+      <workItem from="1517484993102" duration="23000" />
+      <workItem from="1517485048635" duration="10730000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="250000" />
+    <option name="totallyTimeSpent" value="40418000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1920" y="0" width="1912" height="1049" extended-state="4" />
+    <frame x="1920" y="0" width="1915" height="1049" extended-state="1" />
+    <editor active="true" />
     <layout>
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32972974" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32972974" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32983193" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32878152" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33016878" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22739153" sideWeight="0.4937304" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32911393" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Learn" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2265625" sideWeight="0.5054773" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
+    <layout-to-restore>
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32983193" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32878152" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33016878" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22739153" sideWeight="0.4937304" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32911393" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Learn" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2265625" sideWeight="0.5054773" order="5" side_tool="true" content_ui="tabs" />
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -247,5 +886,599 @@
   <component name="XDebuggerManager">
     <breakpoint-manager />
     <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/thesis/tuc/services/rest/responseDTOs/FlightInfo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="50" lean-forward="false" selection-start-line="0" selection-start-column="50" selection-end-line="0" selection-end-column="50" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#859#860#0" expanded="true" />
+            <element signature="e#884#885#0" expanded="true" />
+            <element signature="e#919#920#0" expanded="true" />
+            <element signature="e#950#951#0" expanded="true" />
+            <element signature="e#983#984#0" expanded="true" />
+            <element signature="e#1012#1013#0" expanded="true" />
+            <element signature="e#1047#1048#0" expanded="true" />
+            <element signature="e#1078#1079#0" expanded="true" />
+            <element signature="e#1111#1112#0" expanded="true" />
+            <element signature="e#1140#1141#0" expanded="true" />
+            <element signature="e#1175#1176#0" expanded="true" />
+            <element signature="e#1206#1207#0" expanded="true" />
+            <element signature="e#1239#1240#0" expanded="true" />
+            <element signature="e#1268#1269#0" expanded="true" />
+            <element signature="e#1304#1305#0" expanded="true" />
+            <element signature="e#1336#1337#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/components/thesis-ticket/welcome.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="15" lean-forward="false" selection-start-line="6" selection-start-column="15" selection-end-line="6" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/css/components.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="97155">
+          <caret line="6477" column="0" lean-forward="false" selection-start-line="6477" selection-start-column="0" selection-end-line="6477" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/components/thesis-ticket/flightController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="34" lean-forward="false" selection-start-line="11" selection-start-column="30" selection-end-line="11" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3825">
+          <caret line="255" column="30" lean-forward="false" selection-start-line="255" selection-start-column="28" selection-end-line="255" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/components/thesis-ticket/flightInfoService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="38" lean-forward="true" selection-start-line="4" selection-start-column="38" selection-end-line="4" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/components/thesis-ticket/flightService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="38" lean-forward="false" selection-start-line="4" selection-start-column="28" selection-end-line="4" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/thesis/tuc/services/rest/responseDTOs/Flight.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="6" column="32" lean-forward="false" selection-start-line="6" selection-start-column="21" selection-end-line="6" selection-end-column="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/components/thesis-ticket/flightResults.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="900">
+          <caret line="60" column="40" lean-forward="false" selection-start-line="60" selection-start-column="40" selection-end-line="60" selection-end-column="40" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h5#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="354045">
+          <caret line="23603" column="19" lean-forward="true" selection-start-line="23603" selection-start-column="19" selection-end-line="23603" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/thesis/tuc/services/rest/controllers/ViewController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="30" column="33" lean-forward="false" selection-start-line="30" selection-start-column="33" selection-end-line="30" selection-end-column="33" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="20" lean-forward="false" selection-start-line="10" selection-start-column="20" selection-end-line="10" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/thesis/tuc/services/rest/responseDTOs/FlightInfo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="50" lean-forward="false" selection-start-line="0" selection-start-column="50" selection-end-line="0" selection-end-column="50" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#859#860#0" expanded="true" />
+            <element signature="e#884#885#0" expanded="true" />
+            <element signature="e#919#920#0" expanded="true" />
+            <element signature="e#950#951#0" expanded="true" />
+            <element signature="e#983#984#0" expanded="true" />
+            <element signature="e#1012#1013#0" expanded="true" />
+            <element signature="e#1047#1048#0" expanded="true" />
+            <element signature="e#1078#1079#0" expanded="true" />
+            <element signature="e#1111#1112#0" expanded="true" />
+            <element signature="e#1140#1141#0" expanded="true" />
+            <element signature="e#1175#1176#0" expanded="true" />
+            <element signature="e#1206#1207#0" expanded="true" />
+            <element signature="e#1239#1240#0" expanded="true" />
+            <element signature="e#1268#1269#0" expanded="true" />
+            <element signature="e#1304#1305#0" expanded="true" />
+            <element signature="e#1336#1337#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/components/thesis-ticket/welcome.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="15" lean-forward="false" selection-start-line="6" selection-start-column="15" selection-end-line="6" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/components/thesis-ticket/flightController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="73" lean-forward="false" selection-start-line="2" selection-start-column="73" selection-end-line="2" selection-end-column="73" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4380">
+          <caret line="292" column="82" lean-forward="false" selection-start-line="292" selection-start-column="82" selection-end-line="292" selection-end-column="82" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/components/thesis-ticket/flightService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="19" lean-forward="false" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/components/thesis-ticket/flightInfoService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="50" lean-forward="false" selection-start-line="16" selection-start-column="50" selection-end-line="16" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/thesis/tuc/services/rest/responseDTOs/Flight.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="6" column="32" lean-forward="false" selection-start-line="6" selection-start-column="21" selection-end-line="6" selection-end-column="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/components/thesis-ticket/flightResults.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="840">
+          <caret line="56" column="0" lean-forward="false" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h5#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/thesis/tuc/services/rest/controllers/ViewController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="30" column="33" lean-forward="false" selection-start-line="30" selection-start-column="33" selection-end-line="30" selection-end-column="33" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="20" lean-forward="true" selection-start-line="10" selection-start-column="20" selection-end-line="10" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/thesis/tuc/services/rest/responseDTOs/FlightInfo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="50" lean-forward="false" selection-start-line="0" selection-start-column="50" selection-end-line="0" selection-end-column="50" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#859#860#0" expanded="true" />
+            <element signature="e#884#885#0" expanded="true" />
+            <element signature="e#919#920#0" expanded="true" />
+            <element signature="e#950#951#0" expanded="true" />
+            <element signature="e#983#984#0" expanded="true" />
+            <element signature="e#1012#1013#0" expanded="true" />
+            <element signature="e#1047#1048#0" expanded="true" />
+            <element signature="e#1078#1079#0" expanded="true" />
+            <element signature="e#1111#1112#0" expanded="true" />
+            <element signature="e#1140#1141#0" expanded="true" />
+            <element signature="e#1175#1176#0" expanded="true" />
+            <element signature="e#1206#1207#0" expanded="true" />
+            <element signature="e#1239#1240#0" expanded="true" />
+            <element signature="e#1268#1269#0" expanded="true" />
+            <element signature="e#1304#1305#0" expanded="true" />
+            <element signature="e#1336#1337#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/components/thesis-ticket/flightController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="73" lean-forward="false" selection-start-line="2" selection-start-column="73" selection-end-line="2" selection-end-column="73" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4380">
+          <caret line="292" column="82" lean-forward="true" selection-start-line="292" selection-start-column="82" selection-end-line="292" selection-end-column="82" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/components/thesis-ticket/flightService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="19" lean-forward="true" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/thesis/tuc/services/rest/responseDTOs/Flight.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="6" column="32" lean-forward="false" selection-start-line="6" selection-start-column="21" selection-end-line="6" selection-end-column="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/components/thesis-ticket/flightInfoService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="50" lean-forward="false" selection-start-line="16" selection-start-column="50" selection-end-line="16" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/components/thesis-ticket/flightResults.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="840">
+          <caret line="56" column="0" lean-forward="true" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h5#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/thesis/tuc/services/rest/controllers/ViewController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/thesis/tuc/services/rest/responseDTOs/FlightDTO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="37" lean-forward="false" selection-start-line="7" selection-start-column="37" selection-end-line="7" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/thesis/tuc/repository/FlightRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="72" lean-forward="false" selection-start-line="5" selection-start-column="34" selection-end-line="5" selection-end-column="72" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/thesis/tuc/repository/FlightInfoRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="54" lean-forward="false" selection-start-line="7" selection-start-column="54" selection-end-line="7" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/components/thesis-ticket/flightInfoController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="13" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="20" lean-forward="false" selection-start-line="10" selection-start-column="20" selection-end-line="10" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/thesis/tuc/services/rest/responseDTOs/FlightInfo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="50" lean-forward="false" selection-start-line="0" selection-start-column="50" selection-end-line="0" selection-end-column="50" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#859#860#0" expanded="true" />
+            <element signature="e#884#885#0" expanded="true" />
+            <element signature="e#919#920#0" expanded="true" />
+            <element signature="e#950#951#0" expanded="true" />
+            <element signature="e#983#984#0" expanded="true" />
+            <element signature="e#1012#1013#0" expanded="true" />
+            <element signature="e#1047#1048#0" expanded="true" />
+            <element signature="e#1078#1079#0" expanded="true" />
+            <element signature="e#1111#1112#0" expanded="true" />
+            <element signature="e#1140#1141#0" expanded="true" />
+            <element signature="e#1175#1176#0" expanded="true" />
+            <element signature="e#1206#1207#0" expanded="true" />
+            <element signature="e#1239#1240#0" expanded="true" />
+            <element signature="e#1268#1269#0" expanded="true" />
+            <element signature="e#1304#1305#0" expanded="true" />
+            <element signature="e#1336#1337#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/css/slick-theme.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/components/thesis-ticket/welcome.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="15" lean-forward="false" selection-start-line="6" selection-start-column="15" selection-end-line="6" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/thesis/tuc/services/rest/controllers/ViewController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="24" column="31" lean-forward="false" selection-start-line="24" selection-start-column="31" selection-end-line="24" selection-end-column="31" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/css/animate.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/components/thesis-ticket/flightController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="163">
+          <caret line="11" column="22" lean-forward="false" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/components/thesis-ticket/flightInfoService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="38" lean-forward="false" selection-start-line="4" selection-start-column="38" selection-end-line="4" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/components/thesis-ticket/flightService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="38" lean-forward="false" selection-start-line="4" selection-start-column="28" selection-end-line="4" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/css/responsive.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="690">
+          <caret line="1998" column="15" lean-forward="false" selection-start-line="1998" selection-start-column="15" selection-end-line="1998" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/css/components.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1455">
+          <caret line="6490" column="0" lean-forward="false" selection-start-line="6490" selection-start-column="0" selection-end-line="6490" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/thesis/tuc/services/rest/responseDTOs/Flight.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="6" column="32" lean-forward="false" selection-start-line="6" selection-start-column="21" selection-end-line="6" selection-end-column="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/components/thesis-ticket/flightResults.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-270">
+          <caret line="12" column="85" lean-forward="true" selection-start-line="12" selection-start-column="8" selection-end-line="12" selection-end-column="85" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h5#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="10932" column="69" lean-forward="false" selection-start-line="10932" selection-start-column="69" selection-end-line="10932" selection-end-column="69" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/usefulJs/sidebar.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="1" lean-forward="true" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="351">
+          <caret line="306" column="90" lean-forward="false" selection-start-line="306" selection-start-column="90" selection-end-line="306" selection-end-column="90" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>Spring</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>thesis</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.6" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>Maven: ch.qos.logback:logback-classic:1.1.9</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
   </component>
 </project>

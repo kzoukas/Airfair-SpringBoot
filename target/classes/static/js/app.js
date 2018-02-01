@@ -7,8 +7,9 @@
             .when("/allflights", {
                 templateUrl: "js/components/thesis-ticket/flightResults.html",
                 controller: "flightController"
-            }).when("/", {
-            templateUrl: "js/components/thesis-ticket/welcome.html"
+            })
+            .when("/", {
+                templateUrl: "js/components/thesis-ticket/welcome.html",
 
         })
             .otherwise({redirectTo:"/"});

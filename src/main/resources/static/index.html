@@ -1,53 +1,3 @@
-<!--<!DOCTYPE html>-->
-<!--<html lang="en" ng-app="githubViewer">-->
-<!--<head>-->
-    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">-->
-    <!--<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>-->
-    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>-->
-    <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>-->
-    <!--<script src="js/libs/jquery-3.2.1.js"></script>-->
-    <!--<script src="js/libs/1.6.6/angular.js"></script>-->
-    <!--<script src="js/libs/1.6.6/angular-sanitize.js"></script>-->
-    <!--<script src="js/libs/1.6.6/angular-route.js"></script>-->
-    <!--<script src="js/libs/1.6.6/angular-resource.js"></script>-->
-    <!--<script src="js/app.js"></script>-->
-    <!--&lt;!&ndash; Components&ndash;&gt;-->
-
-    <!--<script src="js/components/thesis-ticket/flightController.js"></script>-->
-    <!--&lt;!&ndash; Services&ndash;&gt;-->
-    <!--<script src="js/components/thesis-ticket/flightService.js"></script>-->
-
-<!--</head>-->
-<!--<body >-->
-
-<!--&lt;!&ndash;<thesis-ticket></thesis-ticket>&ndash;&gt;-->
-<!--<table class="table">-->
-    <!--<thead>-->
-    <!--<tr>-->
-        <!--<th>fromDepartureTime</th>-->
-        <!--<th>fromArrivalTime</th>-->
-        <!--<th>fromTown</th>-->
-        <!--<th>toTown</th>-->
-        <!--&lt;!&ndash;<th>toDepartureTime</th>&ndash;&gt;-->
-        <!--&lt;!&ndash;<th>toArrivalTime</th>&ndash;&gt;-->
-        <!--<th>price</th>-->
-        <!--<th>fromDate</th>-->
-        <!--<th>toDate</th>-->
-        <!--<th>longitude_from</th>-->
-        <!--<th>latitude_from</th>-->
-        <!--<th>longitude_to</th>-->
-        <!--<th>latitude_to</th>-->
-
-
-        <!--<th style="width: 90px"></th>-->
-    <!--</tr>-->
-    <!--</thead>-->
-    <!--<tbody ng-view></tbody>-->
-<!--</table>-->
-
-<!--</body>-->
-<!--</html>-->
-
 
 <!DOCTYPE html>
 <!-- saved from url=(0042)http://swlabs.co/exploore/homepage-03.html -->
@@ -84,25 +34,34 @@
     <script src="js/libs/jquery-3.2.1.js"></script>
     <link type="text/css" rel="stylesheet" href="css/bootstrap-datepicker.min.css">
 
-    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">-->
-    <!--<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>-->
-    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>-->
-    <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>-->
-
     <script src="js/libs/1.6.6/angular.js"></script>
     <script src="js/libs/1.6.6/angular-sanitize.js"></script>
     <script src="js/libs/1.6.6/angular-route.js"></script>
     <script src="js/libs/1.6.6/angular-resource.js"></script>
     <script src="js/app.js"></script>
     <!-- Components-->
-
     <script src="js/components/thesis-ticket/flightController.js"></script>
+    <script src="js/components/thesis-ticket/flightInfoController.js"></script>
     <!-- Services-->
     <script src="js/components/thesis-ticket/flightService.js"></script>
+    <script src="js/components/thesis-ticket/flightInfoService.js"></script>
+
+    <script src="js/usefulJs/sidebar.js"></script>
 
 
 </head>
+<script>
+    var slider = document.getElementById("myRange");
 
+console.log("eee");
+var output = document.getElementById("demo");
+output.innerHTML = slider.value; // Display the default slider value
+
+// Update the current slider value (each time you drag the slider handle)
+slider.oninput = function() {
+    output.innerHTML = this.value;
+}
+</script>
 <body class="linux mozilla5 5 pg-loaded">
 <div class="body-wrapper loaded">
     <!-- MENU MOBILE-->
@@ -310,82 +269,56 @@
             <section class="section-60 section-md-60 bg-gray-lighter">
                 <div class="shell shell-wide">
                     <div class="range text-lg-left">
-                        <div class="cell-lg-8">
-                            <div class="inset-xl-right-80">
-                                <h4 class="text-ubold">Chania, (CHQ) to Athens (ATH)</h4>
-                                <h6 class="text-gray offset-top-60">2 Adults ,economy</h6>
-                                <hr class="divider divider-lg-left divider-primary divider-80 offset-top-40">
-                                <div class="offset-top-60">
-                                    <div class="range range-xs-justify text-left">
-                                        <div class="cell-sm-8 cell-md-6 cell-xl-4">
-                                            <div class="range">
-                                                <div class="cell-sm-6">
-                                                    <span class="small">Departure</span>
-                                                    <!--Select 2-->
-                                                    <div class="offset-top-4">
-                                                        <input type="text" data-time-picker="date" data-constraints="@Required" name="departure" class="form-control">
-                                                    </div>
-                                                </div>
-                                                <div class="cell-sm-6 offset-top-20 offset-sm-top-0">
-                                                    <span class="small">Return</span>
-                                                    <!--Select 2-->
-                                                    <div class="offset-top-4">
-                                                        <input type="text" data-time-picker="date" data-constraints="@Required" name="return" class="form-control">
-                                                    </div>
-                                                </div>
-                                            </div>
+                        <div class="cell-lg-3">
+                            <div class="sidebar-list">
+
+                                <div class="stops-side-bar">
+
+                                    <div class="stop-name">
+                                        <h5>Stops</h5>
+                                    </div>
+
+
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
+                                        <label class="form-check-label" for="gridRadios1">
+                                            Direct
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
+                                        <label class="form-check-label" for="gridRadios2">
+                                            One stop
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3" value="option3" disabled>
+                                        <label class="form-check-label" for="gridRadios3">
+                                            Two stops
+                                        </label>
+                                    </div>
+                                    <hr class="divider divider-lg-left divider-primary divider-80 offset-top-40">
+                                    <div class="trip-duration">
+
+                                        <div class="trip-duration-name">
+                                            <h5>Trip Duration</h5>
                                         </div>
-                                        <div class="cell-sm-4 cell-xl-3 offset-top-20 offset-sm-top-0">
-                                            <span class="small">Sort by</span>
-                                            <!--Select 2-->
-                                            <div class="offset-top-4">
-                                                <select data-placeholder="Select an option" data-minimum-results-for-search="Infinity" data-constraints="@Required" class="form-control select-filter">
-                                                    <option>Price: low to high</option>
-                                                    <option value="2">Item 1-1</option>
-                                                    <option value="3">Item 1-2</option>
-                                                    <option value="4">Item 1-2</option>
-                                                    <option value="5">Item 2-1</option>
-                                                    <option value="6">Item 2-2</option>
-                                                    <option value="7">Item 2-3</option>
-                                                </select>
-                                            </div>
+                                        <div class="slidecontainer">
+                                            <input type="range" min="1" max="15" value="10" class="slider" id="myRange">
                                         </div>
+                                        <p>1 hour -  <span id="demo"></span></p>
                                     </div>
                                 </div>
-                                <div ng-view>
-
-                                </div>
 
 
-                                <div class="offset-top-60 offset-lg-top-60">
-                                    <!-- Bootstrap Pagination-->
-                                    <nav>
-                                        <ul class="pagination pagination">
-                                            <li class="disabled">
-                                                    <span aria-label="Previous">
-                                                        <span aria-hidden="true" class="fa-chevron-left"></span>
-                                                    </span>
-                                            </li>
-                                            <li class="active">
-                                                <span>1</span>
-                                            </li>
-                                            <li>
-                                                <a href="#">2</a>
-                                            </li>
-                                            <li>
-                                                <a href="#">3</a>
-                                            </li>
-                                            <li>
-                                                <a href="#" aria-label="Next">
-                                                    <span aria-hidden="true" class="fa-chevron-right"></span>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </nav>
-                                </div>
                             </div>
+
+
+                            </div>
+                        <div class="cell-lg-6">
+                            <div ng-view></div>
                         </div>
-                        <div class="cell-lg-4"></div>
+                        <div class="cell-lg-3"></div>
 
                     </div>
                 </div>
