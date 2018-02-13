@@ -1,6 +1,6 @@
 (function() {
     var module = angular.module("flightTicketApp");
-    var flightInfoController = function($scope, $routeParams, flightInfoService) {
+    var flightInfoController = function($scope, flightInfoService) {
 
 
 

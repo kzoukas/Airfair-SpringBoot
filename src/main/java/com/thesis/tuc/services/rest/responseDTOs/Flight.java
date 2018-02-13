@@ -14,6 +14,8 @@ public class Flight {
 //    private String toArrivalTime;
     private String fromTown;
     private String toTown;
+    private String fromIata;
+    private String toIata;
     private String price;
     private String fromCompany;
     private String toCompany;
@@ -25,11 +27,16 @@ public class Flight {
     private String latitude_to;
 
 
+
+
     public Flight(String fromDepartureTime, String fromArrivalTime, String fromTown, String toTown, String price, String fromCompany, String toCompany, String fromDate, String toDate, String longitude_from, String longitude_to, String latitude_from, String latitude_to) {
         this.fromDepartureTime = fromDepartureTime;
         this.fromArrivalTime = fromArrivalTime;
         this.fromTown = fromTown;
         this.toTown = toTown;
+        this.fromIata=fromIata;
+
+        this.toIata= toIata;
 //        this.toDepartureTime = toDepartureTime;
 //        this.toArrivalTime = toArrivalTime;
         this.price = price;
@@ -43,6 +50,8 @@ public class Flight {
 
         this.latitude_to = latitude_to;
     }
+
+
 
     public String getId() {
         return id;
@@ -70,6 +79,14 @@ public class Flight {
 
     public String getToTown() {
         return toTown;
+    }
+
+    public String getFromIata() {
+        return fromIata;
+    }
+
+    public String getToIata() {
+        return toIata;
     }
 
     public String getPrice() {

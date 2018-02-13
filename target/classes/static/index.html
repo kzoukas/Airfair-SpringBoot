@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <!-- saved from url=(0042)http://swlabs.co/exploore/homepage-03.html -->
 <html lang="en" ng-app="flightTicketApp">
@@ -9,12 +8,12 @@
     <title>Sky travel</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <!--FONT CSS-->
+    <!--FONT CSS-->
     <link type="text/css" rel="stylesheet" href="fonts/css">
     <link type="text/css" rel="stylesheet" href="fonts/css(1)">
     <link type="text/css" rel="stylesheet" href="fonts/font-awesome.css">
     <link type="text/css" rel="stylesheet" href="fonts/flaticon.css">
-     <!--LIBRARY CSS-->
+    <!--LIBRARY CSS-->
     <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css">
     <link type="text/css" rel="stylesheet" href="css/animate.css">
     <link type="text/css" rel="stylesheet" href="css/slick.css">
@@ -42,26 +41,15 @@
     <!-- Components-->
     <script src="js/components/thesis-ticket/flightController.js"></script>
     <script src="js/components/thesis-ticket/flightInfoController.js"></script>
+    <script src="js/components/thesis-ticket/filterController.js"></script>
     <!-- Services-->
     <script src="js/components/thesis-ticket/flightService.js"></script>
     <script src="js/components/thesis-ticket/flightInfoService.js"></script>
-
-    <script src="js/usefulJs/sidebar.js"></script>
+    <script src="js/components/thesis-ticket/filterService.js"></script>
 
 
 </head>
-<script>
-    var slider = document.getElementById("myRange");
 
-console.log("eee");
-var output = document.getElementById("demo");
-output.innerHTML = slider.value; // Display the default slider value
-
-// Update the current slider value (each time you drag the slider handle)
-slider.oninput = function() {
-    output.innerHTML = this.value;
-}
-</script>
 <body class="linux mozilla5 5 pg-loaded">
 <div class="body-wrapper loaded">
     <!-- MENU MOBILE-->
@@ -169,7 +157,7 @@ slider.oninput = function() {
                             <div class="navbar-header">
                                 <div class="logo">
                                     <a href="index.html" class="header-logo logo-black">
-                                        <img src="./images/logo-black-color-1.png" alt="" />
+                                        <img src="./images/logo-black-color-1.png" alt=""/>
                                     </a>
                                 </div>
                             </div>
@@ -253,7 +241,7 @@ slider.oninput = function() {
                                 </ul>
                                 <div class="nav-search hide">
                                     <form>
-                                        <input type="text" placeholder="Search" class="searchbox" />
+                                        <input type="text" placeholder="Search" class="searchbox"/>
                                         <button type="submit" class="searchbutton fa fa-search"></button>
                                     </form>
                                 </div>
@@ -264,184 +252,443 @@ slider.oninput = function() {
                 </div>
             </div>
         </header>
-        <main class="page-content">
+        <div class="wrapper" style="position: relative;">
+            <div class="container">
+                <div class="grid">
 
-            <section class="section-60 section-md-60 bg-gray-lighter">
-                <div class="shell shell-wide">
-                    <div class="range text-lg-left">
-                        <div class="cell-lg-3">
-                            <div class="sidebar-list">
+                    <div id="main" class="grid-item-lg-7-10">
+                        <div class="main-content">
+                            <div ng-view>
 
-                                <div class="stops-side-bar">
+                            </div>
+                        </div>
+                    </div>
+                    <div id="sidebar" class="grid-item-lg-3-10">
+                        <div id="sidebarButton" data-toggle="sidebar">
+                            <div>
+                                <i class="fa fa-filter">Filters</i>&nbsp;
+                            </div>
+                            <i class="fa fa-angle-up fa-lg" aria-hidden="true"></i>
+                        </div>
+                        <!-- Sidebar content -->
+                        <div class="sidebar-block" id="tabContent">
+                            <div id="filters">
+                                <div class="card">
+                                    <div class="list-group list-group-flush">
+                                        <!-- Means of transport -->
 
-                                    <div class="stop-name">
-                                        <h5>Stops</h5>
-                                    </div>
+                                    <form name="filterForm" ng-submit="filterUse();" ng-controller="filterController">
+                                        <!-- price -->
+                                        <div class="list-group-item">
+                                            <a class="filter-toggle text-yellow" data-toggle="collapse"
+                                               data-target="#price" aria-expanded="false">Max price
 
+                                            </a>
+                                            <div class="collapse sliderControler in" id="price">
+                                                <div class="filter-content">
 
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
-                                        <label class="form-check-label" for="gridRadios1">
-                                            Direct
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
-                                        <label class="form-check-label" for="gridRadios2">
-                                            One stop
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3" value="option3" disabled>
-                                        <label class="form-check-label" for="gridRadios3">
-                                            Two stops
-                                        </label>
-                                    </div>
-                                    <hr class="divider divider-lg-left divider-primary divider-80 offset-top-40">
-                                    <div class="trip-duration">
+                                                    <div>
+                                                        <div class="slidecontainer">
+                                                            <input type="range" min="1" max="15" value="10" class="slider" id="priceRange" ng-model="filter.maxPrice">
+                                                        </div>
 
-                                        <div class="trip-duration-name">
-                                            <h5>Trip Duration</h5>
+                                                        <div class="indicators">
+                                                            <p>1h -  <span id="maxPrice"></span>h</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
-                                        <div class="slidecontainer">
-                                            <input type="range" min="1" max="15" value="10" class="slider" id="myRange">
+
+                                        <!-- Outbound Flight -->
+                                        <div class="list-group-item">
+                                            <a class="filter-toggle text-yellow" data-toggle="collapse"
+                                               data-target="#obTimeFilters" aria-expanded="false">Flight Duration
+                                            </a>
+                                            <div class="collapse in" id="obTimeFilters" aria-expanded="true">
+                                                <div class="filter-content">
+
+                                                    <div>
+                                                        <div class="slidecontainer">
+                                                            <input type="range" min="1" max="2000" value="2000" class="slider" id="hourRange" ng-model="filter.flightDuration">
+                                                        </div>
+
+                                                        <div class="indicators">
+                                                            <p><span id="maxHours"></span> €</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
-                                        <p>1 hour -  <span id="demo"></span></p>
+
+                                        <!-- Stops -->
+                                        <div class="list-group-item">
+                                            <a class="filter-toggle text-yellow" data-toggle="collapse"
+                                               data-target="#stops" aria-expanded="false">Στάσεις
+
+                                            </a>
+                                            <div class="collapse in" id="stops">
+                                                <div class="filter-content">
+                                                    <div id="stopsColumn">
+                                                        <div class="radio">
+                                                            <label for="stops-0">
+                                                                <!--<small class="float-right text-muted">από 57,94&nbsp;€-->
+                                                                <!--</small>-->
+                                                                <input type="radio" name="stops-filter" value="0"
+                                                                       id="stops-0" ng-model="filter.stops">Απευθείας</label>
+                                                        </div>
+                                                        <div class="radio">
+                                                            <label for="stops-1">
+                                                                <!--<small class="float-right text-muted">από 57,94&nbsp;€-->
+                                                                <!--</small>-->
+                                                                <input type="radio" name="stops-filter" value="1"
+                                                                       id="stops-1" ng-model="filter.stops">Έως μια στάση</label>
+                                                        </div>
+                                                        <div class="radio">
+                                                            <label for="stops-2">
+                                                                <!--<small class="float-right text-muted">από 57,94&nbsp;€-->
+                                                                <!--</small>-->
+                                                                <input type="radio" name="stops-filter"
+                                                                       checked="checked" value="2"
+                                                                       id="stops-2" ng-model="filter.stops">'Εως 2 στάσεις</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                         <!--Airlines-->
+                                        <div class="list-group-item">
+                                            <a class="filter-toggle text-yellow" data-toggle="collapse"
+                                               data-target="#airlines" aria-expanded="false">Αεροπορικές Εταιρείες
+
+                                            </a>
+                                            <div class="collapse in" id="airlines">
+                                                <div class="filter-content">
+                                                    <div id="airlinesColumn">
+                                                        <div class="checkbox">
+                                                            <label for="reset-filter-airline">
+                                                                <input type="checkbox" id="reset-filter-airline"
+                                                                       value="AllAirlines" checked="checked">Όλες οι
+                                                                αεροπορικές εταιρείες</label>
+                                                        </div>
+                                                        <div class="checkbox">
+                                                            <label class="d-block text-truncate" for="airline-A3">
+                                                                <input type="checkbox" name="airline-filter" value="A3" id="airline-A3">Aegean
+                                                                Airlines
+                                                            </label>
+                                                        </div>
+                                                        <div class="checkbox">
+                                                            <label class="d-block text-truncate" for="airline-LH">
+                                                                <input type="checkbox" name="airline-filter" value="LH" id="airline-LH">Lufthansa
+                                                            </label>
+                                                        </div>
+                                                        <div class="checkbox">
+                                                            <label class="d-block text-truncate" for="airline-OA">
+                                                                <input type="checkbox" name="airline-filter" value="OA" id="airline-OA">Olympic
+                                                                Air
+                                                            </label>
+                                                        </div>
+                                                        <div class="checkbox">
+                                                            <label class="d-block text-truncate" for="airline-FR">
+                                                                <input type="checkbox" name="airline-filter" value="FR" id="airline-FR">Ryanair
+                                                            </label>
+                                                        </div>
+                                                        <div class="checkbox">
+                                                            <label class="d-block text-truncate" for="airline-LX">
+                                                                <input type="checkbox" name="airline-filter" value="LX" id="airline-LX">Swiss
+                                                                International Airlines
+                                                            </label>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+
+
+                                        <div class="list-group-item border-bottom-0">
+                                            <button id="reset-filters" type="submit" value="submit"
+                                                    class="btn-search text-truncate">
+                                                Search
+                                            </button>
+                                        </div>
+                                    </form>
+                                    </div>
+                                    <div class="text-center hidden-sm hidden-xs pt-xl">
+                                        <div id="filters-ad"></div>
                                     </div>
                                 </div>
-
-
                             </div>
 
-
-                            </div>
-                        <div class="cell-lg-6">
-                            <div ng-view></div>
+                            <!--<script id="stopsFilterColumn" type="text/template">-->
+                            <!--{{#each this}}-->
+                            <!--<div class="radio"><label for="stops">-->
+                            <!--<small class="float-right text-muted">από {{formatPrice this.minprice-->
+                            <!--this.currencyCode}}-->
+                            <!--</small>-->
+                            <!--<input type="radio" name="stops-filter" {{#if @last}}checked="checked" {{/if}}-->
+                            <!--value="{{this.number}}" id="stops-{{this.number}}">{{translateNofStops this.number}}</label>-->
+                            <!--</div>-->
+                            <!--{{/each}}-->
+                            <!--</script>-->
+                            <!--<script id="airlinesFilterColumn" type="text/template">-->
+                            <!--<div class="checkbox"><label for="reset-filter-airline"><input type="checkbox"-->
+                            <!--id="reset-filter-airline"-->
+                            <!--value="AllAirlines"-->
+                            <!--checked="checked">Όλες οι-->
+                            <!--αεροπορικές εταιρείες</label></div>-->
+                            <!--{{#each this}}-->
+                            <!--<div class="checkbox">-->
+                            <!--<div class="text-small float-right">-->
+                            <!--<span class="airline-only">μόνο</span>-->
+                            <!--<span class="text-muted">από {{formatPrice this.minprice this.currencyCode}}</span>-->
+                            <!--</div>-->
+                            <!--<label class="d-block text-truncate">-->
+                            <!--<input type="checkbox" name="airline-filter" checked="checked" {{#hasOneElement-->
+                            <!--../this}}disabled="disabled"{{/hasOneElement}}value="{{this.code}}"-->
+                            <!--id="airline-{{this.code}}">{{this.name}}-->
+                            <!--</label>-->
+                            <!--</div>-->
+                            <!--{{/each}}-->
+                            <!--<div class="checkbox"><label for="combi-airline" class="display-block"><input-->
+                            <!--type="checkbox" id="combi-airline" value="CombiAirlines" checked="checked">Συνδυασμός-->
+                            <!--αεροπορικών εταιρειών</label></div>-->
+                            <!--</script>-->
+                            <!--<script id="paymentMethodFilterColumn" type="text/template">-->
+                            <!--<div class="checkbox"><label for="reset-filter-payment-method" class="display-block">-->
+                            <!--<small class="pull-right"></small>-->
+                            <!--<input type="checkbox" id="reset-filter-payment-method" value="AllPaymentMethods"-->
+                            <!--checked="checked">Όλοι οι τρόποι πληρωμής</label></div>-->
+                            <!--{{#each this}}-->
+                            <!--<div class="checkbox"><label class="display-block"><input type="checkbox"-->
+                            <!--name="payment-method-filter"-->
+                            <!--checked="checked"-->
+                            <!--{{#hasOneElement ../this}}disabled="disabled"{{/hasOneElement}}-->
+                            <!--value="{{this}}" id="payment-{{this}}">{{translateText this-->
+                            <!--'paymentMethods'}}</label></div>-->
+                            <!--{{/each}}-->
+                            <!--</script>-->
+                            <!--<script id="transportationsFilterColumn" type="text/template">-->
+                            <!--<div class="toggle-switch d-lg-none d-xl-none">-->
+                            <!--<label for="transportation-onlyFlights">-->
+                            <!--<input type="checkbox" value="onlyFlights" class=""-->
+                            <!--id="transportation-onlyFlights">-->
+                            <!--Μόνο Πτήσεις-->
+                            <!--<div class="slider"></div>-->
+                            <!--</label>-->
+                            <!--</div>-->
+                            <!--{{#each this}}-->
+                            <!--<div class="checkbox">-->
+                            <!--<div class="text-small float-right">-->
+                            <!--<span class="transportation-only">μόνο</span>-->
+                            <!--<span class="text-muted">από {{formatPrice this.minprice this.currencyCode}}</span>-->
+                            <!--</div>-->
+                            <!--<label for="transportation-{{this.type}}">-->
+                            <!--<input type="checkbox" name="transportation-filter" checked="checked"-->
+                            <!--value="{{this.type}}" id="transportation-{{this.type}}">{{translateText-->
+                            <!--this.type 'transportationTypes'}}-->
+                            <!--</label>-->
+                            <!--</div>-->
+                            <!--{{/each}}-->
+                            <!--</script>-->
                         </div>
-                        <div class="cell-lg-3"></div>
 
                     </div>
                 </div>
-            </section>
-        </main>
-        <footer>
-            <div class="bg-blue-gradient">
-                <div class="footer-main bg-transparent padding-top padding-bottom">
-                    <div class="container">
-                        <div class="footer-main-wrapper">
-                            <a href="" class="logo-footer logo-black">
-                                <img src="" alt="" class="img-responsive">
-                            </a>
-                            <div class="row">
-                                <div class="col-2">
-                                    <div class="col-md-3 col-xs-5">
-                                        <div class="contact-us-widget widget">
-                                            <div class="title-widget">contact us</div>
-                                            <div class="content-widget">
-                                                <div class="info-list">
-                                                    <ul class="list-unstyled">
-                                                        <li>
-                                                            <i class="icons fa fa-map-marker"></i>
-                                                            <a href="" class="link">Papaflessa 42 Galatsi, Athens</a>
-                                                        </li>
-                                                        <li>
-                                                            <i class="icons fa fa-phone"></i>
-                                                            <a href="" class="link">2102345621</a>
-                                                        </li>
-                                                        <li>
-                                                            <i class="icons fa fa-envelope-o"></i>
-                                                            <a href="" class="link">zoukas1sb4ck@hotmail.com</a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                                <div class="form-email">
-                                                    <p class="text">Sign up for our mailing list to get latest updates and offers.</p>
-                                                    <form action="">
-                                                        <div class="input-group">
-                                                            <input type="text" placeholder="Email address" class="form-control form-email-widget">
-                                                            <span class="input-group-btn">
+
+            </div>
+        </div>
+
+                    <!--<main class="page-content">-->
+
+                    <!--<section class="section-60 section-md-60 bg-gray-lighter">-->
+                    <!--<div class="shell shell-wide">-->
+                    <!--<div class="range text-lg-left">-->
+
+                    <!--<div class="cell-lg-3">-->
+
+                    <!--&lt;!&ndash;<div class="sidebar-list">&ndash;&gt;-->
+
+                    <!--&lt;!&ndash;<div class="stops-side-bar">&ndash;&gt;-->
+
+                    <!--&lt;!&ndash;<div class="stop-name">&ndash;&gt;-->
+                    <!--&lt;!&ndash;<h5>Stops</h5>&ndash;&gt;-->
+                    <!--&lt;!&ndash;</div>&ndash;&gt;-->
+
+
+                    <!--&lt;!&ndash;<div class="form-check">&ndash;&gt;-->
+                    <!--&lt;!&ndash;<input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>&ndash;&gt;-->
+                    <!--&lt;!&ndash;<label class="form-check-label" for="gridRadios1">&ndash;&gt;-->
+                    <!--&lt;!&ndash;Direct&ndash;&gt;-->
+                    <!--&lt;!&ndash;</label>&ndash;&gt;-->
+                    <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                    <!--&lt;!&ndash;<div class="form-check">&ndash;&gt;-->
+                    <!--&lt;!&ndash;<input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">&ndash;&gt;-->
+                    <!--&lt;!&ndash;<label class="form-check-label" for="gridRadios2">&ndash;&gt;-->
+                    <!--&lt;!&ndash;One stop&ndash;&gt;-->
+                    <!--&lt;!&ndash;</label>&ndash;&gt;-->
+                    <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                    <!--&lt;!&ndash;<div class="form-check">&ndash;&gt;-->
+                    <!--&lt;!&ndash;<input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3" value="option3" disabled>&ndash;&gt;-->
+                    <!--&lt;!&ndash;<label class="form-check-label" for="gridRadios3">&ndash;&gt;-->
+                    <!--&lt;!&ndash;Two stops&ndash;&gt;-->
+                    <!--&lt;!&ndash;</label>&ndash;&gt;-->
+                    <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                    <!--&lt;!&ndash;<hr class="divider divider-lg-left divider-primary divider-80 offset-top-40">&ndash;&gt;-->
+                    <!--&lt;!&ndash;<div class="trip-duration">&ndash;&gt;-->
+
+                    <!--<div class="trip-duration-name">-->
+                    <!--<h5>Trip Duration</h5>-->
+                    <!--</div>-->
+                    <!--<div class="slidecontainer">-->
+                    <!--<input type="range" min="1" max="15" value="10" class="slider" id="myRange">-->
+                    <!--</div>-->
+                    <!--<p>1 hour -  <span id="demo"></span></p>-->
+                    <!--</div>-->
+                    <!--</div>-->
+
+
+                    <!--&lt;!&ndash;</div>&ndash;&gt;-->
+
+
+                    <!--</div>-->
+                    <!--<div class="cell-lg-6">-->
+                    <!--<div ng-view></div>-->
+                    <!--</div>-->
+                    <!--<div class="cell-lg-3"></div>-->
+
+                    <!--</div>-->
+                    <!--</div>-->
+                    <!--</section>-->
+                    <!--</main>-->
+                    <footer>
+                        <div class="bg-blue-gradient">
+                            <div class="footer-main bg-transparent padding-top padding-bottom">
+                                <div class="container">
+                                    <div class="footer-main-wrapper">
+                                        <a href="" class="logo-footer logo-black">
+                                            <img src="" alt="" class="img-responsive">
+                                        </a>
+                                        <div class="row">
+                                            <div class="col-2">
+                                                <div class="col-md-3 col-xs-5">
+                                                    <div class="contact-us-widget widget">
+                                                        <div class="title-widget">contact us</div>
+                                                        <div class="content-widget">
+                                                            <div class="info-list">
+                                                                <ul class="list-unstyled">
+                                                                    <li>
+                                                                        <i class="icons fa fa-map-marker"></i>
+                                                                        <a href="" class="link">Papaflessa 42 Galatsi,
+                                                                            Athens</a>
+                                                                    </li>
+                                                                    <li>
+                                                                        <i class="icons fa fa-phone"></i>
+                                                                        <a href="" class="link">2102345621</a>
+                                                                    </li>
+                                                                    <li>
+                                                                        <i class="icons fa fa-envelope-o"></i>
+                                                                        <a href=""
+                                                                           class="link">zoukas1sb4ck@hotmail.com</a>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                            <div class="form-email">
+                                                                <p class="text">Sign up for our mailing list to get
+                                                                    latest updates and offers.</p>
+                                                                <form action="">
+                                                                    <div class="input-group">
+                                                                        <input type="text" placeholder="Email address"
+                                                                               class="form-control form-email-widget">
+                                                                        <span class="input-group-btn">
                                                                     <button type="submit" class="btn-email">✔</button>
                                                                 </span>
+                                                                    </div>
+                                                                </form>
+                                                            </div>
                                                         </div>
-                                                    </form>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-2 col-xs-3">
+                                                    <div class="booking-widget widget text-center">
+                                                        <div class="title-widget">book now</div>
+                                                        <div class="content-widget">
+                                                            <ul class="list-unstyled">
+                                                                <li>
+                                                                    <a href="" class="link">Flights</a>
+                                                                </li>
+
+
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-2 col-xs-4">
+                                                    <div class="explore-widget widget">
+                                                        <div class="title-widget">Top destinations</div>
+                                                        <div class="content-widget">
+                                                            <ul class="list-unstyled">
+                                                                <li>
+                                                                    <a href="" class="link">Athens</a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="" class="link">Chania City</a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="" class="link">Thessalonikh</a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="" class="link">Paris City</a>
+                                                                </li>
+
+                                                            </ul>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-2 col-xs-3">
-                                        <div class="booking-widget widget text-center">
-                                            <div class="title-widget">book now</div>
-                                            <div class="content-widget">
-                                                <ul class="list-unstyled">
-                                                    <li>
-                                                        <a href="" class="link">Flights</a>
-                                                    </li>
+                                            <div class="col-2">
 
 
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-2 col-xs-4">
-                                        <div class="explore-widget widget">
-                                            <div class="title-widget">Top destinations</div>
-                                            <div class="content-widget">
-                                                <ul class="list-unstyled">
-                                                    <li>
-                                                        <a href="" class="link">Athens</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="" class="link">Chania City</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="" class="link">Thessalonikh</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="" class="link">Paris City</a>
-                                                    </li>
-
-                                                </ul>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-2">
+                            </div>
+                            <div class="hyperlink bg-transparent">
+                                <div class="container">
 
-
+                                    <div class="social-footer">
+                                        <ul class="list-inline list-unstyled">
+                                            <li>
+                                                <a href="" class="link facebook">
+                                                    <i class="fa fa-facebook"></i>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="" class="link twitter">
+                                                    <i class="fa fa-twitter"></i>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="" class="link google">
+                                                    <i class="fa fa-google"></i>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="name-company">© Designed by Konstantinos Zoukas.</div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-                <div class="hyperlink bg-transparent">
-                    <div class="container">
-
-                        <div class="social-footer">
-                            <ul class="list-inline list-unstyled">
-                                <li>
-                                    <a href="" class="link facebook">
-                                        <i class="fa fa-facebook"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="" class="link twitter">
-                                        <i class="fa fa-twitter"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="" class="link google">
-                                        <i class="fa fa-google"></i>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="name-company">© Designed by Konstantinos Zoukas.</div>
-                    </div>
+                    </footer>
                 </div>
             </div>
-        </footer>
-    </div>
-</div>
+
+            <script src="js/usefulJs/sidebar.js"></script>
 </body>
 
 </html>
+

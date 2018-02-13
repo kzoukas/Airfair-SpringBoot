@@ -1,156 +1,155 @@
 
+    <ul>
+        <li class="list-item" ng-repeat="datum in flightInfoList">
+            <h4 class="text-ubold">{{datum.fromIata}} to {{datum.toIata}}</h4>
+            <h6 class="text-gray offset-top-60">2 Adults ,economy</h6>
 
+        </li>
+    </ul>
 
-    <div class="inset-xl-right-80">
-        <ul>
-            <li class="list-item" ng-repeat="datum in flightInfoList">
-                <h4 class="text-ubold">{{datum.fromIata}} to {{datum.toIata}}</h4>
-                <h6 class="text-gray offset-top-60">2 Adults ,economy</h6>
-
-            </li>
-        </ul>
-
-        <hr class="divider divider-lg-left divider-primary divider-80 offset-top-40">
-        <div class="offset-top-60">
-            <div class="range range-xs-justify text-left">
-                <div class="cell-sm-8 cell-md-6 cell-xl-4">
-                    <div class="range">
-                        <div class="cell-sm-6">
-                            <span class="small">Departure</span>
-                            <!--Select 2-->
-                            <div class="offset-top-4">
-                                <input type="text" data-time-picker="date" data-constraints="@Required" name="departure" class="form-control">
-                            </div>
+    <hr class="divider divider-lg-left divider-primary divider-80 offset-top-40">
+    <div class="offset-top-60">
+        <div class="range range-xs-justify text-left">
+            <div class="cell-sm-8 cell-md-6 cell-xl-4">
+                <div class="range">
+                    <div class="cell-sm-6">
+                        <span class="small">Departure</span>
+                        <!--Select 2-->
+                        <div class="offset-top-4">
+                            <input type="text" data-time-picker="date" data-constraints="@Required" name="departure"
+                                   class="form-control">
                         </div>
-                        <div class="cell-sm-6 offset-top-20 offset-sm-top-0">
-                            <span class="small">Return</span>
-                            <!--Select 2-->
-                            <div class="offset-top-4">
-                                <input type="text" data-time-picker="date" data-constraints="@Required" name="return" class="form-control">
-                            </div>
+                    </div>
+                    <div class="cell-sm-6 offset-top-20 offset-sm-top-0">
+                        <span class="small">Return</span>
+                        <!--Select 2-->
+                        <div class="offset-top-4">
+                            <input type="text" data-time-picker="date" data-constraints="@Required" name="return"
+                                   class="form-control">
                         </div>
                     </div>
                 </div>
-                <div class="cell-sm-4 cell-xl-3 offset-top-20 offset-sm-top-0">
-                    <span class="small">Sort by</span>
-                    <!--Select 2-->
-                    <div class="offset-top-4">
-                        <select data-placeholder="Select an option" data-minimum-results-for-search="Infinity" data-constraints="@Required" class="form-control select-filter">
-                            <option>Price: low to high</option>
-                            <option value="2">Item 1-1</option>
-                            <option value="3">Item 1-2</option>
-                            <option value="4">Item 1-2</option>
-                            <option value="5">Item 2-1</option>
-                            <option value="6">Item 2-2</option>
-                            <option value="7">Item 2-3</option>
-                        </select>
-                    </div>
+            </div>
+            <div class="cell-sm-4 cell-xl-3 offset-top-20 offset-sm-top-0">
+                <span class="small">Sort by</span>
+                <!--Select 2-->
+                <div class="offset-top-4">
+                    <select data-placeholder="Select an option" data-minimum-results-for-search="Infinity"
+                            data-constraints="@Required" class="form-control select-filter">
+                        <option>Price: low to high</option>
+                        <option value="2">Item 1-1</option>
+                        <option value="3">Item 1-2</option>
+                        <option value="4">Item 1-2</option>
+                        <option value="5">Item 2-1</option>
+                        <option value="6">Item 2-2</option>
+                        <option value="7">Item 2-3</option>
+                    </select>
                 </div>
             </div>
         </div>
-        <div ng-if="flightList.length==0">
-            <div class="col-md-offset-5" style="margin-bottom: 300px; margin-top: 160px">
-                <i class="fa fa-spinner fa-pulse fa-3x fa-fw" style="margin-left: 70px"></i><br>
-                <h5 style="margin-top: 50px">Searching for flight tickets...</h5>
-            </div>
+    </div>
+    <div ng-if="flightList.length==0">
+        <div class="col-md-offset-5" style="margin-bottom: 300px; margin-top: 160px">
+            <i class="fa fa-spinner fa-pulse fa-3x fa-fw" style="margin-left: 70px"></i><br>
+            <h5 style="margin-top: 50px">Searching for flight tickets...</h5>
         </div>
+    </div>
 
-        <div ng-if="flightList.length!=0">
-
-            <div class="offset-top-40 ">
-                <ul class="list-tickets">
+    <div ng-if="flightList.length!=0">
 
 
-                    <li class="list-item" ng-repeat="flight in flightList">
-                        <div class="list-item-inner">
-                            <div class="list-item-main">
-                                <div class="list-item-top">
-                                    <div class="list-item-logo">
-                                        <img src="./images/logo-01.jpg" alt="">
+            <ul class="list-tickets">
+
+
+                <li class="list-item" ng-repeat="flight in flightList">
+                    <div class="list-item-inner">
+                        <div class="list-item-main">
+                            <div class="list-item-top">
+                                <div class="list-item-logo">
+                                    <img src="./images/logo-01.jpg" alt="">
+                                </div>
+                                <div class="list-item-content">
+                                    <div class="list-item-content-left">
+                                        <div class="text-bold text-base">{{flight.fromDepartureTime}}</div>
+                                        <span class="small reveal-block">{{flight.fromIata}}</span>
                                     </div>
-                                    <div class="list-item-content">
-                                        <div class="list-item-content-left">
-                                            <div class="text-bold text-base">{{flight.fromDepartureTime}}</div>
-                                            <span class="small reveal-block">{{flight.fromTown}}</span>
-                                        </div>
-                                        <div class="list-item-content-line-wrapper small">
-                                            <div class="list-item-content-line-top">6h 50m</div>
-                                            <div class="list-item-content-line"></div>
-                                            <div class="list-item-content-line-bottom text-info-dr">Direct</div>
-                                        </div>
-                                        <div class="list-item-content-right">
-                                            <div class="text-bold text-base">{{flight.fromArrivalTime}}</div>
-                                            <span class="small reveal-block">{{flight.toTown}}</span>
-                                        </div>
+                                    <div class="list-item-content-line-wrapper small">
+                                        <div class="list-item-content-line-top">6h 50m</div>
+                                        <div class="list-item-content-line"></div>
+                                        <div class="list-item-content-line-bottom text-info-dr">Direct</div>
+                                    </div>
+                                    <div class="list-item-content-right">
+                                        <div class="text-bold text-base">{{flight.fromArrivalTime}}</div>
+                                        <span class="small reveal-block">{{flight.toIata}}</span>
                                     </div>
                                 </div>
-                                <!--<hr class="divider divider-wide">-->
-                                <!--<div class="list-item-bottom">-->
+                            </div>
+                            <!--<hr class="divider divider-wide">-->
+                            <!--<div class="list-item-bottom">-->
                                 <!--<div class="list-item-logo">-->
-                                <!--<img src="./images/logo-01.jpg" alt="">-->
+                                    <!--<img src="./images/logo-01.jpg" alt="">-->
                                 <!--</div>-->
                                 <!--<div class="list-item-content">-->
-                                <!--<div class="list-item-content-left">-->
-                                <!--<div class="text-bold text-base">9:50pm</div>-->
-                                <!--<span class="small reveal-block">LGW</span>-->
+                                    <!--<div class="list-item-content-left">-->
+                                        <!--<div class="text-bold text-base">9:50pm</div>-->
+                                        <!--<span class="small reveal-block">LGW</span>-->
+                                    <!--</div>-->
+                                    <!--<div class="list-item-content-line-wrapper small">-->
+                                        <!--<div class="list-item-content-line-top">18h 40m</div>-->
+                                        <!--<div class="list-item-content-line"></div>-->
+                                        <!--<div class="list-item-content-line-bottom">-->
+                                            <!--<span class="text-primary-dr">1 stop</span>-->
+                                            <!--<span> DUB</span>-->
+                                        <!--</div>-->
+                                    <!--</div>-->
+                                    <!--<div class="list-item-content-right">-->
+                                        <!--<div class="text-bold text-base">11:30am (+1)</div>-->
+                                        <!--<span class="small reveal-block">JFK</span>-->
+                                    <!--</div>-->
                                 <!--</div>-->
-                                <!--<div class="list-item-content-line-wrapper small">-->
-                                <!--<div class="list-item-content-line-top">18h 40m</div>-->
-                                <!--<div class="list-item-content-line"></div>-->
-                                <!--<div class="list-item-content-line-bottom">-->
-                                <!--<span class="text-primary-dr">1 stop</span>-->
-                                <!--<span> DUB</span>-->
-                                <!--</div>-->
-                                <!--</div>-->
-                                <!--<div class="list-item-content-right">-->
-                                <!--<div class="text-bold text-base">11:30am (+1)</div>-->
-                                <!--<span class="small reveal-block">JFK</span>-->
-                                <!--</div>-->
-                                <!--</div>-->
-                                <!--</div>-->
-                            </div>
-                            <div class="list-item-footer">
-                                <!--<span class="small">7 deals from</span>-->
-                                <h5 class="text-bold list-item-price">{{flight.price}}</h5>
-                                <a href="#" class="btn btn-primary btn-xs btn-no-shadow">select</a>
-                            </div>
+                            <!--</div>-->
                         </div>
-                        <div class="small text-gray-light list-item-subtitle">{{flight.fromDate}}</div>
-                    </li>
-                    <hr class="divider divider-wide">
+                        <div class="list-item-footer">
+                            <!--<span class="small">7 deals from</span>-->
+                            <h5 class="text-bold list-item-price">{{flight.price}}</h5>
+                            <a href="#" class="btn btn-primary btn-xs btn-no-shadow">select</a>
+                        </div>
+                    </div>
+                    <div class="small text-gray-light list-item-subtitle">{{flight.fromDate}}</div>
+                </li>
+                <hr class="divider divider-wide">
 
-                </ul>
-            </div>
+            </ul>
 
 
-            <!--<div class="offset-top-60 offset-lg-top-60">-->
-                <!--&lt;!&ndash; Bootstrap Pagination&ndash;&gt;-->
-                <!--<nav>-->
-                    <!--<ul class="pagination pagination">-->
-                        <!--<li class="disabled">-->
-                                                    <!--<span aria-label="Previous">-->
-                                                        <!--<span aria-hidden="true" class="fa-chevron-left"></span>-->
-                                                    <!--</span>-->
-                        <!--</li>-->
-                        <!--<li class="active">-->
-                            <!--<span>1</span>-->
-                        <!--</li>-->
-                        <!--<li>-->
-                            <!--<a href="#">2</a>-->
-                        <!--</li>-->
-                        <!--<li>-->
-                            <!--<a href="#">3</a>-->
-                        <!--</li>-->
-                        <!--<li>-->
-                            <!--<a href="#" aria-label="Next">-->
-                                <!--<span aria-hidden="true" class="fa-chevron-right"></span>-->
-                            <!--</a>-->
-                        <!--</li>-->
-                    <!--</ul>-->
-                <!--</nav>-->
-            <!--</div>-->
 
-        </div>
-
+        <!--<div class="offset-top-60 offset-lg-top-60">-->
+        <!--&lt;!&ndash; Bootstrap Pagination&ndash;&gt;-->
+        <!--<nav>-->
+        <!--<ul class="pagination pagination">-->
+        <!--<li class="disabled">-->
+        <!--<span aria-label="Previous">-->
+        <!--<span aria-hidden="true" class="fa-chevron-left"></span>-->
+        <!--</span>-->
+        <!--</li>-->
+        <!--<li class="active">-->
+        <!--<span>1</span>-->
+        <!--</li>-->
+        <!--<li>-->
+        <!--<a href="#">2</a>-->
+        <!--</li>-->
+        <!--<li>-->
+        <!--<a href="#">3</a>-->
+        <!--</li>-->
+        <!--<li>-->
+        <!--<a href="#" aria-label="Next">-->
+        <!--<span aria-hidden="true" class="fa-chevron-right"></span>-->
+        <!--</a>-->
+        <!--</li>-->
+        <!--</ul>-->
+        <!--</nav>-->
+        <!--</div>-->
 
     </div>
+
+

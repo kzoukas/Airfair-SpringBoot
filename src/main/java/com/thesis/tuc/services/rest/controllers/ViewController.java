@@ -1,9 +1,13 @@
 package com.thesis.tuc.services.rest.controllers;
 
+import com.thesis.tuc.business.FlightService;
+import com.thesis.tuc.business.filterService;
 import com.thesis.tuc.services.rest.responseDTOs.Flight;
+import com.thesis.tuc.services.rest.responseDTOs.Filters;
 import com.thesis.tuc.repository.FlightRepository;
 import com.thesis.tuc.services.rest.responseDTOs.FlightInfo;
 import com.thesis.tuc.repository.FlightInfoRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -13,25 +17,26 @@ import java.util.List;
 @RequestMapping(path = "/")
 public class ViewController {
 
-    private FlightRepository flightRepository;
-    private FlightInfoRepository flightInfoRepository;
-    public ViewController(FlightRepository flightRepository,FlightInfoRepository flightInfoRepository) {
+    @Autowired
+    private FlightService flightService;
+    @Autowired
+    private filterService filterService;
 
-        this.flightRepository = flightRepository;
-
-        this.flightInfoRepository = flightInfoRepository;
-    }
     @GetMapping(path="/allflights")
     public List<Flight> getAll(){
-        List<Flight> flights=this.flightRepository.findAll();
 
-        return flights;
+        return flightService.getAllFlights();
     }
 
     @GetMapping(path="/flightInfo")
     public List<FlightInfo> getAlls(){
-        List<FlightInfo> flights2=this.flightInfoRepository.findAll();
 
-        return flights2;
+        return flightService.getAllFlightInfo();
     }
+    @GetMapping(path="/allflights/filters")
+    public List<Flight> getAllFilter(){
+
+         return filterService.getFilteredFlights();
+    }
+
 }
