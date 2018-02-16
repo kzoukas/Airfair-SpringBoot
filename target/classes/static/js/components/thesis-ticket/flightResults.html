@@ -1,36 +1,11 @@
 
-    <ul>
-        <li class="list-item" ng-repeat="datum in flightInfoList">
-            <h4 class="text-ubold">{{datum.fromIata}} to {{datum.toIata}}</h4>
-            <h6 class="text-gray offset-top-60">2 Adults ,economy</h6>
 
-        </li>
-    </ul>
 
     <hr class="divider divider-lg-left divider-primary divider-80 offset-top-40">
     <div class="offset-top-60">
         <div class="range range-xs-justify text-left">
-            <div class="cell-sm-8 cell-md-6 cell-xl-4">
-                <div class="range">
-                    <div class="cell-sm-6">
-                        <span class="small">Departure</span>
-                        <!--Select 2-->
-                        <div class="offset-top-4">
-                            <input type="text" data-time-picker="date" data-constraints="@Required" name="departure"
-                                   class="form-control">
-                        </div>
-                    </div>
-                    <div class="cell-sm-6 offset-top-20 offset-sm-top-0">
-                        <span class="small">Return</span>
-                        <!--Select 2-->
-                        <div class="offset-top-4">
-                            <input type="text" data-time-picker="date" data-constraints="@Required" name="return"
-                                   class="form-control">
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="cell-sm-4 cell-xl-3 offset-top-20 offset-sm-top-0">
+
+            <div class="cell-sm-4 cell-xl-3 ">
                 <span class="small">Sort by</span>
                 <!--Select 2-->
                 <div class="offset-top-4">
@@ -45,6 +20,9 @@
                         <option value="7">Item 2-3</option>
                     </select>
                 </div>
+            </div>
+            <div class="cell-sm-8 cell-md-6 cell-xl-4">
+
             </div>
         </div>
     </div>

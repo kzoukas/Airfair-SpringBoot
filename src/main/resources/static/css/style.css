@@ -24814,7 +24814,8 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
   .divider-80 {
     margin-top: 30px;
     margin-bottom: 30px;
-    width: 80px;
+    max-width: 100%;
+
   }
 
   .divider-60 {
@@ -36422,6 +36423,15 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
     margin-top: 20px;
 
 }
+.grid-item-lg-10-10{
+  position:relative;
+  width:100%;
+  min-height:1px;
+  padding-right:16px;
+  padding-left:16px;
+  margin-top: 20px;
+
+}
 @media (min-width:992px) {
   .grid-item-lg-3-10 {
     -webkit-box-flex: 0;
@@ -36434,6 +36444,12 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
     -ms-flex:0 0 70%;
     flex:0 0 70%;
     max-width:70%
+  }
+  .grid-item-lg-10-10{
+    -webkit-box-flex:0;
+    -ms-flex:0 0 70%;
+    flex:0 0 100%;
+    max-width:100%
   }
 }
 /*#main{*/

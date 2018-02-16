@@ -17,3 +17,16 @@
     module.factory("flightInfoService", flightInfoService);
 
 }());
+
+
+// (function () {
+//     'use strict';
+//     var module = angular.module("flightTicketApp");
+//     module.factory('flightInfoService', ['$resource', function ($resource) {
+//         return $resource('/flightInfo',
+//             {
+//                 getFlightInfo: {method: 'GET'}
+//             }
+//         );
+//     }]);
+// }());

@@ -5,6 +5,8 @@ import com.thesis.tuc.repository.FlightRepository;
 import com.thesis.tuc.services.rest.responseDTOs.Flight;
 import com.thesis.tuc.services.rest.responseDTOs.FlightInfo;
 import org.springframework.stereotype.Component;
+import org.springframework.data.mongodb.repository.MongoRepository;
+
 
 import java.util.List;
 
@@ -19,8 +21,8 @@ public class filterService {
 
 
     }
-    public List<Flight> getFilteredFlights() {
-        List<Flight> flights = this.flightRepository.findAll();
+    public List<Flight> getFilteredFlights(String fromIata,String toIata) {
+        List<Flight> flights = this.flightRepository.findByFromIataAndToIata( fromIata,toIata);
 
         return flights;
 
