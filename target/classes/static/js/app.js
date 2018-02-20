@@ -6,14 +6,14 @@
         $locationProvider.html5Mode(true).hashPrefix('!');
         $routeProvider
             .when("/allflights", {
-                templateUrl: "js/components/thesis-ticket/flightResults.html",
+                template: "<flight-list></flight-list>",
 
             })
             .when("/", {
                 templateUrl: "js/components/thesis-ticket/welcome.html",
 
         })
-            .otherwise({redirectTo:"/"});
+            // .otherwise({redirectTo:"/"});
     });
 
     app.run(['$window', 'parameterService', function ($window, parameterService) {

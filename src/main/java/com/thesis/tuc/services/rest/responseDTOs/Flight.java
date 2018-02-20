@@ -25,7 +25,7 @@ public class Flight {
     private String longitude_to;
     private String latitude_from;
     private String latitude_to;
-
+    //private String maxPrice;
 
 
 
@@ -49,6 +49,7 @@ public class Flight {
         this.latitude_from = latitude_from;
 
         this.latitude_to = latitude_to;
+        //this.maxPrice = maxPrice;
     }
 
 
@@ -121,7 +122,8 @@ public class Flight {
         return latitude_from;
     }
 
-    public String getLatitude_to() {
-        return latitude_to;
-    }
+    //public String maxPrice() {
+        //return maxPrice;
+    //}
+
 }

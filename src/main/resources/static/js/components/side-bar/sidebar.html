@@ -14,11 +14,11 @@
                     <!-- Means of transport -->
 
                     <!--<form name="filterForm" ng-submit="filterUse();" >-->
-                        <form name="filterForm">
+                        <form name="filterForm" ng-submit="submitFilters();" >
                         <!-- price -->
                         <div class="list-group-item">
                             <a class="filter-toggle text-yellow" data-toggle="collapse"
-                               data-target="#price" aria-expanded="false">Max price
+                               data-target="#price" aria-expanded="false">Flight Duration
 
                             </a>
                             <div class="collapse sliderControler in" id="price">
@@ -26,7 +26,7 @@
 
                                     <div>
                                         <div class="slidecontainer">
-                                            <input type="range" min="1" max="15"  class="slider" id="priceRange" ng-model="filter.maxPrice">
+                                            <input type="range" min="1" value="8" max="15"  class="slider" id="priceRange" ng-model="filter.flightDuration">
                                         </div>
 
                                         <div class="indicators">
@@ -40,14 +40,14 @@
                         <!-- Outbound Flight -->
                         <div class="list-group-item">
                             <a class="filter-toggle text-yellow" data-toggle="collapse"
-                               data-target="#obTimeFilters" aria-expanded="false">Flight Duration
+                               data-target="#obTimeFilters" aria-expanded="false">Max Price
                             </a>
                             <div class="collapse in" id="obTimeFilters" aria-expanded="true">
                                 <div class="filter-content">
 
                                     <div>
                                         <div class="slidecontainer">
-                                            <input type="range" min="1" max="2000" class="slider" id="hourRange" ng-model="filter.flightDuration">
+                                            <input type="range" min="1" value="1500" max="2000" class="slider" id="hourRange" ng-model="filter.maxPrice">
                                         </div>
 
                                         <div class="indicators">

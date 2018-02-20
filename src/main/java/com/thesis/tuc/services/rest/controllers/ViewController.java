@@ -24,10 +24,10 @@ private static final Logger logger = LoggerFactory.getLogger(ViewController.clas
     @Autowired
     private filterService filterService;
 
-    @GetMapping(path="/allflights")
-    public List<Flight> getAll(){
+    @GetMapping(path="/allflights/{fromIata}/{toIata}/{stops}/{maxPrice}/{flightDuration}")
+    public List<Flight> getAll(@PathVariable String fromIata, @PathVariable String toIata,@PathVariable String stops, @PathVariable double maxPrice,@PathVariable String flightDuration){
 
-        return flightService.getAllFlights();
+        return flightService.getAllFlights(fromIata,toIata,stops,maxPrice,flightDuration);
     }
 
     @GetMapping(path="/flightInfo")

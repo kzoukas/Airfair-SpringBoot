@@ -13,8 +13,8 @@
 (function(){
 
     var flightListService = function($http){
-        var getFlightList = function(){
-            var repoUrl = "/allflights";
+        var getFlightList = function(fromIata,toIata,stops,maxPrice,flightDuration){
+            var repoUrl = "/allflights/" + fromIata +"/"+ toIata +"/"+ stops +"/"+ maxPrice +"/"+ flightDuration;
             return $http.get(repoUrl)
                 .then(function(response){
                    return response.data;

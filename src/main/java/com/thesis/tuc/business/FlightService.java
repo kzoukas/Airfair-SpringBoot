@@ -31,18 +31,15 @@ public class FlightService {
         this.flightInfoRepository = flightInfoRepository;
     }
 
-    public List<Flight> getAllFlights() {
-        List<Flight> flights = this.flightRepository.findAll();
+    public List<Flight> getAllFlights(String fromIata,  String toIata, String stops,  double maxPrice, String flightDuration) {
+//        List<Flight> flights = this.flightRepository.findByFromIataAndToIata(fromIata,toIata);
+        List<Flight> flights = this.flightRepository.findByPriceLessThan(maxPrice);
+
+
         List<Flight> flightsTIA = new ArrayList<>();
 
-
-//        for (int j = i+1; j < list.size(); j++) {
-//            // compare list.get(i) and list.get(j)
-//        }
         for (int i = 0; i < flights.size(); i++) {
             for (int j = i+1; j < flights.size(); j++) {
-
-//                SimpleDateFormat sdf = new SimpleDateFormat("HH:mm");
                 SimpleDateFormat format = new SimpleDateFormat("HH:mm");
                 String time1= flights.get(i).getFromArrivalTime();
                 Date d1 = null;
@@ -69,13 +66,6 @@ public class FlightService {
             }
         }
 
-//        for (Flight flight : flights) {
-//            if (flight.getFromDepartureTime().equals("08:40")) {
-//
-//
-//                flightsTIA.add(flight);
-//            }
-//        }
         List<Flight> distinctElements = flightsTIA.stream().distinct().collect(Collectors.toList());
         Collections.sort(distinctElements, new Comparator<Flight>() {
 

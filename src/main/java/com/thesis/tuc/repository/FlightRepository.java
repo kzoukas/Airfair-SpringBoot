@@ -8,4 +8,6 @@ import java.util.List;
 public interface FlightRepository extends MongoRepository<Flight,String>  {
 
     List<Flight> findByFromIataAndToIata(String fromIata, String toIata);
+    List<Flight> findByPriceLessThan(double maxPrice);
+
 }
