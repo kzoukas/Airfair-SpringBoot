@@ -1,4 +1,4 @@
-<hr class="divider divider-lg-left divider-primary divider-80 offset-top-40">
+<!--<hr class="divider divider-lg-left divider-primary divider-80 offset-top-40">-->
 <div class="offset-top-60">
     <div class="range range-xs-justify text-left">
 
@@ -36,63 +36,178 @@
     <ul class="list-tickets">
 
 
-        <li class="list-item" ng-repeat="flight in flightList">
-            <div class="list-item-inner">
-                <div class="list-item-main">
-                    <div class="list-item-top">
-                        <div class="list-item-logo">
-                            <img src="./images/logo-01.jpg" alt="">
+        <li class="list-item" ng-repeat="flight in flightList" id="accordion">
+            <div class="flight-result">
+
+
+                <div class="list-item-inner">
+                    <div class="list-item-main">
+                        <div class="list-item-top">
+                            <div class="list-item-logo">
+                                <img ng-src="{{flight.companyImage.flag}}"
+                                     alt="{{flight.companyImage.alt}}"
+                                     style="height:30px; width:90px; ">
+                            </div>
+                            <a class="accordion-toggle" data-toggle="collapse-next" data-parent="#accordion">
+
+                                <div class="list-item-content">
+                                    <div class="list-item-content-left">
+                                        <div class="text-bold text-base">{{flight.fromDepartureTime}}</div>
+                                        <span class="small reveal-block">{{flight.fromTown}}</span>
+                                    </div>
+                                    <div class="list-item-content-line-wrapper small">
+                                        <div class="list-item-content-line-top">6h 50m</div>
+                                        <div class="list-item-content-line"></div>
+                                        <div class="list-item-content-line-bottom text-info-dr">Direct</div>
+                                    </div>
+                                    <div class="list-item-content-right">
+                                        <div class="text-bold text-base">{{flight.fromArrivalTime}}</div>
+                                        <span class="small reveal-block">{{flight.toTown}}</span>
+                                    </div>
+                                </div>
+                            </a>
                         </div>
-                        <div class="list-item-content">
-                            <div class="list-item-content-left">
-                                <div class="text-bold text-base">{{flight.fromDepartureTime}}</div>
-                                <span class="small reveal-block">{{flight.fromIata}}</span>
-                            </div>
-                            <div class="list-item-content-line-wrapper small">
-                                <div class="list-item-content-line-top">6h 50m</div>
-                                <div class="list-item-content-line"></div>
-                                <div class="list-item-content-line-bottom text-info-dr">Direct</div>
-                            </div>
-                            <div class="list-item-content-right">
-                                <div class="text-bold text-base">{{flight.fromArrivalTime}}</div>
-                                <span class="small reveal-block">{{flight.toIata}}</span>
-                            </div>
-                        </div>
+
                     </div>
-                    <hr class="divider divider-wide">
-                    <div class="list-item-bottom">
-                        <div class="list-item-logo">
-                            <img src="./images/logo-01.jpg" alt="">
-                        </div>
-                        <div class="list-item-content">
-                            <div class="list-item-content-left">
-                                <div class="text-bold text-base">9:50pm</div>
-                                <span class="small reveal-block">LGW</span>
+                    <div class="list-item-footer">
+                        <!--<span class="small">7 deals from</span>-->
+                        <h5 class="text-bold list-item-price">{{flight.price}} €</h5>
+                        <a href="#" class="btn btn-primary btn-xs btn-no-shadow">Book flight</a>
+                    </div>
+                </div>
+                <div class="small text-gray-light list-item-subtitle">{{flight.fromDate}}</div>
+
+            </div>
+            <!--<hr class="divider divider-wide">-->
+            <div class="flight-result-collapse collapse">
+                <!-- ngRepeat: sector in productDetails -->
+                <hr class="divider divider-lg-left divider-primary divider-80 offset-top-40">
+                <div class="itenary-details ng-scope">
+                    <div class="leg-type clearfix">
+                        <span class="review-title " style="background-color:#ffdd00; color:black">Departure</span>
+                        <!--<p class="pull-right">Total Time: {{sector.totalDuration}}</p>-->
+                    </div>
+                    <!-- Flight Depart Leg : 1 -->
+                    <div class="sector-details">
+                        <!-- ngRepeat: segment in sector.segmentDetails -->
+                        <article class="row review-article ng-scope">
+
+                            <div class="text-sm-center col-sm-2 col-lg-3 text-xs-left sm-gutter-bottom">
+                                <p>
+                                     <img src="./images/ryanair.jpg"
+                                             alt="{}"
+                                             style="height:20px; width:60px; ">
+                                    <br class="hidden-xs-down">
+                                    <span class="ib fs-13 gray ng-binding">Alitalia</span>
+
+                                    <span class="fs-12 gray-dark block bold ng-binding">Economy</span>
+                                </p>
                             </div>
-                            <div class="list-item-content-line-wrapper small">
-                                <div class="list-item-content-line-top">18h 40m</div>
-                                <div class="list-item-content-line"></div>
-                                <div class="list-item-content-line-bottom">
-                                    <span class="text-primary-dr">1 stop</span>
-                                    <span> DUB</span>
+                            <div class="col-sm-10 col-lg-9 bdr bdr-left">
+                                <div class="row">
+                                    <div class="col-xs-6 col-md-3">
+                                        <p class="fs-base ng-binding">Athens, GR</p>
+                                        <h3 class="fs-18 lh28 bold gray-dark ng-binding">18:45</h3>
+                                        <p class="fs-sm gray lh18">
+                                            <span class="bold ng-binding">18/2/2018</span>
+                                            <br>
+                                            <span class="gray-light ng-binding">Eleftherios Venizelos</span>
+                                        </p>
+                                    </div>
+
+                                    <div class="col-xs-6 col-md-push-6 col-md-3 sm-border-left">
+                                        <p class="fs-base ng-binding">Rome, IT</p>
+                                        <h3 class="fs-18 bold gray-dark ng-binding">19:50</h3>
+                                        <p class="fs-sm gray lh18">
+                                            <span class="bold ng-binding">18/2/2018</span>
+                                            <br>
+                                            <span class="gray-light ng-binding">Fiumicino</span>
+                                        </p>
+                                    </div>
+
+                                    <div class="col-sm-12 text-center col-md-pull-3 col-md-6 col-lg-6 sm-gutter-top tab-posn-align ng-binding">
+                                        <p class="fs-13 ng-binding">
+                                            <i class="far fa-clock"></i>
+                                            &nbsp; 02h 05m &nbsp;
+
+                                        </p>
+                                        <p class="hidden-sm-down two-dots">
+                                            <i class="fas fa-plane"></i>
+                                        </p>
+                                        <p class="fs-13">
+                                        </p>
+
+                                    </div>
                                 </div>
                             </div>
-                            <div class="list-item-content-right">
-                                <div class="text-bold text-base">11:30am (+1)</div>
-                                <span class="small reveal-block">JFK</span>
+                        </article>
+                        <!-- ngIf: !$last -->
+                        <div class="text-center clearfix">
+                            <div class="col-sm-2 col-lg-3"></div>
+                            <div class="box-condensed pr col-sm-10 col-lg-9 padd-none">
+                                <div class=" fs-12 msg-bar">
+                                    <i class="fas fa-info-circle"></i> Change planes at
+                                    <span class="bold">Rome (FCO)</span>, Connecting Time:
+                                    <span class="bold">13h 30m</span>
+
+                                </div>
                             </div>
                         </div>
+                        <!-- end ngIf: !$last -->
+                        <!-- end ngRepeat: segment in sector.segmentDetails -->
+                        <article class="row review-article ng-scope">
+
+                            <div class="text-sm-center col-sm-2 col-lg-3 text-xs-left sm-gutter-bottom">
+                                <p>
+                                    <img src="./images/ryanair.jpg"
+                                         alt=""
+                                         style="height:20px; width:60px;">
+                                    <br class="hidden-xs-down">
+                                    <span class="ib fs-13 bold gray">Alitalia</span>
+                                    <span class="fs-12 gray-dark block">Economy</span>
+
+                                </p>
+                            </div>
+                            <div class="col-sm-10 col-lg-9 bdr bdr-left">
+                                <div class="row">
+                                    <div class="col-xs-6 col-md-3">
+                                        <p class="fs-base ng-binding">Rome, IT</p>
+                                        <h3 class="fs-18 bold gray-dark">09:20</h3>
+                                        <p class="fs-sm gray lh18">
+                                            <span class="bold">18/2/2018</span>
+                                            <span class="gray-light">Fiumicino</span>
+                                        </p>
+                                    </div>
+
+                                    <div class="col-xs-6 col-md-push-6 col-md-3 sm-border-left">
+                                        <p class="fs-base ng-binding">Budapest</p>
+                                        <h3 class="fs-18 bold gray-dark ng-binding">11:05</h3>
+                                        <p class="fs-sm gray lh18">
+                                            <span class="bold ng-binding">18/2/2018</span>
+                                            <span class="gray-light ng-binding">Ferihegy</span>
+                                        </p>
+                                    </div>
+
+                                    <div class="col-sm-12 text-center col-md-pull-3 col-md-6 col-lg-6 sm-gutter-top tab-posn-align ng-binding">
+                                        <p class="fs-13 ng-binding">
+                                            <i class="far fa-clock"></i>
+                                            &nbsp; 01h 45m &nbsp;
+                                        </p>
+                                        <p class="hidden-sm-down two-dots">
+                                            <i class="fas fa-plane"></i>
+                                        </p>
+                                        <p class="fs-13">
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </article><!-- end ngRepeat: segment in sector.segmentDetails -->
                     </div>
                 </div>
-                <div class="list-item-footer">
-                    <!--<span class="small">7 deals from</span>-->
-                    <h5 class="text-bold list-item-price">{{flight.price}}</h5>
-                    <a href="#" class="btn btn-primary btn-xs btn-no-shadow">select</a>
-                </div>
+                <!-- end ngRepeat: sector in productDetails -->
             </div>
-            <div class="small text-gray-light list-item-subtitle">{{flight.fromDate}}</div>
         </li>
-        <hr class="divider divider-wide">
+
 
     </ul>
 
@@ -126,4 +241,15 @@
 
 </div>
 
+<script>$(function () {
+    // init bootstrap collapse for elements with panel-collapse class
+    $('.flight-result-collapse').collapse({toggle: false});
+    // init bootstrap collapse for elements with panel-collapse class
+    // $('.flight-result-collapse').collapse({toggle: false});
+    $('body').on('click', '[data-toggle=collapse-next]', function (e) {
+        var $target = $(this).parents('.list-item').find('.flight-result-collapse');
+        $target.collapse('toggle');
 
+    });
+});
+</script>

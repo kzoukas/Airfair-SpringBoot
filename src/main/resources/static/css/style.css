@@ -401,15 +401,26 @@ textarea {
   line-height: inherit;
 }
 
+/*a {*/
+  /*color: #42d4ec;*/
+  /*text-decoration: none;*/
+/*}*/
 a {
-  color: #42d4ec;
+  color: #000000;
+  text-decoration: none;
+  cursor: pointer;
+}
+a:hover, a:focus{
+  color: #000000;
   text-decoration: none;
 }
 
-a:hover, a:focus {
-  color: #3e3f40;
-  text-decoration: none;
-}
+
+
+/*a:hover, a:focus {*/
+  /*color: #3e3f40;*/
+  /*text-decoration: none;*/
+/*}*/
 
 a:focus {
   outline: thin dotted;
@@ -10947,7 +10958,7 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
      position: relative;
      width: 100%;
      overflow-y: auto;
-     max-height: 700px;
+     max-height: 1190px;
      box-sizing: border-box;
      z-index: 1001;
    }
@@ -10962,13 +10973,13 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
   @media (min-width: 768px) {
     .list-tickets .list-item {
       text-align: left;
-      padding: 13px 30px 12px 30px;
+      padding: 15px 20px 15px 20px;
     }
   }
 
   @media (min-width: 1600px) {
     .list-tickets .list-item {
-      padding: 13px 12.2% 12px 40px;
+      padding: 15px 20px 15px 20px;
     }
   }
 
@@ -10977,9 +10988,9 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
   }
 
   .list-tickets .list-item .divider {
-    margin-top: 14px;
-    margin-bottom: 14px;
-    background-color: #cacaca;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    background-color: #ffdd00;
   }
 
   @media (max-width: 767px) {
@@ -10991,9 +11002,9 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
   }
 
   .list-tickets .list-item .btn {
-    margin-top: 12px;
-    padding: 11px 20px;
-    font-size: 12px;
+    margin-top: 8px;
+    padding: 10px 10px;
+    font-size: 14px;
     letter-spacing: 0.08em;
   }
 
@@ -11039,7 +11050,7 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
   @media (min-width: 768px) {
     .list-tickets .list-item-footer {
       margin-top: 0;
-      margin-left: 7.6%;
+      /*margin-left: 7.6%;*/
       text-align: left;
     }
   }
@@ -11091,20 +11102,21 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
 
   @media (min-width: 768px) {
     .list-tickets .list-item-content-left {
-      text-align: right;
+      text-align: center;
     }
   }
 
   @media (min-width: 768px) {
     .list-tickets .list-item-content-right {
-      text-align: left;
+      text-align: center;
     }
   }
 
   .list-tickets .list-item-content-line {
+    min-width: 100px;
     position: relative;
     height: 1px;
-    margin: 5px 0;
+    /*margin: 5px 0;*/
     background-color: #3e3f40;
   }
 
@@ -11123,12 +11135,12 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
   .list-tickets .list-item-content-line-wrapper {
     flex-basis: 260px;
     text-align: center;
-    margin: 12px 0;
+    /*margin: 12px 0;*/
   }
 
   @media (min-width: 768px) {
     .list-tickets .list-item-content-line-wrapper {
-      margin: 0 18px;
+      /*margin: 0 18px;*/
     }
   }
 
@@ -11141,7 +11153,7 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
 
   @media (min-width: 1400px) {
     .list-tickets .list-item-content-left, .list-tickets .list-item-content-right {
-      min-width: 142px;
+      min-width: 90px;
     }
   }
 
@@ -11688,13 +11700,12 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
   .btn {
     position: relative;
     transition: .3s ease-out;
-    text-transform: uppercase;
     letter-spacing: 0.08em;
     font-weight: 900;
     border-radius: 0;
     box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.23);
     border: none;
-    padding: 16px 35px;
+    padding: 3px 10px;
     z-index: 1;
     overflow: hidden;
   }
@@ -36411,7 +36422,7 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
   min-height:1px;
   padding-right:16px;
   padding-left:16px;
-    margin-top: 100px;
+  margin-top: 60px;
 
 }
 .grid-item-lg-7-10{
@@ -36420,7 +36431,7 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
     min-height:1px;
     padding-right:16px;
     padding-left:16px;
-    margin-top: 20px;
+    margin-top: 10px;
 
 }
 .grid-item-lg-10-10{
@@ -36525,7 +36536,7 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
   word-wrap:break-word;
   background-color:#fff;
   background-clip:border-box;
-  border:1px solid rgba(0,0,0,.125);
+  border:1px solid #ffdd00;
   border-radius:4px;
   margin-bottom:16px
 }
@@ -36601,7 +36612,7 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
   border-bottom:0
 }
 #filters .list-group-item{
-  border-style:dashed
+  /*border-style:dashed*/
 }
 
 .filter-content{
@@ -36775,4 +36786,10 @@ tbody.collapse.in{
     color:black ;
 
     /*background-color: #ffdd00;*/
+}
+
+.list-item-top > a:hover,
+.list-item-top > a:focus{
+  color: black;
+
 }
