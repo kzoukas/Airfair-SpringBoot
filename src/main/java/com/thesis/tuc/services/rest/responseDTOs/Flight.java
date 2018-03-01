@@ -1,6 +1,5 @@
 package com.thesis.tuc.services.rest.responseDTOs;
 
-
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -10,48 +9,45 @@ public class Flight {
     private String id;
     private String fromDepartureTime;
     private String fromArrivalTime;
-//    private String toDepartureTime;
-//    private String toArrivalTime;
     private String fromTown;
     private String toTown;
     private String fromIata;
     private String toIata;
-    private String price;
+    private Double price;
     private String fromCompany;
     private String toCompany;
     private String fromDate;
     private String toDate;
-    private String longitude_from;
-    private String longitude_to;
-    private String latitude_from;
-    private String latitude_to;
-    //private String maxPrice;
+    private String duration;
+    private String station;
+    private String stationTown;
+    private String stationArrivalTime;
+    private String stationArrivalDate;
+    private String waitingTime;
+    private String stationDepTime;
+    private String stationDepDate;
 
-
-
-    public Flight(String fromDepartureTime, String fromArrivalTime, String fromTown, String toTown, String price, String fromCompany, String toCompany, String fromDate, String toDate, String longitude_from, String longitude_to, String latitude_from, String latitude_to) {
+    public Flight(String fromDepartureTime, String fromArrivalTime, String fromTown, String toTown, String fromIata, String toIata, Double price, String fromCompany, String toCompany, String fromDate, String toDate, String duration, String station, String stationTown, String stationArrivalTime, String stationArrivalDate, String waitingTime, String stationDepTime, String stationDepDate) {
         this.fromDepartureTime = fromDepartureTime;
         this.fromArrivalTime = fromArrivalTime;
         this.fromTown = fromTown;
         this.toTown = toTown;
-        this.fromIata=fromIata;
-
-        this.toIata= toIata;
-//        this.toDepartureTime = toDepartureTime;
-//        this.toArrivalTime = toArrivalTime;
+        this.fromIata = fromIata;
+        this.toIata = toIata;
         this.price = price;
         this.fromCompany = fromCompany;
         this.toCompany = toCompany;
         this.fromDate = fromDate;
         this.toDate = toDate;
-        this.longitude_from = longitude_from;
-        this.longitude_to = longitude_to;
-        this.latitude_from = latitude_from;
-
-        this.latitude_to = latitude_to;
-        //this.maxPrice = maxPrice;
+        this.duration = duration;
+        this.station = station;
+        this.stationTown = stationTown;
+        this.stationArrivalTime = stationArrivalTime;
+        this.stationArrivalDate = stationArrivalDate;
+        this.waitingTime = waitingTime;
+        this.stationDepTime = stationDepTime;
+        this.stationDepDate = stationDepDate;
     }
-
 
 
     public String getId() {
@@ -65,14 +61,6 @@ public class Flight {
     public String getFromArrivalTime() {
         return fromArrivalTime;
     }
-
-//    public String getToDepartureTime() {
-//        return toDepartureTime;
-//    }
-//
-//    public String getToArrivalTime() {
-//        return toArrivalTime;
-//    }
 
     public String getFromTown() {
         return fromTown;
@@ -90,7 +78,7 @@ public class Flight {
         return toIata;
     }
 
-    public String getPrice() {
+    public Double getPrice() {
         return price;
     }
 
@@ -110,20 +98,39 @@ public class Flight {
         return toDate;
     }
 
-    public String getLongitude_from() {
-        return longitude_from;
+    public String getDuration() {
+        return duration;
     }
 
-    public String getLongitude_to() {
-        return longitude_to;
+    public String getStation() {
+        return station;
     }
 
-    public String getLatitude_from() {
-        return latitude_from;
+    public void setStation(String station) {
+        this.station = station;
     }
 
-    //public String maxPrice() {
-        //return maxPrice;
-    //}
+    public String getStationTown() {
+        return stationTown;
+    }
 
+    public String getStationArrivalTime() {
+        return stationArrivalTime;
+    }
+
+    public String getStationArrivalDate() {
+        return stationArrivalDate;
+    }
+
+    public String getWaitingTime() {
+        return waitingTime;
+    }
+
+    public String getStationDepTime() {
+        return stationDepTime;
+    }
+
+    public String getStationDepDate() {
+        return stationDepDate;
+    }
 }

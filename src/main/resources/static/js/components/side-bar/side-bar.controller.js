@@ -14,7 +14,7 @@
 
         var model = this;
         model.$onInit=initialize;
-        model.stops=2;
+        model.stops=1;
         model.maxPrice=300;
         model.flightDuration=8;
 

@@ -2523,35 +2523,44 @@ hr {
 
 /* line 236, ../../../../sass/components/checkout/tranquil/_type.scss */
 .two-dots {
-  border-top: 1px solid #e4e4e4;
+  border-top: 1px solid black;
   line-height: 0;
   margin-top: 13px !important;
   margin-bottom: 13px !important;
   position: relative;
   text-align: center;
-  color: #999;
+  color: rgba(3, 3, 3, 0.99);
 }
 /* line 244, ../../../../sass/components/checkout/tranquil/_type.scss */
-.two-dots:after {
-  background-color: #e4e4e4;
-  content: " ";
-  display: inline-block;
-  height: 8px;
-  left: 0;
-  position: absolute;
-  top: -5px;
-  width: 1px;
-}
+/*.two-dots:after {*/
+  /*background-color: #e4e4e4;*/
+  /*content: " ";*/
+  /*display: inline-block;*/
+  /*height: 8px;*/
+  /*left: 0;*/
+  /*position: absolute;*/
+  /*top: -5px;*/
+  /*width: 1px;*/
+/*}*/
 /* line 254, ../../../../sass/components/checkout/tranquil/_type.scss */
 .two-dots:before {
-  background-color: #e4e4e4;
-  content: " ";
-  display: inline-block;
-  height: 8px;
+  /*background-color: #e4e4e4;*/
+  /*content: " ";*/
+  /*display: inline-block;*/
+  /*height: 8px;*/
+  /*position: absolute;*/
+  /*right: 0;*/
+  /*top: -5px;*/
+  /*width: 1px;*/
   position: absolute;
   right: 0;
-  top: -5px;
-  width: 1px;
+  content: '';
+  top: -4px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 4px 0 4.4px 8px;
+  border-color: transparent transparent transparent #3e3f40;
 }
 
 /* line 267, ../../../../sass/components/checkout/tranquil/_type.scss */

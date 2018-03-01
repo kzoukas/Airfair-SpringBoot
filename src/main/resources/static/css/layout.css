@@ -227,7 +227,9 @@ body {
     line-height: 24px;
 
     color: #555e69;
-    background-color: #ddd;
+    /*background-color: #ddd;*/
+    background-image: url('../images/airplane-homepage.jpg');
+    background-attachment: fixed;
 }
 
 .loaded {
@@ -574,6 +576,7 @@ a:hover {
 
 .flight-result {
     background-image: url('../images/background/flight-result.jpg');
+    margin-bottom: 20px;
 }
 
 .hotel-result {

@@ -9,5 +9,7 @@ public interface FlightRepository extends MongoRepository<Flight,String>  {
 
     List<Flight> findByFromIataAndToIata(String fromIata, String toIata);
     List<Flight> findByPriceLessThan(double maxPrice);
+    List<Flight> findByStationAndPriceLessThan(String typeOfFlight,Double maxPrice);
+    List<Flight> findByPriceLessThan(Double maxPrice);
 
 }

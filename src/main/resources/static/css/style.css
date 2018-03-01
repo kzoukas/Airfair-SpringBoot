@@ -4612,9 +4612,10 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
     padding: 16px 20px;
     line-height: 1.5;
     text-decoration: none;
-    color: #42d4ec;
+    color: #ffdd00;
     background-color: #fff;
-    border: 1px solid #ddd;
+    border: 1px solid #e8e9ea;
+    border-radius: 30px;
     margin-left: -1px;
   }
 
@@ -4646,8 +4647,8 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
   .pagination > .active > span:focus {
     z-index: 3;
     color: #fff;
-    background-color: #cacaca;
-    border-color: #cacaca;
+    background-color: #ffdd00;
+    border-color: #eee;
     cursor: default;
   }
 
@@ -10958,13 +10959,13 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
      position: relative;
      width: 100%;
      overflow-y: auto;
-     max-height: 1190px;
+     max-height: 2000px;
      box-sizing: border-box;
      z-index: 1001;
    }
   .list-tickets .list-item {
     border-radius: 4px;
-    margin-top: 10px;
+    margin-bottom: 10px;
     background-color: #fff;
     transition: .4s box-shadow;
     padding: 30px 12px;
@@ -10974,12 +10975,14 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
     .list-tickets .list-item {
       text-align: left;
       padding: 15px 20px 15px 20px;
+        border-top: 3px solid #ffdd00;
     }
   }
 
   @media (min-width: 1600px) {
     .list-tickets .list-item {
       padding: 15px 20px 15px 20px;
+        border-top: 3px solid #ffdd00;
     }
   }
 
@@ -27653,9 +27656,9 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
     transition: .3s;
     text-align: center;
     background-color: transparent;
-    color: #fff;
-    border-color: #42d4ec;
-    background-color: #42d4ec;
+    color: #ffdd00;
+    /*border-color: #ffdd00;*/
+    background-color: white;
     border-width: 2px;
     font-weight: 700;
     margin: 0 2px;
@@ -27681,8 +27684,8 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
   .pagination > li > span:focus,
   .pagination > li > span:active,
   .pagination > li > span:active:focus {
-    color: #fff;
-    background-color: #ffdd00;
+    color: #ffdd00;
+    background-color: white;
     border-color: #ffdd00;
     box-shadow: none;
   }
@@ -36422,7 +36425,7 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
   min-height:1px;
   padding-right:16px;
   padding-left:16px;
-  margin-top: 60px;
+  margin-top: 30px;
 
 }
 .grid-item-lg-7-10{
@@ -36431,16 +36434,16 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
     min-height:1px;
     padding-right:16px;
     padding-left:16px;
-    margin-top: 10px;
+    margin-top: 30px;
 
 }
 .grid-item-lg-10-10{
   position:relative;
-  width:100%;
+  width: 100%;
   min-height:1px;
   padding-right:16px;
   padding-left:16px;
-  margin-top: 20px;
+  /*margin-top: 20px;*/
 
 }
 @media (min-width:992px) {
@@ -36460,7 +36463,18 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
     -webkit-box-flex:0;
     -ms-flex:0 0 70%;
     flex:0 0 100%;
-    max-width:100%
+    max-width:100%;
+
+  }
+}
+@media (max-width:992px) {
+
+  .grid-item-lg-10-10{
+    -webkit-box-flex:0;
+    -ms-flex:0 0 70%;
+    flex:0 0 100%;
+    max-width:100%;
+    width:100%
   }
 }
 /*#main{*/
@@ -36536,7 +36550,10 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
   word-wrap:break-word;
   background-color:#fff;
   background-clip:border-box;
-  border:1px solid #ffdd00;
+  border-color: #ffdd00;
+  border-style: solid;
+  border-width: 3px 1px 1px 1px;
+  /*border:1px solid #ffdd00;*/
   border-radius:4px;
   margin-bottom:16px
 }
@@ -36793,3 +36810,37 @@ tbody.collapse.in{
   color: black;
 
 }
+
+/*.offset-top-60 .tab-btn-wrapper.active .tab-btn {*/
+    /*background-color: #ffdd00;*/
+/*}*/
+
+
+.offset-top-60 .tab-btn-wrapper .tab-btn {
+  /*font-size: 16px;*/
+  /*font-weight: 800;*/
+  line-height: 50px;
+  display: flex;
+  height: 50px;
+  width: 69%;
+  float: left;
+  margin-right: 0;
+  padding: 0;
+  text-align: left;
+  background-color: #ffdd00;
+  -webkit-border-radius: 0 15px 0 0;
+  -moz-border-radius: 0 15px 0 0;
+  border-radius: 0 0px 15px 15px;
+  border: none;
+
+}
+@media (max-width:992px) {
+  .offset-top-60 .tab-btn-wrapper .tab-btn {
+    width: 100%;
+  }
+}
+.list-item-content-line-bottom{
+  color:#ffdd00;
+  font-weight: 800;
+}
+

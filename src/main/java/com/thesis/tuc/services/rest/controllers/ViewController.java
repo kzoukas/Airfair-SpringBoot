@@ -1,4 +1,5 @@
 package com.thesis.tuc.services.rest.controllers;
+import com.thesis.tuc.services.rest.responseDTOs.FlightOneWay;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import com.thesis.tuc.business.FlightService;
@@ -25,10 +26,17 @@ private static final Logger logger = LoggerFactory.getLogger(ViewController.clas
     private filterService filterService;
 
     @GetMapping(path="/allflights/{fromIata}/{toIata}/{stops}/{maxPrice}/{flightDuration}")
-    public List<Flight> getAll(@PathVariable String fromIata, @PathVariable String toIata,@PathVariable String stops, @PathVariable double maxPrice,@PathVariable String flightDuration){
-
-        return flightService.getAllFlights(fromIata,toIata,stops,maxPrice,flightDuration);
+    public List<FlightOneWay> getAll(@PathVariable String fromIata, @PathVariable String toIata, @PathVariable int stops, @PathVariable double maxPrice, @PathVariable int flightDuration){
+        if(stops==1) {
+            return flightService.getFlightsOneStation(fromIata, toIata, maxPrice, flightDuration);
+        }else if(stops==2){
+            return flightService.getFlightsTwoStations(fromIata, toIata, maxPrice, flightDuration);
+        }
+        else {
+            return flightService.getDirectFlight(fromIata, toIata, maxPrice, flightDuration);
+        }
     }
+
 
     @GetMapping(path="/flightInfo")
     public List<FlightInfo> getAlls(){
