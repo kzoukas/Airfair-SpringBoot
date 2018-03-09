@@ -1,6 +1,6 @@
 (function(){
 
-    var app = angular.module("flightTicketApp", ["ngRoute"]);
+    var app = angular.module("flightTicketApp", ["ngRoute","ui.bootstrap"]);
 
     app.config(function($routeProvider,$locationProvider){
         $locationProvider.html5Mode(true).hashPrefix('!');

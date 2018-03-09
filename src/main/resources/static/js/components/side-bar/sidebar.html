@@ -1,233 +1,230 @@
 <script src="js/usefulJs/sidebar.js"></script>
 
 <div id="sidebarButton" data-toggle="sidebar">
-        <div>
-            <i class="fa fa-filter">Filters</i>&nbsp;
-        </div>
-        <i class="fa fa-angle-up fa-lg" aria-hidden="true"></i>
+    <div>
+        <i class="fa fa-filter">Filters</i>&nbsp;
     </div>
-    <!-- Sidebar content -->
-    <div class="sidebar-block" id="tabContent">
-        <div id="filters">
-            <div class="card">
-                <div class="list-group list-group-flush">
-                    <!-- Means of transport -->
+    <i class="fa fa-angle-up fa-lg" aria-hidden="true"></i>
+</div>
+<!-- Sidebar content -->
+<div class="sidebar-block" id="tabContent">
+    <div id="filters">
+        <div class="card">
+            <div class="list-group list-group-flush">
+                <form name="filterForm" ng-submit="submitFilters();">
+                    <div class="list-group-item">
+                        <a class="filter-toggle text-yellow" data-toggle="collapse"
+                           data-target="#price" aria-expanded="false">Flight Duration
+                        </a>
+                        <div class="collapse sliderControler in" id="price">
+                            <div class="filter-content">
+                                <div>
+                                    <div class="slidecontainer">
+                                        <input type="range" min="0" value="{{filter.flightDuration}}" max="30"
+                                               class="slider" id="hourRange" ng-model="filter.flightDuration">
+                                    </div>
 
-                    <!--<form name="filterForm" ng-submit="filterUse();" >-->
-                        <form name="filterForm" ng-submit="submitFilters();" >
-                        <!-- price -->
-                        <div class="list-group-item">
-                            <a class="filter-toggle text-yellow" data-toggle="collapse"
-                               data-target="#price" aria-expanded="false">Flight Duration
-
-                            </a>
-                            <div class="collapse sliderControler in" id="price">
-                                <div class="filter-content">
-
-                                    <div>
-                                        <div class="slidecontainer">
-                                            <input type="range" min="1" value="8" max="15"  class="slider" id="priceRange" ng-model="filter.flightDuration">
-                                        </div>
-
-                                        <div class="indicators">
-                                            <p>1h -  <span id="maxPrice"></span>h</p>
-                                        </div>
+                                    <div class="indicators">
+                                        <p>0h - <span id="maxHours"></span>h</p>
                                     </div>
                                 </div>
                             </div>
                         </div>
-
-                        <!-- Outbound Flight -->
-                        <div class="list-group-item">
-                            <a class="filter-toggle text-yellow" data-toggle="collapse"
-                               data-target="#obTimeFilters" aria-expanded="false">Max Price
-                            </a>
-                            <div class="collapse in" id="obTimeFilters" aria-expanded="true">
-                                <div class="filter-content">
-
-                                    <div>
-                                        <div class="slidecontainer">
-                                            <input type="range" min="1" value="1500" max="2000" class="slider" id="hourRange" ng-model="filter.maxPrice">
-                                        </div>
-
-                                        <div class="indicators">
-                                            <p><span id="maxHours"></span> €</p>
-                                        </div>
+                    </div>
+                    <div class="list-group-item">
+                        <a class="filter-toggle text-yellow" data-toggle="collapse"
+                           data-target="#obTimeFilters" aria-expanded="false">Max Price
+                        </a>
+                        <div class="collapse in" id="obTimeFilters" aria-expanded="true">
+                            <div class="filter-content">
+                                <div>
+                                    <div class="slidecontainer">
+                                        <input type="range" min="1" value="{{filter.maxPrice}}" max="2000"
+                                               class="slider" id="priceRange" ng-model="filter.maxPrice">
+                                    </div>
+                                    <div class="indicators">
+                                        <p><span id="maxPrice"></span> €</p>
                                     </div>
                                 </div>
                             </div>
                         </div>
-
-                        <!-- Stops -->
-                        <div class="list-group-item">
-                            <a class="filter-toggle text-yellow" data-toggle="collapse"
-                               data-target="#stops" aria-expanded="false">Stops
-
-                            </a>
-                            <div class="collapse in" id="stops">
-                                <div class="filter-content">
-                                    <div id="stopsColumn">
-                                        <div class="radio">
-                                            <label for="stops-0">
-                                                <!--<small class="float-right text-muted">από 57,94&nbsp;€-->
-                                                <!--</small>-->
-                                                <input type="radio" name="stops-filter" value="0"
-                                                       id="stops-0" ng-model="filter.stops">Direct</label>
-                                        </div>
-                                        <div class="radio">
-                                            <label for="stops-1">
-                                                <!--<small class="float-right text-muted">από 57,94&nbsp;€-->
-                                                <!--</small>-->
-                                                <input type="radio" name="stops-filter" value="1"
-                                                       id="stops-1" ng-model="filter.stops">Up to 1 stop</label>
-                                        </div>
-                                        <div class="radio">
-                                            <label for="stops-2">
-                                                <!--<small class="float-right text-muted">από 57,94&nbsp;€-->
-                                                <!--</small>-->
-                                                <input type="radio" name="stops-filter"
-                                                       checked="checked" value="2"
-                                                       id="stops-2" ng-model="filter.stops">Up to 2 stops</label>
-                                        </div>
+                    </div>
+                    <div class="list-group-item">
+                        <a class="filter-toggle text-yellow" data-toggle="collapse"
+                           data-target="#connectingHoursCollapse" aria-expanded="false">Connecting time
+                        </a>
+                        <div class="collapse in" id="connectingHoursCollapse" aria-expanded="true">
+                            <div class="filter-content">
+                                <div>
+                                    <div class="slidecontainer">
+                                        <input type="range" min="1" value="{{filter.connectingTime}}" max="24"
+                                               class="slider" id="connectingHoursRange" ng-model="filter.connectingTime">
+                                    </div>
+                                    <div class="indicators">
+                                        <p>1h - <span id="connectingHours"></span>h</p>
                                     </div>
                                 </div>
                             </div>
                         </div>
-
-                        <!--Airlines-->
-                        <div class="list-group-item">
-                            <a class="filter-toggle text-yellow" data-toggle="collapse"
-                               data-target="#airlines" aria-expanded="false">Airlines
-
-                            </a>
-                            <div class="collapse in" id="airlines">
-                                <div class="filter-content">
-                                    <div id="airlinesColumn">
-                                        <div class="checkbox">
-                                            <label for="reset-filter-airline">
-                                                <input type="checkbox" id="reset-filter-airline"
-                                                       value="AllAirlines" checked="checked">All Airlines</label>
-                                        </div>
-                                        <div class="checkbox">
-                                            <label class="d-block text-truncate" for="airline-A3">
-                                                <input type="checkbox" name="airline-filter" value="A3" id="airline-A3">Aegean
-                                                Airlines
-                                            </label>
-                                        </div>
-                                        <div class="checkbox">
-                                            <label class="d-block text-truncate" for="airline-LH">
-                                                <input type="checkbox" name="airline-filter" value="LH" id="airline-LH">Lufthansa
-                                            </label>
-                                        </div>
-                                        <div class="checkbox">
-                                            <label class="d-block text-truncate" for="airline-OA">
-                                                <input type="checkbox" name="airline-filter" value="OA" id="airline-OA">Olympic
-                                                Air
-                                            </label>
-                                        </div>
-                                        <div class="checkbox">
-                                            <label class="d-block text-truncate" for="airline-FR">
-                                                <input type="checkbox" name="airline-filter" value="FR" id="airline-FR">Ryanair
-                                            </label>
-                                        </div>
-                                        <div class="checkbox">
-                                            <label class="d-block text-truncate" for="airline-LX">
-                                                <input type="checkbox" name="airline-filter" value="LX" id="airline-LX">Swiss
-                                                International Airlines
-                                            </label>
-                                        </div>
-
+                    </div>
+                    <!-- Stops -->
+                    <div class="list-group-item">
+                        <a class="filter-toggle text-yellow" data-toggle="collapse"
+                           data-target="#stops" aria-expanded="false">Stops
+                        </a>
+                        <div class="collapse in" id="stops">
+                            <div class="filter-content">
+                                <div id="stopsColumn">
+                                    <div class="radio">
+                                        <label>
+                                            <!--<small class="float-right text-muted">από 57,94&nbsp;€-->
+                                            <!--</small>-->
+                                            <input type="radio" value="0" ng-model="filter.stops">Direct</label>
+                                    </div>
+                                    <div class="radio">
+                                        <label>
+                                            <input type="radio"  value="1" ng-model="filter.stops">Up to 1 stop
+                                        </label>
+                                    </div>
+                                    <div class="radio">
+                                        <label>
+                                            <input type="radio" value="2" ng-model="filter.stops">Up to 2 stops
+                                        </label>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                    </div>
+                    <!--Airlines-->
+                    <div class="list-group-item">
+                        <a class="filter-toggle text-yellow" data-toggle="collapse"
+                           data-target="#airlines" aria-expanded="false">Airlines
 
+                        </a>
+                        <div class="collapse in" id="airlines">
+                            <div class="filter-content">
+                                <div id="airlinesColumn">
+                                    <div class="checkbox">
+                                        <label for="reset-filter-airline">
+                                            <input type="checkbox" id="reset-filter-airline"
+                                                   value="AllAirlines" checked="checked">All Airlines</label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label class="d-block text-truncate" for="airline-A3">
+                                            <input type="checkbox" name="airline-filter" value="A3" id="airline-A3">Aegean
+                                            Airlines
+                                        </label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label class="d-block text-truncate" for="airline-LH">
+                                            <input type="checkbox" name="airline-filter" value="LH" id="airline-LH">Lufthansa
+                                        </label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label class="d-block text-truncate" for="airline-OA">
+                                            <input type="checkbox" name="airline-filter" value="OA" id="airline-OA">Olympic
+                                            Air
+                                        </label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label class="d-block text-truncate" for="airline-FR">
+                                            <input type="checkbox" name="airline-filter" value="FR" id="airline-FR">Ryanair
+                                        </label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label class="d-block text-truncate" for="airline-LX">
+                                            <input type="checkbox" name="airline-filter" value="LX" id="airline-LX">Swiss
+                                            International Airlines
+                                        </label>
+                                    </div>
 
-
-
-                        <div class="list-group-item border-bottom-0">
-                            <button id="reset-filters" type="submit" value="submit"
-                                    class="btn-search text-truncate">
-                                Search results
-                            </button>
+                                </div>
+                            </div>
                         </div>
-                    </form>
-                </div>
-                <div class="text-center hidden-sm hidden-xs pt-xl">
-                    <div id="filters-ad"></div>
-                </div>
+                    </div>
+                    <div class="list-group-item border-bottom-0">
+                        <button id="reset-filters" type="submit" value="submit"
+                                class="btn-search text-truncate">
+                            Search results
+                        </button>
+                    </div>
+                </form>
+            </div>
+            <div class="text-center hidden-sm hidden-xs pt-xl">
+                <div id="filters-ad"></div>
             </div>
         </div>
-
-        <!--<script id="stopsFilterColumn" type="text/template">-->
-        <!--{{#each this}}-->
-        <!--<div class="radio"><label for="stops">-->
-        <!--<small class="float-right text-muted">από {{formatPrice this.minprice-->
-        <!--this.currencyCode}}-->
-        <!--</small>-->
-        <!--<input type="radio" name="stops-filter" {{#if @last}}checked="checked" {{/if}}-->
-        <!--value="{{this.number}}" id="stops-{{this.number}}">{{translateNofStops this.number}}</label>-->
-        <!--</div>-->
-        <!--{{/each}}-->
-        <!--</script>-->
-        <!--<script id="airlinesFilterColumn" type="text/template">-->
-        <!--<div class="checkbox"><label for="reset-filter-airline"><input type="checkbox"-->
-        <!--id="reset-filter-airline"-->
-        <!--value="AllAirlines"-->
-        <!--checked="checked">Όλες οι-->
-        <!--αεροπορικές εταιρείες</label></div>-->
-        <!--{{#each this}}-->
-        <!--<div class="checkbox">-->
-        <!--<div class="text-small float-right">-->
-        <!--<span class="airline-only">μόνο</span>-->
-        <!--<span class="text-muted">από {{formatPrice this.minprice this.currencyCode}}</span>-->
-        <!--</div>-->
-        <!--<label class="d-block text-truncate">-->
-        <!--<input type="checkbox" name="airline-filter" checked="checked" {{#hasOneElement-->
-        <!--../this}}disabled="disabled"{{/hasOneElement}}value="{{this.code}}"-->
-        <!--id="airline-{{this.code}}">{{this.name}}-->
-        <!--</label>-->
-        <!--</div>-->
-        <!--{{/each}}-->
-        <!--<div class="checkbox"><label for="combi-airline" class="display-block"><input-->
-        <!--type="checkbox" id="combi-airline" value="CombiAirlines" checked="checked">Συνδυασμός-->
-        <!--αεροπορικών εταιρειών</label></div>-->
-        <!--</script>-->
-        <!--<script id="paymentMethodFilterColumn" type="text/template">-->
-        <!--<div class="checkbox"><label for="reset-filter-payment-method" class="display-block">-->
-        <!--<small class="pull-right"></small>-->
-        <!--<input type="checkbox" id="reset-filter-payment-method" value="AllPaymentMethods"-->
-        <!--checked="checked">Όλοι οι τρόποι πληρωμής</label></div>-->
-        <!--{{#each this}}-->
-        <!--<div class="checkbox"><label class="display-block"><input type="checkbox"-->
-        <!--name="payment-method-filter"-->
-        <!--checked="checked"-->
-        <!--{{#hasOneElement ../this}}disabled="disabled"{{/hasOneElement}}-->
-        <!--value="{{this}}" id="payment-{{this}}">{{translateText this-->
-        <!--'paymentMethods'}}</label></div>-->
-        <!--{{/each}}-->
-        <!--</script>-->
-        <!--<script id="transportationsFilterColumn" type="text/template">-->
-        <!--<div class="toggle-switch d-lg-none d-xl-none">-->
-        <!--<label for="transportation-onlyFlights">-->
-        <!--<input type="checkbox" value="onlyFlights" class=""-->
-        <!--id="transportation-onlyFlights">-->
-        <!--Μόνο Πτήσεις-->
-        <!--<div class="slider"></div>-->
-        <!--</label>-->
-        <!--</div>-->
-        <!--{{#each this}}-->
-        <!--<div class="checkbox">-->
-        <!--<div class="text-small float-right">-->
-        <!--<span class="transportation-only">μόνο</span>-->
-        <!--<span class="text-muted">από {{formatPrice this.minprice this.currencyCode}}</span>-->
-        <!--</div>-->
-        <!--<label for="transportation-{{this.type}}">-->
-        <!--<input type="checkbox" name="transportation-filter" checked="checked"-->
-        <!--value="{{this.type}}" id="transportation-{{this.type}}">{{translateText-->
-        <!--this.type 'transportationTypes'}}-->
-        <!--</label>-->
-        <!--</div>-->
-        <!--{{/each}}-->
-        <!--</script>-->
     </div>
+
+    <!--<script id="stopsFilterColumn" type="text/template">-->
+    <!--{{#each this}}-->
+    <!--<div class="radio"><label for="stops">-->
+    <!--<small class="float-right text-muted">από {{formatPrice this.minprice-->
+    <!--this.currencyCode}}-->
+    <!--</small>-->
+    <!--<input type="radio" name="stops-filter" {{#if @last}}checked="checked" {{/if}}-->
+    <!--value="{{this.number}}" id="stops-{{this.number}}">{{translateNofStops this.number}}</label>-->
+    <!--</div>-->
+    <!--{{/each}}-->
+    <!--</script>-->
+    <!--<script id="airlinesFilterColumn" type="text/template">-->
+    <!--<div class="checkbox"><label for="reset-filter-airline"><input type="checkbox"-->
+    <!--id="reset-filter-airline"-->
+    <!--value="AllAirlines"-->
+    <!--checked="checked">Όλες οι-->
+    <!--αεροπορικές εταιρείες</label></div>-->
+    <!--{{#each this}}-->
+    <!--<div class="checkbox">-->
+    <!--<div class="text-small float-right">-->
+    <!--<span class="airline-only">μόνο</span>-->
+    <!--<span class="text-muted">από {{formatPrice this.minprice this.currencyCode}}</span>-->
+    <!--</div>-->
+    <!--<label class="d-block text-truncate">-->
+    <!--<input type="checkbox" name="airline-filter" checked="checked" {{#hasOneElement-->
+    <!--../this}}disabled="disabled"{{/hasOneElement}}value="{{this.code}}"-->
+    <!--id="airline-{{this.code}}">{{this.name}}-->
+    <!--</label>-->
+    <!--</div>-->
+    <!--{{/each}}-->
+    <!--<div class="checkbox"><label for="combi-airline" class="display-block"><input-->
+    <!--type="checkbox" id="combi-airline" value="CombiAirlines" checked="checked">Συνδυασμός-->
+    <!--αεροπορικών εταιρειών</label></div>-->
+    <!--</script>-->
+    <!--<script id="paymentMethodFilterColumn" type="text/template">-->
+    <!--<div class="checkbox"><label for="reset-filter-payment-method" class="display-block">-->
+    <!--<small class="pull-right"></small>-->
+    <!--<input type="checkbox" id="reset-filter-payment-method" value="AllPaymentMethods"-->
+    <!--checked="checked">Όλοι οι τρόποι πληρωμής</label></div>-->
+    <!--{{#each this}}-->
+    <!--<div class="checkbox"><label class="display-block"><input type="checkbox"-->
+    <!--name="payment-method-filter"-->
+    <!--checked="checked"-->
+    <!--{{#hasOneElement ../this}}disabled="disabled"{{/hasOneElement}}-->
+    <!--value="{{this}}" id="payment-{{this}}">{{translateText this-->
+    <!--'paymentMethods'}}</label></div>-->
+    <!--{{/each}}-->
+    <!--</script>-->
+    <!--<script id="transportationsFilterColumn" type="text/template">-->
+    <!--<div class="toggle-switch d-lg-none d-xl-none">-->
+    <!--<label for="transportation-onlyFlights">-->
+    <!--<input type="checkbox" value="onlyFlights" class=""-->
+    <!--id="transportation-onlyFlights">-->
+    <!--Μόνο Πτήσεις-->
+    <!--<div class="slider"></div>-->
+    <!--</label>-->
+    <!--</div>-->
+    <!--{{#each this}}-->
+    <!--<div class="checkbox">-->
+    <!--<div class="text-small float-right">-->
+    <!--<span class="transportation-only">μόνο</span>-->
+    <!--<span class="text-muted">από {{formatPrice this.minprice this.currencyCode}}</span>-->
+    <!--</div>-->
+    <!--<label for="transportation-{{this.type}}">-->
+    <!--<input type="checkbox" name="transportation-filter" checked="checked"-->
+    <!--value="{{this.type}}" id="transportation-{{this.type}}">{{translateText-->
+    <!--this.type 'transportationTypes'}}-->
+    <!--</label>-->
+    <!--</div>-->
+    <!--{{/each}}-->
+    <!--</script>-->
+</div>

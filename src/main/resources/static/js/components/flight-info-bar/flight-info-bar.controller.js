@@ -7,18 +7,19 @@
         controllerAs: "model",
         controller: flightInfoBarController
     });
-    flightInfoBarController.$inject=['$scope','flightInfoService'];
+    flightInfoBarController.$inject=['$scope','parameterService'];
 
-    function flightInfoBarController($scope, flightInfoService){
+    function flightInfoBarController($scope, parameterService){
+        var model = this;
+        model.params=parameterService.getter();
 
-        var onRepo = function(data){
-            $scope.flightInfoList = data;
-        };
-        var onError = function(reason){
-            $scope.error = reason;
-        };
-        flightInfoService.getFlightInfo()
-            .then(onRepo, onError);
+        $scope.fromTown=model.params.from;
+        $scope.toTown=model.params.to;
+        $scope.checkIn=model.params.checkIn;
+        $scope.typeOfFlight=model.params.typeOfFlight;
+        $scope.adults=model.params.adults;
+        $scope.childs=model.params.childs;
+
 
     };
 }());

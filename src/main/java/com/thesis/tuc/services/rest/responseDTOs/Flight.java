@@ -15,6 +15,7 @@ public class Flight {
     private String toIata;
     private Double price;
     private String fromCompany;
+    private String airlineImgSrc;
     private String toCompany;
     private String fromDate;
     private String toDate;
@@ -26,8 +27,11 @@ public class Flight {
     private String waitingTime;
     private String stationDepTime;
     private String stationDepDate;
+    private String toTime;
 
-    public Flight(String fromDepartureTime, String fromArrivalTime, String fromTown, String toTown, String fromIata, String toIata, Double price, String fromCompany, String toCompany, String fromDate, String toDate, String duration, String station, String stationTown, String stationArrivalTime, String stationArrivalDate, String waitingTime, String stationDepTime, String stationDepDate) {
+
+
+    public Flight(String fromDepartureTime, String fromArrivalTime, String fromTown, String toTown, String fromIata, String toIata, Double price, String fromCompany,String airlineImgSrc, String toCompany, String fromDate, String toDate, String duration, String station, String stationTown, String stationArrivalTime, String stationArrivalDate, String waitingTime, String stationDepTime, String stationDepDate,String toTime) {
         this.fromDepartureTime = fromDepartureTime;
         this.fromArrivalTime = fromArrivalTime;
         this.fromTown = fromTown;
@@ -36,6 +40,7 @@ public class Flight {
         this.toIata = toIata;
         this.price = price;
         this.fromCompany = fromCompany;
+        this.airlineImgSrc=airlineImgSrc;
         this.toCompany = toCompany;
         this.fromDate = fromDate;
         this.toDate = toDate;
@@ -47,6 +52,7 @@ public class Flight {
         this.waitingTime = waitingTime;
         this.stationDepTime = stationDepTime;
         this.stationDepDate = stationDepDate;
+        this.toTime = toTime;
     }
 
 
@@ -133,4 +139,12 @@ public class Flight {
     public String getStationDepDate() {
         return stationDepDate;
     }
+
+    public String getToTime() {
+        return toTime;
+    }
+    public String getAirlineImgSrc() {
+        return airlineImgSrc;
+    }
+
 }

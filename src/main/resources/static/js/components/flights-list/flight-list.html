@@ -1,73 +1,51 @@
 <!--<hr class="divider divider-lg-left divider-primary divider-80 offset-top-40">-->
 
-<div ng-if="flightList.length==0">
-    <div class="col-md-offset-5" style="margin-bottom: 300px; margin-top: 160px">
+<script src="js/usefulJs/sidebar.js"></script>
+<div ng-if="(flightList.length==0) && (!flightSearched)">
+    <div class="col-md-offset-4" style="margin-bottom: 300px; margin-top: 100px">
         <i class="fa fa-spinner fa-pulse fa-3x fa-fw" style="margin-left: 70px"></i><br>
         <h5 style="margin-top: 50px">Searching for flight tickets...</h5>
     </div>
 </div>
-
+<div ng-if="(flightList.length==0) && (flightSearched)">
+    <div class="noTickets">
+        <p style="font-weight: 600; margin: 15px;"><i class="fas fa-exclamation-triangle"></i>  No tickets found! Please try again</p>
+    </div>
+</div>
 <div ng-if="flightList.length!=0">
 
+    <div ng-if="(!flightSearched)">
+        <div class="col-md-offset-5" style="">
+            <i class="fa fa-spinner fa-pulse fa-3x fa-fw" style=" margin: 20px"></i><br>
+        </div>
+    </div>
 
     <ul class="list-tickets">
-
-
-        <li class="list-item" ng-repeat="flight in flightList" id="accordion">
-
+        <li class="list-item" ng-repeat="flight in flightList.slice(((currentPage-1)*itemsPerPage), ((currentPage)*itemsPerPage))" id="accordion">
             <div ng-if="flight.station=='Direct'">
-            <div class="flight-result">
-                <div class="list-item-inner">
-                    <div class="list-item-main">
-                        <div class="list-item-top">
-                            <div class="list-item-logo">
-                                <img ng-src="{{flight.companyImage.flag}}"
-                                     alt="{{flight.companyImage.alt}}"
-                                     style="height:30px; width:90px; ">
-                            </div>
-
-
-                                <a><div class="list-item-content">
-                                    <div class="list-item-content-left">
-                                        <div class="text-bold text-base">{{flight.fromDepartureTime}}</div>
-                                        <span class="small reveal-block">{{flight.departureFrom}}</span>
-                                    </div>
-                                    <div class="list-item-content-line-wrapper small">
-                                        <div class="list-item-content-line-top">{{flight.duration}}</div>
-                                        <div class="list-item-content-line"></div>
-                                        <div class="list-item-content-line-bottom text-info-dr">{{flight.station}}</div>
-                                    </div>
-                                    <div class="list-item-content-right">
-                                        <div class="text-bold text-base">{{flight.toDepartureTime}}</div>
-                                        <span class="small reveal-block">{{flight.departureTo}}</span>
-                                    </div>
-                        </div></a>
-
-                        </div>
-
-                    </div>
-                    <div class="list-item-footer">
-                        <!--<span class="small">7 deals from</span>-->
-                        <h5 class="text-bold list-item-price">{{flight.price}} €</h5>
-                        <a href="#" class="btn btn-primary btn-xs btn-no-shadow">Book flight</a>
-                    </div>
-                </div>
-                <div class="small text-gray-light list-item-subtitle">{{flight.fromDepartureDate}}</div>
-
-            </div>
-            </div>
-            <div ng-if="flight.station=='1 Stop'">
                 <div class="flight-result">
                     <div class="list-item-inner">
                         <div class="list-item-main">
                             <div class="list-item-top">
                                 <div class="list-item-logo">
-                                    <!--<img ng-src="{{flight.companyImage.flag}}"-->
-                                         <!--alt="{{flight.companyImage.alt}}"-->
-                                         <!--style="height:30px; width:90px; ">-->
-                                </div>
-                                <a class="accordion-toggle" data-toggle="collapse-next" data-parent="#accordion">
+                                    <div class="toggleLogos" ng-class="{'toggleLogosUnvisible': flight.IsVisible}">
+                                    <div class="col-sm-4">
+                                        <img src="{{flight.airlineToStation1imgSrc}}"
+                                             alt=""
+                                             style="height:33px; width:44px; ">
+                                    </div>
+                                    <div class="col-sm-4">
 
+                                    </div>
+
+                                    <div class="col-sm-4">
+
+                                    </div>
+                                    </div>
+                                </div>
+
+
+                                <a class="accordion-toggle" data-toggle="collapse-next" data-parent="#accordion" ng-click="ShowHide(flight)">
                                     <div class="list-item-content">
                                         <div class="list-item-content-left">
                                             <div class="text-bold text-base">{{flight.fromDepartureTime}}</div>
@@ -76,7 +54,129 @@
                                         <div class="list-item-content-line-wrapper small">
                                             <div class="list-item-content-line-top">{{flight.duration}}</div>
                                             <div class="list-item-content-line"></div>
-                                            <div class="list-item-content-line-bottom text-info-dr">{{flight.station}}</div>
+                                            <div class="list-item-content-line-bottom text-info-dr">{{flight.station}}
+                                            </div>
+                                        </div>
+                                        <div class="list-item-content-right">
+                                            <div class="text-bold text-base">{{flight.toDepartureTime}}</div>
+                                            <span class="small reveal-block">{{flight.departureTo}}</span>
+                                        </div>
+                                    </div>
+                                </a>
+
+                            </div>
+
+                        </div>
+                        <div class="list-item-footer">
+                            <!--<span class="small">7 deals from</span>-->
+                            <h5 class="text-bold list-item-price">{{flight.price}} €</h5>
+                            <a href="#" class="btn btn-primary btn-xs btn-no-shadow">Book flight</a>
+                        </div>
+                    </div>
+                    <!--<div class="small text-gray-light list-item-subtitle">{{flight.fromDepartureDate}}</div>-->
+
+                </div>
+                <div class="flight-result-collapse collapse">
+                    <div class="itenary-details ng-scope">
+                        <div class="leg-type clearfix">
+                            <span class="review-title " style="background-color:#ffdd00; color:black">Departure</span>
+                        </div>
+                        <div class="sector-details">
+                            <article class="row review-article ng-scope">
+
+                                <div class="text-sm-center col-sm-2 col-lg-3 text-xs-left sm-gutter-bottom">
+                                    <p>
+                                        <img src="{{flight.airlineToStation1imgSrc}}"
+                                             alt="{{flight.companyImage.alt}}"
+                                             style="height:33px; width:44px;">
+                                        <br class="hidden-xs-down">
+                                        <span class="ib fs-13 gray ng-binding">{{flight.airlineToStation1}}</span>
+                                    </p>
+                                </div>
+                                <div class="col-sm-10 col-lg-9 bdr bdr-left">
+                                    <div class="row">
+                                        <div class="col-xs-6 col-md-4">
+                                            <p class="fs-base ng-binding">{{flight.departureFrom}}</p>
+                                            <h3 class="fs-18 lh28 bold gray-dark ng-binding">
+                                                {{flight.fromDepartureTime}}</h3>
+                                            <p class="fs-sm gray lh18">
+                                                <span class="bold ng-binding">{{flight.fromDepartureDate}}</span>
+                                                <!--<br>-->
+                                                <!--<span class="gray-light ng-binding">Eleftherios Venizelos</span>-->
+                                            </p>
+                                        </div>
+
+                                        <div class="col-xs-6 col-md-push-4 col-md-4 sm-border-left">
+                                            <p class="fs-base ng-binding">{{flight.departureTo}}</p>
+                                            <h3 class="fs-18 bold gray-dark ng-binding">
+                                                {{flight.toDepartureTime}}</h3>
+                                            <p class="fs-sm gray lh18">
+                                                <span class="bold ng-binding">{{flight.toDepartureDate}}</span>
+                                                <!--<br>-->
+                                                <!--<span class="gray-light ng-binding">Fiumicino</span>-->
+                                            </p>
+                                        </div>
+
+                                        <div class="col-sm-12 text-center col-md-pull-4 col-md-4 col-lg-4 sm-gutter-top tab-posn-align ng-binding">
+                                            <p class="fs-13 ng-binding">
+                                                <i class="far fa-clock"></i>
+                                                &nbsp; {{flight.duration}} &nbsp;
+
+                                            </p>
+                                            <p class="hidden-sm-down two-dots">
+                                                <i class="fas fa-plane"></i>
+                                            </p>
+                                            <p class="fs-13">
+                                            </p>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </article>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div ng-if="flight.station=='1 Stop'">
+                <div class="flight-result">
+                    <div class="list-item-inner">
+                        <div class="list-item-main">
+                            <div class="list-item-top">
+                                <div class="list-item-logo">
+                                    <div class="toggleLogos" ng-class="{'toggleLogosUnvisible': flight.IsVisible}">
+                                        <div class="col-sm-3">
+                                            <img src="{{flight.airlineToStation1imgSrc}}"
+                                                 alt=""
+                                                 style="height:26px; width:34px; ">
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <img src="{{flight.airlineFromStation1imgSrc}}"
+                                                 alt=""
+                                                 style="height:26px; width:34px; ">
+                                        </div>
+                                        <div class="col-sm-3">
+
+                                        </div>
+                                        <div class="col-sm-3">
+
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <!--<a class="accordion-toggle" data-toggle="collapse-next" data-parent="#accordion" ng-click="toggleFilter(flight)">-->
+                                <a class="accordion-toggle" data-toggle="collapse-next" data-parent="#accordion" ng-click="ShowHide(flight)">
+                                    <div class="list-item-content">
+                                        <div class="list-item-content-left">
+                                            <div class="text-bold text-base">{{flight.fromDepartureTime}}</div>
+                                            <span class="small reveal-block">{{flight.departureFrom}}</span>
+                                        </div>
+                                        <div class="list-item-content-line-wrapper small">
+                                            <div class="list-item-content-line-top">{{flight.duration}}</div>
+                                            <div class="list-item-content-line"></div>
+                                            <div class="list-item-content-line-bottom text-info-dr">{{flight.station}}
+                                            </div>
                                         </div>
                                         <div class="list-item-content-right">
                                             <div class="text-bold text-base">{{flight.toDepartureTime}}</div>
@@ -93,139 +193,126 @@
                             <a href="#" class="btn btn-primary btn-xs btn-no-shadow">Book flight</a>
                         </div>
                     </div>
-                    <div class="small text-gray-light list-item-subtitle">{{flight.fromDepartureDate}}</div>
 
                 </div>
-
-
-            <!--<hr class="divider divider-wide">-->
-            <div class="flight-result-collapse collapse">
-                <!-- ngRepeat: sector in productDetails -->
-                <hr class="divider divider-lg-left divider-primary divider-80 offset-top-40">
-                <div class="itenary-details ng-scope">
-                    <div class="leg-type clearfix">
-                        <span class="review-title " style="background-color:#ffdd00; color:black">Departure</span>
-                        <!--<p class="pull-right">Total Time: {{sector.totalDuration}}</p>-->
-                    </div>
-                    <!-- Flight Depart Leg : 1 -->
-                    <div class="sector-details">
-                        <!-- ngRepeat: segment in sector.segmentDetails -->
-                        <article class="row review-article ng-scope">
-
-                            <div class="text-sm-center col-sm-2 col-lg-3 text-xs-left sm-gutter-bottom">
-                                <p>
-                                    <img ng-src="{{flight.companyImage.flag}}"
-                                         alt="{{flight.companyImage.alt}}"
-                                         style="height:20px; width:60px; ">
-                                    <br class="hidden-xs-down">
-                                    <span class="ib fs-13 gray ng-binding">{{flight.airlineToStation1}}</span>
-
-                                    <span class="fs-12 gray-dark block bold ng-binding">Economy</span>
-                                </p>
-                            </div>
-                            <div class="col-sm-10 col-lg-9 bdr bdr-left">
-                                <div class="row">
-                                    <div class="col-xs-6 col-md-3">
-                                        <p class="fs-base ng-binding">{{flight.departureFrom}}</p>
-                                        <h3 class="fs-18 lh28 bold gray-dark ng-binding">{{flight.fromDepartureTime}}</h3>
-                                        <p class="fs-sm gray lh18">
-                                            <span class="bold ng-binding">{{flight.fromDepartureDate}}</span>
-                                            <!--<br>-->
-                                            <!--<span class="gray-light ng-binding">Eleftherios Venizelos</span>-->
-                                        </p>
-                                    </div>
-
-                                    <div class="col-xs-6 col-md-push-6 col-md-3 sm-border-left">
-                                        <p class="fs-base ng-binding">{{flight.departureToStation1}}</p>
-                                        <h3 class="fs-18 bold gray-dark ng-binding">{{flight.station1ArrivalTime}}</h3>
-                                        <p class="fs-sm gray lh18">
-                                            <span class="bold ng-binding">{{flight.station1ArrivalDate}}</span>
-                                            <!--<br>-->
-                                            <!--<span class="gray-light ng-binding">Fiumicino</span>-->
-                                        </p>
-                                    </div>
-
-                                    <div class="col-sm-12 text-center col-md-pull-3 col-md-6 col-lg-6 sm-gutter-top tab-posn-align ng-binding">
-                                        <p class="fs-13 ng-binding">
-                                            <i class="far fa-clock"></i>
-                                            &nbsp; {{flight.durationToStation1}} &nbsp;
-
-                                        </p>
-                                        <p class="hidden-sm-down two-dots">
-                                            <i class="fas fa-plane"></i>
-                                        </p>
-                                        <p class="fs-13">
-                                        </p>
-
-                                    </div>
-                                </div>
-                            </div>
-                        </article>
-                        <!-- ngIf: !$last -->
-                        <div class="text-center clearfix">
-                            <div class="col-sm-2 col-lg-3"></div>
-                            <div class="box-condensed pr col-sm-10 col-lg-9 padd-none">
-                                <div class=" fs-12 msg-bar">
-                                    <i class="fas fa-info-circle"></i> Change planes at
-                                    <span class="bold">{{flight.departureToStation1}}</span>, Connecting Time:
-                                    <span class="bold">{{flight.waitingTimeStation1}}</span>
-
-                                </div>
-                            </div>
+                <div class="flight-result-collapse collapse">
+                    <div class="itenary-details ng-scope">
+                        <div class="leg-type clearfix">
+                            <span class="review-title " style="background-color:#ffdd00; color:black">Departure</span>
                         </div>
-                        <!-- end ngIf: !$last -->
-                        <!-- end ngRepeat: segment in sector.segmentDetails -->
-                        <article class="row review-article ng-scope">
+                        <div class="sector-details">
+                            <article class="row review-article ng-scope">
 
-                            <div class="text-sm-center col-sm-2 col-lg-3 text-xs-left sm-gutter-bottom">
-                                <p>
-                                    <img src="./images/ryanair.jpg"
-                                         alt=""
-                                         style="height:20px; width:60px;">
-                                    <br class="hidden-xs-down">
-                                    <span class="ib fs-13 bold gray">{{flight.airlineFromStation1}}</span>
-                                    <!--<span class="fs-12 gray-dark block">Economy</span>-->
+                                <div class="text-sm-center col-sm-2 col-lg-3 text-xs-left sm-gutter-bottom">
+                                    <p>
+                                        <img src="{{flight.airlineToStation1imgSrc}}"
+                                             alt="{{flight.companyImage.alt}}"
+                                             style="height:33px; width:44px;">
+                                        <br class="hidden-xs-down">
+                                        <span class="ib fs-13 gray ng-binding">{{flight.airlineToStation1}}</span>
+                                    </p>
+                                </div>
+                                <div class="col-sm-10 col-lg-9 bdr bdr-left">
+                                    <div class="row">
+                                        <div class="col-xs-6 col-md-4">
+                                            <p class="fs-base ng-binding">{{flight.departureFrom}}</p>
+                                            <h3 class="fs-18 lh28 bold gray-dark ng-binding">
+                                                {{flight.fromDepartureTime}}</h3>
+                                            <p class="fs-sm gray lh18">
+                                                <span class="bold ng-binding">{{flight.fromDepartureDate}}</span>
+                                                <!--<br>-->
+                                                <!--<span class="gray-light ng-binding">Eleftherios Venizelos</span>-->
+                                            </p>
+                                        </div>
 
-                                </p>
-                            </div>
-                            <div class="col-sm-10 col-lg-9 bdr bdr-left">
-                                <div class="row">
-                                    <div class="col-xs-6 col-md-3">
-                                        <p class="fs-base ng-binding">{{flight.departurefromStation1}}</p>
-                                        <h3 class="fs-18 bold gray-dark">{{flight.station1DepTime}}</h3>
-                                        <p class="fs-sm gray lh18">
-                                            <span class="bold">{{flight.station1DepDate}}</span>
-                                            <!--<span class="gray-light">Fiumicino</span>-->
-                                        </p>
+                                        <div class="col-xs-6 col-md-push-4 col-md-4 sm-border-left">
+                                            <p class="fs-base ng-binding">{{flight.departureToStation1}}</p>
+                                            <h3 class="fs-18 bold gray-dark ng-binding">
+                                                {{flight.station1ArrivalTime}}</h3>
+                                            <p class="fs-sm gray lh18">
+                                                <span class="bold ng-binding">{{flight.station1ArrivalDate}}</span>
+                                                <!--<br>-->
+                                                <!--<span class="gray-light ng-binding">Fiumicino</span>-->
+                                            </p>
+                                        </div>
+
+                                        <div class="col-sm-12 text-center col-md-pull-4 col-md-4 col-lg-4 sm-gutter-top tab-posn-align ng-binding">
+                                            <p class="fs-13 ng-binding">
+                                                <i class="far fa-clock"></i>
+                                                &nbsp; {{flight.durationToStation1}} &nbsp;
+
+                                            </p>
+                                            <p class="hidden-sm-down two-dots">
+                                                <i class="fas fa-plane"></i>
+                                            </p>
+                                            <p class="fs-13">
+                                            </p>
+
+                                        </div>
                                     </div>
+                                </div>
+                            </article>
+                            <div class="text-center clearfix">
+                                <div class="col-sm-2 col-lg-3"></div>
+                                <div class="box-condensed pr col-sm-10 col-lg-9 padd-none">
+                                    <div class=" fs-12 msg-bar">
+                                        <i class="fas fa-info-circle"></i> Change planes at
+                                        <span class="bold">{{flight.departureToStation1}}</span>, Connecting Time:
+                                        <span class="bold">{{flight.waitingTimeStation1}}</span>
 
-                                    <div class="col-xs-6 col-md-push-6 col-md-3 sm-border-left">
-                                        <p class="fs-base ng-binding">{{flight.departureTo}}</p>
-                                        <h3 class="fs-18 bold gray-dark ng-binding">{{flight.toDepartureTime}}</h3>
-                                        <p class="fs-sm gray lh18">
-                                            <span class="bold ng-binding">{{flight.toDepartureDate}}</span>
-                                            <!--<span class="gray-light ng-binding">Ferihegy</span>-->
-                                        </p>
-                                    </div>
-
-                                    <div class="col-sm-12 text-center col-md-pull-3 col-md-6 col-lg-6 sm-gutter-top tab-posn-align ng-binding">
-                                        <p class="fs-13 ng-binding">
-                                            <i class="far fa-clock"></i>
-                                            &nbsp; {{flight.durationFromStation1}} &nbsp;
-                                        </p>
-                                        <p class="hidden-sm-down two-dots">
-                                            <i class="fas fa-plane"></i>
-                                        </p>
-                                        <p class="fs-13">
-                                        </p>
                                     </div>
                                 </div>
                             </div>
-                        </article><!-- end ngRepeat: segment in sector.segmentDetails -->
+                            <article class="row review-article ng-scope">
+
+                                <div class="text-sm-center col-sm-2 col-lg-3 text-xs-left sm-gutter-bottom">
+                                    <p>
+                                        <img src="{{flight.airlineFromStation1imgSrc}}"
+                                             alt=""
+                                             style="height:33px; width:44px;">
+                                        <br class="hidden-xs-down">
+                                        <span class="ib fs-13 bold gray">{{flight.airlineFromStation1}}</span>
+                                        <!--<span class="fs-12 gray-dark block">Economy</span>-->
+
+                                    </p>
+                                </div>
+                                <div class="col-sm-10 col-lg-9 bdr bdr-left">
+                                    <div class="row">
+                                        <div class="col-xs-6 col-md-4">
+                                            <p class="fs-base ng-binding">{{flight.departurefromStation1}}</p>
+                                            <h3 class="fs-18 bold gray-dark">{{flight.station1DepTime}}</h3>
+                                            <p class="fs-sm gray lh18">
+                                                <span class="bold">{{flight.station1DepDate}}</span>
+                                                <!--<span class="gray-light">Fiumicino</span>-->
+                                            </p>
+                                        </div>
+
+                                        <div class="col-xs-6 col-md-push-4 col-md-4 sm-border-left">
+                                            <p class="fs-base ng-binding">{{flight.departureTo}}</p>
+                                            <h3 class="fs-18 bold gray-dark ng-binding">{{flight.toDepartureTime}}</h3>
+                                            <p class="fs-sm gray lh18">
+                                                <span class="bold ng-binding">{{flight.toDepartureDate}}</span>
+                                                <!--<span class="gray-light ng-binding">Ferihegy</span>-->
+                                            </p>
+                                        </div>
+
+                                        <div class="col-sm-12 text-center col-md-pull-4 col-md-4 col-lg-4 sm-gutter-top tab-posn-align ng-binding">
+                                            <p class="fs-13 ng-binding">
+                                                <i class="far fa-clock"></i>
+                                                &nbsp; {{flight.durationFromStation1}} &nbsp;
+                                            </p>
+                                            <p class="hidden-sm-down two-dots">
+                                                <i class="fas fa-plane"></i>
+                                            </p>
+                                            <p class="fs-13">
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
                     </div>
                 </div>
-                <!-- end ngRepeat: sector in productDetails -->
-            </div>
             </div>
             <div ng-if="flight.station=='2 Stops'">
                 <div class="flight-result">
@@ -233,11 +320,28 @@
                         <div class="list-item-main">
                             <div class="list-item-top">
                                 <div class="list-item-logo">
-                                    <!--<img ng-src="{{flight.companyImage.flag}}"-->
-                                    <!--alt="{{flight.companyImage.alt}}"-->
-                                    <!--style="height:30px; width:90px; ">-->
+                                    <div class="toggleLogos" ng-class="{'toggleLogosUnvisible': flight.IsVisible}">
+                                        <div class="col-sm-3">
+                                            <img src="{{flight.airlineToStation1imgSrc}}"
+                                                 alt=""
+                                                 style="height:22px; width:28px; ">
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <img src="{{flight.airlineFromStation1imgSrc}}"
+                                                 alt=""
+                                                 style="height:22px; width:28px; ">
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <img src="{{flight.airlineFromStation2imgSrc}}"
+                                                 alt=""
+                                                 style="height:22px; width:28px; ">
+                                        </div>
+                                        <div class="col-sm-3">
+
+                                        </div>
+                                    </div>
                                 </div>
-                                <a class="accordion-toggle" data-toggle="collapse-next" data-parent="#accordion">
+                                <a class="accordion-toggle" data-toggle="collapse-next" data-parent="#accordion" ng-click="ShowHide(flight)">
 
                                     <div class="list-item-content">
                                         <div class="list-item-content-left">
@@ -247,10 +351,16 @@
                                         <div class="list-item-content-line-wrapper small">
                                             <div class="list-item-content-line-top">{{flight.duration}}</div>
                                             <div class="list-item-content-line"></div>
-                                            <div class="list-item-content-line-bottom text-info-dr">{{flight.station}}</div>
+                                            <div class="list-item-content-line-bottom text-info-dr">{{flight.station}}
+                                            </div>
                                         </div>
                                         <div class="list-item-content-right">
-                                            <div class="text-bold text-base">{{flight.toDepartureTime}}</div>
+                                            <div ng-if="flight.toDepartureTime.slice(-2)=='+1'">
+                                                <div class="text-bold text-base">{{flight.toLastDepartureTime}}<sup>+1</sup></div>
+                                            </div>
+                                            <div ng-if="flight.toDepartureTime.slice(-2)!='+1'">
+                                                <div class="text-bold text-base">{{flight.toLastDepartureTime}}</div>
+                                            </div>
                                             <span class="small reveal-block">{{flight.departureTo}}</span>
                                         </div>
                                     </div>
@@ -264,7 +374,7 @@
                             <a href="#" class="btn btn-primary btn-xs btn-no-shadow">Book flight</a>
                         </div>
                     </div>
-                    <div class="small text-gray-light list-item-subtitle">{{flight.fromDepartureDate}}</div>
+                    <!--<div class="small text-gray-light list-item-subtitle">{{flight.fromDepartureDate}}</div>-->
 
                 </div>
 
@@ -272,7 +382,7 @@
                 <!--<hr class="divider divider-wide">-->
                 <div class="flight-result-collapse collapse">
                     <!-- ngRepeat: sector in productDetails -->
-                    <hr class="divider divider-lg-left divider-primary divider-80 offset-top-40">
+                    <!--<hr class="divider divider-lg-left divider-primary divider-80 offset-top-40">-->
                     <div class="itenary-details ng-scope">
                         <div class="leg-type clearfix">
                             <span class="review-title " style="background-color:#ffdd00; color:black">Departure</span>
@@ -285,20 +395,21 @@
 
                                 <div class="text-sm-center col-sm-2 col-lg-3 text-xs-left sm-gutter-bottom">
                                     <p>
-                                        <img ng-src="{{flight.companyImage.flag}}"
+                                        <img src="{{flight.airlineToStation1imgSrc}}"
                                              alt="{{flight.companyImage.alt}}"
-                                             style="height:20px; width:60px; ">
+                                             style="height:33px; width:44px;">
                                         <br class="hidden-xs-down">
                                         <span class="ib fs-13 gray ng-binding">{{flight.airlineToStation1}}</span>
 
-                                        <span class="fs-12 gray-dark block bold ng-binding">Economy</span>
+                                        <!--<span class="fs-12 gray-dark block bold ng-binding">Economy</span>-->
                                     </p>
                                 </div>
                                 <div class="col-sm-10 col-lg-9 bdr bdr-left">
                                     <div class="row">
-                                        <div class="col-xs-6 col-md-3">
+                                        <div class="col-xs-6 col-md-4">
                                             <p class="fs-base ng-binding">{{flight.departureFrom}}</p>
-                                            <h3 class="fs-18 lh28 bold gray-dark ng-binding">{{flight.fromDepartureTime}}</h3>
+                                            <h3 class="fs-18 lh28 bold gray-dark ng-binding">
+                                                {{flight.fromDepartureTime}}</h3>
                                             <p class="fs-sm gray lh18">
                                                 <span class="bold ng-binding">{{flight.fromDepartureDate}}</span>
                                                 <!--<br>-->
@@ -306,9 +417,10 @@
                                             </p>
                                         </div>
 
-                                        <div class="col-xs-6 col-md-push-6 col-md-3 sm-border-left">
+                                        <div class="col-xs-6 col-md-push-4 col-md-4 sm-border-left">
                                             <p class="fs-base ng-binding">{{flight.departureToStation1}}</p>
-                                            <h3 class="fs-18 bold gray-dark ng-binding">{{flight.station1ArrivalTime}}</h3>
+                                            <h3 class="fs-18 bold gray-dark ng-binding">
+                                                {{flight.station1ArrivalTime}}</h3>
                                             <p class="fs-sm gray lh18">
                                                 <span class="bold ng-binding">{{flight.station1ArrivalDate}}</span>
                                                 <!--<br>-->
@@ -316,7 +428,7 @@
                                             </p>
                                         </div>
 
-                                        <div class="col-sm-12 text-center col-md-pull-3 col-md-6 col-lg-6 sm-gutter-top tab-posn-align ng-binding">
+                                        <div class="col-sm-12 text-center col-md-pull-4 col-md-4 col-lg-4 sm-gutter-top tab-posn-align ng-binding">
                                             <p class="fs-13 ng-binding">
                                                 <i class="far fa-clock"></i>
                                                 &nbsp; {{flight.durationToStation1}} &nbsp;
@@ -350,9 +462,9 @@
 
                                 <div class="text-sm-center col-sm-2 col-lg-3 text-xs-left sm-gutter-bottom">
                                     <p>
-                                        <img src="./images/ryanair.jpg"
+                                        <img src="{{flight.airlineFromStation1imgSrc}}"
                                              alt=""
-                                             style="height:20px; width:60px;">
+                                             style="height:33px; width:44px;">
                                         <br class="hidden-xs-down">
                                         <span class="ib fs-13 bold gray">{{flight.airlineFromStation1}}</span>
                                         <!--<span class="fs-12 gray-dark block">Economy</span>-->
@@ -361,7 +473,7 @@
                                 </div>
                                 <div class="col-sm-10 col-lg-9 bdr bdr-left">
                                     <div class="row">
-                                        <div class="col-xs-6 col-md-3">
+                                        <div class="col-xs-6 col-md-4">
                                             <p class="fs-base ng-binding">{{flight.departurefromStation1}}</p>
                                             <h3 class="fs-18 bold gray-dark">{{flight.station1DepTime}}</h3>
                                             <p class="fs-sm gray lh18">
@@ -370,16 +482,17 @@
                                             </p>
                                         </div>
 
-                                        <div class="col-xs-6 col-md-push-6 col-md-3 sm-border-left">
+                                        <div class="col-xs-6 col-md-push-4 col-md-4 sm-border-left">
                                             <p class="fs-base ng-binding">{{flight.departureToStation2}}</p>
-                                            <h3 class="fs-18 bold gray-dark ng-binding">{{flight.station2ArrivalTime}}</h3>
+                                            <h3 class="fs-18 bold gray-dark ng-binding">
+                                                {{flight.station2ArrivalTime}}</h3>
                                             <p class="fs-sm gray lh18">
                                                 <span class="bold ng-binding">{{flight.station2ArrivalDate}}</span>
                                                 <!--<span class="gray-light ng-binding">Ferihegy</span>-->
                                             </p>
                                         </div>
 
-                                        <div class="col-sm-12 text-center col-md-pull-3 col-md-6 col-lg-6 sm-gutter-top tab-posn-align ng-binding">
+                                        <div class="col-sm-12 text-center col-md-pull-4 col-md-4 col-lg-4 sm-gutter-top tab-posn-align ng-binding">
                                             <p class="fs-13 ng-binding">
                                                 <i class="far fa-clock"></i>
                                                 &nbsp; {{flight.durationToStation2}} &nbsp;
@@ -410,9 +523,9 @@
 
                                 <div class="text-sm-center col-sm-2 col-lg-3 text-xs-left sm-gutter-bottom">
                                     <p>
-                                        <img src="./images/ryanair.jpg"
+                                        <img src="{{flight.airlineFromStation2imgSrc}}"
                                              alt=""
-                                             style="height:20px; width:60px;">
+                                             style="height:33px; width:44px;">
                                         <br class="hidden-xs-down">
                                         <span class="ib fs-13 bold gray">{{flight.airlineFromStation2}}</span>
                                         <!--<span class="fs-12 gray-dark block">Economy</span>-->
@@ -421,7 +534,7 @@
                                 </div>
                                 <div class="col-sm-10 col-lg-9 bdr bdr-left">
                                     <div class="row">
-                                        <div class="col-xs-6 col-md-3">
+                                        <div class="col-xs-6 col-md-4">
                                             <p class="fs-base ng-binding">{{flight.departurefromStation2}}</p>
                                             <h3 class="fs-18 bold gray-dark">{{flight.station2DepTime}}</h3>
                                             <p class="fs-sm gray lh18">
@@ -430,16 +543,17 @@
                                             </p>
                                         </div>
 
-                                        <div class="col-xs-6 col-md-push-6 col-md-3 sm-border-left">
+                                        <div class="col-xs-6 col-md-push-4 col-md-4 sm-border-left">
                                             <p class="fs-base ng-binding">{{flight.departureTo}}</p>
-                                            <h3 class="fs-18 bold gray-dark ng-binding">{{flight.toDepartureTime}}</h3>
+                                            <h3 class="fs-18 bold gray-dark ng-binding">
+                                                {{flight.toLastDepartureTime}}</h3>
                                             <p class="fs-sm gray lh18">
                                                 <span class="bold ng-binding">{{flight.toDepartureDate}}</span>
                                                 <!--<span class="gray-light ng-binding">Ferihegy</span>-->
                                             </p>
                                         </div>
 
-                                        <div class="col-sm-12 text-center col-md-pull-3 col-md-6 col-lg-6 sm-gutter-top tab-posn-align ng-binding">
+                                        <div class="col-sm-12 text-center col-md-pull-4 col-md-4 col-lg-4 sm-gutter-top tab-posn-align ng-binding">
                                             <p class="fs-13 ng-binding">
                                                 <i class="far fa-clock"></i>
                                                 &nbsp; {{flight.durationFromStation2}} &nbsp;
@@ -459,74 +573,13 @@
                 </div>
             </div>
         </li>
-
-
     </ul>
-
-
-    <div class="offset-top-60 offset-lg-top-60">
-        <div style="float:right">
-        <nav>
-            <ul class="pagination pagination">
-                <li class="disabled">
-        <span aria-label="Previous">
-        <span aria-hidden="true" class="fa-chevron-left"></span>
-        </span>
-                </li>
-                <li class="active">
-                    <span>1</span>
-                </li>
-                <li>
-                    <a href="#">2</a>
-                </li>
-                <li>
-                    <a href="#">3</a>
-                </li>
-                <li>
-                    <a href="#" aria-label="Next">
-                        <span aria-hidden="true" class="fa-chevron-right"></span>
-                    </a>
-                </li>
-            </ul>
-        </nav>
+    <div id="pagination" class="offset-top-60 offset-lg-top-60">
+        <div  style="float:left">
+            <ul uib-pagination total-items="totalItems" ng-model="currentPage" max-size="maxSize" class="pagination-sm" boundary-link-numbers="true" ></ul>
         </div>
-        <!--<div class="day-list-pagination clearfix" data-id="bottom">-->
-        <!--&lt;!&ndash;<ul class="clearfix">&ndash;&gt;-->
-        <!--&lt;!&ndash;<li class="selected">1</li>&ndash;&gt;-->
-        <!--&lt;!&ndash;<li data-id="2">&ndash;&gt;-->
-        <!--&lt;!&ndash;<button>2</button>&ndash;&gt;-->
-        <!--&lt;!&ndash;</li>&ndash;&gt;-->
-        <!--&lt;!&ndash;<li data-id="3">&ndash;&gt;-->
-        <!--&lt;!&ndash;<button>3</button>&ndash;&gt;-->
-        <!--&lt;!&ndash;</li>&ndash;&gt;-->
-        <!--&lt;!&ndash;<li class="ellipsis">...</li>&ndash;&gt;-->
-        <!--&lt;!&ndash;<li data-id="54">&ndash;&gt;-->
-        <!--&lt;!&ndash;<button>54</button>&ndash;&gt;-->
-        <!--&lt;!&ndash;</li>&ndash;&gt;-->
-        <!--&lt;!&ndash;<li data-id="next" class="next">&ndash;&gt;-->
-        <!--&lt;!&ndash;<button title="Επόμενη σελίδα">&nbsp;</button>&ndash;&gt;-->
-        <!--&lt;!&ndash;</li>&ndash;&gt;-->
-        <!--&lt;!&ndash;</ul>&ndash;&gt;-->
-        <!--</div>-->
-        <!--<ul class="pagination modal-4">-->
-        <!--<li><a href="#" class="prev">-->
-        <!--<i class="fa fa-chevron-left"></i>-->
-        <!--Previous-->
-        <!--</a>-->
-        <!--</li>-->
-        <!--<li><a href="#">1</a></li>-->
-        <!--<li> <a href="#">2</a></li>-->
-        <!--<li> <a href="#">3</a></li>-->
-        <!--<li> <a href="#">4</a></li>-->
-        <!--<li> <a href="#" class="active">5</a></li>-->
-        <!--<li> <a href="#">6</a></li>-->
-        <!--<li> <a href="#">7</a></li>-->
-        <!--<li><a href="#" class="next"> Next-->
-        <!--<i class="fa fa-chevron-right"></i>-->
-        <!--</a></li>-->
-        <!--</ul><br>-->
-
     </div>
+
 
 </div>
 

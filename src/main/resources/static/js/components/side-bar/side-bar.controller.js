@@ -7,55 +7,32 @@
         controllerAs: "model",
         controller: sideBarController
     });
-
-    sideBarController.$inject=['$scope','$location','parameterService','getFlightListFiltered','$route'];
-
-    function sideBarController($scope,$location,parameterService,getFlightListFiltered,$route){
-
+    sideBarController.$inject=['$scope','$location','parameterService','$route'];
+    function sideBarController($scope,$location,parameterService,$route){
         var model = this;
         model.$onInit=initialize;
         model.stops=1;
         model.maxPrice=300;
-        model.flightDuration=8;
-
+        model.flightDuration=10;
+        model.connectingTime=4;
+        $scope.filter = {
+            stops:"1",
+            maxPrice:300,
+            flightDuration:10,
+            connectingTime:4
+        };
         function initialize() {
 
         }
-
-
         $scope.submitFilters=function() {
-
             model.params=parameterService.getter();
             model.stops=$scope.filter.stops;
             model.maxPrice=$scope.filter.maxPrice ;
             model.flightDuration=$scope.filter.flightDuration;
-            $location.path('/allflights').search({from:model.params.from,to:model.params.to,stops:model.stops,maxPrice:model.maxPrice,flightDuration:model.flightDuration});
-
-
+            model.connectingTime=$scope.filter.connectingTime;
+            $location.path('/allflights').search({from:model.params.from,to:model.params.to,checkIn:model.params.checkIn,typeOfFlight:model.params.typeOfFlight,adults:model.params.adults,childs:model.params.childs,stops:model.stops,maxPrice:model.maxPrice,flightDuration:model.flightDuration,connectingTime:model.connectingTime});
         }
-        // $scope.initFilter();
-        //     alert($scope.filter.maxPrice);
-
-
-
-
-
         model.params=parameterService.getter();
-        $location.path('/allflights').search({from:model.params.from,to:model.params.to,stops:model.stops,maxPrice:model.maxPrice,flightDuration:model.flightDuration});
-        // $route.reload();
-        // var onRepo = function(data){
-        //     $scope.flightList = data;
-        // };
-        // var onError = function(reason){
-        //     $scope.error = reason;
-        // };
-        // // callService();
-        // // $interval(callService,10000);
-        //
-        //
-        //     getFlightListFiltered.getFlightListFiltered(model.params.from , model.params.to)
-        //         .then(onRepo,onError);
-
-
+        $location.path('/allflights').search({from:model.params.from,to:model.params.to,checkIn:model.params.checkIn,typeOfFlight:model.params.typeOfFlight,adults:model.params.adults,childs:model.params.childs,stops:model.stops,maxPrice:model.maxPrice,flightDuration:model.flightDuration,connectingTime:model.connectingTime});
     };
 }());

@@ -1,14 +1,14 @@
 (function () {
     "use strict";
 
-    var module = angular.module("flightTicketApp");
+    var module = angular.module('flightTicketApp');
     module.component("flightList", {
         templateUrl: 'js/components/flights-list/flight-list.html',
         controllerAs: "model",
         controller: flightListController
     });
-    flightListController.$inject=['$scope','$window', '$routeParams','$interval', 'flightListService', 'parameterService'];
-    function flightListController($scope,$window, $routeParams,$interval, flightListService, parameterService){
+    flightListController.$inject=['$scope','$window', '$routeParams','$interval', 'flightListService','flightInfoService', 'parameterService'];
+    function flightListController($scope,$window, $routeParams,$interval, flightListService, flightInfoService , parameterService){
 
         var model = this;
         model.$onInit=initialize;
@@ -32,124 +32,63 @@
         }
 
         parameterService.setter(params);
-
-
         model.params=parameterService.getter();
         var onRepo = function(data){
             $scope.flightList = data;
-            for(var i=0;i<data.length;i++) {
-                if (data[i].fromCompany == "Olympic Air") {
+            $scope.totalItems = $scope.flightList.length;
+            $scope.currentPage = 1;
+            $scope.itemsPerPage=8;
+            $scope.setPage = function (pageNo) {
+                $scope.currentPage = pageNo;
+            };
+            $scope.maxSize = 3;
 
-                    var companyImage = {
-                        flag: "./images/olympicAir.jpg",
-                        alt: "OlympicAir"
-                    };
-                    $scope.flightList[i].companyImage = companyImage;
-
-                }else if(data[i].fromCompany == "Aegean Airlines"){
-                    var companyImage = {
-                        flag: "./images/aegean.jpg",
-                        alt: "Aegean"
-                    };
-                    $scope.flightList[i].companyImage = companyImage;
-                }else if(data[i].fromCompany == "Turkish Airlines"){
-                    var companyImage = {
-                        flag: "./images/turkish.jpg",
-                        alt: "Turkish"
-                    };
-                    $scope.flightList[i].companyImage = companyImage;
-                }
-                else if(data[i].fromCompany == "Bulgaria Air"){
-                    var companyImage = {
-                        flag: "./images/bulgariaAir.jpg",
-                        alt: "Bulgaria air"
-                    };
-                    $scope.flightList[i].companyImage = companyImage;
-                }else if(data[i].fromCompany == "Alitalia"){
-                    var companyImage = {
-                        flag: "./images/alitalia.jpg",
-                        alt: "Alitalia"
-                    };
-                    $scope.flightList[i].companyImage = companyImage;
-                }else if(data[i].fromCompany == "Ellinair"){
-                    var companyImage = {
-                        flag: "./images/ellinair.jpg",
-                        alt: "Ellinair"
-                    };
-                    $scope.flightList[i].companyImage = companyImage;
-                }else if(data[i].fromCompany == "Ryanair"){
-                    var companyImage = {
-                        flag: "./images/ryanair.jpg",
-                        alt: "Ryanair"
-                    };
-                    $scope.flightList[i].companyImage = companyImage;
-                }else if(data[i].fromCompany == "Montenegro Airlines"){
-                    var companyImage = {
-                        flag: "./images/montenegro.jpg",
-                        alt: "Montenegro"
-                    };
-                    $scope.flightList[i].companyImage = companyImage;
-                }else if(data[i].fromCompany == "Tarom Romanian Air"){
-                    var companyImage = {
-                        flag: "./images/tarom.jpg",
-                        alt: "Tarom"
-                    };
-                    $scope.flightList[i].companyImage = companyImage;
-                }else if(data[i].fromCompany == "Adria Airways"){
-                    var companyImage = {
-                        flag: "./images/adria.jpg",
-                        alt: "Adria"
-                    };
-                    $scope.flightList[i].companyImage = companyImage;
-                }else if(data[i].fromCompany == "Wizzair"){
-                    var companyImage = {
-                        flag: "./images/wizzair.jpg",
-                        alt: "Wizzair"
-                    };
-                    $scope.flightList[i].companyImage = companyImage;
-                }else if(data[i].fromCompany == "Swiss International Airlines"){
-                    var companyImage = {
-                        flag: "./images/swiss.jpg",
-                        alt: "Swiss International Airlines"
-                    };
-                    $scope.flightList[i].companyImage = companyImage;
-                }else if(data[i].fromCompany == "Pegasus Airlines"){
-                    var companyImage = {
-                        flag: "./images/pegasus.jpg",
-                        alt: "Pegasus Airlines"
-                    };
-                    $scope.flightList[i].companyImage = companyImage;
-                }else if(data[i].fromCompany == "Air Serbia"){
-                    var companyImage = {
-                        flag: "./images/airSerbia.jpg",
-                        alt: "Air Serbia"
-                    };
-                    $scope.flightList[i].companyImage = companyImage;
-                }else if(data[i].fromCompany == "Air France"){
-                    var companyImage = {
-                        flag: "./images/airFrance.jpg",
-                        alt: "Air France"
-                    };
-                    $scope.flightList[i].companyImage = companyImage;
-                }else{
-                    var companyImage = {
-                        flag: "",
-                        alt: data[i].fromCompany
-                    };
-                    $scope.flightList[i].companyImage = companyImage;
-                }
-            }
         };
+
         var onError = function(reason){
             $scope.error = reason;
         };
-        callService();
-        // $interval(callService,10000);
-        function callService(){
-            flightListService.getFlightList(model.params.from,model.params.to,model.params.stops,model.params.maxPrice,model.params.flightDuration)
-                .then(onRepo, onError);
+
+        var onSuccess=function(data){
+            $scope.flightSearched = data;
+            if (!($scope.flightSearched)){
+
+                flightListService.getFlightList(model.params.from, model.params.to, model.params.stops, model.params.maxPrice, model.params.flightDuration, model.params.connectingTime)
+                    .then(onRepo, onError);
+
+            }else{
+                clearInterval(interval);
+            }
         }
 
+
+        flightListService.getFlightList(model.params.from, model.params.to, model.params.stops, model.params.maxPrice, model.params.flightDuration, model.params.connectingTime)
+            .then(onRepo, onError);
+        callService();
+        var interval = null;
+
+        interval=setInterval(callService,15000);
+        function callService(){
+            flightInfoService.getFlightInfo(model.params.from, model.params.to, model.params.typeOfFlight)
+                .then(onSuccess, onError);
+            // if (severalTimes<7){
+            //     flightListService.getFlightList(model.params.from, model.params.to, model.params.stops, model.params.maxPrice, model.params.flightDuration, model.params.connectingTime)
+            //         .then(onSuccess, onError);
+            //     severalTimes=severalTimes+1;
+            // }
+        }
+
+
+
+
+        $scope.IsVisible = false;
+        $scope.ShowHide = function(flight) {
+            //If DIV is visible it will be hidden and vice versa.
+            flight.IsVisible = !flight.IsVisible;
+        }
+
+
     };
+
 
 }());

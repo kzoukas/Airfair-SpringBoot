@@ -574,10 +574,10 @@ a:hover {
     background-image: url('../images/background/tour-result.jpg');
 }
 
-.flight-result {
-    background-image: url('../images/background/flight-result.jpg');
-    margin-bottom: 20px;
-}
+/*.flight-result {*/
+    /*background-image: url('../images/background/flight-result.jpg');*/
+    /*margin-bottom: 20px;*/
+/*}*/
 
 .hotel-result {
     background-image: url('../images/background/hotel-result.jpg');
@@ -749,7 +749,8 @@ a:hover {
 }
 
 .header-01 .header-main {
-    border-bottom: none;
+    /*border-bottom: none;*/
+    border-bottom: 1px solid #ffdd00;
 }
 
 .header-01 .header-main .navbar-header {
@@ -763,6 +764,7 @@ a:hover {
 
 .header-01 .header-main .logo .header-logo img {
     max-width: 190px;
+    margin-right: 300px;
 }
 
 .header-01 .header-main .navigation {

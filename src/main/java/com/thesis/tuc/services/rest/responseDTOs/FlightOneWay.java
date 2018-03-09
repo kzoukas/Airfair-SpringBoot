@@ -12,6 +12,7 @@ public class FlightOneWay {
     private String duration;
     private String fromCompany;
     private String toDepartureTime;
+    private String toLastDepartureTime; //so to avoid printing time +1 (next day) at the last glight time
     private String toDepartureDate;
 
     private String departureToStation1;
@@ -22,7 +23,10 @@ public class FlightOneWay {
     private String station1DepDate;
     private String waitingTimeStation1;
     private String airlineToStation1;
+    private String airlineToStation1imgSrc;
     private String airlineFromStation1;
+    private String airlineFromStation1imgSrc;
+
     private String durationToStation1;
     private String durationFromStation1;
 
@@ -33,8 +37,8 @@ public class FlightOneWay {
     private String station2DepTime;
     private String station2DepDate;
     private String waitingTimeStation2;
-
     private String airlineFromStation2;
+    private String airlineFromStation2imgSrc;
     private String durationToStation2;
     private String durationFromStation2;
 
@@ -308,5 +312,37 @@ public class FlightOneWay {
 
     public void setDurationFromStation2(String durationFromStation2) {
         this.durationFromStation2 = durationFromStation2;
+    }
+
+    public void setToLastDepartureTime(String toLastDepartureTime) {
+        this.toLastDepartureTime = toLastDepartureTime;
+    }
+
+    public String getToLastDepartureTime() {
+        return toLastDepartureTime;
+    }
+
+    public String getAirlineToStation1imgSrc() {
+        return airlineToStation1imgSrc;
+    }
+
+    public void setAirlineToStation1imgSrc(String airlineTotation1imgSrc) {
+        this.airlineToStation1imgSrc = airlineTotation1imgSrc;
+    }
+
+    public String getAirlineFromStation1imgSrc() {
+        return airlineFromStation1imgSrc;
+    }
+
+    public void setAirlineFromStation1imgSrc(String airlineFromStation1imgSrc) {
+        this.airlineFromStation1imgSrc = airlineFromStation1imgSrc;
+    }
+
+    public String getAirlineFromStation2imgSrc() {
+        return airlineFromStation2imgSrc;
+    }
+
+    public void setAirlineFromStation2imgSrc(String airlineFromStation2imgSrc) {
+        this.airlineFromStation2imgSrc = airlineFromStation2imgSrc;
     }
 }

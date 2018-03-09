@@ -1026,7 +1026,7 @@ html {
 
   /* line 32, ../../../../sass/vendor/bootstrap/mixins/_grid-framework.scss */
   .col-md-3 {
-    width: 25%;
+    width: 21%;
   }
 
   /* line 32, ../../../../sass/vendor/bootstrap/mixins/_grid-framework.scss */
@@ -7144,8 +7144,9 @@ hr {
 
 /* line 59, ../../../../sass/inclusions/checkout/tranquil/_page-review.scss */
 .itenary-details {
-  margin-top: 30px;
+  /*margin-top: 30px;*/
   position: relative;
+  border:1px solid #ffdd00;
 
 }
 .flight-result-collapse{
