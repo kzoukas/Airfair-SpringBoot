@@ -2,8 +2,8 @@
 (function(){
 
     var flightListService = function($http){
-        var getFlightList = function(fromIata,toIata,stops,maxPrice,flightDuration,connectingTime){
-            var repoUrl = "/allflights/" + fromIata +"/"+ toIata +"/"+ stops +"/"+ maxPrice +"/"+ flightDuration+ "/" + connectingTime;
+        var getFlightList = function(fromIata,toIata,stops,maxPrice,flightDuration,connectingTime,departureTimeStart,departureTimeEnd,arrivalTimeStart,arrivalTimeEnd){
+            var repoUrl = "/allflights/" + fromIata +"/"+ toIata +"/"+ stops +"/"+ maxPrice +"/"+ flightDuration+ "/" + connectingTime+ "/" + departureTimeStart+ "/" + departureTimeEnd+ "/" + arrivalTimeStart+ "/" + arrivalTimeEnd;
             return $http.get(repoUrl)
                 .then(function(response){
                    return response.data;

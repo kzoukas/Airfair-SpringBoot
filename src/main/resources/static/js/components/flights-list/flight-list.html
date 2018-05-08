@@ -9,7 +9,8 @@
 </div>
 <div ng-if="(flightList.length==0) && (flightSearched)">
     <div class="noTickets">
-        <p style="font-weight: 600; margin: 15px;"><i class="fas fa-exclamation-triangle"></i>  No tickets found! Please try again</p>
+        <p style="font-weight: 600; margin: 15px;"><i class="fas fa-exclamation-triangle"></i> No tickets found! Please
+            try again</p>
     </div>
 </div>
 <div ng-if="flightList.length!=0">
@@ -21,43 +22,40 @@
     </div>
 
     <ul class="list-tickets">
-        <li class="list-item" ng-repeat="flight in flightList.slice(((currentPage-1)*itemsPerPage), ((currentPage)*itemsPerPage))" id="accordion">
+        <li class="list-item"
+            ng-repeat="flight in flightList.slice(((currentPage-1)*itemsPerPage), ((currentPage)*itemsPerPage))"
+            id="accordion">
             <div ng-if="flight.station=='Direct'">
                 <div class="flight-result">
                     <div class="list-item-inner">
-                        <div class="list-item-main">
+                        <div class="list-item-main ">
                             <div class="list-item-top">
-                                <div class="list-item-logo">
-                                    <div class="toggleLogos" ng-class="{'toggleLogosUnvisible': flight.IsVisible}">
-                                    <div class="col-sm-4">
-                                        <img src="{{flight.airlineToStation1imgSrc}}"
-                                             alt=""
-                                             style="height:33px; width:44px; ">
-                                    </div>
-                                    <div class="col-sm-4">
-
-                                    </div>
-
-                                    <div class="col-sm-4">
-
-                                    </div>
-                                    </div>
-                                </div>
 
 
-                                <a class="accordion-toggle" data-toggle="collapse-next" data-parent="#accordion" ng-click="ShowHide(flight)">
+                                <a class="accordion-toggle" data-toggle="collapse-next" data-parent="#accordion"
+                                   ng-click="ShowHide(flight)">
+
                                     <div class="list-item-content">
-                                        <div class="list-item-content-left">
+                                        <div class="toggleLogos col-xs-3 col-sm-3"
+                                             ng-class="{'toggleLogosUnvisible': flight.IsVisible}">
+
+                                            <img src="{{flight.airlineToStation1imgSrc}}"
+                                                 alt=""
+                                                 style="height:33px; width:44px; ">
+
+
+                                        </div>
+                                        <div class="list-item-content-left col-xs-3 col-sm-3">
                                             <div class="text-bold text-base">{{flight.fromDepartureTime}}</div>
                                             <span class="small reveal-block">{{flight.departureFrom}}</span>
                                         </div>
-                                        <div class="list-item-content-line-wrapper small">
+                                        <div class="list-item-content-line-wrapper small col-xs-3 col-sm-3">
                                             <div class="list-item-content-line-top">{{flight.duration}}</div>
                                             <div class="list-item-content-line"></div>
                                             <div class="list-item-content-line-bottom text-info-dr">{{flight.station}}
                                             </div>
                                         </div>
-                                        <div class="list-item-content-right">
+                                        <div class="list-item-content-right col-xs-3 col-sm-3">
                                             <div class="text-bold text-base">{{flight.toDepartureTime}}</div>
                                             <span class="small reveal-block">{{flight.departureTo}}</span>
                                         </div>
@@ -69,10 +67,15 @@
                         </div>
                         <div class="list-item-footer">
                             <!--<span class="small">7 deals from</span>-->
-                            <h5 class="text-bold list-item-price">{{flight.price}} €</h5>
-                            <a href="#" class="btn btn-primary btn-xs btn-no-shadow">Book flight</a>
+
+                            <h5 class="list-item-price">{{flight.price}} €</h5>
+                            <!--<a href="#" class="btn btn-primary btn-xs btn-no-shadow">Book flight</a>-->
                         </div>
                     </div>
+                    <a class="accordion-toggle flight-details-arrow" data-toggle="collapse-next"
+                       data-parent="#accordion" ng-click="ShowHide(flight)">Details <i
+                            class="fa fa-angle-down"></i></a>
+
                     <!--<div class="small text-gray-light list-item-subtitle">{{flight.fromDepartureDate}}</div>-->
 
                 </div>
@@ -144,41 +147,39 @@
                     <div class="list-item-inner">
                         <div class="list-item-main">
                             <div class="list-item-top">
-                                <div class="list-item-logo">
-                                    <div class="toggleLogos" ng-class="{'toggleLogosUnvisible': flight.IsVisible}">
-                                        <div class="col-sm-3">
+                                <a class="accordion-toggle" data-toggle="collapse-next" data-parent="#accordion"
+                                   ng-click="ShowHide(flight)">
+                                    <div class="list-item-content">
+
+                                        <div class="toggleLogos col-xs-3"
+                                             ng-class="{'toggleLogosUnvisible': flight.IsVisible}">
+
                                             <img src="{{flight.airlineToStation1imgSrc}}"
                                                  alt=""
                                                  style="height:26px; width:34px; ">
-                                        </div>
-                                        <div class="col-sm-3">
+
+
                                             <img src="{{flight.airlineFromStation1imgSrc}}"
                                                  alt=""
                                                  style="height:26px; width:34px; ">
-                                        </div>
-                                        <div class="col-sm-3">
 
                                         </div>
-                                        <div class="col-sm-3">
 
-                                        </div>
-                                    </div>
 
-                                </div>
-                                <!--<a class="accordion-toggle" data-toggle="collapse-next" data-parent="#accordion" ng-click="toggleFilter(flight)">-->
-                                <a class="accordion-toggle" data-toggle="collapse-next" data-parent="#accordion" ng-click="ShowHide(flight)">
-                                    <div class="list-item-content">
-                                        <div class="list-item-content-left">
+                                        <!--<a class="accordion-toggle" data-toggle="collapse-next" data-parent="#accordion" ng-click="toggleFilter(flight)">-->
+
+
+                                        <div class="list-item-content-left col-xs-3">
                                             <div class="text-bold text-base">{{flight.fromDepartureTime}}</div>
                                             <span class="small reveal-block">{{flight.departureFrom}}</span>
                                         </div>
-                                        <div class="list-item-content-line-wrapper small">
+                                        <div class="list-item-content-line-wrapper small col-xs-3">
                                             <div class="list-item-content-line-top">{{flight.duration}}</div>
                                             <div class="list-item-content-line"></div>
                                             <div class="list-item-content-line-bottom text-info-dr">{{flight.station}}
                                             </div>
                                         </div>
-                                        <div class="list-item-content-right">
+                                        <div class="list-item-content-right col-xs-3">
                                             <div class="text-bold text-base">{{flight.toDepartureTime}}</div>
                                             <span class="small reveal-block">{{flight.departureTo}}</span>
                                         </div>
@@ -190,9 +191,13 @@
                         <div class="list-item-footer">
                             <!--<span class="small">7 deals from</span>-->
                             <h5 class="text-bold list-item-price">{{flight.price}} €</h5>
-                            <a href="#" class="btn btn-primary btn-xs btn-no-shadow">Book flight</a>
+
                         </div>
                     </div>
+                    <a class="accordion-toggle flight-details-arrow" data-toggle="collapse-next"
+                       data-parent="#accordion" ng-click="ShowHide(flight)">Details <i
+                            class="fa fa-angle-down"></i></a>
+
 
                 </div>
                 <div class="flight-result-collapse collapse">
@@ -319,44 +324,36 @@
                     <div class="list-item-inner">
                         <div class="list-item-main">
                             <div class="list-item-top">
-                                <div class="list-item-logo">
-                                    <div class="toggleLogos" ng-class="{'toggleLogosUnvisible': flight.IsVisible}">
-                                        <div class="col-sm-3">
+                                <a class="accordion-toggle" data-toggle="collapse-next" data-parent="#accordion"
+                                   ng-click="ShowHide(flight)">
+                                    <div class="list-item-content">
+                                        <div class="toggleLogos col-xs-3 col-sm-3"
+                                             ng-class="{'toggleLogosUnvisible': flight.IsVisible}">
+
                                             <img src="{{flight.airlineToStation1imgSrc}}"
                                                  alt=""
                                                  style="height:22px; width:28px; ">
-                                        </div>
-                                        <div class="col-sm-3">
                                             <img src="{{flight.airlineFromStation1imgSrc}}"
                                                  alt=""
                                                  style="height:22px; width:28px; ">
-                                        </div>
-                                        <div class="col-sm-3">
                                             <img src="{{flight.airlineFromStation2imgSrc}}"
                                                  alt=""
                                                  style="height:22px; width:28px; ">
                                         </div>
-                                        <div class="col-sm-3">
-
-                                        </div>
-                                    </div>
-                                </div>
-                                <a class="accordion-toggle" data-toggle="collapse-next" data-parent="#accordion" ng-click="ShowHide(flight)">
-
-                                    <div class="list-item-content">
-                                        <div class="list-item-content-left">
+                                        <div class="list-item-content-left col-xs-3 col-sm-3">
                                             <div class="text-bold text-base">{{flight.fromDepartureTime}}</div>
                                             <span class="small reveal-block">{{flight.departureFrom}}</span>
                                         </div>
-                                        <div class="list-item-content-line-wrapper small">
+                                        <div class="list-item-content-line-wrapper small col-xs-3 col-sm-3">
                                             <div class="list-item-content-line-top">{{flight.duration}}</div>
                                             <div class="list-item-content-line"></div>
                                             <div class="list-item-content-line-bottom text-info-dr">{{flight.station}}
                                             </div>
                                         </div>
-                                        <div class="list-item-content-right">
+                                        <div class="list-item-content-right col-xs-3 col-sm-3">
                                             <div ng-if="flight.toDepartureTime.slice(-2)=='+1'">
-                                                <div class="text-bold text-base">{{flight.toLastDepartureTime}}<sup>+1</sup></div>
+                                                <div class="text-bold text-base">
+                                                    {{flight.toLastDepartureTime}}<sup>+1</sup></div>
                                             </div>
                                             <div ng-if="flight.toDepartureTime.slice(-2)!='+1'">
                                                 <div class="text-bold text-base">{{flight.toLastDepartureTime}}</div>
@@ -366,16 +363,14 @@
                                     </div>
                                 </a>
                             </div>
-
                         </div>
                         <div class="list-item-footer">
-                            <!--<span class="small">7 deals from</span>-->
                             <h5 class="text-bold list-item-price">{{flight.price}} €</h5>
-                            <a href="#" class="btn btn-primary btn-xs btn-no-shadow">Book flight</a>
                         </div>
                     </div>
-                    <!--<div class="small text-gray-light list-item-subtitle">{{flight.fromDepartureDate}}</div>-->
-
+                    <a class="accordion-toggle flight-details-arrow" data-toggle="collapse-next"
+                       data-parent="#accordion" ng-click="ShowHide(flight)">Details <i
+                            class="fa fa-angle-down"></i></a>
                 </div>
 
 
@@ -575,8 +570,9 @@
         </li>
     </ul>
     <div id="pagination" class="offset-top-60 offset-lg-top-60">
-        <div  style="float:left">
-            <ul uib-pagination total-items="totalItems" ng-model="currentPage" max-size="maxSize" class="pagination-sm" boundary-link-numbers="true" ></ul>
+        <div style="float:left">
+            <ul uib-pagination total-items="totalItems" ng-model="currentPage" max-size="maxSize" class="pagination-sm"
+                boundary-link-numbers="true"></ul>
         </div>
     </div>
 

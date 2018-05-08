@@ -1,6 +1,6 @@
 <script src="js/usefulJs/sidebar.js"></script>
 
-<div id="sidebarButton" data-toggle="sidebar">
+<div id="sidebarButton" data-toggle="tabContent">
     <div>
         <i class="fa fa-filter">Filters</i>&nbsp;
     </div>
@@ -12,25 +12,7 @@
         <div class="card">
             <div class="list-group list-group-flush">
                 <form name="filterForm" ng-submit="submitFilters();">
-                    <div class="list-group-item">
-                        <a class="filter-toggle text-yellow" data-toggle="collapse"
-                           data-target="#price" aria-expanded="false">Flight Duration
-                        </a>
-                        <div class="collapse sliderControler in" id="price">
-                            <div class="filter-content">
-                                <div>
-                                    <div class="slidecontainer">
-                                        <input type="range" min="0" value="{{filter.flightDuration}}" max="30"
-                                               class="slider" id="hourRange" ng-model="filter.flightDuration">
-                                    </div>
 
-                                    <div class="indicators">
-                                        <p>0h - <span id="maxHours"></span>h</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                     <div class="list-group-item">
                         <a class="filter-toggle text-yellow" data-toggle="collapse"
                            data-target="#obTimeFilters" aria-expanded="false">Max Price
@@ -49,24 +31,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="list-group-item">
-                        <a class="filter-toggle text-yellow" data-toggle="collapse"
-                           data-target="#connectingHoursCollapse" aria-expanded="false">Connecting time
-                        </a>
-                        <div class="collapse in" id="connectingHoursCollapse" aria-expanded="true">
-                            <div class="filter-content">
-                                <div>
-                                    <div class="slidecontainer">
-                                        <input type="range" min="1" value="{{filter.connectingTime}}" max="24"
-                                               class="slider" id="connectingHoursRange" ng-model="filter.connectingTime">
-                                    </div>
-                                    <div class="indicators">
-                                        <p>1h - <span id="connectingHours"></span>h</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+
                     <!-- Stops -->
                     <div class="list-group-item">
                         <a class="filter-toggle text-yellow" data-toggle="collapse"
@@ -95,6 +60,101 @@
                             </div>
                         </div>
                     </div>
+                    <!--Flight Duration-->
+                    <div class="list-group-item">
+                        <a class="filter-toggle text-yellow" data-toggle="collapse"
+                           data-target="#price" aria-expanded="false">Flight Duration
+                        </a>
+                        <div class="collapse sliderControler in" id="price">
+                            <div class="filter-content">
+                                <div>
+                                    <div class="slidecontainer">
+                                        <input type="range" min="0" value="{{filter.flightDuration}}" max="30"
+                                               class="slider" id="hourRange" ng-model="filter.flightDuration">
+                                    </div>
+
+                                    <div class="indicators">
+                                        <p>0h - <span id="maxHours"></span>h</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Connecting time-->
+                    <div class="list-group-item">
+                        <a class="filter-toggle text-yellow" data-toggle="collapse"
+                           data-target="#connectingHoursCollapse" aria-expanded="false">Connecting time
+                        </a>
+                        <div class="collapse in" id="connectingHoursCollapse" aria-expanded="true">
+                            <div class="filter-content">
+                                <div>
+                                    <div class="slidecontainer">
+                                        <input type="range" min="1" value="{{filter.connectingTime}}" max="24"
+                                               class="slider" id="connectingHoursRange" ng-model="filter.connectingTime">
+                                    </div>
+                                    <div class="indicators">
+                                        <p>1h - <span id="connectingHours"></span>h</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Departure time-->
+                    <div class="list-group-item">
+                        <a class="filter-toggle text-yellow" data-toggle="collapse"
+                           data-target="#departureTimeCollapse" aria-expanded="false">Departure
+                        </a>
+                        <div class="collapse in" id="departureTimeCollapse" aria-expanded="true">
+                            <div class="filter-content">
+                                <div>
+                                    <div class="slidecontainer">
+                                        <input id="ex2" type="text" class="span2" value="" data-slider-min="0"
+                                               data-slider-max="24" data-slider-step="1" data-slider-value="[0,24]" >
+                                    </div>
+                                    <div class="indicators">
+
+                                            <input type="text" id="departureTime1Filter" ng-model="filter.departureTimeStart"  style=" width:15px;border: none; background: transparent; color: #000;" value="{{filter.departureTimeStart}}" disabled="disabled"/>
+                                            <p> :00 - </p>
+
+
+                                            <input type="text" id="departureTime2Filter" ng-model="filter.departureTimeEnd" style=" width:15px;border: none; background: transparent; color: #000;" value="{{filter.departureTimeEnd}}" disabled="disabled"/>
+                                            <p> :00 </p>
+
+                                        <!--<p> <span id=""></span>:00 - <span id=""></span>:00</p>-->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--Arrival time-->
+                    <div class="list-group-item">
+                        <a class="filter-toggle text-yellow" data-toggle="collapse"
+                           data-target="#arrivalTimeCollapse" aria-expanded="false">Arrival
+                        </a>
+                        <div class="collapse in" id="arrivalTimeCollapse" aria-expanded="true">
+                            <div class="filter-content">
+                                <div>
+                                    <div class="slidecontainer">
+                                        <input id="ex1" type="text" class="span2" value="" data-slider-min="0"
+                                               data-slider-max="24" data-slider-step="1" data-slider-value="[0,24]" >
+                                    </div>
+                                    <div class="indicators">
+
+                                        <input  type="text" id="arrivalTime1Filter" value="{{filter.arrivalTimeStart}}" ng-model="filter.arrivalTimeStart" style=" width:15px; border: none; background: transparent; color: #000;" disabled="disabled"/>
+                                        <p> :00 - </p>
+
+
+                                        <input  type="text" value="{{filter.arrivalTimeEnd}}" ng-model="filter.arrivalTimeEnd" id="arrivalTime2Filter" style=" width:15px;border: none; background: transparent; color: #000;"  disabled="disabled"/>
+                                        <p> :00 </p>
+
+                                        <!--<p> <span id=""></span>:00 - <span id=""></span>:00</p>-->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                     <!--Airlines-->
                     <div class="list-group-item">
                         <a class="filter-toggle text-yellow" data-toggle="collapse"

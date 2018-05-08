@@ -53,7 +53,9 @@
             $scope.flightSearched = data;
             if (!($scope.flightSearched)){
 
-                flightListService.getFlightList(model.params.from, model.params.to, model.params.stops, model.params.maxPrice, model.params.flightDuration, model.params.connectingTime)
+                flightListService.getFlightList(model.params.from, model.params.to, model.params.stops, model.params.maxPrice,
+                                                model.params.flightDuration, model.params.connectingTime,model.params.departureTimeStart,
+                                                model.params.departureTimeEnd,model.params.arrivalTimeStart,model.params.arrivalTimeEnd)
                     .then(onRepo, onError);
 
             }else{
@@ -62,7 +64,9 @@
         }
 
 
-        flightListService.getFlightList(model.params.from, model.params.to, model.params.stops, model.params.maxPrice, model.params.flightDuration, model.params.connectingTime)
+        flightListService.getFlightList(model.params.from, model.params.to, model.params.stops, model.params.maxPrice,
+                                        model.params.flightDuration, model.params.connectingTime,model.params.departureTimeStart,
+                                        model.params.departureTimeEnd,model.params.arrivalTimeStart,model.params.arrivalTimeEnd)
             .then(onRepo, onError);
         callService();
         var interval = null;

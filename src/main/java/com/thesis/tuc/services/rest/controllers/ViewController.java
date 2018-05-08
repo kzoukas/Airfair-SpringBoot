@@ -19,15 +19,15 @@ private static final Logger logger = LoggerFactory.getLogger(ViewController.clas
     private FlightService flightService;
 
 
-    @GetMapping(path="/allflights/{fromIata}/{toIata}/{stops}/{maxPrice}/{flightDuration}/{connectingTime}")
-    public List<FlightOneWay> getAll(@PathVariable String fromIata, @PathVariable String toIata, @PathVariable int stops, @PathVariable double maxPrice, @PathVariable int flightDuration, @PathVariable int connectingTime){
+    @GetMapping(path="/allflights/{fromIata}/{toIata}/{stops}/{maxPrice}/{flightDuration}/{connectingTime}/{departureTimeStart}/{departureTimeEnd}/{arrivalTimeStart}/{arrivalTimeEnd}")
+    public List<FlightOneWay> getAll(@PathVariable String fromIata, @PathVariable String toIata, @PathVariable int stops, @PathVariable double maxPrice, @PathVariable int flightDuration, @PathVariable int connectingTime, @PathVariable int departureTimeStart, @PathVariable int departureTimeEnd, @PathVariable int arrivalTimeStart, @PathVariable int arrivalTimeEnd){
         if(stops==1) {
-            return flightService.getFlightsOneStation(fromIata, toIata, maxPrice, flightDuration,connectingTime);
+            return flightService.getFlightsOneStation(fromIata, toIata, maxPrice, flightDuration,connectingTime,departureTimeStart,departureTimeEnd,arrivalTimeStart,arrivalTimeEnd);
         }else if(stops==2){
-            return flightService.getFlightsTwoStations(fromIata, toIata, maxPrice, flightDuration,connectingTime);
+            return flightService.getFlightsTwoStations(fromIata, toIata, maxPrice, flightDuration,connectingTime,departureTimeStart,departureTimeEnd,arrivalTimeStart,arrivalTimeEnd);
         }
         else {
-            return flightService.getDirectFlight(fromIata, toIata, maxPrice, flightDuration);
+            return flightService.getDirectFlight(fromIata, toIata, maxPrice, flightDuration,departureTimeStart,departureTimeEnd,arrivalTimeStart,arrivalTimeEnd);
         }
     }
     @GetMapping(path="/allInfos/{fromIata}/{toIata}/{typeOfFlight}")

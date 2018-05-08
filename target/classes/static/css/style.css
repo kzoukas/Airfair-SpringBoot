@@ -1771,76 +1771,77 @@ select[multiple].input-lg,
 }
 
 @media (min-width: 768px) {
-  .form-inline .form-group {
-    display: inline-block;
-    margin-bottom: 0;
-    vertical-align: middle;
+    .form-inline .form-group {
+        display: inline-block;
+        margin-bottom: 0;
+        vertical-align: middle;
+    }
+
+    .form-inline .form-control {
+        display: inline-block;
+        width: auto;
+        vertical-align: middle;
+    }
+
+    .form-inline .form-control-static {
+        display: inline-block;
+    }
+
+    .form-inline .input-group {
+        display: inline-table;
+        vertical-align: middle;
+    }
+
+    .form-inline .input-group .input-group-addon,
+    .form-inline .input-group .input-group-btn,
+    .form-inline .input-group .form-control {
+        width: auto;
+    }
+
+    .form-inline .input-group > .form-control {
+        width: 100%;
+    }
+
+    .form-inline .control-label {
+        margin-bottom: 0;
+        vertical-align: middle;
+    }
+
+    /* .form-inline .radio,
+    .form-inline .checkbox {
+      display: inline-block;
+      margin-top: 0;
+      margin-bottom: 0;
+      vertical-align: middle;
+    }
+    .form-inline .radio label,
+    .form-inline .checkbox label {
+      padding-left: 0;
+    }
+    .form-inline .radio input[type="radio"],
+    .form-inline .checkbox input[type="checkbox"] {
+      position: relative;
+      margin-left: 0;
+    }
+    .form-inline .has-feedback .form-control-feedback {
+      top: 0;
+    }*/
   }
 
-  .form-inline .form-control {
-    display: inline-block;
-    width: auto;
-    vertical-align: middle;
-  }
-
-  .form-inline .form-control-static {
-    display: inline-block;
-  }
-
-  .form-inline .input-group {
-    display: inline-table;
-    vertical-align: middle;
-  }
-
-  .form-inline .input-group .input-group-addon,
-  .form-inline .input-group .input-group-btn,
-  .form-inline .input-group .form-control {
-    width: auto;
-  }
-
-  .form-inline .input-group > .form-control {
-    width: 100%;
-  }
-
-  .form-inline .control-label {
-    margin-bottom: 0;
-    vertical-align: middle;
-  }
-
-  /* .form-inline .radio,
-  .form-inline .checkbox {
-    display: inline-block;
+ /* .form-horizontal .radio,
+  .form-horizontal .checkbox,
+  .form-horizontal .radio-inline,
+  .form-horizontal .checkbox-inline {
     margin-top: 0;
     margin-bottom: 0;
-    vertical-align: middle;
+    padding-top: 17px;
   }
-  .form-inline .radio label,
-  .form-inline .checkbox label {
-    padding-left: 0;
-  }
-  .form-inline .radio input[type="radio"],
-  .form-inline .checkbox input[type="checkbox"] {
-    position: relative;
-    margin-left: 0;
-  }
-  .form-inline .has-feedback .form-control-feedback {
-    top: 0;
-  }
-}
 
-.form-horizontal .radio,
-.form-horizontal .checkbox,
-.form-horizontal .radio-inline,
-.form-horizontal .checkbox-inline {
-  margin-top: 0;
-  margin-bottom: 0;
-  padding-top: 17px;
-}
+  .form-horizontal .radio,
+  .form-horizontal .checkbox {
+    min-height: 41px;
+  } */
 
-.form-horizontal .radio,
-.form-horizontal .checkbox {
-  min-height: 41px;
-} */
   .form-horizontal .form-group {
     margin-left: -15px;
     margin-right: -15px;
@@ -10735,7 +10736,7 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
   }
 
   .small {
-    font-size: 14px;
+    font-size: 13px;
   }
 
   code {
@@ -10963,23 +10964,45 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
      overflow-y: auto;
      max-height: 5000px;
      box-sizing: border-box;
-     z-index: 1001;
+     /*z-index: 1001;*/
    }
+
+
   .list-tickets .list-item {
     border-radius: 4px;
     margin-bottom: 10px;
     background-color: #fff;
     transition: .4s box-shadow;
-    padding: 30px 12px;
+      border-top: 3px solid #ffdd00;
+    padding: 30px 30px 10px 12px;
   }
 
   @media (min-width: 768px) {
-    .list-tickets .list-item {
-      text-align: left;
-      padding: 15px 20px 15px 20px;
-        border-top: 3px solid #ffdd00;
-    }
+      .list-tickets .list-item {
+          text-align: left;
+          padding: 15px 20px 15px 20px;
+          border-top: 3px solid #ffdd00;
+      }
   }
+  /*}@media (max-width: 768px) {*/
+        /*.list-tickets .list-item {*/
+            /*text-align: left;*/
+            /*padding: 15px 20px 15px 20px;*/
+            /*border-top: 3px solid #ffdd00;*/
+        /*}*/
+    /*}*/
+    /*@media (min-width: 100px) {*/
+        /*.list-tickets .list-item {*/
+            /*text-align: left;*/
+            /*padding: 15px 20px 15px 20px;*/
+            /*border-top: 3px solid #ffdd00;*/
+            /*border-radius: 4px;*/
+            /*margin-bottom: 10px;*/
+            /*background-color: #fff;*/
+            /*transition: .4s box-shadow;*/
+            /**/
+        /*}*/
+    /*}*/
 
   @media (min-width: 1600px) {
     .list-tickets .list-item {
@@ -11015,16 +11038,35 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
 
   .list-tickets .list-item-price {
     margin-top: 3px;
+      border: 3px solid #ffdd00;
+      border-radius: 4px;
+      background-color: #ffdd00;
+      font-weight:400;
+
   }
 
   @media (min-width: 768px) {
     .list-tickets .list-item-inner {
       display: flex;
       align-items: center;
-      margin-bottom: 10px;
+      margin-bottom: 0px;
     }
+      .list-tickets .list-item-price {
+          margin-top: 3px;
+          border: 3px solid #ffdd00;
+          border-radius: 4px;
+          font-weight:400;
+
+      }
   }
 
+@media (max-width: 768px) {
+    .list-tickets .list-item-inner {
+        /*display: flex;*/
+        align-items: center;
+        margin-bottom: 5px;
+    }
+}
   .list-tickets .list-item-subtitle {
     margin-top: 11px;
     text-align: center;
@@ -11053,20 +11095,48 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
     text-align: center;
   }
 
+
   @media (min-width: 768px) {
     .list-tickets .list-item-footer {
       margin-top: 0;
       /*margin-left: 7.6%;*/
       text-align: left;
+        margin-left: 30px;
     }
   }
+@media (max-width: 768px) {
+    .list-tickets .list-item-footer {
+        margin-top: 0;
+        margin-left:  28%;
+        text-align: center;
+        /*margin-left: 90px;*/
+    }
+}
 
-  .list-tickets .list-item-top, .list-tickets .list-item-bottom {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    flex-basis: 50%;
-  }
+@media (max-width: 768px) {
+    .flight-details-arrow {
+        margin-top: 0;
+        margin-left:  56%;
+        text-align: center;
+        font-size: 12px;
+
+    }
+}
+@media (min-width: 768px) {
+    .flight-details-arrow {
+        margin-top: 0;
+        margin-left:  90%;
+        text-align: center;
+        font-size: 12px;
+
+    }
+}
+  /*.list-tickets .list-item-top, .list-tickets .list-item-bottom {*/
+    /*display: flex;*/
+    /*align-items: center;*/
+    /*flex-direction: column;*/
+    /*flex-basis: 50%;*/
+  /*}*/
 
   @media (min-width: 768px) {
     .list-tickets .list-item-top, .list-tickets .list-item-bottom {
@@ -11119,7 +11189,7 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
   }
 
   .list-tickets .list-item-content-line {
-    min-width: 100px;
+    min-width: 40px;
     position: relative;
     height: 1px;
     /*margin: 5px 0;*/
@@ -12018,7 +12088,7 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
   }
 
   .btn-xs, .btn-group-xs > .btn {
-    letter-spacing: 0.1em;
+    letter-spacing: 0em;
     padding: 9px 38px;
   }
 
@@ -36383,7 +36453,7 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
     text-align: center;
     color: #3e3f40;
   }
-}
+
 /*# sourceMappingURL=style.css.map */
 
 .container{
@@ -36736,7 +36806,7 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
   align-items:center;
   -webkit-box-pack:justify;
   -ms-flex-pack:justify;
-  justify-content:space-between;
+  /*justify-content:space-between;*/
   font-size:12px;
   line-height:21px;
     margin-top:8px;
@@ -36823,8 +36893,8 @@ tbody.collapse.in{
   /*font-size: 16px;*/
   /*font-weight: 800;*/
   line-height: 50px;
-  display: flex;
-  height: 50px;
+  /*display: flex;*/
+  /*height: 50px;*/
   width: 69%;
   float: left;
   margin-right: 0;

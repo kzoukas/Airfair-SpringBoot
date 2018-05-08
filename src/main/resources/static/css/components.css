@@ -476,7 +476,7 @@
 
 .btn {
     width: 100px;
-    padding: 6px 20px;
+    padding: 6px;
 
     -webkit-transition: all .5s ease;
        -moz-transition: all .5s ease;
