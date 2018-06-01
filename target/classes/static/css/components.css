@@ -477,7 +477,8 @@
 .btn {
     width: 100px;
     padding: 6px;
-
+    margin-left: 29%;
+    margin-top: 10px;
     -webkit-transition: all .5s ease;
        -moz-transition: all .5s ease;
          -o-transition: all .5s ease;
@@ -490,7 +491,12 @@
     border-radius: 5px;
     background-color: transparent;
 }
-
+@media (max-width:992px) {
+    .btn {
+        margin-left: 40%;
+        margin-top: 10px;
+    }
+}
 .btn:hover {
     color: #ffffff;
     border: 1px solid #3c3c3c;

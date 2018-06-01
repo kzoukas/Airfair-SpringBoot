@@ -15,10 +15,12 @@
 
         $scope.fromTown=model.params.from;
         $scope.toTown=model.params.to;
-        $scope.checkIn=model.params.checkIn;
+        $scope.checkin=model.params.checkin;
+        $scope.checkout=model.params.checkout;
         $scope.typeOfFlight=model.params.typeOfFlight;
-        $scope.adults=model.params.adults;
-        $scope.childs=model.params.childs;
+        $scope.adultNum=model.params.adultNum;
+        $scope.childNum=model.params.childNum;
+        $scope.typeOfFlight=model.params.typeOfFlight;
 
 
     };

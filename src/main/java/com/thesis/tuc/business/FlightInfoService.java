@@ -6,7 +6,6 @@ import org.springframework.stereotype.Component;
 
 import java.util.List;
 
-
 @Component
 public class FlightInfoService {
 
@@ -15,8 +14,4 @@ public class FlightInfoService {
     public FlightInfoService(FlightInfoRepository flightInfoRepository) {
         this.flightInfoRepository = flightInfoRepository;
     }
-
-
-
-
 }

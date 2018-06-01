@@ -7,6 +7,15 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class Flight {
     @Id
     private String id;
+    private String flightSearchFromIata;
+    private String flightSearchToIata;
+    private String checkin;
+    private String checkout;
+    private String adultNum;
+    private String childNum;
+    private String typeOfFlight;
+    private String airportSize;
+    private String tripDistance;
     private String fromDepartureTime;
     private String fromArrivalTime;
     private String fromTown;
@@ -31,7 +40,45 @@ public class Flight {
 
 
 
-    public Flight(String fromDepartureTime, String fromArrivalTime, String fromTown, String toTown, String fromIata, String toIata, Double price, String fromCompany,String airlineImgSrc, String toCompany, String fromDate, String toDate, String duration, String station, String stationTown, String stationArrivalTime, String stationArrivalDate, String waitingTime, String stationDepTime, String stationDepDate,String toTime) {
+    public Flight(String flightSearchFromIata,
+                  String flightSearchToIata,
+                  String checkin,
+                  String checkout,
+                  String adultNum,
+                  String childNum,
+                  String typeOfFlight,
+                  String airportSize,
+                  String tripDistance,
+                  String fromDepartureTime,
+                  String fromArrivalTime,
+                  String fromTown,
+                  String toTown,
+                  String fromIata,
+                  String toIata,
+                  Double price,
+                  String fromCompany,
+                  String airlineImgSrc,
+                  String toCompany,
+                  String fromDate,
+                  String toDate,
+                  String duration,
+                  String station,
+                  String stationTown,
+                  String stationArrivalTime,
+                  String stationArrivalDate,
+                  String waitingTime,
+                  String stationDepTime,
+                  String stationDepDate,
+                  String toTime) {
+        this.flightSearchFromIata = flightSearchFromIata;
+        this.flightSearchToIata = flightSearchToIata;
+        this.checkin = checkin;
+        this.checkout = checkout;
+        this.adultNum = adultNum;
+        this.childNum = childNum;
+        this.typeOfFlight = typeOfFlight;
+        this.airportSize = airportSize;
+        this.tripDistance = tripDistance;
         this.fromDepartureTime = fromDepartureTime;
         this.fromArrivalTime = fromArrivalTime;
         this.fromTown = fromTown;
@@ -58,6 +105,42 @@ public class Flight {
 
     public String getId() {
         return id;
+    }
+
+    public String getFlightSearchFromIata() {
+        return flightSearchFromIata;
+    }
+
+    public String getFlightSearchToIata() {
+        return flightSearchToIata;
+    }
+
+    public String getCheckin() {
+        return checkin;
+    }
+
+    public String getCheckout() {
+        return checkout;
+    }
+
+    public String getAdultNum() {
+        return adultNum;
+    }
+
+    public String getChildNum() {
+        return childNum;
+    }
+
+    public String getTypeOfFlight() {
+        return typeOfFlight;
+    }
+
+    public String getAirportSize() {
+        return airportSize;
+    }
+
+    public String getTripDistance() {
+        return tripDistance;
     }
 
     public String getFromDepartureTime() {
@@ -143,8 +226,11 @@ public class Flight {
     public String getToTime() {
         return toTime;
     }
+
     public String getAirlineImgSrc() {
         return airlineImgSrc;
     }
+
+
 
 }

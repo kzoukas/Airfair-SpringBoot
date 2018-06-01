@@ -645,7 +645,7 @@
 
 /*----------  1.4. Media screen max width 768px  ----------*/
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 992px) {
     /*----------  home page 3  ----------*/
 
     .homepage-03 h1.banner {
@@ -717,12 +717,9 @@
     }
     .hamburger-menu {
         position: absolute;
-        top: 50%;
-        left: 30px;
-
         display: table;
-
-        margin-top: -20px;
+        left: 15px;
+        margin-top: 165px;
     }
     .navigation {
         display: none;
@@ -2184,7 +2181,7 @@
 
 /*----------  1.7. Media screen max width 480px  ----------*/
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 768px) {
     .margin-bottom {
         margin-bottom: 30px;
     }
@@ -2274,6 +2271,7 @@
     }
     .hamburger-menu {
         left: 15px;
+        margin-top: 212px;
     }
     .wrapper-mobile-nav .header-topbar {
         padding: 15px 0;
@@ -2282,10 +2280,11 @@
         float: right;
     }
     .header-01 .header-main .navbar-header {
-        float: right;
+        /*float: right;*/
     }
     .header-01 .header-main .logo .header-logo img {
         max-width: 150px;
+
     }
     .header-main .logo .header-logo img {
         max-width: 150px;
@@ -3477,5 +3476,10 @@
         width: 5.5em;
     }
 }
-
+@media screen and (min-width: 768px) {
+    .header-01 .header-main .logo .header-logo img {
+        max-width: 190px;
+        margin-right: 81%;
+    }
+}
 /*=====  End of RESPONSIVE SCREEN  ======*/

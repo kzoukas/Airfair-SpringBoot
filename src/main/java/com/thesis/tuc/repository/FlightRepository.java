@@ -7,9 +7,29 @@ import java.util.List;
 
 public interface FlightRepository extends MongoRepository<Flight,String>  {
 
-    List<Flight> findByFromIataAndToIata(String fromIata, String toIata);
-    List<Flight> findByPriceLessThan(double maxPrice);
-    List<Flight> findByStationAndPriceLessThan(String typeOfFlight,Double maxPrice);
-    List<Flight> findByPriceLessThan(Double maxPrice);
+
+    List<Flight> findDistinctByPriceLessThan(double maxPrice);
+    List<Flight> findDistinctByStationAndPriceLessThanAndFlightSearchFromIataAndFlightSearchToIataAndCheckinAndCheckoutAndAdultNumAndChildNumAndTypeOfFlightAndAirportSizeAndTripDistance(String typeOfFlightToSearch,
+                                                                                                                                              Double maxPrice,
+                                                                                                                                              String fromIata,
+                                                                                                                                              String toIata,
+                                                                                                                                              String checkin,
+                                                                                                                                              String checkout,
+                                                                                                                                              String adultNum,
+                                                                                                                                              String childNum,
+                                                                                                                                              String typeOfFlight,
+                                                                                                                                              String airportSize,
+                                                                                                                                              String tripDistance);
+    List<Flight> findDistinctByPriceLessThanAndFlightSearchFromIataAndFlightSearchToIataAndCheckinAndCheckoutAndAdultNumAndChildNumAndTypeOfFlightAndAirportSizeAndTripDistance(Double maxPrice,
+                                                                                                                                                                                String fromIata,
+                                                                                                                                                                                String toIata,
+                                                                                                                                                                                String checkin,
+                                                                                                                                                                                String checkout,
+                                                                                                                                                                                String adultNum,
+                                                                                                                                                                                String childNum,
+                                                                                                                                                                                String typeOfFlight,
+                                                                                                                                                                                String airportSize,
+                                                                                                                                                                                String tripDistance);
+
 
 }

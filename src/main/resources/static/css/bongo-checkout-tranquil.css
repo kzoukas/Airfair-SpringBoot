@@ -7144,7 +7144,7 @@ hr {
 
 /* line 59, ../../../../sass/inclusions/checkout/tranquil/_page-review.scss */
 .itenary-details {
-  /*margin-top: 30px;*/
+  margin-bottom: 5px;
   position: relative;
   border:1px solid #ffdd00;
 

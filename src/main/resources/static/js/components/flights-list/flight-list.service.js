@@ -2,8 +2,42 @@
 (function(){
 
     var flightListService = function($http){
-        var getFlightList = function(fromIata,toIata,stops,maxPrice,flightDuration,connectingTime,departureTimeStart,departureTimeEnd,arrivalTimeStart,arrivalTimeEnd){
-            var repoUrl = "/allflights/" + fromIata +"/"+ toIata +"/"+ stops +"/"+ maxPrice +"/"+ flightDuration+ "/" + connectingTime+ "/" + departureTimeStart+ "/" + departureTimeEnd+ "/" + arrivalTimeStart+ "/" + arrivalTimeEnd;
+        var getFlightList = function(fromIata,
+                                     toIata,
+                                     checkin,
+                                     checkout,
+                                     adultNum,
+                                     childNum,
+                                     typeOfFlight,
+                                     airportSize,
+                                     tripDistance,
+                                     stops,
+                                     maxPrice,
+                                     flightDuration,
+                                     connectingTimeStart,
+                                     connectingTimeEnd,
+                                     departureTimeStart,
+                                     departureTimeEnd,
+                                     arrivalTimeStart,
+                                     arrivalTimeEnd){
+            var repoUrl = "/allflights/" + fromIata
+                +"/"+ toIata
+                +"/"+ checkin
+                +"/"+ checkout
+                +"/"+ adultNum
+                +"/"+ childNum
+                +"/"+ typeOfFlight
+                +"/"+ airportSize
+                +"/"+ tripDistance
+                +"/"+ stops
+                +"/"+ maxPrice
+                +"/"+ flightDuration
+                +"/"+ connectingTimeStart
+                +"/"+ connectingTimeEnd
+                +"/"+ departureTimeStart
+                +"/"+ departureTimeEnd
+                +"/"+ arrivalTimeStart
+                +"/"+ arrivalTimeEnd;
             return $http.get(repoUrl)
                 .then(function(response){
                    return response.data;

@@ -10980,7 +10980,7 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
   @media (min-width: 768px) {
       .list-tickets .list-item {
           text-align: left;
-          padding: 15px 20px 15px 20px;
+          padding: 15px 20px 5px 20px;
           border-top: 3px solid #ffdd00;
       }
   }
@@ -36498,16 +36498,16 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
   min-height:1px;
   padding-right:16px;
   padding-left:16px;
-  margin-top: 30px;
+  margin-top: 10px;
 
 }
 .grid-item-lg-7-10{
     position:relative;
     width:100%;
-    min-height:1px;
+    min-height:790px;
     padding-right:16px;
     padding-left:16px;
-    margin-top: 30px;
+    margin-top: 10px;
 
 }
 .grid-item-lg-10-10{
@@ -36531,6 +36531,7 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
     -ms-flex:0 0 70%;
     flex:0 0 70%;
     max-width:70%
+
   }
   .grid-item-lg-10-10{
     -webkit-box-flex:0;
@@ -36549,6 +36550,10 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
     max-width:100%;
     width:100%
   }
+  .grid-item-lg-7-10{
+   margin-top: 10px;
+
+  }
 }
 /*#main{*/
   /*-webkit-box-flex:0;*/
@@ -36562,18 +36567,11 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
 }
 @media (max-width:991px){
   #sidebar{
-    position:fixed;
-    top:0;
-    bottom:0;
-    left:0;
-    right:0;
-    overflow:auto;
-    z-index:1000;
-    background-color:#fff;
-    padding:0;
-    -webkit-transform:translateY(calc(100% - 40px));
-    transform:translateY(calc(100% - 40px))
+    display:none;
+
+
   }
+
   #sidebar .card{
     border:0
   }
@@ -36907,10 +36905,56 @@ tbody.collapse.in{
   border: none;
 
 }
-@media (max-width:992px) {
+.info-bar-places{
+  margin-left: 0px;
+  font-size: 13px;
+  font-weight: 800;
+  text-align: center;
+
+}
+.info-bar{
+  font-size: 13px;
+  font-weight: 400;
+  text-align: right;
+
+}
+@media (max-width: 992px) {
   .offset-top-60 .tab-btn-wrapper .tab-btn {
     width: 100%;
   }
+}
+
+@media (max-width: 768px) {
+  .offset-top-60 .tab-btn-wrapper .tab-btn {
+    line-height: 30px;
+    width: 80%;
+    margin-left: 40px;
+    background-color: transparent;
+    border-radius: unset;
+    border: none;
+
+  }
+  .info-bar-places{
+    margin-left: 0px;
+    font-size: 13px;
+    font-weight: 800;
+    text-align: center;
+    border: 2px solid #ffdd00;
+    border-radius: 7px;
+    margin-top: 5px;
+  }
+
+
+  .info-bar{
+    font-size: 13px;
+    font-weight: 400;
+    text-align: center;
+    border: 2px solid #ffdd00;
+    border-radius: 7px;
+    margin-top: 5px;
+  }
+
+
 }
 .list-item-content-line-bottom{
   color:#ffdd00;

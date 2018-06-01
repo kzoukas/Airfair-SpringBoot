@@ -53,20 +53,69 @@
             $scope.flightSearched = data;
             if (!($scope.flightSearched)){
 
-                flightListService.getFlightList(model.params.from, model.params.to, model.params.stops, model.params.maxPrice,
-                                                model.params.flightDuration, model.params.connectingTime,model.params.departureTimeStart,
-                                                model.params.departureTimeEnd,model.params.arrivalTimeStart,model.params.arrivalTimeEnd)
+                flightListService.getFlightList(model.params.from,
+                    model.params.to,
+                    model.params.checkin,
+                    model.params.checkout,
+                    model.params.adultNum,
+                    model.params.childNum,
+                    model.params.typeOfFlight,
+                    model.params.airportSize,
+                    model.params.tripDistance,
+                    model.params.stops,
+                    model.params.maxPrice,
+                    model.params.flightDuration,
+                    model.params.connectingTimeStart,
+                    model.params.connectingTimeEnd,
+                    model.params.departureTimeStart,
+                    model.params.departureTimeEnd,
+                    model.params.arrivalTimeStart,
+                    model.params.arrivalTimeEnd)
                     .then(onRepo, onError);
 
             }else{
+                flightListService.getFlightList(model.params.from,
+                    model.params.to,
+                    model.params.checkin,
+                    model.params.checkout,
+                    model.params.adultNum,
+                    model.params.childNum,
+                    model.params.typeOfFlight,
+                    model.params.airportSize,
+                    model.params.tripDistance,
+                    model.params.stops,
+                    model.params.maxPrice,
+                    model.params.flightDuration,
+                    model.params.connectingTimeStart,
+                    model.params.connectingTimeEnd,
+                    model.params.departureTimeStart,
+                    model.params.departureTimeEnd,
+                    model.params.arrivalTimeStart,
+                    model.params.arrivalTimeEnd)
+                    .then(onRepo, onError);
                 clearInterval(interval);
             }
         }
 
 
-        flightListService.getFlightList(model.params.from, model.params.to, model.params.stops, model.params.maxPrice,
-                                        model.params.flightDuration, model.params.connectingTime,model.params.departureTimeStart,
-                                        model.params.departureTimeEnd,model.params.arrivalTimeStart,model.params.arrivalTimeEnd)
+        flightListService.getFlightList(model.params.from,
+            model.params.to,
+            model.params.checkin,
+            model.params.checkout,
+            model.params.adultNum,
+            model.params.childNum,
+            model.params.typeOfFlight,
+            model.params.airportSize,
+            model.params.tripDistance,
+            model.params.stops,
+            model.params.maxPrice,
+            model.params.flightDuration,
+            model.params.connectingTimeStart,
+            model.params.connectingTimeEnd,
+            model.params.departureTimeStart,
+            model.params.departureTimeEnd,
+            model.params.arrivalTimeStart,
+            model.params.arrivalTimeEnd)
             .then(onRepo, onError);
         callService();
         var interval = null;

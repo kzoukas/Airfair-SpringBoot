@@ -1,37 +1,52 @@
 <script src="js/usefulJs/sidebar.js"></script>
+<script src="js/usefulJs/hamburger-menu.js"></script>
 
-<div id="sidebarButton" data-toggle="tabContent">
-    <div>
-        <i class="fa fa-filter">Filters</i>&nbsp;
-    </div>
-    <i class="fa fa-angle-up fa-lg" aria-hidden="true"></i>
-</div>
+<script src="https://rawgit.com/GMaxera/angularjs-slider/master/dist/rzslider.js"></script>
+
+
 <!-- Sidebar content -->
 <div class="sidebar-block" id="tabContent">
     <div id="filters">
         <div class="card">
             <div class="list-group list-group-flush">
                 <form name="filterForm" ng-submit="submitFilters();">
-
+                    <!--<div class="list-group-item">-->
+                        <!--<a class="filter-toggle text-yellow" data-toggle="collapse"-->
+                           <!--data-target="#obTimeFilters" aria-expanded="false">Max Price-->
+                        <!--</a>-->
+                        <!--<div class="collapse in" id="obTimeFilters" aria-expanded="true">-->
+                            <!--<div class="filter-content">-->
+                                <!--<div>-->
+                                    <!--<div class="slidecontainer">-->
+                                        <!--<input type="range" min="1" value="{{filter.maxPrice}}" max="2000"-->
+                                               <!--class="slider" id="priceRange" ng-model="filter.maxPrice">-->
+                                    <!--</div>-->
+                                    <!--<div class="indicators">-->
+                                        <!--<p><span id="maxPrice"></span> €</p>-->
+                                    <!--</div>-->
+                                <!--</div>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</div>-->
                     <div class="list-group-item">
                         <a class="filter-toggle text-yellow" data-toggle="collapse"
-                           data-target="#obTimeFilters" aria-expanded="false">Max Price
+                           data-target="#maxPriceCollapse" aria-expanded="false">Max price
                         </a>
-                        <div class="collapse in" id="obTimeFilters" aria-expanded="true">
+                        <div class="collapse in" id="maxPriceCollapse" aria-expanded="true">
                             <div class="filter-content">
                                 <div>
                                     <div class="slidecontainer">
-                                        <input type="range" min="1" value="{{filter.maxPrice}}" max="2000"
-                                               class="slider" id="priceRange" ng-model="filter.maxPrice">
+                                        <rzslider rz-slider-model="filter.maxPriceSlider.value"
+                                                  rz-slider-options="filter.maxPriceSlider.options"></rzslider>
                                     </div>
                                     <div class="indicators">
-                                        <p><span id="maxPrice"></span> €</p>
+                                        <p> 0-</p>
+                                        <p> {{filter.maxPriceSlider.value}} € </p>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-
                     <!-- Stops -->
                     <div class="list-group-item">
                         <a class="filter-toggle text-yellow" data-toggle="collapse"
@@ -42,13 +57,12 @@
                                 <div id="stopsColumn">
                                     <div class="radio">
                                         <label>
-                                            <!--<small class="float-right text-muted">από 57,94&nbsp;€-->
-                                            <!--</small>-->
-                                            <input type="radio" value="0" ng-model="filter.stops">Direct</label>
+                                            <input type="radio" value="0" ng-model="filter.stops">Direct
+                                        </label>
                                     </div>
                                     <div class="radio">
                                         <label>
-                                            <input type="radio"  value="1" ng-model="filter.stops">Up to 1 stop
+                                            <input type="radio" value="1" ng-model="filter.stops">Up to 1 stop
                                         </label>
                                     </div>
                                     <div class="radio">
@@ -60,40 +74,79 @@
                             </div>
                         </div>
                     </div>
-                    <!--Flight Duration-->
+                    <!--&lt;!&ndash;Flight Duration&ndash;&gt;-->
+                    <!--<div class="list-group-item">-->
+                        <!--<a class="filter-toggle text-yellow" data-toggle="collapse"-->
+                           <!--data-target="#price" aria-expanded="false">Flight Duration-->
+                        <!--</a>-->
+                        <!--<div class="collapse sliderControler in" id="price">-->
+                            <!--<div class="filter-content">-->
+                                <!--<div>-->
+                                    <!--<div class="slidecontainer">-->
+                                        <!--<input type="range" min="0" value="{{filter.flightDuration}}" max="30"-->
+                                               <!--class="slider" id="hourRange" ng-model="filter.flightDuration">-->
+                                    <!--</div>-->
+                                    <!--<div class="indicators">-->
+                                        <!--<p>0h - <span id="maxHours"></span>h</p>-->
+                                    <!--</div>-->
+                                <!--</div>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <!--&lt;!&ndash;Connecting time&ndash;&gt;-->
+                    <!--<div class="list-group-item">-->
+                        <!--<a class="filter-toggle text-yellow" data-toggle="collapse"-->
+                           <!--data-target="#connectingHoursCollapse" aria-expanded="false">Connecting time-->
+                        <!--</a>-->
+                        <!--<div class="collapse in" id="connectingHoursCollapse" aria-expanded="true">-->
+                            <!--<div class="filter-content">-->
+                                <!--<div>-->
+                                    <!--<div class="slidecontainer">-->
+                                        <!--<input type="range" min="1" value="{{filter.connectingTime}}" max="24"-->
+                                               <!--class="slider" id="connectingHoursRange"-->
+                                               <!--ng-model="filter.connectingTime">-->
+                                    <!--</div>-->
+                                    <!--<div class="indicators">-->
+                                        <!--<p>1h - <span id="connectingHours"></span>h</p>-->
+                                    <!--</div>-->
+                                <!--</div>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</div>-->
                     <div class="list-group-item">
                         <a class="filter-toggle text-yellow" data-toggle="collapse"
-                           data-target="#price" aria-expanded="false">Flight Duration
+                           data-target="#flightDurationCollapse" aria-expanded="false">Flight duration
                         </a>
-                        <div class="collapse sliderControler in" id="price">
+                        <div class="collapse in" id="flightDurationCollapse" aria-expanded="true">
                             <div class="filter-content">
                                 <div>
                                     <div class="slidecontainer">
-                                        <input type="range" min="0" value="{{filter.flightDuration}}" max="30"
-                                               class="slider" id="hourRange" ng-model="filter.flightDuration">
+                                        <rzslider rz-slider-model="filter.flightDurationSlider.value"
+                                                  rz-slider-options="filter.flightDurationSlider.options"></rzslider>
                                     </div>
-
                                     <div class="indicators">
-                                        <p>0h - <span id="maxHours"></span>h</p>
+                                        <p> 1-</p>
+                                        <p> {{filter.flightDurationSlider.value}} h </p>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <!--Connecting time-->
                     <div class="list-group-item">
                         <a class="filter-toggle text-yellow" data-toggle="collapse"
-                           data-target="#connectingHoursCollapse" aria-expanded="false">Connecting time
+                           data-target="#connectingTimeCollapse" aria-expanded="false">Connecting time
                         </a>
-                        <div class="collapse in" id="connectingHoursCollapse" aria-expanded="true">
+                        <div class="collapse in" id="connectingTimeCollapse" aria-expanded="true">
                             <div class="filter-content">
                                 <div>
                                     <div class="slidecontainer">
-                                        <input type="range" min="1" value="{{filter.connectingTime}}" max="24"
-                                               class="slider" id="connectingHoursRange" ng-model="filter.connectingTime">
+                                        <rzslider rz-slider-model="filter.connectingTimeSlider.minValue"
+                                                  rz-slider-high="filter.connectingTimeSlider.maxValue"
+                                                  rz-slider-options="filter.connectingTimeSlider.options"></rzslider>
                                     </div>
                                     <div class="indicators">
-                                        <p>1h - <span id="connectingHours"></span>h</p>
+                                        <p> {{filter.connectingTimeSlider.minValue}}- </p>
+                                        <p> {{filter.connectingTimeSlider.maxValue}} h </p>
                                     </div>
                                 </div>
                             </div>
@@ -102,107 +155,92 @@
                     <!--Departure time-->
                     <div class="list-group-item">
                         <a class="filter-toggle text-yellow" data-toggle="collapse"
-                           data-target="#departureTimeCollapse" aria-expanded="false">Departure
+                           data-target="#departureTimeCollapse1" aria-expanded="false">Departure time
                         </a>
-                        <div class="collapse in" id="departureTimeCollapse" aria-expanded="true">
+                        <div class="collapse in" id="departureTimeCollapse1" aria-expanded="true">
                             <div class="filter-content">
                                 <div>
                                     <div class="slidecontainer">
-                                        <input id="ex2" type="text" class="span2" value="" data-slider-min="0"
-                                               data-slider-max="24" data-slider-step="1" data-slider-value="[0,24]" >
+                                        <rzslider rz-slider-model="filter.departureTimeSlider.minValue"
+                                                  rz-slider-high="filter.departureTimeSlider.maxValue"
+                                                  rz-slider-options="filter.departureTimeSlider.options"></rzslider>
                                     </div>
                                     <div class="indicators">
-
-                                            <input type="text" id="departureTime1Filter" ng-model="filter.departureTimeStart"  style=" width:15px;border: none; background: transparent; color: #000;" value="{{filter.departureTimeStart}}" disabled="disabled"/>
-                                            <p> :00 - </p>
-
-
-                                            <input type="text" id="departureTime2Filter" ng-model="filter.departureTimeEnd" style=" width:15px;border: none; background: transparent; color: #000;" value="{{filter.departureTimeEnd}}" disabled="disabled"/>
-                                            <p> :00 </p>
-
-                                        <!--<p> <span id=""></span>:00 - <span id=""></span>:00</p>-->
+                                        <p> {{filter.departureTimeSlider.minValue}}:00-</p>
+                                        <p> {{filter.departureTimeSlider.maxValue}}:00 </p>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-
                     <!--Arrival time-->
                     <div class="list-group-item">
                         <a class="filter-toggle text-yellow" data-toggle="collapse"
-                           data-target="#arrivalTimeCollapse" aria-expanded="false">Arrival
+                           data-target="#arrivalTimeCollapse1" aria-expanded="false">Arrival time
                         </a>
-                        <div class="collapse in" id="arrivalTimeCollapse" aria-expanded="true">
+                        <div class="collapse in" id="arrivalTimeCollapse1" aria-expanded="true">
                             <div class="filter-content">
                                 <div>
                                     <div class="slidecontainer">
-                                        <input id="ex1" type="text" class="span2" value="" data-slider-min="0"
-                                               data-slider-max="24" data-slider-step="1" data-slider-value="[0,24]" >
+                                        <rzslider rz-slider-model="filter.arrivalTimeSlider.minValue"
+                                                  rz-slider-high="filter.arrivalTimeSlider.maxValue"
+                                                  rz-slider-options="filter.arrivalTimeSlider.options"></rzslider>
                                     </div>
                                     <div class="indicators">
-
-                                        <input  type="text" id="arrivalTime1Filter" value="{{filter.arrivalTimeStart}}" ng-model="filter.arrivalTimeStart" style=" width:15px; border: none; background: transparent; color: #000;" disabled="disabled"/>
-                                        <p> :00 - </p>
-
-
-                                        <input  type="text" value="{{filter.arrivalTimeEnd}}" ng-model="filter.arrivalTimeEnd" id="arrivalTime2Filter" style=" width:15px;border: none; background: transparent; color: #000;"  disabled="disabled"/>
-                                        <p> :00 </p>
-
-                                        <!--<p> <span id=""></span>:00 - <span id=""></span>:00</p>-->
+                                        <p> {{filter.arrivalTimeSlider.minValue}}:00-</p>
+                                        <p> {{filter.arrivalTimeSlider.maxValue}}:00 </p>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <!--&lt;!&ndash;Airlines&ndash;&gt;-->
+                    <!--<div class="list-group-item">-->
+                        <!--<a class="filter-toggle text-yellow" data-toggle="collapse"-->
+                           <!--data-target="#airlines" aria-expanded="false">Airlines-->
+                        <!--</a>-->
+                        <!--<div class="collapse in" id="airlines">-->
+                            <!--<div class="filter-content">-->
+                                <!--<div id="airlinesColumn">-->
+                                    <!--<div class="checkbox">-->
+                                        <!--<label for="reset-filter-airline">-->
+                                            <!--<input type="checkbox" id="reset-filter-airline"-->
+                                                   <!--value="AllAirlines" checked="checked">All Airlines</label>-->
+                                    <!--</div>-->
+                                    <!--<div class="checkbox">-->
+                                        <!--<label class="d-block text-truncate" for="airline-A3">-->
+                                            <!--<input type="checkbox" name="airline-filter" value="A3" id="airline-A3">Aegean-->
+                                            <!--Airlines-->
+                                        <!--</label>-->
+                                    <!--</div>-->
+                                    <!--<div class="checkbox">-->
+                                        <!--<label class="d-block text-truncate" for="airline-LH">-->
+                                            <!--<input type="checkbox" name="airline-filter" value="LH" id="airline-LH">Lufthansa-->
+                                        <!--</label>-->
+                                    <!--</div>-->
+                                    <!--<div class="checkbox">-->
+                                        <!--<label class="d-block text-truncate" for="airline-OA">-->
+                                            <!--<input type="checkbox" name="airline-filter" value="OA" id="airline-OA">Olympic-->
+                                            <!--Air-->
+                                        <!--</label>-->
+                                    <!--</div>-->
+                                    <!--<div class="checkbox">-->
+                                        <!--<label class="d-block text-truncate" for="airline-FR">-->
+                                            <!--<input type="checkbox" name="airline-filter" value="FR" id="airline-FR">Ryanair-->
+                                        <!--</label>-->
+                                    <!--</div>-->
+                                    <!--<div class="checkbox">-->
+                                        <!--<label class="d-block text-truncate" for="airline-LX">-->
+                                            <!--<input type="checkbox" name="airline-filter" value="LX" id="airline-LX">Swiss-->
+                                            <!--International Airlines-->
+                                        <!--</label>-->
+                                    <!--</div>-->
 
-                    <!--Airlines-->
-                    <div class="list-group-item">
-                        <a class="filter-toggle text-yellow" data-toggle="collapse"
-                           data-target="#airlines" aria-expanded="false">Airlines
-
-                        </a>
-                        <div class="collapse in" id="airlines">
-                            <div class="filter-content">
-                                <div id="airlinesColumn">
-                                    <div class="checkbox">
-                                        <label for="reset-filter-airline">
-                                            <input type="checkbox" id="reset-filter-airline"
-                                                   value="AllAirlines" checked="checked">All Airlines</label>
-                                    </div>
-                                    <div class="checkbox">
-                                        <label class="d-block text-truncate" for="airline-A3">
-                                            <input type="checkbox" name="airline-filter" value="A3" id="airline-A3">Aegean
-                                            Airlines
-                                        </label>
-                                    </div>
-                                    <div class="checkbox">
-                                        <label class="d-block text-truncate" for="airline-LH">
-                                            <input type="checkbox" name="airline-filter" value="LH" id="airline-LH">Lufthansa
-                                        </label>
-                                    </div>
-                                    <div class="checkbox">
-                                        <label class="d-block text-truncate" for="airline-OA">
-                                            <input type="checkbox" name="airline-filter" value="OA" id="airline-OA">Olympic
-                                            Air
-                                        </label>
-                                    </div>
-                                    <div class="checkbox">
-                                        <label class="d-block text-truncate" for="airline-FR">
-                                            <input type="checkbox" name="airline-filter" value="FR" id="airline-FR">Ryanair
-                                        </label>
-                                    </div>
-                                    <div class="checkbox">
-                                        <label class="d-block text-truncate" for="airline-LX">
-                                            <input type="checkbox" name="airline-filter" value="LX" id="airline-LX">Swiss
-                                            International Airlines
-                                        </label>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="list-group-item border-bottom-0">
+                                <!--</div>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <div class="searchFilters list-group-item border-bottom-0">
                         <button id="reset-filters" type="submit" value="submit"
                                 class="btn-search text-truncate">
                             Search results
@@ -215,76 +253,4 @@
             </div>
         </div>
     </div>
-
-    <!--<script id="stopsFilterColumn" type="text/template">-->
-    <!--{{#each this}}-->
-    <!--<div class="radio"><label for="stops">-->
-    <!--<small class="float-right text-muted">από {{formatPrice this.minprice-->
-    <!--this.currencyCode}}-->
-    <!--</small>-->
-    <!--<input type="radio" name="stops-filter" {{#if @last}}checked="checked" {{/if}}-->
-    <!--value="{{this.number}}" id="stops-{{this.number}}">{{translateNofStops this.number}}</label>-->
-    <!--</div>-->
-    <!--{{/each}}-->
-    <!--</script>-->
-    <!--<script id="airlinesFilterColumn" type="text/template">-->
-    <!--<div class="checkbox"><label for="reset-filter-airline"><input type="checkbox"-->
-    <!--id="reset-filter-airline"-->
-    <!--value="AllAirlines"-->
-    <!--checked="checked">Όλες οι-->
-    <!--αεροπορικές εταιρείες</label></div>-->
-    <!--{{#each this}}-->
-    <!--<div class="checkbox">-->
-    <!--<div class="text-small float-right">-->
-    <!--<span class="airline-only">μόνο</span>-->
-    <!--<span class="text-muted">από {{formatPrice this.minprice this.currencyCode}}</span>-->
-    <!--</div>-->
-    <!--<label class="d-block text-truncate">-->
-    <!--<input type="checkbox" name="airline-filter" checked="checked" {{#hasOneElement-->
-    <!--../this}}disabled="disabled"{{/hasOneElement}}value="{{this.code}}"-->
-    <!--id="airline-{{this.code}}">{{this.name}}-->
-    <!--</label>-->
-    <!--</div>-->
-    <!--{{/each}}-->
-    <!--<div class="checkbox"><label for="combi-airline" class="display-block"><input-->
-    <!--type="checkbox" id="combi-airline" value="CombiAirlines" checked="checked">Συνδυασμός-->
-    <!--αεροπορικών εταιρειών</label></div>-->
-    <!--</script>-->
-    <!--<script id="paymentMethodFilterColumn" type="text/template">-->
-    <!--<div class="checkbox"><label for="reset-filter-payment-method" class="display-block">-->
-    <!--<small class="pull-right"></small>-->
-    <!--<input type="checkbox" id="reset-filter-payment-method" value="AllPaymentMethods"-->
-    <!--checked="checked">Όλοι οι τρόποι πληρωμής</label></div>-->
-    <!--{{#each this}}-->
-    <!--<div class="checkbox"><label class="display-block"><input type="checkbox"-->
-    <!--name="payment-method-filter"-->
-    <!--checked="checked"-->
-    <!--{{#hasOneElement ../this}}disabled="disabled"{{/hasOneElement}}-->
-    <!--value="{{this}}" id="payment-{{this}}">{{translateText this-->
-    <!--'paymentMethods'}}</label></div>-->
-    <!--{{/each}}-->
-    <!--</script>-->
-    <!--<script id="transportationsFilterColumn" type="text/template">-->
-    <!--<div class="toggle-switch d-lg-none d-xl-none">-->
-    <!--<label for="transportation-onlyFlights">-->
-    <!--<input type="checkbox" value="onlyFlights" class=""-->
-    <!--id="transportation-onlyFlights">-->
-    <!--Μόνο Πτήσεις-->
-    <!--<div class="slider"></div>-->
-    <!--</label>-->
-    <!--</div>-->
-    <!--{{#each this}}-->
-    <!--<div class="checkbox">-->
-    <!--<div class="text-small float-right">-->
-    <!--<span class="transportation-only">μόνο</span>-->
-    <!--<span class="text-muted">από {{formatPrice this.minprice this.currencyCode}}</span>-->
-    <!--</div>-->
-    <!--<label for="transportation-{{this.type}}">-->
-    <!--<input type="checkbox" name="transportation-filter" checked="checked"-->
-    <!--value="{{this.type}}" id="transportation-{{this.type}}">{{translateText-->
-    <!--this.type 'transportationTypes'}}-->
-    <!--</label>-->
-    <!--</div>-->
-    <!--{{/each}}-->
-    <!--</script>-->
 </div>

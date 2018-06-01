@@ -4,6 +4,8 @@ public class FlightOneWay {
 
     private String flightSearchFromIata;
     private String flightSearchToIata;
+
+// Direct Flight
     private String departureFrom;
     private String fromDepartureTime;
     private String fromDepartureDate;
@@ -12,9 +14,11 @@ public class FlightOneWay {
     private String duration;
     private String fromCompany;
     private String toDepartureTime;
-    private String toLastDepartureTime; //so to avoid printing time +1 (next day) at the last glight time
+    private String toLastDepartureTime; //so to avoid printing time +1 (next day) at the last flight time
     private String toDepartureDate;
+    private Double price;
 
+    //+ Flight up to 1 station
     private String departureToStation1;
     private String departurefromStation1;
     private String station1ArrivalTime;
@@ -26,10 +30,10 @@ public class FlightOneWay {
     private String airlineToStation1imgSrc;
     private String airlineFromStation1;
     private String airlineFromStation1imgSrc;
-
     private String durationToStation1;
     private String durationFromStation1;
 
+    //+ Flight up to 2 stations
     private String departureToStation2;
     private String departurefromStation2;
     private String station2ArrivalTime;
@@ -41,9 +45,6 @@ public class FlightOneWay {
     private String airlineFromStation2imgSrc;
     private String durationToStation2;
     private String durationFromStation2;
-
-    private Double price;
-
 
     public FlightOneWay() {
 

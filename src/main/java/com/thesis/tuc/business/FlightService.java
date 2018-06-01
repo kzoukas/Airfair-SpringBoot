@@ -25,24 +25,38 @@ public class FlightService {
         this.flightInfoRepository = flightInfoRepository;
     }
 
-    public List<FlightOneWay> getDirectFlight(String fromIata, String toIata, double maxPrice, int flightDuration,int departureTimeStart,int departureTimeEnd,int arrivalTimeStart,int arrivalTimeEnd) {
+    public List<FlightOneWay> getDirectFlight(String fromIata,
+                                              String toIata,
+                                              String checkin,
+                                              String checkout,
+                                              String adultNum,
+                                              String childNum,
+                                              String typeOfFlight,
+                                              String airportSize,
+                                              String tripDistance,
+                                              double maxPrice,
+                                              int flightDuration,
+                                              int departureTimeStart,
+                                              int departureTimeEnd,
+                                              int arrivalTimeStart,
+                                              int arrivalTimeEnd) {
 
-        String typeOfFlight = "Direct";
-        List<Flight> flights = this.flightRepository.findByStationAndPriceLessThan(typeOfFlight, maxPrice);
+        String typeOfFlightToSearch = "Απευθείας";
+        List<Flight> flights = new ArrayList<>();;
+        flights = getFlights(fromIata, toIata, checkin, checkout, adultNum, childNum, typeOfFlight, airportSize, tripDistance, maxPrice, typeOfFlightToSearch, flights);
         List<FlightOneWay> flightsList = new ArrayList<>();
 
         for (int i = 0; i < flights.size(); i++) {
-            // Direct flight add to list
-            searchDirectFlights(fromIata, toIata, maxPrice, flights, flightsList, i,flightDuration,departureTimeStart,departureTimeEnd,arrivalTimeStart,arrivalTimeEnd);
+                // Direct flight add to list
+                searchDirectFlights(fromIata, toIata, maxPrice, flights, flightsList, i,
+                        flightDuration, departureTimeStart, departureTimeEnd, arrivalTimeStart, arrivalTimeEnd);
         }
-
         Collections.sort(flightsList, new Comparator<FlightOneWay>() {
 
             public int compare(FlightOneWay s1, FlightOneWay s2) {
                 return (int) ((s1.getPrice()) - (s2.getPrice()));
                 //return String.valueOf(s2.getPrice().substring(1)).compareTo(s1.getPrice().substring(1));
             }
-
             Double extractDouble(String s) {
                 String num = s.replaceAll("\\D", "");
                 // return 0 if no digits found
@@ -54,64 +68,115 @@ public class FlightService {
         return distinctElements;
     }
 
-    public List<FlightOneWay> getFlightsOneStation(String fromIata, String toIata, double maxPrice, int flightDuration,int connectingTime,int departureTimeStart,int departureTimeEnd,int arrivalTimeStart,int arrivalTimeEnd) {
 
-        String typeOfFlight = "Direct";
-        List<Flight> flights = this.flightRepository.findByStationAndPriceLessThan(typeOfFlight, maxPrice);
+
+    public List<FlightOneWay> getFlightsOneStation(String fromIata,
+                                                   String toIata,
+                                                   String checkin,
+                                                   String checkout,
+                                                   String adultNum,
+                                                   String childNum,
+                                                   String typeOfFlight,
+                                                   String airportSize,
+                                                   String tripDistance,
+                                                   double maxPrice,
+                                                   int flightDuration,
+                                                   int connectingTimeStart,
+                                                   int connectingTimeEnd,
+                                                   int departureTimeStart,
+                                                   int departureTimeEnd,
+                                                   int arrivalTimeStart,
+                                                   int arrivalTimeEnd) {
+
+        String typeOfFlightToSearch = "Απευθείας";
+        List<Flight> flights = new ArrayList<>();;
+        flights = getFlights(fromIata, toIata, checkin, checkout, adultNum, childNum, typeOfFlight,
+                airportSize, tripDistance, maxPrice, typeOfFlightToSearch, flights);
         List<FlightOneWay> flightsList = new ArrayList<>();
-
         for (int i = 0; i < flights.size(); i++) {
-            // Direct flight add to list
-            searchDirectFlights(fromIata, toIata, maxPrice, flights, flightsList, i,flightDuration,departureTimeStart,departureTimeEnd,arrivalTimeStart,arrivalTimeEnd);
-            //Add to list all pair of flights with station and waiting time at least 1 hour so the passenger have time to change plane
-            for (int j = i + 1; j < flights.size(); j++) {
-                flightsUpToOneStation(maxPrice, flights, flightsList, i, j, flightDuration,connectingTime,departureTimeStart,departureTimeEnd,arrivalTimeStart,arrivalTimeEnd);
-            }
-        }
-        Collections.sort(flightsList, new Comparator<FlightOneWay>() {
+                // Direct flight add to list
+                searchDirectFlights(fromIata, toIata, maxPrice, flights, flightsList, i,
+                        flightDuration, departureTimeStart, departureTimeEnd, arrivalTimeStart, arrivalTimeEnd);
+                //Add to list all pair of flights with station and waiting time
+                // at least 1 hour so the passenger have time to change plane
+                for (int j = 0; j < flights.size(); j++) {
 
-            public int compare(FlightOneWay s1, FlightOneWay s2) {
-                return (int) ((s1.getPrice()) - (s2.getPrice()));
-                //return String.valueOf(s2.getPrice().substring(1)).compareTo(s1.getPrice().substring(1));
-            }
-
-            Double extractDouble(String s) {
-                String num = s.replaceAll("\\D", "");
-                // return 0 if no digits found
-                return num.isEmpty() ? 0 : Double.parseDouble(num.replace(".", ","));
-            }
-        });
-        List<FlightOneWay> distinctElements = flightsList.stream().distinct()
-                .collect(Collectors.toList());
-        return distinctElements;
-    }
-
-    public List<FlightOneWay> getFlightsTwoStations(String fromIata, String toIata, double maxPrice, int flightDuration,int connectingTime,int departureTimeStart,int departureTimeEnd,int arrivalTimeStart,int arrivalTimeEnd) {
-
-        List<Flight> flights = this.flightRepository.findByPriceLessThan(maxPrice);
-        List<FlightOneWay> flightsList = new ArrayList<>();
-
-        for (int i = 0; i < flights.size(); i++) {
-            // Direct flight add to list
-            searchDirectFlights(fromIata, toIata, maxPrice, flights, flightsList, i,flightDuration,departureTimeStart,departureTimeEnd,arrivalTimeStart,arrivalTimeEnd);
-
-            for (int j = i + 1; j < flights.size(); j++) {
-
-                if (flights.get(i).getStation().equals("Direct") && (flights.get(j).getStation().equals("Direct"))) {
-
-                    flightsUpToOneStation(maxPrice, flights, flightsList, i, j, flightDuration,connectingTime,departureTimeStart,departureTimeEnd,arrivalTimeStart,arrivalTimeEnd);
-
-                } else if (flights.get(i).getStation().equals("Direct") && (flights.get(j).getStation().equals("1 Stop"))) {
-
-                    upTo2directFlightFirst(maxPrice, flights, flightsList, i, j, flightDuration,connectingTime,departureTimeStart,departureTimeEnd,arrivalTimeStart,arrivalTimeEnd);
-
-                } else if (flights.get(i).getStation().equals("1 Stop") && (flights.get(j).getStation().equals("Direct"))) {
-
-                    upTo2directFlightSecond(maxPrice, flights, flightsList, i, j, flightDuration,connectingTime,departureTimeStart,departureTimeEnd,arrivalTimeStart,arrivalTimeEnd);
-
+                    flightsUpToOneStation(maxPrice, flights, flightsList, i, j, flightDuration, connectingTimeStart,
+                            connectingTimeEnd,departureTimeStart, departureTimeEnd, arrivalTimeStart, arrivalTimeEnd);
                 }
+        }
+        Collections.sort(flightsList, new Comparator<FlightOneWay>() {
+
+            public int compare(FlightOneWay s1, FlightOneWay s2) {
+                return (int) ((s1.getPrice()) - (s2.getPrice()));
+                //return String.valueOf(s2.getPrice().substring(1)).compareTo(s1.getPrice().substring(1));
             }
 
+            Double extractDouble(String s) {
+                String num = s.replaceAll("\\D", "");
+                // return 0 if no digits found
+                return num.isEmpty() ? 0 : Double.parseDouble(num.replace(".", ","));
+            }
+        });
+        List<FlightOneWay> distinctElements = flightsList.stream().distinct()
+                .collect(Collectors.toList());
+        return distinctElements;
+    }
+
+    public List<FlightOneWay> getFlightsTwoStations(String fromIata,
+                                                    String toIata,
+                                                    String checkin,
+                                                    String checkout,
+                                                    String adultNum,
+                                                    String childNum,
+                                                    String typeOfFlight,
+                                                    String airportSize,
+                                                    String tripDistance,
+                                                    double maxPrice,
+                                                    int flightDuration,
+                                                    int connectingTimeStart,
+                                                    int connectingTimeEnd,
+                                                    int departureTimeStart,
+                                                    int departureTimeEnd,
+                                                    int arrivalTimeStart,
+                                                    int arrivalTimeEnd) {
+
+        List<Flight> flights = this.flightRepository.
+                findDistinctByPriceLessThanAndFlightSearchFromIataAndFlightSearchToIataAndCheckinAndCheckoutAndAdultNumAndChildNumAndTypeOfFlightAndAirportSizeAndTripDistance( maxPrice,fromIata,
+                        toIata,
+                        checkin,
+                        checkout,
+                        adultNum,
+                        childNum,
+                        typeOfFlight,
+                        airportSize,
+                        tripDistance);
+        List<FlightOneWay> flightsList = new ArrayList<>();
+
+        for (int i = 0; i < flights.size(); i++) {
+                // Direct flight add to list
+                searchDirectFlights(fromIata, toIata, maxPrice, flights, flightsList, i, flightDuration,
+                        departureTimeStart, departureTimeEnd, arrivalTimeStart, arrivalTimeEnd);
+
+                for (int j = 0; j < flights.size(); j++) {
+
+                    if (flights.get(i).getStation().equals("Απευθείας") && (flights.get(j).getStation().equals("Απευθείας"))) {
+
+                        flightsUpToOneStation(maxPrice, flights, flightsList, i, j, flightDuration, connectingTimeStart,
+                                connectingTimeEnd,departureTimeStart, departureTimeEnd, arrivalTimeStart, arrivalTimeEnd);
+
+                    } else if (flights.get(i).getStation().equals("Απευθείας") && (flights.get(j).getStation().equals("1 Στάση"))) {
+
+                        upTo2directFlightFirst(maxPrice, flights, flightsList, i, j, flightDuration, connectingTimeStart,
+                                connectingTimeEnd,departureTimeStart, departureTimeEnd, arrivalTimeStart, arrivalTimeEnd);
+
+                    } else if (flights.get(i).getStation().equals("1 Στάση") && (flights.get(j).getStation().equals("Απευθείας"))) {
+
+                        upTo2directFlightSecond(maxPrice, flights, flightsList, i, j, flightDuration, connectingTimeStart,
+                                connectingTimeEnd,departureTimeStart, departureTimeEnd, arrivalTimeStart, arrivalTimeEnd);
+
+                    }
+                }
         }
 
         Collections.sort(flightsList, new Comparator<FlightOneWay>() {
@@ -132,7 +197,17 @@ public class FlightService {
         return distinctFlightList;
     }
 
-    private void searchDirectFlights(String fromIata, String toIata, double maxPrice, List<Flight> flights, List<FlightOneWay> flightsList, int i,int flightDuration,int departureTimeStart,int departureTimeEnd,int arrivalTimeStart,int arrivalTimeEnd) {
+    private void searchDirectFlights(String fromIata,
+                                     String toIata,
+                                     double maxPrice,
+                                     List<Flight> flights,
+                                     List<FlightOneWay> flightsList,
+                                     int i,
+                                     int flightDuration,
+                                     int departureTimeStart,
+                                     int departureTimeEnd,
+                                     int arrivalTimeStart,
+                                     int arrivalTimeEnd) {
 
         SimpleDateFormat timeFormat = new SimpleDateFormat("HH:mm");
         SimpleDateFormat dateFormat = new SimpleDateFormat("M/d/yyyy");
@@ -160,17 +235,27 @@ public class FlightService {
         int departureTime = Integer.parseInt(departureTimeString.substring(0, Math.min(departureTimeString.length(), 2)));
 
         String arrivalTimeString=flights.get(i).getFromArrivalTime();
-        int arrivalTime = Integer.parseInt(departureTimeString.substring(0, Math.min(departureTimeString.length(), 2)));
+        int arrivalTime = Integer.parseInt(arrivalTimeString.substring(0, Math.min(arrivalTimeString.length(), 2)));
 
         if (flights.get(i).getFromIata().equals(fromIata)
                 && (flights.get(i).getToIata().equals(toIata))
-                && (flights.get(i).getStation().equals("Direct"))
+                && (flights.get(i).getStation().equals("Απευθείας"))
                 && (diffHours < flightDuration)
                 && (departureTimeStart <= departureTime)
                 && (departureTimeEnd > departureTime)
                 && (arrivalTimeStart <= arrivalTime)
                 && (arrivalTimeEnd > arrivalTime)
-                && (maxPrice > flights.get(i).getPrice())   ){
+                && (maxPrice > flights.get(i).getPrice())
+                ||(flights.get(i).getFromIata().equals(toIata)
+                && (flights.get(i).getToIata().equals(fromIata))
+                && (flights.get(i).getStation().equals("Απευθείας"))
+                && (diffHours < flightDuration)
+                && (departureTimeStart <= departureTime)
+                && (departureTimeEnd > departureTime)
+                && (arrivalTimeStart <= arrivalTime)
+                && (arrivalTimeEnd > arrivalTime)
+                && (maxPrice > flights.get(i).getPrice()) ))
+        {
 
             FlightOneWay flight = new FlightOneWay();
             flight.setDepartureFrom(flights.get(i).getFromTown());
@@ -191,7 +276,18 @@ public class FlightService {
         }
     }
 
-    private void flightsUpToOneStation(double maxPrice, List<Flight> flights, List<FlightOneWay> flightsList, int i, int j, int flightDuration,int connectingTime,int departureTimeStart,int departureTimeEnd,int arrivalTimeStart,int arrivalTimeEnd) {
+    private void flightsUpToOneStation(double maxPrice,
+                                       List<Flight> flights,
+                                       List<FlightOneWay> flightsList,
+                                       int i,
+                                       int j,
+                                       int flightDuration,
+                                       int connectingTimeStart,
+                                       int connectingTimeEnd,
+                                       int departureTimeStart,
+                                       int departureTimeEnd,
+                                       int arrivalTimeStart,
+                                       int arrivalTimeEnd) {
         SimpleDateFormat format = new SimpleDateFormat("HH:mm");
         String time1 = flights.get(i).getFromArrivalTime();
         Date d1 = null;
@@ -230,13 +326,17 @@ public class FlightService {
         String departureTimeString=flights.get(i).getFromDepartureTime();
         int departureTime = Integer.parseInt(departureTimeString.substring(0, Math.min(departureTimeString.length(), 2)));
 
-        String arrivalTimeString=flights.get(i).getFromArrivalTime();
-        int arrivalTime = Integer.parseInt(departureTimeString.substring(0, Math.min(departureTimeString.length(), 2)));
+        String arrivalTimeString=flights.get(j).getFromArrivalTime();
+        int arrivalTime = Integer.parseInt(arrivalTimeString.substring(0, Math.min(arrivalTimeString.length(), 2)));
 
         Double finalPrice = flights.get(i).getPrice() + flights.get(j).getPrice();
 
         //Add to list all pair of flights with station and waiting time at least 1 hour so the passenger have time to change plane
         if (flights.get(i).getToIata().equals(flights.get(j).getFromIata())
+                && (flights.get(i).getFlightSearchFromIata().equals(flights.get(j).getFlightSearchFromIata()))
+                && (flights.get(i).getFlightSearchToIata().equals(flights.get(j).getFlightSearchToIata()))
+                && (flights.get(i).getFlightSearchFromIata().equals(flights.get(i).getFromIata()))
+                && (flights.get(j).getFlightSearchToIata().equals(flights.get(j).getToIata()))
                 && (waitingTimeHours >= 1 || waitingTimeMinutes > 45)
                 && (finalPrice < maxPrice)
                 && (diffHours < flightDuration)
@@ -244,7 +344,8 @@ public class FlightService {
                 && (departureTimeEnd > departureTime)
                 && (arrivalTimeStart <= arrivalTime)
                 && (arrivalTimeEnd > arrivalTime)
-                && (waitingTimeHours < connectingTime)){
+                && (connectingTimeStart <= waitingTimeHours)
+                && (connectingTimeEnd > waitingTimeHours)){
 
             FlightOneWay flight = new FlightOneWay();
             flight.setDepartureFrom(flights.get(i).getFromTown());
@@ -288,7 +389,18 @@ public class FlightService {
 
     }
 
-    private void upTo2directFlightFirst(double maxPrice, List<Flight> flights, List<FlightOneWay> flightsList, int i, int j, int flightDuration,int connectingTime,int departureTimeStart,int departureTimeEnd,int arrivalTimeStart,int arrivalTimeEnd) {
+    private void upTo2directFlightFirst(double maxPrice,
+                                        List<Flight> flights,
+                                        List<FlightOneWay> flightsList,
+                                        int i,
+                                        int j,
+                                        int flightDuration,
+                                        int connectingTimeStart,
+                                        int connectingTimeEnd,
+                                        int departureTimeStart,
+                                        int departureTimeEnd,
+                                        int arrivalTimeStart,
+                                        int arrivalTimeEnd) {
 
         if (flights.get(i).getToIata().equals(flights.get(j).getFromIata())) {
 
@@ -360,15 +472,18 @@ public class FlightService {
             String departureTimeString=flights.get(i).getFromDepartureTime();
             int departureTime = Integer.parseInt(departureTimeString.substring(0, Math.min(departureTimeString.length(), 2)));
 
-            String arrivalTimeString=flights.get(i).getFromArrivalTime();
-            int arrivalTime = Integer.parseInt(departureTimeString.substring(0, Math.min(departureTimeString.length(), 2)));
+            String arrivalTimeString=flights.get(j).getFromArrivalTime();
+            int arrivalTime = Integer.parseInt(arrivalTimeString.substring(0, Math.min(arrivalTimeString.length(), 2)));
 
             Double finalPrice = flights.get(i).getPrice() + flights.get(j).getPrice();
 
-            if ((waitingTimeHours1 >= 1 || waitingTimeMinutes1 > 45)
+            if (    (flightDurationUpTo2>0)
+                    &&(waitingTimeHours1 >= 1 || waitingTimeMinutes1 > 45)
                     && (waitingTimeHours2 >= 1 || waitingTimeMinutes2 > 45)
-                    && (waitingTimeHours1 < connectingTime)
-                    && (waitingTimeHours2 < connectingTime)
+                    && (connectingTimeStart <= waitingTimeHours1)
+                    && (connectingTimeEnd > waitingTimeHours1)
+                    && (connectingTimeStart <= waitingTimeHours2)
+                    && (connectingTimeEnd > waitingTimeHours2)
                     && (finalPrice < maxPrice)
                     && (diffHours < flightDuration)
                     && (departureTimeStart <= departureTime)
@@ -439,7 +554,18 @@ public class FlightService {
         }
     }
 
-    private void upTo2directFlightSecond(double maxPrice, List<Flight> flights, List<FlightOneWay> flightsList, int i, int j, int flightDuration,int connectingTime,int departureTimeStart,int departureTimeEnd,int arrivalTimeStart,int arrivalTimeEnd) {
+    private void upTo2directFlightSecond(double maxPrice,
+                                         List<Flight> flights,
+                                         List<FlightOneWay> flightsList,
+                                         int i,
+                                         int j,
+                                         int flightDuration,
+                                         int connectingTimeStart,
+                                         int connectingTimeEnd,
+                                         int departureTimeStart,
+                                         int departureTimeEnd,
+                                         int arrivalTimeStart,
+                                         int arrivalTimeEnd) {
 
         if (flights.get(i).getToIata().equals(flights.get(j).getFromIata())) {
 
@@ -510,14 +636,17 @@ public class FlightService {
             int departureTime = Integer.parseInt(departureTimeString.substring(0, Math.min(departureTimeString.length(), 2)));
 
             String arrivalTimeString=flights.get(i).getFromArrivalTime();
-            int arrivalTime = Integer.parseInt(departureTimeString.substring(0, Math.min(departureTimeString.length(), 2)));
+            int arrivalTime = Integer.parseInt(arrivalTimeString.substring(0, Math.min(arrivalTimeString.length(), 2)));
 
             Double finalPrice = flights.get(i).getPrice() + flights.get(j).getPrice();
 
-            if ((waitingTimeHours1 >= 1 || waitingTimeMinutes1 > 45)
+            if ((flightDurationUpTo2>0)
+                    &&(waitingTimeHours1 >= 1 || waitingTimeMinutes1 > 45)
                     && (waitingTimeHours2 >= 1 || waitingTimeMinutes2 > 45)
-                    && (waitingTimeHours1 < connectingTime)
-                    && (waitingTimeHours2 < connectingTime)
+                    && (connectingTimeStart <= waitingTimeHours1)
+                    && (connectingTimeEnd > waitingTimeHours1)
+                    && (connectingTimeStart <= waitingTimeHours2)
+                    && (connectingTimeEnd > waitingTimeHours2)
                     && (finalPrice < maxPrice)
                     && (diffHours < flightDuration)
                     && (departureTimeStart <= departureTime)
@@ -587,6 +716,47 @@ public class FlightService {
 
             }
         }
+    }
+
+    private List<Flight> getFlights(String fromIata, String toIata, String checkin, String checkout, String adultNum,
+                                    String childNum, String typeOfFlight, String airportSize, String tripDistance,
+                                    double maxPrice, String typeOfFlightToSearch, List<Flight> flights) {
+        if(typeOfFlight=="oneWay") {
+            flights = this.flightRepository.
+                    findDistinctByStationAndPriceLessThanAndFlightSearchFromIataAndFlightSearchToIataAndCheckinAndCheckoutAndAdultNumAndChildNumAndTypeOfFlightAndAirportSizeAndTripDistance(typeOfFlightToSearch, maxPrice, fromIata,
+                            toIata,
+                            checkin,
+                            checkout,
+                            adultNum,
+                            childNum,
+                            typeOfFlight,
+                            airportSize,
+                            tripDistance);
+        }else{
+            List<Flight> flightsCheckIn = this.flightRepository.
+                    findDistinctByStationAndPriceLessThanAndFlightSearchFromIataAndFlightSearchToIataAndCheckinAndCheckoutAndAdultNumAndChildNumAndTypeOfFlightAndAirportSizeAndTripDistance(typeOfFlightToSearch, maxPrice, fromIata,
+                            toIata,
+                            checkin,
+                            checkout,
+                            adultNum,
+                            childNum,
+                            typeOfFlight,
+                            airportSize,
+                            tripDistance);
+            List<Flight> flightsCheckOut = this.flightRepository.
+                    findDistinctByStationAndPriceLessThanAndFlightSearchFromIataAndFlightSearchToIataAndCheckinAndCheckoutAndAdultNumAndChildNumAndTypeOfFlightAndAirportSizeAndTripDistance(typeOfFlightToSearch, maxPrice, toIata,
+                            fromIata,
+                            checkout,
+                            checkin,
+                            adultNum,
+                            childNum,
+                            typeOfFlight,
+                            airportSize,
+                            tripDistance);
+            flights.addAll(flightsCheckIn);
+            flights.addAll(flightsCheckOut);
+        }
+        return flights;
     }
 
     public static double round(double value, int places) {

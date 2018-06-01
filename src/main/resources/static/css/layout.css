@@ -764,7 +764,7 @@ a:hover {
 
 .header-01 .header-main .logo .header-logo img {
     max-width: 190px;
-    margin-right: 300px;
+    /*margin-right: 300px;*/
 }
 
 .header-01 .header-main .navigation {
