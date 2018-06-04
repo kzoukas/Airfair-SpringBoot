@@ -2,24 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="897d45ea-ce64-4318-878e-4be4f1afd7f2" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/thesis/tuc/business/FlightService.java" afterPath="$PROJECT_DIR$/src/main/java/com/thesis/tuc/business/FlightService.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/thesis/tuc/services/rest/responseDTOs/FlightOneWay.java" afterPath="$PROJECT_DIR$/src/main/java/com/thesis/tuc/services/rest/responseDTOs/FlightOneWay.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/bongo-checkout-tranquil.css" afterPath="$PROJECT_DIR$/src/main/resources/static/css/bongo-checkout-tranquil.css" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/responsive.css" afterPath="$PROJECT_DIR$/src/main/resources/static/css/responsive.css" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/style.css" afterPath="$PROJECT_DIR$/src/main/resources/static/css/style.css" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/index.html" afterPath="$PROJECT_DIR$/src/main/resources/static/index.html" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/app.js" afterPath="$PROJECT_DIR$/src/main/resources/static/js/app.js" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/components/flights-list/flight-list.controller.js" afterPath="$PROJECT_DIR$/src/main/resources/static/js/components/flights-list/flight-list.controller.js" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/components/flights-list/flight-list.html" afterPath="$PROJECT_DIR$/src/main/resources/static/js/components/flights-list/flight-list.html" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/components/mobile-menu/mobile-menu.html" afterPath="$PROJECT_DIR$/src/main/resources/static/js/components/mobile-menu/mobile-menu.html" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/components/top-bar/top-bar.html" afterPath="$PROJECT_DIR$/src/main/resources/static/js/components/top-bar/top-bar.html" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/usefulJs/hamburger-menu.js" afterPath="$PROJECT_DIR$/src/main/resources/static/js/usefulJs/hamburger-menu.js" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/css/responsive.css" afterPath="$PROJECT_DIR$/target/classes/static/css/responsive.css" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/css/style.css" afterPath="$PROJECT_DIR$/target/classes/static/css/style.css" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/index.html" afterPath="$PROJECT_DIR$/target/classes/static/index.html" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/js/app.js" afterPath="$PROJECT_DIR$/target/classes/static/js/app.js" />
-      <change beforePath="$PROJECT_DIR$/thesis.pid" afterPath="$PROJECT_DIR$/thesis.pid" />
+      <change beforePath="$PROJECT_DIR$/thesis.pid" afterPath="" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -153,8 +136,8 @@
       <file leaf-file-name="style.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/resources/static/css/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="333">
-              <caret line="10994" column="24" lean-forward="false" selection-start-line="10994" selection-start-column="24" selection-end-line="10994" selection-end-column="24" />
+            <state relative-caret-position="318">
+              <caret line="10993" column="24" lean-forward="false" selection-start-line="10993" selection-start-column="24" selection-end-line="10993" selection-end-column="24" />
               <folding />
             </state>
           </provider>
@@ -349,7 +332,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-319" />
     <option name="width" value="1898" />
     <option name="height" value="1053" />
@@ -768,12 +751,12 @@
       <workItem from="1527842131741" duration="25947000" />
       <workItem from="1527942799710" duration="18788000" />
       <workItem from="1528018846568" duration="24492000" />
-      <workItem from="1528103744527" duration="2893000" />
+      <workItem from="1528103744527" duration="3239000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="733230000" />
+    <option name="totallyTimeSpent" value="733576000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -785,7 +768,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-319" y="0" width="1922" height="1053" extended-state="7" />
+    <frame x="-319" y="0" width="1922" height="1053" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1309,8 +1292,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/static/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="333">
-          <caret line="10994" column="24" lean-forward="false" selection-start-line="10994" selection-start-column="24" selection-end-line="10994" selection-end-column="24" />
+        <state relative-caret-position="318">
+          <caret line="10993" column="24" lean-forward="false" selection-start-line="10993" selection-start-column="24" selection-end-line="10993" selection-end-column="24" />
           <folding />
         </state>
       </provider>
