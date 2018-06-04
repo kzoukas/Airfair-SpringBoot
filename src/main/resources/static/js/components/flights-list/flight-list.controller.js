@@ -35,6 +35,7 @@
         model.params=parameterService.getter();
         var onRepo = function(data){
             $scope.flightList = data;
+            $scope.typeOfFlight = model.params.typeOfFlight;
             $scope.totalItems = $scope.flightList.length;
             $scope.currentPage = 1;
             $scope.itemsPerPage=8;
@@ -138,6 +139,13 @@
         $scope.ShowHide = function(flight) {
             //If DIV is visible it will be hidden and vice versa.
             flight.IsVisible = !flight.IsVisible;
+        }
+
+        $scope.IsVisible1 = false;
+        $scope.ShowHideReturn = function(flight1) {
+            //If DIV is visible it will be hidden and vice versa.
+            console.log("mpikaaa");
+            flight1.IsVisible1 = !flight1.IsVisible1;
         }
 
 

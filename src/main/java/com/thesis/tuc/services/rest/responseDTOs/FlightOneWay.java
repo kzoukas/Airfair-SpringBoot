@@ -46,6 +46,50 @@ public class FlightOneWay {
     private String durationToStation2;
     private String durationFromStation2;
 
+    // Direct Flight Return
+    private String departureFromReturn;
+    private String fromDepartureTimeReturn;
+    private String fromDepartureDateReturn;
+    private String departureToReturn;
+    private String stationReturn;
+    private String durationReturn;
+    private String fromCompanyReturn;
+    private String toDepartureTimeReturn;
+    private String toLastDepartureTimeReturn; //so to avoid printing time +1 (next day) at the last flight time
+    private String toDepartureDateReturn;
+    private Double priceReturn;
+    private String airlineToStation1imgSrcReturn;
+
+    private Double finalPriceRoundTrip;
+
+    //+ Flight up to 1 station return
+    private String departureToStation1Return;
+    private String departurefromStation1Return;
+    private String station1ArrivalTimeReturn;
+    private String station1ArrivalDateReturn;
+    private String station1DepTimeReturn;
+    private String station1DepDateReturn;
+    private String waitingTimeStation1Return;
+    private String airlineToStation1Return;
+    private String airlineFromStation1Return;
+    private String airlineFromStation1imgSrcReturn;
+    private String durationToStation1Return;
+    private String durationFromStation1Return;
+
+    //+ Flight up to 2 stations return
+    private String departureToStation2Return;
+    private String departurefromStation2Return;
+    private String station2ArrivalTimeReturn;
+    private String station2ArrivalDateReturn;
+    private String station2DepTimeReturn;
+    private String station2DepDateReturn;
+    private String waitingTimeStation2Return;
+    private String airlineFromStation2Return;
+    private String airlineFromStation2imgSrcReturn;
+    private String durationToStation2Return;
+    private String durationFromStation2Return;
+
+
     public FlightOneWay() {
 
     }
@@ -290,7 +334,6 @@ public class FlightOneWay {
         this.waitingTimeStation2 = waitingTimeStation2;
     }
 
-
     public String getAirlineFromStation2() {
         return airlineFromStation2;
     }
@@ -345,5 +388,293 @@ public class FlightOneWay {
 
     public void setAirlineFromStation2imgSrc(String airlineFromStation2imgSrc) {
         this.airlineFromStation2imgSrc = airlineFromStation2imgSrc;
+    }
+
+    public String getDepartureFromReturn() {
+        return departureFromReturn;
+    }
+
+    public void setDepartureFromReturn(String departureFromReturn) {
+        this.departureFromReturn = departureFromReturn;
+    }
+
+    public String getFromDepartureTimeReturn() {
+        return fromDepartureTimeReturn;
+    }
+
+    public void setFromDepartureTimeReturn(String fromDepartureTimeReturn) {
+        this.fromDepartureTimeReturn = fromDepartureTimeReturn;
+    }
+
+    public String getFromDepartureDateReturn() {
+        return fromDepartureDateReturn;
+    }
+
+    public void setFromDepartureDateReturn(String fromDepartureDateReturn) {
+        this.fromDepartureDateReturn = fromDepartureDateReturn;
+    }
+
+    public String getDepartureToReturn() {
+        return departureToReturn;
+    }
+
+    public void setDepartureToReturn(String departureToReturn) {
+        this.departureToReturn = departureToReturn;
+    }
+
+    public String getStationReturn() {
+        return stationReturn;
+    }
+
+    public void setStationReturn(String stationReturn) {
+        this.stationReturn = stationReturn;
+    }
+
+    public String getDurationReturn() {
+        return durationReturn;
+    }
+
+    public void setDurationReturn(String durationReturn) {
+        this.durationReturn = durationReturn;
+    }
+
+    public String getFromCompanyReturn() {
+        return fromCompanyReturn;
+    }
+
+    public void setFromCompanyReturn(String fromCompanyReturn) {
+        this.fromCompanyReturn = fromCompanyReturn;
+    }
+
+    public String getToDepartureTimeReturn() {
+        return toDepartureTimeReturn;
+    }
+
+    public void setToDepartureTimeReturn(String toDepartureTimeReturn) {
+        this.toDepartureTimeReturn = toDepartureTimeReturn;
+    }
+
+    public String getToLastDepartureTimeReturn() {
+        return toLastDepartureTimeReturn;
+    }
+
+    public void setToLastDepartureTimeReturn(String toLastDepartureTimeReturn) {
+        this.toLastDepartureTimeReturn = toLastDepartureTimeReturn;
+    }
+
+    public String getToDepartureDateReturn() {
+        return toDepartureDateReturn;
+    }
+
+    public void setToDepartureDateReturn(String toDepartureDateReturn) {
+        this.toDepartureDateReturn = toDepartureDateReturn;
+    }
+
+    public Double getPriceReturn() {
+        return priceReturn;
+    }
+
+    public void setPriceReturn(Double priceReturn) {
+        this.priceReturn = priceReturn;
+    }
+
+    public String getAirlineToStation1imgSrcReturn() {
+        return airlineToStation1imgSrcReturn;
+    }
+
+    public void setAirlineToStation1imgSrcReturn(String airlineToStation1imgSrcReturn) {
+        this.airlineToStation1imgSrcReturn = airlineToStation1imgSrcReturn;
+    }
+
+    public Double getFinalPriceRoundTrip() {
+        return finalPriceRoundTrip;
+    }
+
+    public void setFinalPriceRoundTrip(Double finalPriceRoundTrip) {
+        this.finalPriceRoundTrip = finalPriceRoundTrip;
+    }
+
+    public String getDepartureToStation1Return() {
+        return departureToStation1Return;
+    }
+
+    public void setDepartureToStation1Return(String departureToStation1Return) {
+        this.departureToStation1Return = departureToStation1Return;
+    }
+
+    public String getDeparturefromStation1Return() {
+        return departurefromStation1Return;
+    }
+
+    public void setDeparturefromStation1Return(String departurefromStation1Return) {
+        this.departurefromStation1Return = departurefromStation1Return;
+    }
+
+    public String getStation1ArrivalTimeReturn() {
+        return station1ArrivalTimeReturn;
+    }
+
+    public void setStation1ArrivalTimeReturn(String station1ArrivalTimeReturn) {
+        this.station1ArrivalTimeReturn = station1ArrivalTimeReturn;
+    }
+
+    public String getStation1ArrivalDateReturn() {
+        return station1ArrivalDateReturn;
+    }
+
+    public void setStation1ArrivalDateReturn(String station1ArrivalDateReturn) {
+        this.station1ArrivalDateReturn = station1ArrivalDateReturn;
+    }
+
+    public String getStation1DepTimeReturn() {
+        return station1DepTimeReturn;
+    }
+
+    public void setStation1DepTimeReturn(String station1DepTimeReturn) {
+        this.station1DepTimeReturn = station1DepTimeReturn;
+    }
+
+    public String getStation1DepDateReturn() {
+        return station1DepDateReturn;
+    }
+
+    public void setStation1DepDateReturn(String station1DepDateReturn) {
+        this.station1DepDateReturn = station1DepDateReturn;
+    }
+
+    public String getWaitingTimeStation1Return() {
+        return waitingTimeStation1Return;
+    }
+
+    public void setWaitingTimeStation1Return(String waitingTimeStation1Return) {
+        this.waitingTimeStation1Return = waitingTimeStation1Return;
+    }
+
+    public String getAirlineToStation1Return() {
+        return airlineToStation1Return;
+    }
+
+    public void setAirlineToStation1Return(String airlineToStation1Return) {
+        this.airlineToStation1Return = airlineToStation1Return;
+    }
+
+    public String getAirlineFromStation1Return() {
+        return airlineFromStation1Return;
+    }
+
+    public void setAirlineFromStation1Return(String airlineFromStation1Return) {
+        this.airlineFromStation1Return = airlineFromStation1Return;
+    }
+
+    public String getAirlineFromStation1imgSrcReturn() {
+        return airlineFromStation1imgSrcReturn;
+    }
+
+    public void setAirlineFromStation1imgSrcReturn(String airlineFromStation1imgSrcReturn) {
+        this.airlineFromStation1imgSrcReturn = airlineFromStation1imgSrcReturn;
+    }
+
+    public String getDurationToStation1Return() {
+        return durationToStation1Return;
+    }
+
+    public void setDurationToStation1Return(String durationToStation1Return) {
+        this.durationToStation1Return = durationToStation1Return;
+    }
+
+    public String getDurationFromStation1Return() {
+        return durationFromStation1Return;
+    }
+
+    public void setDurationFromStation1Return(String durationFromStation1Return) {
+        this.durationFromStation1Return = durationFromStation1Return;
+    }
+
+    public String getDepartureToStation2Return() {
+        return departureToStation2Return;
+    }
+
+    public void setDepartureToStation2Return(String departureToStation2Return) {
+        this.departureToStation2Return = departureToStation2Return;
+    }
+
+    public String getDeparturefromStation2Return() {
+        return departurefromStation2Return;
+    }
+
+    public void setDeparturefromStation2Return(String departurefromStation2Return) {
+        this.departurefromStation2Return = departurefromStation2Return;
+    }
+
+    public String getStation2ArrivalTimeReturn() {
+        return station2ArrivalTimeReturn;
+    }
+
+    public void setStation2ArrivalTimeReturn(String station2ArrivalTimeReturn) {
+        this.station2ArrivalTimeReturn = station2ArrivalTimeReturn;
+    }
+
+    public String getStation2ArrivalDateReturn() {
+        return station2ArrivalDateReturn;
+    }
+
+    public void setStation2ArrivalDateReturn(String station2ArrivalDateReturn) {
+        this.station2ArrivalDateReturn = station2ArrivalDateReturn;
+    }
+
+    public String getStation2DepTimeReturn() {
+        return station2DepTimeReturn;
+    }
+
+    public void setStation2DepTimeReturn(String station2DepTimeReturn) {
+        this.station2DepTimeReturn = station2DepTimeReturn;
+    }
+
+    public String getStation2DepDateReturn() {
+        return station2DepDateReturn;
+    }
+
+    public void setStation2DepDateReturn(String station2DepDateReturn) {
+        this.station2DepDateReturn = station2DepDateReturn;
+    }
+
+    public String getWaitingTimeStation2Return() {
+        return waitingTimeStation2Return;
+    }
+
+    public void setWaitingTimeStation2Return(String waitingTimeStation2Return) {
+        this.waitingTimeStation2Return = waitingTimeStation2Return;
+    }
+
+    public String getAirlineFromStation2Return() {
+        return airlineFromStation2Return;
+    }
+
+    public void setAirlineFromStation2Return(String airlineFromStation2Return) {
+        this.airlineFromStation2Return = airlineFromStation2Return;
+    }
+
+    public String getAirlineFromStation2imgSrcReturn() {
+        return airlineFromStation2imgSrcReturn;
+    }
+
+    public void setAirlineFromStation2imgSrcReturn(String airlineFromStation2imgSrcReturn) {
+        this.airlineFromStation2imgSrcReturn = airlineFromStation2imgSrcReturn;
+    }
+
+    public String getDurationToStation2Return() {
+        return durationToStation2Return;
+    }
+
+    public void setDurationToStation2Return(String durationToStation2Return) {
+        this.durationToStation2Return = durationToStation2Return;
+    }
+
+    public String getDurationFromStation2Return() {
+        return durationFromStation2Return;
+    }
+
+    public void setDurationFromStation2Return(String durationFromStation2Return) {
+        this.durationFromStation2Return = durationFromStation2Return;
     }
 }

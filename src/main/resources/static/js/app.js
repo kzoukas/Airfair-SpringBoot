@@ -3,7 +3,7 @@
     var app = angular.module("flightTicketApp", ["ngRoute","ui.bootstrap","rzModule"]);
 
     app.config(function($routeProvider,$locationProvider){
-        $locationProvider.html5Mode(true).hashPrefix('!');
+        $locationProvider.html5Mode(true);
         $routeProvider
             .when("/allflights", {
                 template: "<flight-list></flight-list>",
@@ -22,6 +22,7 @@
 
         function getSearchParameters() {
             var prmstr = $window.location.search.substr(1);
+            console.log(prmstr);
             return prmstr != null && prmstr != "" ? transformToAssocArray(prmstr) : {};
         }
 

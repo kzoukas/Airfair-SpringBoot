@@ -443,7 +443,7 @@ html {
 @media (min-width: 75em) {
   /* line 5, ../../../../sass/vendor/bootstrap/_grid.scss */
   .container {
-    max-width: 72.25rem;
+    max-width: 75.4rem;
   }
 }
 
@@ -7154,9 +7154,10 @@ hr {
 }
   /* line 62, ../../../../sass/inclusions/checkout/tranquil/_page-review.scss */
 .review-title {
-  background-color: #fafafa;
+  background-color:#ffdd00;
   padding: 3px 15px 6px;
   min-width: 94px;
+  margin-left: 4px;
   border-radius: 4px;
   clear: both;
   position: absolute;
@@ -7167,7 +7168,7 @@ hr {
   transform: translateY(-50%) rotate(-90deg);
   font-size: 1rem;
   text-align: center;
-  color: #666;
+  color: black;
 }
 @media only screen and (max-width: 768px) {
   /* line 62, ../../../../sass/inclusions/checkout/tranquil/_page-review.scss */
