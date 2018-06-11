@@ -1,6 +1,6 @@
 (function(){
 
-    var app = angular.module("flightTicketApp", ["ngRoute","ui.bootstrap","rzModule"]);
+    var app = angular.module("flightTicketApp", ["ngRoute","ui.bootstrap","rzModule","myApp.config"]);
 
     app.config(function($routeProvider,$locationProvider){
         $locationProvider.html5Mode(true);
@@ -15,6 +15,8 @@
         })
             // .otherwise({redirectTo:"/"});
     });
+
+
 
     app.run(['$window', 'parameterService', function ($window, parameterService) {
 

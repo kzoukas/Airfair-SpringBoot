@@ -7,25 +7,11 @@
         controllerAs: "model",
         controller: topBarController
     });
-    topBarController.$inject=['$scope','topBarService','$route'];
-    function topBarController($scope,topBarService,$route){
+    topBarController.$inject=['$scope','topBarService','$route','redirect_url'];
+    function topBarController($scope,topBarService,$route,redirect_url){
 
         var model = this;
-        $scope.submitNewSearch=function() {
+        $scope.node_redirect=redirect_url;
 
-
-            topBarService.getRedirectPage().then(onSuccess,onError);
-
-            var onSuccess = function(data){
-                if (data === "null") {
-                    data = null;
-                }
-                return data;
-            };
-            var onError = function(reason){
-                $scope.error = reason;
-            };
-
-        }
     };
 }());

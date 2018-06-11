@@ -7,9 +7,9 @@
         controllerAs: "model",
         controller: flightInfoBarController
     });
-    flightInfoBarController.$inject=['$scope','parameterService'];
+    flightInfoBarController.$inject=['$scope','parameterService','redirect_url'];
 
-    function flightInfoBarController($scope, parameterService){
+    function flightInfoBarController($scope, parameterService,redirect_url){
         var model = this;
         model.params=parameterService.getter();
 
@@ -21,6 +21,7 @@
         $scope.adultNum=model.params.adultNum;
         $scope.childNum=model.params.childNum;
         $scope.typeOfFlight=model.params.typeOfFlight;
+        $scope.node_redirect=redirect_url;
 
 
     };
