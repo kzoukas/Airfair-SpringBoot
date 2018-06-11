@@ -35,6 +35,7 @@
         model.params=parameterService.getter();
         var onRepo = function(data){
             $scope.flightList = data;
+
             $scope.typeOfFlight = model.params.typeOfFlight;
             $scope.totalItems = $scope.flightList.length;
             $scope.currentPage = 1;
@@ -123,7 +124,15 @@
 
         interval=setInterval(callService,15000);
         function callService(){
-            flightInfoService.getFlightInfo(model.params.from, model.params.to, model.params.typeOfFlight)
+            flightInfoService.getFlightInfo(model.params.from,
+                model.params.to,
+                model.params.checkin,
+                model.params.checkout,
+                model.params.adultNum,
+                model.params.childNum,
+                model.params.typeOfFlight,
+                model.params.airportSize,
+                model.params.tripDistance)
                 .then(onSuccess, onError);
             // if (severalTimes<7){
             //     flightListService.getFlightList(model.params.from, model.params.to, model.params.stops, model.params.maxPrice, model.params.flightDuration, model.params.connectingTime)
@@ -135,18 +144,20 @@
 
 
 
-        $scope.IsVisible = false;
+        $scope.dhowHide = function(flight) {
+            //If DIV is visible it will be hidden and vice versa.
+            console.log("mpikaaa");
+
+            flight.IsVisible = !flight.IsVisible;
+        }
         $scope.ShowHide = function(flight) {
+
             //If DIV is visible it will be hidden and vice versa.
             flight.IsVisible = !flight.IsVisible;
         }
 
-        $scope.IsVisible1 = false;
-        $scope.ShowHideReturn = function(flight1) {
-            //If DIV is visible it will be hidden and vice versa.
-            console.log("mpikaaa");
-            flight1.IsVisible1 = !flight1.IsVisible1;
-        }
+
+
 
 
     };

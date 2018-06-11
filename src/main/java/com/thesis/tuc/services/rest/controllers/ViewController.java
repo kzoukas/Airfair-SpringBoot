@@ -121,12 +121,26 @@ private static final Logger logger = LoggerFactory.getLogger(ViewController.clas
                     arrivalTimeEnd);
         }
     }
-    @GetMapping(path="/allInfos/{fromIata}/{toIata}/{typeOfFlight}")
+    @GetMapping(path="/allInfos/{fromIata}/{toIata}/{checkin}/{checkout}/{adultNum}/{childNum}/{typeOfFlight}/{airportSize}/{tripDistance}")
     public boolean getAllInfos(@PathVariable String fromIata,
                                @PathVariable String toIata,
-                               @PathVariable String typeOfFlight){
+                               @PathVariable String checkin,
+                               @PathVariable String checkout,
+                               @PathVariable String adultNum,
+                               @PathVariable String childNum,
+                               @PathVariable String typeOfFlight,
+                               @PathVariable String airportSize,
+                               @PathVariable String tripDistance){
 
-            return flightService.flightSearched(fromIata, toIata, typeOfFlight);
+            return flightService.flightSearched( fromIata,
+                    toIata ,
+                    checkin,
+                    checkout,
+                    adultNum,
+                    childNum,
+                    typeOfFlight,
+                    airportSize,
+                    tripDistance);
 
     }
 

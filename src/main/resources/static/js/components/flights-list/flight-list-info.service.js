@@ -2,8 +2,24 @@
 (function(){
 
     var flightInfoService = function($http){
-        var getFlightInfo = function(fromIata,toIata,typeOfFlight){
-            var repoUrl = "/allInfos/" + fromIata +"/"+ toIata +"/"+ typeOfFlight;
+        var getFlightInfo = function(fromIata,
+                                     toIata ,
+                                     checkin,
+                                     checkout,
+                                     adultNum,
+                                     childNum,
+                                     typeOfFlight,
+                                     airportSize,
+                                     tripDistance){
+            var repoUrl = "/allInfos/" + fromIata
+                +"/"+ toIata
+                +"/"+ checkin
+                +"/"+ checkout
+                +"/"+ adultNum
+                +"/"+ childNum
+                +"/"+ typeOfFlight
+                +"/"+ airportSize
+                +"/"+ tripDistance;
             return $http.get(repoUrl)
                 .then(function(response){
                     return response.data;
