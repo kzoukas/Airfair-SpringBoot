@@ -122,7 +122,7 @@
         callService();
         var interval = null;
 
-        interval=setInterval(callService,15000);
+        interval=setInterval(callService,8000);
         function callService(){
             flightInfoService.getFlightInfo(model.params.from,
                 model.params.to,
