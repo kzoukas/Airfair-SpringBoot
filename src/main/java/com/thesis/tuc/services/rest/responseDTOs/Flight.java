@@ -24,6 +24,7 @@ public class Flight {
     private String toIata;
     private Double price;
     private String fromCompany;
+    private String fromCompanyAfterStation;
     private String airlineImgSrc;
     private String toCompany;
     private String fromDate;
@@ -57,6 +58,7 @@ public class Flight {
                   String toIata,
                   Double price,
                   String fromCompany,
+                  String fromCompanyAfterStation,
                   String airlineImgSrc,
                   String toCompany,
                   String fromDate,
@@ -87,6 +89,7 @@ public class Flight {
         this.toIata = toIata;
         this.price = price;
         this.fromCompany = fromCompany;
+        this.fromCompanyAfterStation = fromCompanyAfterStation;
         this.airlineImgSrc=airlineImgSrc;
         this.toCompany = toCompany;
         this.fromDate = fromDate;
@@ -231,6 +234,7 @@ public class Flight {
         return airlineImgSrc;
     }
 
-
-
+    public String getFromCompanyAfterStation() {
+        return fromCompanyAfterStation;
+    }
 }

@@ -3,10 +3,26 @@
   <component name="ChangeListManager">
     <list default="true" id="897d45ea-ce64-4318-878e-4be4f1afd7f2" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/responsive.css" afterPath="$PROJECT_DIR$/src/main/resources/static/css/responsive.css" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/logo-black-color-1.png" afterPath="$PROJECT_DIR$/src/main/resources/static/images/logo-black-color-1.png" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/components/flight-info-bar/flight-info-bar.html" afterPath="$PROJECT_DIR$/src/main/resources/static/js/components/flight-info-bar/flight-info-bar.html" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/thesis/tuc/business/FlightInfoService.java" afterPath="$PROJECT_DIR$/src/main/java/com/thesis/tuc/business/FlightInfoService.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/thesis/tuc/business/FlightService.java" afterPath="$PROJECT_DIR$/src/main/java/com/thesis/tuc/business/FlightService.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/thesis/tuc/repository/FlightInfoRepository.java" afterPath="$PROJECT_DIR$/src/main/java/com/thesis/tuc/repository/FlightInfoRepository.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/thesis/tuc/repository/FlightRepository.java" afterPath="$PROJECT_DIR$/src/main/java/com/thesis/tuc/repository/FlightRepository.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/thesis/tuc/services/rest/controllers/ViewController.java" afterPath="$PROJECT_DIR$/src/main/java/com/thesis/tuc/services/rest/controllers/ViewController.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/thesis/tuc/services/rest/responseDTOs/Flight.java" afterPath="$PROJECT_DIR$/src/main/java/com/thesis/tuc/services/rest/responseDTOs/Flight.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/style.css" afterPath="$PROJECT_DIR$/src/main/resources/static/css/style.css" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/index.html" afterPath="$PROJECT_DIR$/src/main/resources/static/index.html" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/app.js" afterPath="$PROJECT_DIR$/src/main/resources/static/js/app.js" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/components/flights-list/flight-list.controller.js" afterPath="$PROJECT_DIR$/src/main/resources/static/js/components/flights-list/flight-list.controller.js" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/components/flights-list/flight-list.html" afterPath="$PROJECT_DIR$/src/main/resources/static/js/components/flights-list/flight-list.html" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/components/flights-list/flight-list.service.js" afterPath="$PROJECT_DIR$/src/main/resources/static/js/components/flights-list/flight-list.service.js" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/components/side-bar/side-bar.controller.js" afterPath="$PROJECT_DIR$/src/main/resources/static/js/components/side-bar/side-bar.controller.js" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/thesis/tuc/repository/FlightRepository.class" afterPath="$PROJECT_DIR$/target/classes/com/thesis/tuc/repository/FlightRepository.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/thesis/tuc/services/rest/controllers/ViewController.class" afterPath="$PROJECT_DIR$/target/classes/com/thesis/tuc/services/rest/controllers/ViewController.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/thesis/tuc/services/rest/responseDTOs/Flight.class" afterPath="$PROJECT_DIR$/target/classes/com/thesis/tuc/services/rest/responseDTOs/Flight.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/css/responsive.css" afterPath="$PROJECT_DIR$/target/classes/static/css/responsive.css" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/css/style.css" afterPath="$PROJECT_DIR$/target/classes/static/css/style.css" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/index.html" afterPath="$PROJECT_DIR$/target/classes/static/index.html" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/js/app.js" afterPath="$PROJECT_DIR$/target/classes/static/js/app.js" />
       <change beforePath="$PROJECT_DIR$/thesis.pid" afterPath="$PROJECT_DIR$/thesis.pid" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
@@ -21,25 +37,147 @@
     <favorites_list name="thesis" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.49541286">
+    <splitter split-orientation="horizontal" split-proportion="0.706035">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="flight-list.controller.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/components/flights-list/flight-list.controller.js">
+          <file leaf-file-name="flight-info-bar.html" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/components/flight-info-bar/flight-info-bar.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="165">
-                  <caret line="124" column="42" lean-forward="false" selection-start-line="124" selection-start-column="42" selection-end-line="124" selection-end-column="42" />
+                <state relative-caret-position="420">
+                  <caret line="28" column="50" lean-forward="false" selection-start-line="28" selection-start-column="50" selection-end-line="28" selection-end-column="50" />
+                  <folding>
+                    <marker date="1529081195106" expanded="false" signature="2633:2646" ph="..." />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="FlightService.java" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/main/java/com/thesis/tuc/business/FlightService.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="201">
+                  <caret line="888" column="0" lean-forward="false" selection-start-line="888" selection-start-column="0" selection-end-line="888" selection-end-column="0" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                    <element signature="method#getFlightsOneStation#0;class#FlightService#0" expanded="false" />
+                    <element signature="method#getFlightsTwoStations#0;class#FlightService#0" expanded="false" />
+                    <element signature="method#round#0;class#FlightService#0" expanded="false" />
+                    <element signature="method#combineDateTime#0;class#FlightService#0" expanded="false" />
+                    <element signature="method#sortedListByPrice#0;class#FlightService#0" expanded="false" />
+                    <element signature="method#extractDouble#0;class#77274:77902" expanded="false" />
+                    <element signature="method#getDateStationDepTime#0;class#FlightService#0" expanded="false" />
+                    <element signature="method#flightSearched#0;class#FlightService#0" expanded="false" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="ArrayList.java" pinned="false" current-in-tab="false">
+            <entry file="jar:///opt/java/jdk-9.0.4/lib/src.zip!/java.base/java/util/ArrayList.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="5955">
+                  <caret line="439" column="0" lean-forward="false" selection-start-line="439" selection-start-column="0" selection-end-line="439" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="top-bar.controller.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/components/top-bar/top-bar.controller.js">
+          <file leaf-file-name="FlightRepository.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/main/java/com/thesis/tuc/repository/FlightRepository.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="195">
-                  <caret line="13" column="42" lean-forward="true" selection-start-line="13" selection-start-column="7" selection-end-line="13" selection-end-column="42" />
+                <state relative-caret-position="0">
+                  <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="10" selection-end-column="62" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="FlightInfoService.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/main/java/com/thesis/tuc/business/FlightInfoService.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="420">
+                  <caret line="32" column="25" lean-forward="false" selection-start-line="32" selection-start-column="25" selection-end-line="32" selection-end-column="25" />
                   <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="AirLogoRepository.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/main/java/com/thesis/tuc/repository/AirLogoRepository.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="105">
+                  <caret line="10" column="64" lean-forward="false" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="64" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="AirLogo.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/main/java/com/thesis/tuc/services/rest/responseDTOs/AirLogo.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="285">
+                  <caret line="20" column="31" lean-forward="false" selection-start-line="20" selection-start-column="31" selection-end-line="20" selection-end-column="31" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                    <element signature="e#604#605#0" expanded="true" />
+                    <element signature="e#644#645#0" expanded="true" />
+                    <element signature="e#680#681#0" expanded="true" />
+                    <element signature="e#722#723#0" expanded="true" />
+                    <element signature="e#764#765#0" expanded="true" />
+                    <element signature="e#822#823#0" expanded="true" />
+                    <element signature="e#876#877#0" expanded="true" />
+                    <element signature="e#917#918#0" expanded="true" />
+                    <element signature="e#958#959#0" expanded="true" />
+                    <element signature="e#1014#1015#0" expanded="true" />
+                    <element signature="e#1066#1067#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Flight.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/main/java/com/thesis/tuc/services/rest/responseDTOs/Flight.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="2565">
+                  <caret line="236" column="46" lean-forward="false" selection-start-line="236" selection-start-column="46" selection-end-line="236" selection-end-column="46" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="FlightInfoRepository.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/main/java/com/thesis/tuc/repository/FlightInfoRepository.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="30">
+                  <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file leaf-file-name="flight-list.html" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/components/flights-list/flight-list.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="15">
+                  <caret line="887" column="86" lean-forward="false" selection-start-line="887" selection-start-column="86" selection-end-line="887" selection-end-column="86" />
+                  <folding>
+                    <element signature="n#div#1;n#div#0;n#li#0;n#ul#0;n#div#2;n#!!top" expanded="false" />
+                    <element signature="n#style#0;n#img#0;n#p#0;n#div#0;n#article#0;n#div#1;n#div#0;n#div#1;n#div#1;n#div#0;n#li#0;n#ul#0;n#div#2;n#!!top" expanded="true" />
+                    <element signature="n#div#2;n#div#0;n#li#0;n#ul#0;n#div#2;n#!!top" expanded="false" />
+                    <element signature="n#div#0;n#div#2;n#div#0;n#li#0;n#ul#0;n#div#2;n#!!top" expanded="false" />
+                    <element signature="n#div#1;n#div#2;n#div#0;n#li#0;n#ul#0;n#div#2;n#!!top" expanded="false" />
+                    <element signature="n#div#0;n#div#1;n#li#0;n#ul#0;n#div#2;n#!!top" expanded="false" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -47,8 +185,8 @@
           <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/app.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="30">
-                  <caret line="2" column="86" lean-forward="false" selection-start-line="2" selection-start-column="86" selection-end-line="2" selection-end-column="86" />
+                <state relative-caret-position="195">
+                  <caret line="13" column="7" lean-forward="false" selection-start-line="13" selection-start-column="7" selection-end-line="13" selection-end-column="7" />
                   <folding />
                 </state>
               </provider>
@@ -64,122 +202,6 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="flight-list.service.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/components/flights-list/flight-list.service.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="300">
-                  <caret line="20" column="41" lean-forward="false" selection-start-line="20" selection-start-column="41" selection-end-line="20" selection-end-column="41" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="flight-info-bar.html" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/components/flight-info-bar/flight-info-bar.html">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="247">
-                  <caret line="28" column="50" lean-forward="false" selection-start-line="28" selection-start-column="50" selection-end-line="28" selection-end-column="50" />
-                  <folding>
-                    <marker date="1529081195106" expanded="false" signature="2633:2646" ph="..." />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/main/resources/static/css/style.css">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="164685">
-                  <caret line="10979" column="22" lean-forward="false" selection-start-line="10979" selection-start-column="22" selection-end-line="10979" selection-end-column="22" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-first>
-      <split-second>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/main/resources/static/css/style.css">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="522">
-                  <caret line="37049" column="26" lean-forward="false" selection-start-line="37049" selection-start-column="20" selection-end-line="37049" selection-end-column="26" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="responsive.css" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/main/resources/static/css/responsive.css">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="135">
-                  <caret line="2272" column="16" lean-forward="false" selection-start-line="2272" selection-start-column="16" selection-end-line="2272" selection-end-column="16" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="components.css" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/main/resources/static/css/components.css">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="270">
-                  <caret line="18" column="22" lean-forward="false" selection-start-line="18" selection-start-column="22" selection-end-line="18" selection-end-column="22" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="config.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/config.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="15">
-                  <caret line="1" column="34" lean-forward="false" selection-start-line="1" selection-start-column="34" selection-end-line="1" selection-end-column="34" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="flight-info-bar.controller.js" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/components/flight-info-bar/flight-info-bar.controller.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="75">
-                  <caret line="5" column="21" lean-forward="false" selection-start-line="5" selection-start-column="21" selection-end-line="5" selection-end-column="21" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/main/resources/static/index.html">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="15">
-                  <caret line="57" column="26" lean-forward="false" selection-start-line="57" selection-start-column="26" selection-end-line="57" selection-end-column="26" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="flight-list.html" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/components/flights-list/flight-list.html">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="3300">
-                  <caret line="1475" column="9" lean-forward="false" selection-start-line="1475" selection-start-column="9" selection-end-line="1475" selection-end-column="9" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="layout.css" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/main/resources/static/css/layout.css">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="3345">
-                  <caret line="223" column="55" lean-forward="false" selection-start-line="223" selection-start-column="45" selection-end-line="223" selection-end-column="55" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
         </leaf>
       </split-second>
     </splitter>
@@ -189,23 +211,15 @@
       <list>
         <option value="Tag Library Descriptor" />
         <option value="FxmlFile" />
-        <option value="Interface" />
-        <option value="Class" />
         <option value="HTML File" />
         <option value="JavaScript File" />
+        <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>wrapper-mobile-nav</find>
-      <find>hamburger-menu-wrapper</find>
-      <find>main</find>
-      <find>.grid-item-lg-10-10</find>
-      <find>min-wid</find>
-      <find>findDistinctByStationAndPriceLessThanAndFlightSearchFromIataAndFlightSearchToIataAndCheckinAndCheckoutAndAdultNumAndChildNumAndTypeOfFlightAndAirportSizeAndTripDistance</find>
-      <find>findDistinctByPriceLessThanAndFlightSearchFromIataAndFlightSearchToIataAndCheckinAndCheckoutAndAdultNumAndChildNumAndTypeOfFlightAndAirportSizeAndTripDistance</find>
-      <find>max-width: 3</find>
       <find>accordion</find>
       <find>lh28</find>
       <find>lh2</find>
@@ -228,7 +242,18 @@
       <find>toggleLogos</find>
       <find>isVisible1</find>
       <find>app.js</find>
+      <find>findDistinctByStationAndPriceLessThanAndFlightSearchFromIataAndFlightSearchToIataAndCheckinAndCheckoutAndAdultNumAndChildNumAndTypeOfFlightAndAirportSizeAndTripDistanceAndFromIataAndToIataAndFromDepartureTimeAndFromArrivalTimeAndFromPriceAndFromCompany</find>
+      <find>flightList</find>
+      <find>flightDurationUpTo2</find>
+      <find>Απε</find>
+      <find>Απευ</find>
+      <find>απ</find>
+      <find>setAirlineFromStation2</find>
+      <find>tom</find>
     </findStrings>
+    <replaceStrings>
+      <replace>findDistinctByStationAndPriceLessThanAndFlightSearchFromIataAndFlightSearchToIataAndCheckinAndCheckoutAndAdultNumAndChildNumAndTypeOfFlightAndAirportSizeAndTripDistanceAndFromIataAndToIataAndFromDepartureTimeAndFromArrivalTimeAndPriceAndFromCompany</replace>
+    </replaceStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/src/main/resources/static/js</dir>
       <dir>$PROJECT_DIR$/src/main/resources/static</dir>
@@ -250,11 +275,8 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/resources/static/js/libs/ui-bootstrap-tpls-2.5.0.min.js" />
-        <option value="$PROJECT_DIR$/src/main/resources/static/fonts/font-awesome.css" />
         <option value="$PROJECT_DIR$/src/main/resources/static/js/usefulJs/bootstrap-slider.js" />
         <option value="$PROJECT_DIR$/src/main/resources/static/css/slider.css" />
-        <option value="$PROJECT_DIR$/src/main/java/com/thesis/tuc/business/FlightInfoService.java" />
         <option value="$PROJECT_DIR$/src/main/resources/static/js/components/flights-list/directFlight.html" />
         <option value="$PROJECT_DIR$/src/main/resources/static/js/components/flights-list/upTo1stationFlight.html" />
         <option value="$PROJECT_DIR$/src/main/resources/static/js/components/flights-list/flight-list-parts/oneWay/upTo1stationOneWay.html" />
@@ -264,11 +286,9 @@
         <option value="$PROJECT_DIR$/src/main/resources/static/js/components/flights-list/flight-list-parts/roundTrip/upTo2stationsRoundTrip/upTo2stationsRoundTrip.html" />
         <option value="$PROJECT_DIR$/src/main/resources/static/js/components/flights-list/flight-list-parts/oneWay/directFlightOneWay/directFlightOneWay.service.js" />
         <option value="$PROJECT_DIR$/src/main/resources/static/js/components/flights-list/flight-list-parts/oneWay/directFlightOneWay/directFlightOneWay.html" />
-        <option value="$PROJECT_DIR$/src/main/java/com/thesis/tuc/services/rest/responseDTOs/Flight.java" />
         <option value="$PROJECT_DIR$/src/main/resources/static/js/components/flights-list/flight-list-parts/oneWay/directFlightOneWay/directFlightOneWay.controller.js" />
         <option value="$PROJECT_DIR$/src/main/resources/static/css/rzslider.css" />
         <option value="$PROJECT_DIR$/src/main/resources/static/js/components/footer/footer-page.html" />
-        <option value="$PROJECT_DIR$/src/main/resources/static/js/components/flights-list/flight-list.service.js" />
         <option value="$PROJECT_DIR$/src/main/resources/static/css/color(1).css" />
         <option value="$PROJECT_DIR$/src/main/resources/static/js/components/main-page/main-page.html" />
         <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
@@ -277,30 +297,35 @@
         <option value="$PROJECT_DIR$/src/main/resources/static/js/usefulJs/main.js" />
         <option value="$PROJECT_DIR$/src/main/resources/static/js/components/top-bar/top-bar.service.js" />
         <option value="$PROJECT_DIR$/src/main/resources/static/css/layout.css" />
-        <option value="$PROJECT_DIR$/src/main/java/com/thesis/tuc/repository/FlightRepository.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/static/js/components/side-bar/side-bar.controller.js" />
         <option value="$PROJECT_DIR$/src/main/resources/static/js/components/mobile-menu/mobile-menu.html" />
         <option value="$PROJECT_DIR$/src/main/resources/static/css/bongo-checkout-tranquil.css" />
         <option value="$PROJECT_DIR$/src/main/resources/static/js/usefulJs/hamburger-menu.js" />
         <option value="$PROJECT_DIR$/src/main/java/com/thesis/tuc/services/rest/responseDTOs/FlightInfos.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/thesis/tuc/repository/FlightInfoRepository.java" />
         <option value="$PROJECT_DIR$/src/main/resources/static/js/components/flights-list/flight-list-info.service.js" />
-        <option value="$PROJECT_DIR$/src/main/java/com/thesis/tuc/services/rest/controllers/ViewController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/thesis/tuc/business/FlightService.java" />
         <option value="$PROJECT_DIR$/src/main/resources/static/css/components.css" />
-        <option value="$PROJECT_DIR$/src/main/resources/static/css/style.css" />
-        <option value="$PROJECT_DIR$/src/main/java/com/thesis/tuc/services/rest/responseDTOs/FlightOneWay.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/static/js/components/flights-list/flight-list.html" />
         <option value="$PROJECT_DIR$/src/main/resources/static/js/env.js" />
-        <option value="$PROJECT_DIR$/src/main/resources/static/index.html" />
-        <option value="$PROJECT_DIR$/src/main/resources/static/js/app.js" />
         <option value="$PROJECT_DIR$/src/main/resources/static/js/components/top-bar/top-bar.controller.js" />
         <option value="$PROJECT_DIR$/src/main/resources/static/js/config.js" />
         <option value="$PROJECT_DIR$/src/main/resources/static/js/components/flight-info-bar/flight-info-bar.controller.js" />
         <option value="$PROJECT_DIR$/src/main/resources/static/js/components/top-bar/top-bar.html" />
-        <option value="$PROJECT_DIR$/src/main/resources/static/js/components/flights-list/flight-list.controller.js" />
         <option value="$PROJECT_DIR$/src/main/resources/static/css/responsive.css" />
         <option value="$PROJECT_DIR$/src/main/resources/static/js/components/flight-info-bar/flight-info-bar.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/static/index.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/static/js/components/flights-list/flight-list.service.js" />
+        <option value="$PROJECT_DIR$/src/main/resources/static/js/app.js" />
+        <option value="$PROJECT_DIR$/src/main/java/com/thesis/tuc/business/FlightInfoService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/thesis/tuc/services/rest/controllers/ViewController.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/static/js/components/flights-list/flight-list.controller.js" />
+        <option value="$PROJECT_DIR$/src/main/resources/static/css/style.css" />
+        <option value="$PROJECT_DIR$/src/main/java/com/thesis/tuc/services/rest/responseDTOs/Flight.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/thesis/tuc/services/rest/responseDTOs/FlightOneWay.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/static/js/components/side-bar/side-bar.controller.js" />
+        <option value="$PROJECT_DIR$/src/main/java/com/thesis/tuc/repository/FlightRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/static/js/components/flights-list/flight-list.html" />
+        <option value="$PROJECT_DIR$/src/main/java/com/thesis/tuc/services/rest/responseDTOs/AirLogo.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/thesis/tuc/repository/FlightInfoRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/thesis/tuc/repository/AirLogoRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/thesis/tuc/business/FlightService.java" />
       </list>
     </option>
   </component>
@@ -312,7 +337,7 @@
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-1" />
-    <option name="width" value="1922" />
+    <option name="width" value="1355" />
     <option name="height" value="1053" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -356,6 +381,68 @@
               <item name="springProject" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="thesis" type="b2602c69:ProjectViewProjectNode" />
+              <item name="springProject" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="tuc" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="thesis" type="b2602c69:ProjectViewProjectNode" />
+              <item name="springProject" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="tuc" type="462c0819:PsiDirectoryNode" />
+              <item name="business" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="thesis" type="b2602c69:ProjectViewProjectNode" />
+              <item name="springProject" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="tuc" type="462c0819:PsiDirectoryNode" />
+              <item name="repository" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="thesis" type="b2602c69:ProjectViewProjectNode" />
+              <item name="springProject" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="tuc" type="462c0819:PsiDirectoryNode" />
+              <item name="rest" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="thesis" type="b2602c69:ProjectViewProjectNode" />
+              <item name="springProject" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="tuc" type="462c0819:PsiDirectoryNode" />
+              <item name="rest" type="462c0819:PsiDirectoryNode" />
+              <item name="controllers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="thesis" type="b2602c69:ProjectViewProjectNode" />
+              <item name="springProject" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="tuc" type="462c0819:PsiDirectoryNode" />
+              <item name="rest" type="462c0819:PsiDirectoryNode" />
+              <item name="responseDTOs" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="thesis" type="b2602c69:ProjectViewProjectNode" />
+              <item name="springProject" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -365,15 +452,6 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="static" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="thesis" type="b2602c69:ProjectViewProjectNode" />
-              <item name="springProject" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="thesis" type="b2602c69:ProjectViewProjectNode" />
@@ -383,49 +461,6 @@
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="static" type="462c0819:PsiDirectoryNode" />
               <item name="js" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="thesis" type="b2602c69:ProjectViewProjectNode" />
-              <item name="springProject" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="thesis" type="b2602c69:ProjectViewProjectNode" />
-              <item name="springProject" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="flight-info-bar" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="thesis" type="b2602c69:ProjectViewProjectNode" />
-              <item name="springProject" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="flights-list" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="thesis" type="b2602c69:ProjectViewProjectNode" />
-              <item name="springProject" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="top-bar" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -433,8 +468,8 @@
       </pane>
       <pane id="PackagesPane" />
       <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="AndroidView" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -708,12 +743,41 @@
       <workItem from="1528799188173" duration="1209000" />
       <workItem from="1528894781247" duration="648000" />
       <workItem from="1528975762303" duration="886000" />
-      <workItem from="1529067995518" duration="5109000" />
+      <workItem from="1529067995518" duration="8324000" />
+      <workItem from="1529112845016" duration="418000" />
+      <workItem from="1529238358757" duration="1701000" />
+      <workItem from="1529310804019" duration="1025000" />
+      <workItem from="1529400893549" duration="836000" />
+      <workItem from="1529402826460" duration="3949000" />
+      <workItem from="1529441511572" duration="796000" />
+      <workItem from="1529492469712" duration="1766000" />
+      <workItem from="1529494912317" duration="3261000" />
+      <workItem from="1529509960042" duration="1501000" />
+      <workItem from="1529677972987" duration="1642000" />
+      <workItem from="1529697766073" duration="621000" />
+      <workItem from="1530181199876" duration="5691000" />
+      <workItem from="1530198760786" duration="4293000" />
+      <workItem from="1530224300073" duration="5641000" />
+      <workItem from="1530277508977" duration="5178000" />
+      <workItem from="1530400001083" duration="4324000" />
+      <workItem from="1530429809184" duration="593000" />
+      <workItem from="1530432926598" duration="615000" />
+      <workItem from="1530442096562" duration="96000" />
+      <workItem from="1530442923632" duration="1173000" />
+      <workItem from="1530563782181" duration="741000" />
+      <workItem from="1530611359882" duration="2031000" />
+      <workItem from="1530618449837" duration="345000" />
+      <workItem from="1530619430794" duration="641000" />
+      <workItem from="1530620810099" duration="443000" />
+      <workItem from="1530621912444" duration="662000" />
+      <workItem from="1530631153477" duration="10790000" />
+      <workItem from="1531571684839" duration="6507000" />
+      <workItem from="1531645787753" duration="718000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="789814000" />
+    <option name="totallyTimeSpent" value="861027000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -737,7 +801,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.11239496" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34348738" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32983193" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3277311" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -745,10 +809,10 @@
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3277311" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30987394" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20520833" sideWeight="0.4937304" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19739583" sideWeight="0.4937304" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Learn" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -778,62 +842,16 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/thesis/tuc/business/FlightService.java</url>
-          <line>657</line>
+          <line>223</line>
           <properties />
-          <option name="timeStamp" value="150" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/thesis/tuc/business/FlightService.java</url>
-          <line>658</line>
-          <properties />
-          <option name="timeStamp" value="151" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/thesis/tuc/business/FlightService.java</url>
-          <line>1064</line>
-          <properties />
-          <option name="timeStamp" value="155" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/thesis/tuc/business/FlightService.java</url>
-          <line>1065</line>
-          <properties />
-          <option name="timeStamp" value="156" />
+          <option name="timeStamp" value="166" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="158" />
+      <option name="time" value="172" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/4.3.6.RELEASE/spring-web-4.3.6.RELEASE.jar!/org/springframework/web/filter/OncePerRequestFilter.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="163">
-          <caret line="43" column="0" lean-forward="false" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-context/4.3.6.RELEASE/spring-context-4.3.6.RELEASE.jar!/org/springframework/context/i18n/LocaleContextHolder.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="24" column="0" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///opt/java/jdk-9.0.4/lib/src.zip!/java.base/java/lang/ThreadLocal.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="173">
-          <caret line="222" column="0" lean-forward="false" selection-start-line="222" selection-start-column="0" selection-end-line="222" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/css/rzslider.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="77" column="21" lean-forward="false" selection-start-line="77" selection-start-column="21" selection-end-line="77" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/usefulJs/bootstrap-slider.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -884,20 +902,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/usefulJs/ui-grid.min.js" />
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/components/side-bar/side-bar.service.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="19" lean-forward="false" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/components/side-bar/side-bar.controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-886">
-          <caret line="30" column="26" lean-forward="true" selection-start-line="30" selection-start-column="26" selection-end-line="30" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/components/mobile-menu/mobile-menu.controller.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -933,13 +937,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/components/main-page/main-page.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="16" lean-forward="true" selection-start-line="5" selection-start-column="16" selection-end-line="5" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-webmvc/4.3.6.RELEASE/spring-webmvc-4.3.6.RELEASE.jar!/org/springframework/web/servlet/mvc/method/annotation/RequestMappingHandlerAdapter.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="181">
@@ -961,87 +958,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/thesis/tuc/services/rest/responseDTOs/FlightInfos.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="20" column="47" lean-forward="false" selection-start-line="20" selection-start-column="47" selection-end-line="20" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/thesis/tuc/repository/FlightRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="11" column="185" lean-forward="false" selection-start-line="11" selection-start-column="108" selection-end-line="11" selection-end-column="185" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/thesis/tuc/services/rest/responseDTOs/Flight.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="78">
-          <caret line="170" column="0" lean-forward="false" selection-start-line="170" selection-start-column="0" selection-end-line="170" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/thesis/tuc/business/FlightInfoService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/thesis/tuc/repository/FlightInfoRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="18" column="80" lean-forward="false" selection-start-line="12" selection-start-column="61" selection-end-line="18" selection-end-column="80" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/thesis/tuc/business/FlightService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="555">
-          <caret line="1116" column="29" lean-forward="false" selection-start-line="1110" selection-start-column="17" selection-end-line="1116" selection-end-column="29" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#FlightService#0;class#FlightService#0" expanded="false" />
-            <element signature="method#getFlightsTwoStations#0;class#FlightService#0" expanded="false" />
-            <element signature="method#getFlightUpTo2stationsLists#0;class#FlightService#0" expanded="false" />
-            <element signature="method#searchDirectFlights#0;class#FlightService#0" expanded="false" />
-            <element signature="method#upTo2directFlightSecond#0;class#FlightService#0" expanded="false" />
-            <element signature="method#getFlights#0;class#FlightService#0" expanded="false" />
-            <element signature="method#round#0;class#FlightService#0" expanded="false" />
-            <element signature="method#extractDouble#0;class#63123:63751" expanded="false" />
-            <element signature="method#getDateStationDepTime#0;class#FlightService#0" expanded="false" />
-            <element signature="method#getDateFromDepartureTime#0;class#FlightService#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/thesis/tuc/services/rest/controllers/ViewController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="142" column="32" lean-forward="true" selection-start-line="136" selection-start-column="20" selection-end-line="142" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/components/flights-list/flight-list-info.service.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="36" column="0" lean-forward="true" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///opt/java/jdk-9.0.4/lib/src.zip!/java.base/java/util/ArrayList.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="439" column="0" lean-forward="false" selection-start-line="439" selection-start-column="0" selection-end-line="439" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
           <caret line="5" column="34" lean-forward="false" selection-start-line="5" selection-start-column="25" selection-end-line="5" selection-end-column="34" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1059,10 +979,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/thesis/tuc/services/rest/responseDTOs/FlightOneWay.java">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/config.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
-          <caret line="89" column="46" lean-forward="false" selection-start-line="89" selection-start-column="46" selection-end-line="89" selection-end-column="46" />
+          <caret line="1" column="34" lean-forward="false" selection-start-line="1" selection-start-column="34" selection-end-line="1" selection-end-column="34" />
         </state>
       </provider>
     </entry>
@@ -1073,51 +993,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="86" lean-forward="false" selection-start-line="2" selection-start-column="86" selection-end-line="2" selection-end-column="86" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/static/css/components.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="22" lean-forward="false" selection-start-line="18" selection-start-column="22" selection-end-line="18" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/config.js">
-      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
-          <caret line="1" column="34" lean-forward="false" selection-start-line="1" selection-start-column="34" selection-end-line="1" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/css/layout.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3345">
-          <caret line="223" column="55" lean-forward="false" selection-start-line="223" selection-start-column="45" selection-end-line="223" selection-end-column="55" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/components/flights-list/flight-list.service.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="41" lean-forward="false" selection-start-line="20" selection-start-column="41" selection-end-line="20" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="164685">
-          <caret line="10979" column="22" lean-forward="false" selection-start-line="10979" selection-start-column="22" selection-end-line="10979" selection-end-column="22" />
-          <folding />
+          <caret line="18" column="22" lean-forward="false" selection-start-line="18" selection-start-column="22" selection-end-line="18" selection-end-column="22" />
         </state>
       </provider>
     </entry>
@@ -1125,30 +1004,62 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
           <caret line="2272" column="16" lean-forward="false" selection-start-line="2272" selection-start-column="16" selection-end-line="2272" selection-end-column="16" />
-          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/components/main-page/main-page.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="261">
+          <caret line="9" column="21" lean-forward="true" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/static/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="57" column="26" lean-forward="false" selection-start-line="57" selection-start-column="26" selection-end-line="57" selection-end-column="26" />
-          <folding />
+        <state relative-caret-position="135">
+          <caret line="9" column="77" lean-forward="false" selection-start-line="9" selection-start-column="66" selection-end-line="9" selection-end-column="77" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/components/flights-list/flight-list.html">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/components/flights-list/flight-list.service.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3300">
-          <caret line="1475" column="9" lean-forward="false" selection-start-line="1475" selection-start-column="9" selection-end-line="1475" selection-end-column="9" />
-          <folding />
+        <state relative-caret-position="795">
+          <caret line="53" column="0" lean-forward="false" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/components/flights-list/flight-list.controller.js">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/css/layout.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="124" column="42" lean-forward="false" selection-start-line="124" selection-start-column="42" selection-end-line="124" selection-end-column="42" />
+        <state relative-caret-position="6855">
+          <caret line="457" column="29" lean-forward="false" selection-start-line="457" selection-start-column="23" selection-end-line="457" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/components/top-bar/top-bar.controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="23" lean-forward="false" selection-start-line="12" selection-start-column="23" selection-end-line="12" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/components/flights-list/flight-list-info.service.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="36" column="0" lean-forward="false" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="556125">
+          <caret line="37075" column="16" lean-forward="false" selection-start-line="37075" selection-start-column="1" selection-end-line="37075" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="7" lean-forward="false" selection-start-line="13" selection-start-column="7" selection-end-line="13" selection-end-column="7" />
           <folding />
         </state>
       </provider>
@@ -1161,28 +1072,191 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/components/flight-info-bar/flight-info-bar.controller.js">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/thesis/tuc/services/rest/responseDTOs/FlightOneWay.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="21" lean-forward="false" selection-start-line="5" selection-start-column="21" selection-end-line="5" selection-end-column="21" />
+        <state relative-caret-position="390">
+          <caret line="71" column="21" lean-forward="false" selection-start-line="71" selection-start-column="21" selection-end-line="71" selection-end-column="21" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/components/top-bar/top-bar.controller.js">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/thesis/tuc/services/rest/controllers/ViewController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="42" lean-forward="true" selection-start-line="13" selection-start-column="7" selection-end-line="13" selection-end-column="42" />
-          <folding />
+        <state relative-caret-position="330">
+          <caret line="38" column="31" lean-forward="false" selection-start-line="38" selection-start-column="31" selection-end-line="38" selection-end-column="31" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/components/side-bar/side-bar.controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="57" column="27" lean-forward="false" selection-start-line="57" selection-start-column="27" selection-end-line="57" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/components/flights-list/flight-list.controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-781">
+          <caret line="40" column="56" lean-forward="false" selection-start-line="40" selection-start-column="50" selection-end-line="40" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/components/side-bar/side-bar.service.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="19" lean-forward="false" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/components/flight-info-bar/flight-info-bar.controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="21" lean-forward="false" selection-start-line="5" selection-start-column="21" selection-end-line="5" selection-end-column="21" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/components/flight-info-bar/flight-info-bar.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
+        <state relative-caret-position="420">
           <caret line="28" column="50" lean-forward="false" selection-start-line="28" selection-start-column="50" selection-end-line="28" selection-end-column="50" />
           <folding>
             <marker date="1529081195106" expanded="false" signature="2633:2646" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="587">
+          <caret line="101" column="42" lean-forward="false" selection-start-line="101" selection-start-column="42" selection-end-line="101" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///opt/java/jdk-9.0.4/lib/src.zip!/java.base/java/text/SimpleDateFormat.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="179">
+          <caret line="1457" column="0" lean-forward="false" selection-start-line="1457" selection-start-column="0" selection-end-line="1457" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/components/flights-list/flight-list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="887" column="86" lean-forward="false" selection-start-line="887" selection-start-column="86" selection-end-line="887" selection-end-column="86" />
+          <folding>
+            <element signature="n#div#1;n#div#0;n#li#0;n#ul#0;n#div#2;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#img#0;n#p#0;n#div#0;n#article#0;n#div#1;n#div#0;n#div#1;n#div#1;n#div#0;n#li#0;n#ul#0;n#div#2;n#!!top" expanded="true" />
+            <element signature="n#div#2;n#div#0;n#li#0;n#ul#0;n#div#2;n#!!top" expanded="false" />
+            <element signature="n#div#0;n#div#2;n#div#0;n#li#0;n#ul#0;n#div#2;n#!!top" expanded="false" />
+            <element signature="n#div#1;n#div#2;n#div#0;n#li#0;n#ul#0;n#div#2;n#!!top" expanded="false" />
+            <element signature="n#div#0;n#div#1;n#li#0;n#ul#0;n#div#2;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/thesis/tuc/business/FlightInfoService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="32" column="25" lean-forward="false" selection-start-line="32" selection-start-column="25" selection-end-line="32" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/thesis/tuc/services/rest/responseDTOs/FlightInfos.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="379">
+          <caret line="42" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/thesis/tuc/repository/FlightRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="10" selection-end-column="62" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/thesis/tuc/services/rest/responseDTOs/Flight.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2565">
+          <caret line="236" column="46" lean-forward="false" selection-start-line="236" selection-start-column="46" selection-end-line="236" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/thesis/tuc/services/rest/responseDTOs/AirLogo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="20" column="31" lean-forward="false" selection-start-line="20" selection-start-column="31" selection-end-line="20" selection-end-column="31" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#604#605#0" expanded="true" />
+            <element signature="e#644#645#0" expanded="true" />
+            <element signature="e#680#681#0" expanded="true" />
+            <element signature="e#722#723#0" expanded="true" />
+            <element signature="e#764#765#0" expanded="true" />
+            <element signature="e#822#823#0" expanded="true" />
+            <element signature="e#876#877#0" expanded="true" />
+            <element signature="e#917#918#0" expanded="true" />
+            <element signature="e#958#959#0" expanded="true" />
+            <element signature="e#1014#1015#0" expanded="true" />
+            <element signature="e#1066#1067#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/thesis/tuc/repository/FlightInfoRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/thesis/tuc/repository/AirLogoRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="10" column="64" lean-forward="false" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="64" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///opt/java/jdk-9.0.4/lib/src.zip!/java.base/java/util/ArrayList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5955">
+          <caret line="439" column="0" lean-forward="false" selection-start-line="439" selection-start-column="0" selection-end-line="439" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/thesis/tuc/business/FlightService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="201">
+          <caret line="888" column="0" lean-forward="false" selection-start-line="888" selection-start-column="0" selection-end-line="888" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#getFlightsOneStation#0;class#FlightService#0" expanded="false" />
+            <element signature="method#getFlightsTwoStations#0;class#FlightService#0" expanded="false" />
+            <element signature="method#round#0;class#FlightService#0" expanded="false" />
+            <element signature="method#combineDateTime#0;class#FlightService#0" expanded="false" />
+            <element signature="method#sortedListByPrice#0;class#FlightService#0" expanded="false" />
+            <element signature="method#extractDouble#0;class#77274:77902" expanded="false" />
+            <element signature="method#getDateStationDepTime#0;class#FlightService#0" expanded="false" />
+            <element signature="method#flightSearched#0;class#FlightService#0" expanded="false" />
           </folding>
         </state>
       </provider>

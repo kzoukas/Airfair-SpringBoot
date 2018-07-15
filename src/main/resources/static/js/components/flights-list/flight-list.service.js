@@ -1,4 +1,3 @@
-
 (function(){
 
     var flightListService = function($http){
@@ -20,7 +19,7 @@
                                      departureTimeEnd,
                                      arrivalTimeStart,
                                      arrivalTimeEnd){
-            var repoUrl = "/allflights/" + fromIata
+            var flightUrl = "/allflights/" + fromIata
                 +"/"+ toIata
                 +"/"+ checkin
                 +"/"+ checkout
@@ -38,7 +37,7 @@
                 +"/"+ departureTimeEnd
                 +"/"+ arrivalTimeStart
                 +"/"+ arrivalTimeEnd;
-            return $http.get(repoUrl)
+            return $http.get(flightUrl)
                 .then(function(response){
                    return response.data;
                 });

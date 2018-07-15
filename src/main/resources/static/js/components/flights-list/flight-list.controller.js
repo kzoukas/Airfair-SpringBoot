@@ -33,8 +33,9 @@
 
         parameterService.setter(params);
         model.params=parameterService.getter();
+
         var onRepo = function(data){
-            $scope.flightList = data;
+            $scope.flightList = removeDuplicateUsingFilter(data);
 
             $scope.typeOfFlight = model.params.typeOfFlight;
             $scope.totalItems = $scope.flightList.length;
@@ -46,6 +47,12 @@
             $scope.maxSize = 3;
 
         };
+        function removeDuplicateUsingFilter(arr){
+            var unique_array = arr.filter(function(elem, index, self) {
+                return index == self.indexOf(elem);
+            });
+            return unique_array
+        }
 
         var onError = function(reason){
             $scope.error = reason;
@@ -119,9 +126,9 @@
             model.params.arrivalTimeStart,
             model.params.arrivalTimeEnd)
             .then(onRepo, onError);
+
         callService();
         var interval = null;
-
         interval=setInterval(callService,8000);
         function callService(){
             flightInfoService.getFlightInfo(model.params.from,
@@ -134,33 +141,11 @@
                 model.params.airportSize,
                 model.params.tripDistance)
                 .then(onSuccess, onError);
-            // if (severalTimes<7){
-            //     flightListService.getFlightList(model.params.from, model.params.to, model.params.stops, model.params.maxPrice, model.params.flightDuration, model.params.connectingTime)
-            //         .then(onSuccess, onError);
-            //     severalTimes=severalTimes+1;
-            // }
         }
-
-
-
 
         $scope.dhowHide = function(flight) {
             //If DIV is visible it will be hidden and vice versa.
-            console.log("mpikaaa");
-
             flight.IsVisible = !flight.IsVisible;
         }
-        $scope.ShowHide = function(flight) {
-
-            //If DIV is visible it will be hidden and vice versa.
-            flight.IsVisible = !flight.IsVisible;
-        }
-
-
-
-
-
     };
-
-
 }());

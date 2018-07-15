@@ -1,4 +1,5 @@
 package com.thesis.tuc.business;
+import com.thesis.tuc.repository.AirLogoRepository;
 import com.thesis.tuc.repository.FlightRepository;
 import com.thesis.tuc.repository.FlightInfoRepository;
 import com.thesis.tuc.services.rest.responseDTOs.Flight;
@@ -6,9 +7,13 @@ import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.text.ParseException;
 import java.util.*;
+import com.thesis.tuc.services.rest.responseDTOs.AirLogo;
 import com.thesis.tuc.services.rest.responseDTOs.FlightInfos;
 import com.thesis.tuc.services.rest.responseDTOs.FlightOneWay;
 import org.springframework.stereotype.Component;
+
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import java.util.stream.*;
 import java.text.SimpleDateFormat;
 
@@ -17,9 +22,11 @@ public class FlightService {
 
     private FlightRepository flightRepository;
     private FlightInfoRepository flightInfoRepository;
-    public FlightService(FlightRepository flightRepository,FlightInfoRepository flightInfoRepository) {
+    private AirLogoRepository airLogoRepository;
+    public FlightService(FlightRepository flightRepository,FlightInfoRepository flightInfoRepository,AirLogoRepository airLogoRepository) {
         this.flightRepository = flightRepository;
         this.flightInfoRepository = flightInfoRepository;
+        this.airLogoRepository=airLogoRepository;
     }
 
     public List<FlightOneWay> getDirectFlight(String fromIata,
@@ -38,7 +45,7 @@ public class FlightService {
                                               int arrivalTimeStart,
                                               int arrivalTimeEnd) {
 
-        String typeOfFlightToSearch = "Απευθείας";
+        String typeOfFlightToSearch = "Direct";
         List<Flight> flights = new ArrayList<>();
 
         List<FlightOneWay> directFlightsList = new ArrayList<>();
@@ -46,7 +53,7 @@ public class FlightService {
         List<FlightOneWay> flightsListCheckout = new ArrayList<>();
         if(typeOfFlight.equals("oneWay")) {
             flights = this.flightRepository.
-                    findDistinctByStationAndPriceLessThanAndFlightSearchFromIataAndFlightSearchToIataAndCheckinAndCheckoutAndAdultNumAndChildNumAndTypeOfFlightAndAirportSizeAndTripDistance(typeOfFlightToSearch, maxPrice, fromIata,
+                    findFlightsDistinctByStationAndPriceLessThanAndFlightSearchFromIataAndFlightSearchToIataAndCheckinAndCheckoutAndAdultNumAndChildNumAndTypeOfFlightAndAirportSizeAndTripDistance(typeOfFlightToSearch, maxPrice, fromIata,
                             toIata,
                             checkin,
                             checkout,
@@ -64,7 +71,7 @@ public class FlightService {
 
         }else if(typeOfFlight.equals("roundTrip")){
             List<Flight> flightsCheckIn = this.flightRepository.
-                    findDistinctByStationAndPriceLessThanAndFlightSearchFromIataAndFlightSearchToIataAndCheckinAndCheckoutAndAdultNumAndChildNumAndTypeOfFlightAndAirportSizeAndTripDistance(typeOfFlightToSearch, maxPrice, fromIata,
+                    findFlightsDistinctByStationAndPriceLessThanAndFlightSearchFromIataAndFlightSearchToIataAndCheckinAndCheckoutAndAdultNumAndChildNumAndTypeOfFlightAndAirportSizeAndTripDistance(typeOfFlightToSearch, maxPrice, fromIata,
                             toIata,
                             checkin,
                             checkout,
@@ -74,7 +81,7 @@ public class FlightService {
                             airportSize,
                             tripDistance);
             List<Flight> flightsCheckOut = this.flightRepository.
-                    findDistinctByStationAndPriceLessThanAndFlightSearchFromIataAndFlightSearchToIataAndCheckinAndCheckoutAndAdultNumAndChildNumAndTypeOfFlightAndAirportSizeAndTripDistance(typeOfFlightToSearch, maxPrice, toIata,
+                    findFlightsDistinctByStationAndPriceLessThanAndFlightSearchFromIataAndFlightSearchToIataAndCheckinAndCheckoutAndAdultNumAndChildNumAndTypeOfFlightAndAirportSizeAndTripDistance(typeOfFlightToSearch, maxPrice, toIata,
                             fromIata,
                             checkout,
                             checkin,
@@ -158,8 +165,14 @@ public class FlightService {
                                                    int arrivalTimeStart,
                                                    int arrivalTimeEnd) {
 
-        String typeOfFlightToSearch = "Απευθείας";
+        String typeOfFlightToSearch = "Direct";
+        String typeOfFlightToSearch2 = "1 Stop";
         List<Flight> flights = new ArrayList<>();
+        List<Flight> flightsDirectUpToOneStationList = new ArrayList<>();
+        List<FlightOneWay> flightsListUpToOneStation1 = new ArrayList<>();
+        List<FlightOneWay> flightsDirectUpToOneStationNewList = new ArrayList<>();
+
+
         List<FlightOneWay> flightsListOneStation = new ArrayList<>();
         List<FlightOneWay> flightsListUpToOneStation = new ArrayList<>();
         List<FlightOneWay> directflightList = getDirectFlight(fromIata, toIata,
@@ -179,9 +192,25 @@ public class FlightService {
         flightsListUpToOneStation.addAll(directflightList);
         List<FlightOneWay> flightsListCheckIn = new ArrayList<>();
         List<FlightOneWay> flightsListCheckout = new ArrayList<>();
+        List<FlightOneWay> flightsDirectUpToOneStationNewListCheckIn = new ArrayList<>();
+        List<FlightOneWay> flightsDirectUpToOneStationNewListCheckOut = new ArrayList<>();
         if(typeOfFlight.equals("oneWay")) {
+            flightsDirectUpToOneStationList=this.flightRepository.
+                    findFlightsDistinctByStationAndPriceLessThanAndFlightSearchFromIataAndFlightSearchToIataAndCheckinAndCheckoutAndAdultNumAndChildNumAndTypeOfFlightAndAirportSizeAndTripDistanceAndFromIataAndToIata( typeOfFlightToSearch2,
+                     maxPrice,
+                     fromIata,
+                     toIata,
+                     checkin,
+                     checkout,
+                     adultNum,
+                     childNum,
+                     typeOfFlight,
+                     airportSize,
+                     tripDistance,
+                     fromIata,
+                     toIata);
             flights = this.flightRepository.
-                    findDistinctByStationAndPriceLessThanAndFlightSearchFromIataAndFlightSearchToIataAndCheckinAndCheckoutAndAdultNumAndChildNumAndTypeOfFlightAndAirportSizeAndTripDistance(typeOfFlightToSearch, maxPrice, fromIata,
+                    findFlightsDistinctByStationAndPriceLessThanAndFlightSearchFromIataAndFlightSearchToIataAndCheckinAndCheckoutAndAdultNumAndChildNumAndTypeOfFlightAndAirportSizeAndTripDistance(typeOfFlightToSearch, maxPrice, fromIata,
                             toIata,
                             checkin,
                             checkout,
@@ -190,16 +219,52 @@ public class FlightService {
                             typeOfFlight,
                             airportSize,
                             tripDistance);
+            for (int i = 0; i < flightsDirectUpToOneStationList.size(); i++) {
+
+                    flightsDirectUpToOneStation(maxPrice, flightsDirectUpToOneStationList, flightsDirectUpToOneStationNewList, i, flightDuration, connectingTimeStart,
+                            connectingTimeEnd,departureTimeStart, departureTimeEnd, arrivalTimeStart, arrivalTimeEnd);
+
+            }
             for (int i = 0; i < flights.size(); i++) {
                 for (int j = 0; j < flights.size(); j++) {
-                    flightsUpToOneStation(maxPrice, flights, flightsListUpToOneStation, i, j, flightDuration, connectingTimeStart,
+                    flightsUpToOneStation(maxPrice, flights, flightsListUpToOneStation1, i, j, flightDuration, connectingTimeStart,
                             connectingTimeEnd,departureTimeStart, departureTimeEnd, arrivalTimeStart, arrivalTimeEnd);
                 }
             }
+            flightsListUpToOneStation.addAll(flightsListUpToOneStation1);
+            flightsListUpToOneStation.addAll(flightsDirectUpToOneStationNewList);
 
         }else if(typeOfFlight.equals("roundTrip")){
+            List<Flight> flightsDirectUpToOneStationListCheckIn=this.flightRepository.
+                    findFlightsDistinctByStationAndPriceLessThanAndFlightSearchFromIataAndFlightSearchToIataAndCheckinAndCheckoutAndAdultNumAndChildNumAndTypeOfFlightAndAirportSizeAndTripDistanceAndFromIataAndToIata( typeOfFlightToSearch2,
+                            maxPrice,
+                            fromIata,
+                            toIata,
+                            checkin,
+                            checkout,
+                            adultNum,
+                            childNum,
+                            typeOfFlight,
+                            airportSize,
+                            tripDistance,
+                            fromIata,
+                            toIata);
+            List<Flight> flightsDirectUpToOneStationListCheckOut=this.flightRepository.
+                    findFlightsDistinctByStationAndPriceLessThanAndFlightSearchFromIataAndFlightSearchToIataAndCheckinAndCheckoutAndAdultNumAndChildNumAndTypeOfFlightAndAirportSizeAndTripDistanceAndFromIataAndToIata( typeOfFlightToSearch2,
+                            maxPrice,
+                            toIata,
+                            fromIata,
+                            checkout,
+                            checkin,
+                            adultNum,
+                            childNum,
+                            typeOfFlight,
+                            airportSize,
+                            tripDistance,
+                            toIata,
+                            fromIata);
             List<Flight> flightsCheckIn = this.flightRepository.
-                    findDistinctByStationAndPriceLessThanAndFlightSearchFromIataAndFlightSearchToIataAndCheckinAndCheckoutAndAdultNumAndChildNumAndTypeOfFlightAndAirportSizeAndTripDistance(typeOfFlightToSearch, maxPrice, fromIata,
+                    findFlightsDistinctByStationAndPriceLessThanAndFlightSearchFromIataAndFlightSearchToIataAndCheckinAndCheckoutAndAdultNumAndChildNumAndTypeOfFlightAndAirportSizeAndTripDistance(typeOfFlightToSearch, maxPrice, fromIata,
                             toIata,
                             checkin,
                             checkout,
@@ -209,7 +274,7 @@ public class FlightService {
                             airportSize,
                             tripDistance);
             List<Flight> flightsCheckOut = this.flightRepository.
-                    findDistinctByStationAndPriceLessThanAndFlightSearchFromIataAndFlightSearchToIataAndCheckinAndCheckoutAndAdultNumAndChildNumAndTypeOfFlightAndAirportSizeAndTripDistance(typeOfFlightToSearch, maxPrice, toIata,
+                    findFlightsDistinctByStationAndPriceLessThanAndFlightSearchFromIataAndFlightSearchToIataAndCheckinAndCheckoutAndAdultNumAndChildNumAndTypeOfFlightAndAirportSizeAndTripDistance(typeOfFlightToSearch, maxPrice, toIata,
                             fromIata,
                             checkout,
                             checkin,
@@ -218,6 +283,18 @@ public class FlightService {
                             typeOfFlight,
                             airportSize,
                             tripDistance);
+            for (int i = 0; i < flightsDirectUpToOneStationListCheckIn.size(); i++) {
+
+                flightsDirectUpToOneStation(maxPrice, flightsDirectUpToOneStationListCheckIn, flightsDirectUpToOneStationNewListCheckIn, i, flightDuration, connectingTimeStart,
+                        connectingTimeEnd,departureTimeStart, departureTimeEnd, arrivalTimeStart, arrivalTimeEnd);
+
+            }
+            for (int i = 0; i < flightsDirectUpToOneStationListCheckOut.size(); i++) {
+
+                flightsDirectUpToOneStation(maxPrice, flightsDirectUpToOneStationListCheckOut, flightsDirectUpToOneStationNewListCheckOut, i, flightDuration, connectingTimeStart,
+                        connectingTimeEnd,departureTimeStart, departureTimeEnd, arrivalTimeStart, arrivalTimeEnd);
+
+            }
             for (int i = 0; i < flightsCheckIn.size(); i++) {
                 for (int j = 0; j < flightsCheckIn.size(); j++) {
                     flightsUpToOneStation(maxPrice, flightsCheckIn, flightsListCheckIn, i, j, flightDuration, connectingTimeStart,
@@ -230,6 +307,8 @@ public class FlightService {
                             connectingTimeEnd,departureTimeStart, departureTimeEnd, arrivalTimeStart, arrivalTimeEnd);
                 }
             }
+            flightsListCheckIn.addAll(flightsDirectUpToOneStationNewListCheckIn);
+            flightsListCheckout.addAll(flightsDirectUpToOneStationNewListCheckOut);
             for (int i = 0; i < flightsListCheckIn.size(); i++) {
                 for (int j = 0; j < flightsListCheckout.size(); j++) {
                     Double finalPrice=flightsListCheckIn.get(i).getPrice() + flightsListCheckout.get(j).getPrice();
@@ -499,12 +578,21 @@ public class FlightService {
                                              List<Flight> flightsFromDatabase) {
         for (int i = 0; i < flightsFromDatabase.size(); i++) {
             for (int j = 0; j < flightsFromDatabase.size(); j++) {
-                if (flightsFromDatabase.get(i).getStation().equals("Απευθείας") && (flightsFromDatabase.get(j).getStation().equals("1 Στάση"))) {
-
+                if (flightsFromDatabase.get(i).getStation().equals("Direct") && (flightsFromDatabase.get(j).getStation().equals("1 Stop"))) {
                     upTo2directFlightFirst(maxPrice, flightsFromDatabase, flightsList, i, j, flightDuration, connectingTimeStart,
-                            connectingTimeEnd,departureTimeStart, departureTimeEnd, arrivalTimeStart, arrivalTimeEnd);
+                                    connectingTimeEnd, departureTimeStart, departureTimeEnd, arrivalTimeStart, arrivalTimeEnd);
+//                    String stationTown=flightsFromDatabase.get(j).getStationTown();
+//                    Matcher stationIata = Pattern.compile("\\(([^)]+)\\)").matcher(stationTown);
+//                    while(stationIata.find()) {
+//                        if (stationIata.group(1).equals(flightsFromDatabase.get(i).getFromIata())) {
+//                            break;
+//                        } else {
+//                            upTo2directFlightFirst(maxPrice, flightsFromDatabase, flightsList, i, j, flightDuration, connectingTimeStart,
+//                                    connectingTimeEnd, departureTimeStart, departureTimeEnd, arrivalTimeStart, arrivalTimeEnd);
+//                        }
+//                    }
 
-                } else if (flightsFromDatabase.get(i).getStation().equals("1 Στάση") && (flightsFromDatabase.get(j).getStation().equals("Απευθείας"))) {
+                } else if (flightsFromDatabase.get(i).getStation().equals("1 Stop") && (flightsFromDatabase.get(j).getStation().equals("Direct"))) {
 
                     upTo2directFlightSecond(maxPrice, flightsFromDatabase, flightsList, i, j, flightDuration, connectingTimeStart,
                             connectingTimeEnd,departureTimeStart, departureTimeEnd, arrivalTimeStart, arrivalTimeEnd);
@@ -526,8 +614,9 @@ public class FlightService {
                                      int arrivalTimeStart,
                                      int arrivalTimeEnd) {
 
+//        Locale locale = new Locale("el");
         SimpleDateFormat timeFormat = new SimpleDateFormat("HH:mm");
-        SimpleDateFormat dateFormat = new SimpleDateFormat("M/d/yyyy");
+        SimpleDateFormat dateFormat = new SimpleDateFormat("EEE, d MMM yyyy");
 
         Date t1,d1,dt1 = null;
         dt1 = getDateFromDepartureTime(flights, i, timeFormat, dateFormat, dt1);
@@ -544,22 +633,13 @@ public class FlightService {
 
         if (flights.get(i).getFromIata().equals(fromIata)
                 && (flights.get(i).getToIata().equals(toIata))
-                && (flights.get(i).getStation().equals("Απευθείας"))
+                && (flights.get(i).getStation().equals("Direct"))
                 && (diffHours < flightDuration)
                 && (departureTimeStart <= departureTime)
                 && (departureTimeEnd > departureTime)
                 && (arrivalTimeStart <= arrivalTime)
                 && (arrivalTimeEnd > arrivalTime)
                 && (maxPrice > flights.get(i).getPrice()))
-//                ||(flights.get(i).getFromIata().equals(toIata)
-//                && (flights.get(i).getToIata().equals(fromIata))
-//                && (flights.get(i).getStation().equals("Απευθείας"))
-//                && (diffHours < flightDuration)
-//                && (departureTimeStart <= departureTime)
-//                && (departureTimeEnd > departureTime)
-//                && (arrivalTimeStart <= arrivalTime)
-//                && (arrivalTimeEnd > arrivalTime)
-//                && (maxPrice > flights.get(i).getPrice()) ))
         {
 
             FlightOneWay flight = new FlightOneWay();
@@ -573,7 +653,9 @@ public class FlightService {
             flight.setStation("Direct");
             flight.setFromDepartureDate(flights.get(i).getFromDate());
             flight.setFromCompany(flights.get(i).getFromCompany());
-            flight.setAirlineToStation1imgSrc(flights.get(i).getAirlineImgSrc());
+            List<AirLogo> airlogos = new ArrayList<>();
+            airlogos=this.airLogoRepository.findDistinctByCompanyName(flights.get(i).getFromCompany());
+            flight.setAirlineToStation1imgSrc(airlogos.get(0).getAirLogoSrc());
             flight.setToDepartureDate(flights.get(i).getToDate());
             flight.setPrice(flights.get(i).getPrice());
 
@@ -594,8 +676,9 @@ public class FlightService {
                                        int arrivalTimeStart,
                                        int arrivalTimeEnd) {
 
+//        Locale locale = new Locale("el");
         SimpleDateFormat timeFormat = new SimpleDateFormat("HH:mm");
-        SimpleDateFormat dateFormat = new SimpleDateFormat("d/M/yyyy");
+        SimpleDateFormat dateFormat = new SimpleDateFormat("EEE, d MMM yyyy");
 
         Date dt1 = null;
         dt1 = getDateFromArrivalTime(flights, i, timeFormat, dateFormat, dt1);
@@ -683,14 +766,135 @@ public class FlightService {
 
             flight.setFromCompany(flights.get(i).getFromCompany());
             flight.setAirlineToStation1(flights.get(i).getFromCompany());
-            flight.setAirlineToStation1imgSrc(flights.get(i).getAirlineImgSrc());
+            List<AirLogo> airlogos = new ArrayList<>();
+            airlogos=this.airLogoRepository.findDistinctByCompanyName(flights.get(i).getFromCompany());
+            flight.setAirlineToStation1imgSrc(airlogos.get(0).getAirLogoSrc());
+//            flight.setAirlineToStation1imgSrc(flights.get(i).getAirlineImgSrc());
             flight.setAirlineFromStation1(flights.get(j).getFromCompany());
-            flight.setAirlineFromStation1imgSrc(flights.get(j).getAirlineImgSrc());
+            airlogos=this.airLogoRepository.findDistinctByCompanyName(flights.get(j).getFromCompany());
+            flight.setAirlineFromStation1imgSrc(airlogos.get(0).getAirLogoSrc());
+//            flight.setAirlineFromStation1imgSrc(flights.get(j).getAirlineImgSrc());
 
             finalPrice = Math.round(finalPrice * 100.0) / 100.0;
             flight.setPrice(finalPrice);
 
             flightsList.add(flight);
+
+        }
+
+    }
+
+    private void flightsDirectUpToOneStation(double maxPrice,
+                                       List<Flight> flightsDirectUpToOneStationList,
+                                       List<FlightOneWay> flightsDirectUpToOneStationNewList,
+                                       int i,
+                                       int flightDuration,
+                                       int connectingTimeStart,
+                                       int connectingTimeEnd,
+                                       int departureTimeStart,
+                                       int departureTimeEnd,
+                                       int arrivalTimeStart,
+                                       int arrivalTimeEnd) {
+
+//        Locale locale = new Locale("el");
+        SimpleDateFormat timeFormat = new SimpleDateFormat("HH:mm");
+        SimpleDateFormat dateFormat = new SimpleDateFormat("EEE, d MMM yyyy");
+
+        Date t1, d1, dt1 = null;
+        dt1 = getDateFromDepartureTime(flightsDirectUpToOneStationList, i, timeFormat, dateFormat, dt1);
+        Date t2, d2, dt2 = null;
+        dt2 = getDateStationArrivalTime(flightsDirectUpToOneStationList, i, timeFormat, dateFormat, dt2);
+        Date t3, d3, dt3 = null;
+        dt3 = getDateStationDepTime(flightsDirectUpToOneStationList, i, timeFormat, dateFormat, dt3);
+        Date t4, d4, dt4 = null;
+        dt4 = getDateFromArrivalTime(flightsDirectUpToOneStationList, i, timeFormat, dateFormat, dt4);
+
+
+        // Find the flights with 1hour differnce
+        long waitingTimeStation = dt3.getTime() - dt2.getTime();
+        long waitingTimeMinutes = waitingTimeStation / (60 * 1000) % 60;
+        long waitingTimeHours = waitingTimeStation / (60 * 60 * 1000);
+
+        long flightDurationUpTo2 = dt4.getTime() - dt1.getTime();
+        long diffminutes = flightDurationUpTo2 / (60 * 1000) % 60;
+        long diffHours = flightDurationUpTo2 / (60 * 60 * 1000);
+
+        long flightDurationUpTo2Station1 = dt2.getTime() - dt1.getTime();
+        long diffminutes1 = flightDurationUpTo2Station1 / (60 * 1000) % 60;
+        long diffHours1 = flightDurationUpTo2Station1 / (60 * 60 * 1000);
+
+        long flightDurationUpTo2Station2 = dt4.getTime() - dt3.getTime();
+        long diffminutes2 = flightDurationUpTo2Station2 / (60 * 1000) % 60;
+        long diffHours2 = flightDurationUpTo2Station2 / (60 * 60 * 1000);
+
+        String departureTimeString=flightsDirectUpToOneStationList.get(i).getFromDepartureTime();
+        int departureTime=Integer.parseInt(departureTimeString.substring(0, Math.min(departureTimeString.length(),2)));
+
+        String arrivalTimeString=flightsDirectUpToOneStationList.get(i).getFromArrivalTime();
+        int arrivalTime = Integer.parseInt(arrivalTimeString.substring(0, Math.min(arrivalTimeString.length(),2)));
+
+        Double finalPrice = flightsDirectUpToOneStationList.get(i).getPrice();
+
+        /*    Add to list all pair of flights with station and waiting time at
+              least 1 hour so the passenger have time to change plane             */
+        if ((waitingTimeHours >= 1 || waitingTimeMinutes > 45)
+                && (finalPrice < maxPrice)
+                && (diffHours <flightDuration)
+                && (departureTimeStart <= departureTime)
+                && (departureTimeEnd > departureTime)
+                && (arrivalTimeStart <= arrivalTime)
+                && (arrivalTimeEnd > arrivalTime)
+                && (connectingTimeStart <= waitingTimeHours)
+                && (connectingTimeEnd > waitingTimeHours)){
+
+            FlightOneWay flight = new FlightOneWay();
+            flight.setDepartureFrom(flightsDirectUpToOneStationList.get(i).getFromTown());
+            flight.setDepartureTo(flightsDirectUpToOneStationList.get(i).getToTown());
+
+            flight.setFromDepartureTime(flightsDirectUpToOneStationList.get(i).getFromDepartureTime());
+            flight.setFromDepartureDate(flightsDirectUpToOneStationList.get(i).getFromDate());
+            flight.setStation1ArrivalTime(flightsDirectUpToOneStationList.get(i).getStationArrivalTime());
+            flight.setStation1ArrivalDate(flightsDirectUpToOneStationList.get(i).getStationArrivalDate());
+            flight.setStation1DepTime(flightsDirectUpToOneStationList.get(i).getStationDepTime());
+            flight.setStation1DepDate(flightsDirectUpToOneStationList.get(i).getStationDepDate());
+            flight.setToDepartureTime(flightsDirectUpToOneStationList.get(i).getFromArrivalTime());
+            flight.setToDepartureDate(flightsDirectUpToOneStationList.get(i).getToDate());
+
+            flight.setDepartureToStation1(flightsDirectUpToOneStationList.get(i).getStationTown());
+            flight.setDeparturefromStation1(flightsDirectUpToOneStationList.get(i).getStationTown());
+
+            String differHours = String.valueOf(diffHours);
+            String differMinutes = String.valueOf(diffminutes);
+            flight.setDuration(differHours + "h " + differMinutes + "m");
+
+            String differHours1 = String.valueOf(diffHours1);
+            String differMinutes1 = String.valueOf(diffminutes1);
+            flight.setDurationToStation1(differHours1 + "h " + differMinutes1 + "m");
+
+            String differHours2 = String.valueOf(diffHours2);
+            String differMinutes2 = String.valueOf(diffminutes2);
+            flight.setDurationFromStation1(differHours2 + "h " + differMinutes2 + "m");
+
+            //flight.setDurationFromStation1(flightsDirectUpToOneStationList.get(i).getDuration());
+            flight.setStation("1 Stop");
+
+            String waitingHours = String.valueOf(waitingTimeHours);
+            String waitingMinutes = String.valueOf(waitingTimeMinutes);
+            flight.setWaitingTimeStation1(waitingHours + "h " + waitingMinutes + "m");
+
+            flight.setFromCompany(flightsDirectUpToOneStationList.get(i).getFromCompany());
+            flight.setAirlineToStation1(flightsDirectUpToOneStationList.get(i).getFromCompany());
+            List<AirLogo> airlogos = new ArrayList<>();
+            airlogos=this.airLogoRepository.findDistinctByCompanyName(flightsDirectUpToOneStationList.get(i).getFromCompany());
+            flight.setAirlineToStation1imgSrc(airlogos.get(0).getAirLogoSrc());
+            flight.setAirlineFromStation1(flightsDirectUpToOneStationList.get(i).getFromCompanyAfterStation());
+            airlogos=this.airLogoRepository.findDistinctByCompanyName(flightsDirectUpToOneStationList.get(i).getFromCompanyAfterStation());
+            flight.setAirlineFromStation1imgSrc(airlogos.get(0).getAirLogoSrc());
+
+            finalPrice = Math.round(finalPrice * 100.0) / 100.0;
+            flight.setPrice(finalPrice);
+
+            flightsDirectUpToOneStationNewList.add(flight);
 
         }
 
@@ -715,8 +919,9 @@ public class FlightService {
                 && (flights.get(i).getFlightSearchFromIata().equals(flights.get(i).getFromIata()))
                 && (flights.get(j).getFlightSearchToIata().equals(flights.get(j).getToIata()))) {
 
+//            Locale locale = new Locale("el");
             SimpleDateFormat timeFormat = new SimpleDateFormat("HH:mm");
-            SimpleDateFormat dateFormat = new SimpleDateFormat("d/M/yyyy");
+            SimpleDateFormat dateFormat = new SimpleDateFormat("EEE, d MMM yyyy");
 
             Date t1,d1,dt1 = null;
             dt1 = getDateFromDepartureTime(flights, i, timeFormat, dateFormat, dt1);
@@ -789,10 +994,22 @@ public class FlightService {
                 flight.setDurationToStation1(flights.get(i).getDuration());
                 flight.setWaitingTimeStation1(waitingTimeHours1 + "h " + waitingTimeMinutes1 + "m");
 
+                List<AirLogo> airlogos = new ArrayList<>();
+                airlogos=this.airLogoRepository.findDistinctByCompanyName(flights.get(i).getFromCompany());
                 flight.setAirlineToStation1(flights.get(i).getFromCompany());
-                flight.setAirlineToStation1imgSrc(flights.get(i).getAirlineImgSrc());
+                if (airlogos.size()==0){
+                    flight.setAirlineToStation1imgSrc(flights.get(i).getAirlineImgSrc());
+                }else {
+                    flight.setAirlineToStation1imgSrc(airlogos.get(0).getAirLogoSrc());
+                }
+
                 flight.setAirlineFromStation1(flights.get(j).getFromCompany());
-                flight.setAirlineFromStation1imgSrc(flights.get(j).getAirlineImgSrc());
+                airlogos=this.airLogoRepository.findDistinctByCompanyName(flights.get(j).getFromCompany());
+                if (airlogos.size()==0){
+                    flight.setAirlineFromStation1imgSrc(flights.get(j).getAirlineImgSrc());
+                }else {
+                    flight.setAirlineFromStation1imgSrc(airlogos.get(0).getAirLogoSrc());
+                }
 
 
                 flight.setDepartureToStation2(flights.get(j).getStationTown());
@@ -801,9 +1018,15 @@ public class FlightService {
                 flight.setStation2ArrivalDate(flights.get(j).getStationArrivalDate());
                 flight.setStation2DepTime(flights.get(j).getStationDepTime());
                 flight.setStation2DepDate(flights.get(j).getStationDepDate());
-                flight.setAirlineFromStation2(flights.get(j).getFromCompany());
-                flight.setAirlineFromStation2imgSrc(flights.get(j).getAirlineImgSrc());
-                flight.setAirlineFromStation2(flights.get(j).getFromCompany());
+                flight.setAirlineFromStation2(flights.get(j).getFromCompanyAfterStation());
+                airlogos=this.airLogoRepository.findDistinctByCompanyName(flights.get(j).getFromCompanyAfterStation());
+                if (airlogos.size()==0){
+                    flight.setAirlineFromStation2imgSrc(flights.get(j).getAirlineImgSrc());
+                }else {
+                    flight.setAirlineFromStation2imgSrc(airlogos.get(0).getAirLogoSrc());
+                }
+
+
 
                 long durationToStation2Format = dt4.getTime() - dt3.getTime();
                 long diff2minutes = durationToStation2Format / (60 * 1000) % 60;
@@ -816,7 +1039,7 @@ public class FlightService {
                 long diff3Hours = durationFromStation2Format / (60 * 60 * 1000);
                 flight.setDurationFromStation2(diff3Hours + "h " + diff3minutes + "m");
                 flight.setToDepartureTime(flights.get(j).getFromArrivalTime());
-                flight.setToLastDepartureTime(flights.get(j).getToTime());
+                flight.setToLastDepartureTime(flights.get(j).getFromArrivalTime());
                 flight.setToDepartureDate(flights.get(j).getToDate());
                 finalPrice = Math.round(finalPrice * 100.0) / 100.0;
                 flight.setPrice(finalPrice);
@@ -848,8 +1071,9 @@ public class FlightService {
                 && (flights.get(i).getFlightSearchFromIata().equals(flights.get(i).getFromIata()))
                 && (flights.get(j).getFlightSearchToIata().equals(flights.get(j).getToIata()))) {
 
+//            Locale locale = new Locale("el");
             SimpleDateFormat timeFormat = new SimpleDateFormat("HH:mm");
-            SimpleDateFormat dateFormat = new SimpleDateFormat("M/d/yyyy");
+            SimpleDateFormat dateFormat = new SimpleDateFormat("EEE, d MMM yyyy");
 
             Date t1, d1, dt1 = null;
             dt1 = getDateFromDepartureTime(flights, i, timeFormat, dateFormat, dt1);
@@ -923,20 +1147,40 @@ public class FlightService {
                 flight.setDurationToStation1(diff2Hours + "h " + diff2minutes + "m");
                 flight.setWaitingTimeStation1(waitingTimeHours1 + "h " + waitingTimeMinutes1 + "m");
 
+                List<AirLogo> airlogos = new ArrayList<>();
+                airlogos=this.airLogoRepository.findDistinctByCompanyName(flights.get(i).getFromCompany());
                 flight.setAirlineToStation1(flights.get(i).getFromCompany());
-                flight.setAirlineToStation1imgSrc(flights.get(i).getAirlineImgSrc());
-                flight.setAirlineFromStation1(flights.get(i).getFromCompany());
-                flight.setAirlineFromStation1imgSrc(flights.get(i).getAirlineImgSrc());
+                if (airlogos.size()==0){
+                    flight.setAirlineToStation1imgSrc(flights.get(i).getAirlineImgSrc());
+                }else {
+                    flight.setAirlineToStation1imgSrc(airlogos.get(0).getAirLogoSrc());
+                }
+
+                airlogos=this.airLogoRepository.findDistinctByCompanyName(flights.get(i).getFromCompanyAfterStation());
+
+                flight.setAirlineFromStation1(flights.get(i).getFromCompanyAfterStation());
+                if (airlogos.size()==0){
+                    flight.setAirlineFromStation1imgSrc(flights.get(i).getAirlineImgSrc());
+                }else {
+                    flight.setAirlineFromStation1imgSrc(airlogos.get(0).getAirLogoSrc());
+                }
+
 
 
                 flight.setDepartureToStation2(flights.get(i).getToTown());
                 flight.setDeparturefromStation2(flights.get(j).getFromTown());
-                flight.setStation2ArrivalTime(flights.get(i).getToTime());
+                flight.setStation2ArrivalTime(flights.get(i).getFromArrivalTime());
                 flight.setStation2ArrivalDate(flights.get(i).getToDate());
                 flight.setStation2DepTime(flights.get(j).getFromDepartureTime());
                 flight.setStation2DepDate(flights.get(j).getFromDate());
                 flight.setAirlineFromStation2(flights.get(j).getFromCompany());
-                flight.setAirlineFromStation2imgSrc(flights.get(j).getAirlineImgSrc());
+                airlogos=this.airLogoRepository.findDistinctByCompanyName(flights.get(j).getFromCompany());
+                if (airlogos.size()==0){
+                    flight.setAirlineFromStation2imgSrc(flights.get(j).getAirlineImgSrc());
+                }else {
+                    flight.setAirlineFromStation2imgSrc(airlogos.get(0).getAirLogoSrc());
+                }
+
 
                 long durationToStation2Format = dt4.getTime() - dt3.getTime();
                 long diff3minutes = durationToStation2Format / (60 * 1000) % 60;
@@ -966,7 +1210,7 @@ public class FlightService {
                                     double maxPrice, String typeOfFlightToSearch, List<Flight> flights) {
         if(typeOfFlight=="oneWay") {
             flights = this.flightRepository.
-                    findDistinctByStationAndPriceLessThanAndFlightSearchFromIataAndFlightSearchToIataAndCheckinAndCheckoutAndAdultNumAndChildNumAndTypeOfFlightAndAirportSizeAndTripDistance(typeOfFlightToSearch, maxPrice, fromIata,
+                    findFlightsDistinctByStationAndPriceLessThanAndFlightSearchFromIataAndFlightSearchToIataAndCheckinAndCheckoutAndAdultNumAndChildNumAndTypeOfFlightAndAirportSizeAndTripDistance(typeOfFlightToSearch, maxPrice, fromIata,
                             toIata,
                             checkin,
                             checkout,
@@ -977,7 +1221,7 @@ public class FlightService {
                             tripDistance);
         }else{
             List<Flight> flightsCheckIn = this.flightRepository.
-                    findDistinctByStationAndPriceLessThanAndFlightSearchFromIataAndFlightSearchToIataAndCheckinAndCheckoutAndAdultNumAndChildNumAndTypeOfFlightAndAirportSizeAndTripDistance(typeOfFlightToSearch, maxPrice, fromIata,
+                    findFlightsDistinctByStationAndPriceLessThanAndFlightSearchFromIataAndFlightSearchToIataAndCheckinAndCheckoutAndAdultNumAndChildNumAndTypeOfFlightAndAirportSizeAndTripDistance(typeOfFlightToSearch, maxPrice, fromIata,
                             toIata,
                             checkin,
                             checkout,
@@ -987,7 +1231,7 @@ public class FlightService {
                             airportSize,
                             tripDistance);
             List<Flight> flightsCheckOut = this.flightRepository.
-                    findDistinctByStationAndPriceLessThanAndFlightSearchFromIataAndFlightSearchToIataAndCheckinAndCheckoutAndAdultNumAndChildNumAndTypeOfFlightAndAirportSizeAndTripDistance(typeOfFlightToSearch, maxPrice, toIata,
+                    findFlightsDistinctByStationAndPriceLessThanAndFlightSearchFromIataAndFlightSearchToIataAndCheckinAndCheckoutAndAdultNumAndChildNumAndTypeOfFlightAndAirportSizeAndTripDistance(typeOfFlightToSearch, maxPrice, toIata,
                             fromIata,
                             checkout,
                             checkin,
@@ -1049,7 +1293,7 @@ public class FlightService {
         Date d5;
         try {
             t5 = timeFormat.parse(flights.get(j).getStationDepTime());
-            d5 = dateFormat.parse(flights.get(j).getStationDepDate().substring(4));
+            d5 = dateFormat.parse(flights.get(j).getStationDepDate());
             dt5 = combineDateTime(d5, t5);
         } catch (ParseException e) {
             e.printStackTrace();
@@ -1062,7 +1306,7 @@ public class FlightService {
         Date d4;
         try {
             t4 = timeFormat.parse(flights.get(j).getStationArrivalTime());
-            d4 = dateFormat.parse(flights.get(j).getStationArrivalDate().substring(4));
+            d4 = dateFormat.parse(flights.get(j).getStationArrivalDate());
             dt4 = combineDateTime(d4, t4);
         } catch (ParseException e) {
             e.printStackTrace();
@@ -1075,7 +1319,7 @@ public class FlightService {
         Date d2;
         try {
             t2 = timeFormat.parse(flights.get(i).getFromArrivalTime());
-            d2 = dateFormat.parse(flights.get(i).getToDate().substring(4));
+            d2 = dateFormat.parse(flights.get(i).getToDate());
             dt2 = combineDateTime(d2, t2);
         } catch (ParseException e) {
             e.printStackTrace();
@@ -1088,7 +1332,7 @@ public class FlightService {
         Date d1;
         try {
             t1 = timeFormat.parse(flights.get(i).getFromDepartureTime());
-            d1 = dateFormat.parse(flights.get(i).getFromDate().substring(4));
+            d1 = dateFormat.parse(flights.get(i).getFromDate());
             dt1 = combineDateTime(d1, t1);
         } catch (ParseException e) {
             e.printStackTrace();

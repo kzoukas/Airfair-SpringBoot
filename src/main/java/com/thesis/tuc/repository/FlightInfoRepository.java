@@ -1,6 +1,6 @@
 package com.thesis.tuc.repository;
 
-import com.thesis.tuc.services.rest.responseDTOs.Flight;
+
 import com.thesis.tuc.services.rest.responseDTOs.FlightInfos;
 import org.springframework.data.mongodb.repository.MongoRepository;
 

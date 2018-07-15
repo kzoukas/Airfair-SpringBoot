@@ -10,19 +10,19 @@
     sideBarController.$inject=['$scope','$location','parameterService','$route'];
     function sideBarController($scope,$location,parameterService,$route){
         var model = this;
-        model.stops=1;
+        model.stops=2;
         model.maxPriceSlider = {
-            value: 1200,
+            value: 2000,
                 options: {
                 floor: 0,
-                ceil: 2000,
+                ceil: 5000,
             }
         }
         model.flightDurationSlider = {
-            value: 15,
+            value: 25,
                 options: {
                 floor: 0,
-                ceil: 30,
+                ceil: 40,
             }
         }
         model.connectingTimeSlider = {
@@ -50,19 +50,19 @@
             }
         }
         $scope.filter = {
-            stops:"1",
+            stops:"2",
             maxPriceSlider : {
-                value: 1200,
+                value: 2000,
                 options: {
                     floor: 0,
-                    ceil: 2000,
+                    ceil: 5000,
                 }
             },
             flightDurationSlider : {
-                value: 15,
+                value: 25,
                 options: {
                     floor: 0,
-                    ceil: 30,
+                    ceil: 40,
                 }
             },
             connectingTimeSlider : {

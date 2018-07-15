@@ -144,31 +144,5 @@ private static final Logger logger = LoggerFactory.getLogger(ViewController.clas
 
     }
 
-//    public ModelAndView method() {
-//        String projectUrl= "http://localhost:3000";
-//        return new ModelAndView("redirect:" + projectUrl);
-//
-//    }
-    public void method(HttpServletResponse httpServletResponse) {
-        String projectUrl= "http://localhost:3000";
-        httpServletResponse.setHeader("Location", projectUrl);
-    }
 
-    @ResponseStatus(value = HttpStatus.MOVED_TEMPORARILY)
-    public class MovedTemporarilyException extends RuntimeException {
-
-        // ...
-    }
-    @GetMapping(value = "/redirect")
-    public ModelAndView pageHandler( HttpServletResponse httpServletResponse,
-                                    Locale locale)  {
-
-        if (httpServletResponse.getStatus()!= 302){
-            throw new MovedTemporarilyException();
-        }
-        else{
-            String projectUrl= "http://localhost:3000";
-            return new ModelAndView("redirect:" + projectUrl);
-        }
-    }
 }

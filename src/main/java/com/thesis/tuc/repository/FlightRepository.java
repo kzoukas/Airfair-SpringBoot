@@ -9,7 +9,7 @@ public interface FlightRepository extends MongoRepository<Flight,String>  {
 
 
     List<Flight> findDistinctByPriceLessThan(double maxPrice);
-    List<Flight> findDistinctByStationAndPriceLessThanAndFlightSearchFromIataAndFlightSearchToIataAndCheckinAndCheckoutAndAdultNumAndChildNumAndTypeOfFlightAndAirportSizeAndTripDistance(String typeOfFlightToSearch,
+    List<Flight> findFlightsDistinctByStationAndPriceLessThanAndFlightSearchFromIataAndFlightSearchToIataAndCheckinAndCheckoutAndAdultNumAndChildNumAndTypeOfFlightAndAirportSizeAndTripDistance(String typeOfFlightToSearch,
                                                                                                                                               Double maxPrice,
                                                                                                                                               String fromIata,
                                                                                                                                               String toIata,
@@ -31,5 +31,17 @@ public interface FlightRepository extends MongoRepository<Flight,String>  {
                                                                                                                                                                                 String airportSize,
                                                                                                                                                                                 String tripDistance);
 
-
+    List<Flight> findFlightsDistinctByStationAndPriceLessThanAndFlightSearchFromIataAndFlightSearchToIataAndCheckinAndCheckoutAndAdultNumAndChildNumAndTypeOfFlightAndAirportSizeAndTripDistanceAndFromIataAndToIata(String typeOfFlightToSearch,
+                                                                                                                                                                                                 Double maxPrice,
+                                                                                                                                                                                                 String fromIata,
+                                                                                                                                                                                                 String toIata,
+                                                                                                                                                                                                 String checkin,
+                                                                                                                                                                                                 String checkout,
+                                                                                                                                                                                                 String adultNum,
+                                                                                                                                                                                                 String childNum,
+                                                                                                                                                                                                 String typeOfFlight,
+                                                                                                                                                                                                 String airportSize,
+                                                                                                                                                                                                 String tripDistance,
+                                                                                                                                                                                                 String fromIata1,
+                                                                                                                                                                                                 String toIata1);
 }

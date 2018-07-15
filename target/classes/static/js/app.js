@@ -7,13 +7,10 @@
         $routeProvider
             .when("/allflights", {
                 template: "<flight-list></flight-list>",
-
             })
             .when("/", {
                 templateUrl: "js/components/thesis-ticket/welcome.html",
-
         })
-            // .otherwise({redirectTo:"/"});
     });
 
 
